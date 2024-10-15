@@ -21,5 +21,10 @@ namespace WinFormsApp1.二级菜单
         {
 
         }
+
+        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
