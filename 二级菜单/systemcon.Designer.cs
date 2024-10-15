@@ -32,15 +32,17 @@
             texconbutton = new Button();
             syswhconbutton = new Button();
             syssetconbutton = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // userconbutton
             // 
             userconbutton.BackgroundImage = Properties.Resource1.权限管理;
             userconbutton.BackgroundImageLayout = ImageLayout.Zoom;
-            userconbutton.Location = new Point(71, 204);
+            userconbutton.Location = new Point(58, 170);
+            userconbutton.Margin = new Padding(2, 2, 2, 2);
             userconbutton.Name = "userconbutton";
-            userconbutton.Size = new Size(173, 144);
+            userconbutton.Size = new Size(142, 120);
             userconbutton.TabIndex = 1;
             userconbutton.Text = "角色管理";
             userconbutton.TextAlign = ContentAlignment.BottomCenter;
@@ -50,9 +52,10 @@
             // 
             texconbutton.BackgroundImage = Properties.Resource1.授信详情_操作日志;
             texconbutton.BackgroundImageLayout = ImageLayout.Zoom;
-            texconbutton.Location = new Point(71, 390);
+            texconbutton.Location = new Point(58, 325);
+            texconbutton.Margin = new Padding(2, 2, 2, 2);
             texconbutton.Name = "texconbutton";
-            texconbutton.Size = new Size(173, 148);
+            texconbutton.Size = new Size(142, 123);
             texconbutton.TabIndex = 2;
             texconbutton.Text = "日志信息";
             texconbutton.TextAlign = ContentAlignment.BottomCenter;
@@ -62,9 +65,10 @@
             // 
             syswhconbutton.BackgroundImage = Properties.Resource1.系统维护;
             syswhconbutton.BackgroundImageLayout = ImageLayout.Zoom;
-            syswhconbutton.Location = new Point(71, 571);
+            syswhconbutton.Location = new Point(58, 476);
+            syswhconbutton.Margin = new Padding(2, 2, 2, 2);
             syswhconbutton.Name = "syswhconbutton";
-            syswhconbutton.Size = new Size(173, 129);
+            syswhconbutton.Size = new Size(142, 108);
             syswhconbutton.TabIndex = 3;
             syswhconbutton.Text = "系统维护";
             syswhconbutton.TextAlign = ContentAlignment.BottomCenter;
@@ -75,24 +79,36 @@
             // 
             syssetconbutton.BackgroundImage = Properties.Resource1.设置用;
             syssetconbutton.BackgroundImageLayout = ImageLayout.Zoom;
-            syssetconbutton.Location = new Point(71, 30);
+            syssetconbutton.Location = new Point(58, 25);
+            syssetconbutton.Margin = new Padding(2, 2, 2, 2);
             syssetconbutton.Name = "syssetconbutton";
-            syssetconbutton.Size = new Size(173, 145);
+            syssetconbutton.Size = new Size(142, 121);
             syssetconbutton.TabIndex = 0;
             syssetconbutton.Text = "系统设置";
             syssetconbutton.TextAlign = ContentAlignment.BottomCenter;
             syssetconbutton.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            button1.Location = new Point(215, 147);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 4;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // systemcon
             // 
-            AutoScaleDimensions = new SizeF(11F, 24F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(button1);
             Controls.Add(syswhconbutton);
             Controls.Add(texconbutton);
             Controls.Add(userconbutton);
             Controls.Add(syssetconbutton);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "systemcon";
-            Size = new Size(351, 777);
+            Size = new Size(287, 648);
             ResumeLayout(false);
         }
 
@@ -101,5 +117,6 @@
         private Button texconbutton;
         private Button syswhconbutton;
         private Button syssetconbutton;
+        private Button button1;
     }
 }
