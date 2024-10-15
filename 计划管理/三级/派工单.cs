@@ -8,23 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsApp1.Forth
+namespace WinFormsApp1.计划管理.三级
 {
-    public partial class 新增生产计划 : Form
+    public partial class 派工单 : UserControl
     {
-        public 新增生产计划()
+        public 派工单()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -122,7 +122,7 @@
             button4.Name = "button4";
             button4.Size = new Size(159, 30);
             button4.TabIndex = 3;
-            button4.Text = "采购单生成";
+            button4.Text = "采购计划生成";
             button4.UseVisualStyleBackColor = true;
             // 
             // button3
@@ -131,7 +131,7 @@
             button3.Name = "button3";
             button3.Size = new Size(159, 30);
             button3.TabIndex = 2;
-            button3.Text = "加工单生成";
+            button3.Text = "车间生产计划生成";
             button3.UseVisualStyleBackColor = true;
             // 
             // button1

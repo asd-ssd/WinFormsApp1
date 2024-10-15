@@ -30,6 +30,8 @@
         {
             dataGridView1 = new DataGridView();
             panel2 = new Panel();
+            button8 = new Button();
+            button7 = new Button();
             button1 = new Button();
             textBox3 = new TextBox();
             checkBox5 = new CheckBox();
@@ -48,8 +50,6 @@
             button4 = new Button();
             button5 = new Button();
             button6 = new Button();
-            button7 = new Button();
-            button8 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
@@ -87,9 +87,27 @@
             panel2.Size = new Size(1688, 120);
             panel2.TabIndex = 5;
             // 
+            // button8
+            // 
+            button8.Location = new Point(0, 60);
+            button8.Name = "button8";
+            button8.Size = new Size(131, 60);
+            button8.TabIndex = 14;
+            button8.Text = "物料需求计划";
+            button8.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            button7.Location = new Point(0, 0);
+            button7.Name = "button7";
+            button7.Size = new Size(131, 60);
+            button7.TabIndex = 13;
+            button7.Text = "生产计划";
+            button7.UseVisualStyleBackColor = true;
+            // 
             // button1
             // 
-            button1.Location = new Point(717, 72);
+            button1.Location = new Point(717, 66);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 12;
@@ -98,7 +116,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(521, 75);
+            textBox3.Location = new Point(521, 69);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(160, 27);
             textBox3.TabIndex = 11;
@@ -106,7 +124,7 @@
             // checkBox5
             // 
             checkBox5.AutoSize = true;
-            checkBox5.Location = new Point(451, 75);
+            checkBox5.Location = new Point(451, 69);
             checkBox5.Name = "checkBox5";
             checkBox5.Size = new Size(76, 24);
             checkBox5.TabIndex = 9;
@@ -115,7 +133,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(261, 75);
+            textBox1.Location = new Point(261, 69);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(160, 27);
             textBox1.TabIndex = 8;
@@ -123,7 +141,7 @@
             // checkBox4
             // 
             checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(191, 75);
+            checkBox4.Location = new Point(191, 69);
             checkBox4.Name = "checkBox4";
             checkBox4.Size = new Size(76, 24);
             checkBox4.TabIndex = 7;
@@ -132,7 +150,7 @@
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(671, 31);
+            dateTimePicker2.Location = new Point(671, 25);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(140, 27);
             dateTimePicker2.TabIndex = 6;
@@ -140,7 +158,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(631, 31);
+            label2.Location = new Point(631, 25);
             label2.Name = "label2";
             label2.Size = new Size(24, 20);
             label2.TabIndex = 5;
@@ -148,7 +166,7 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(481, 31);
+            dateTimePicker1.Location = new Point(481, 25);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(140, 27);
             dateTimePicker1.TabIndex = 4;
@@ -156,7 +174,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(451, 31);
+            label1.Location = new Point(451, 25);
             label1.Name = "label1";
             label1.Size = new Size(24, 20);
             label1.TabIndex = 3;
@@ -165,7 +183,7 @@
             // checkBox3
             // 
             checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(391, 31);
+            checkBox3.Location = new Point(391, 25);
             checkBox3.Name = "checkBox3";
             checkBox3.Size = new Size(76, 24);
             checkBox3.TabIndex = 1;
@@ -175,7 +193,7 @@
             // checkBox2
             // 
             checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(291, 31);
+            checkBox2.Location = new Point(291, 25);
             checkBox2.Name = "checkBox2";
             checkBox2.Size = new Size(76, 24);
             checkBox2.TabIndex = 0;
@@ -185,7 +203,7 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(191, 31);
+            checkBox1.Location = new Point(191, 25);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(76, 24);
             checkBox1.TabIndex = 0;
@@ -208,9 +226,9 @@
             // button3
             // 
             button3.Dock = DockStyle.Left;
-            button3.Location = new Point(398, 0);
+            button3.Location = new Point(500, 0);
             button3.Name = "button3";
-            button3.Size = new Size(94, 50);
+            button3.Size = new Size(125, 50);
             button3.TabIndex = 2;
             button3.Text = "删除";
             button3.UseVisualStyleBackColor = true;
@@ -218,9 +236,9 @@
             // button2
             // 
             button2.Dock = DockStyle.Left;
-            button2.Location = new Point(304, 0);
+            button2.Location = new Point(375, 0);
             button2.Name = "button2";
-            button2.Size = new Size(94, 50);
+            button2.Size = new Size(125, 50);
             button2.TabIndex = 1;
             button2.Text = "修改";
             button2.UseVisualStyleBackColor = true;
@@ -228,9 +246,9 @@
             // button4
             // 
             button4.Dock = DockStyle.Left;
-            button4.Location = new Point(210, 0);
+            button4.Location = new Point(250, 0);
             button4.Name = "button4";
-            button4.Size = new Size(94, 50);
+            button4.Size = new Size(125, 50);
             button4.TabIndex = 3;
             button4.Text = "刷新";
             button4.UseVisualStyleBackColor = true;
@@ -238,48 +256,31 @@
             // button5
             // 
             button5.Dock = DockStyle.Left;
-            button5.Location = new Point(116, 0);
+            button5.Location = new Point(125, 0);
             button5.Name = "button5";
-            button5.Size = new Size(94, 50);
+            button5.Size = new Size(125, 50);
             button5.TabIndex = 4;
             button5.Text = "MRP生成";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += this.button5_Click;
             // 
             // button6
             // 
             button6.Dock = DockStyle.Left;
             button6.Location = new Point(0, 0);
             button6.Name = "button6";
-            button6.Size = new Size(116, 50);
+            button6.Size = new Size(125, 50);
             button6.TabIndex = 5;
-            button6.Text = "新增生产计划";
+            button6.Text = "新增主生产计划";
             button6.UseVisualStyleBackColor = true;
             // 
-            // button7
-            // 
-            button7.Location = new Point(0, 0);
-            button7.Name = "button7";
-            button7.Size = new Size(131, 60);
-            button7.TabIndex = 13;
-            button7.Text = "生产计划";
-            button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            button8.Location = new Point(0, 60);
-            button8.Name = "button8";
-            button8.Size = new Size(131, 60);
-            button8.TabIndex = 14;
-            button8.Text = "物料需求计划";
-            button8.UseVisualStyleBackColor = true;
-            // 
-            // 生产计划
+            // 生产计划及MRP
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
             Controls.Add(dataGridView1);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Name = "生产计划";
+            Name = "生产计划及MRP";
             Size = new Size(1688, 1136);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel2.ResumeLayout(false);

@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp1.Forth
 {
-    partial class 新增生产计划
+    partial class 新增主生产计划
     {
         /// <summary>
         /// Required designer variable.
