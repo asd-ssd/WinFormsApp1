@@ -16,5 +16,10 @@ namespace WinFormsApp1
         {
             InitializeComponent();
         }
+
+        private void xsskd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
