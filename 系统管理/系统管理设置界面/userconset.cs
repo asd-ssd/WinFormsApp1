@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsApp1.基础信息管理工作界面
+namespace WinFormsApp1.系统管理.系统管理设置界面
 {
-    public partial class partplat : UserControl
+    public partial class userconset : Form
     {
-        public partplat()
+        public userconset()
         {
             InitializeComponent();
-        }
-
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-
         }
     }
 }
