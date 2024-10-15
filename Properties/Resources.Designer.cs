@@ -173,6 +173,16 @@ namespace WinFormsApp1.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap Non_Commodity_Adjustment_Receive_Query {
+            get {
+                object obj = ResourceManager.GetObject("Non-Commodity Adjustment-Receive-Query", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap OIP_C {
             get {
                 object obj = ResourceManager.GetObject("OIP-C", resourceCulture);

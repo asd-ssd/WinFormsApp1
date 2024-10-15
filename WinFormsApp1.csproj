@@ -50,4 +50,8 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="采购管理\" />
+  </ItemGroup>
+
 </Project>
