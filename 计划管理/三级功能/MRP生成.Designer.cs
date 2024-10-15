@@ -37,6 +37,7 @@
             button8 = new Button();
             button4 = new Button();
             button3 = new Button();
+            button1 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -44,6 +45,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button4);
             panel1.Controls.Add(button3);
@@ -78,12 +80,13 @@
             // 
             // button5
             // 
-            button5.Location = new Point(106, 22);
+            button5.Location = new Point(41, 22);
             button5.Name = "button5";
-            button5.Size = new Size(150, 30);
+            button5.Size = new Size(159, 30);
             button5.TabIndex = 4;
-            button5.Text = "建议计算";
+            button5.Text = "需求计算";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // dataGridView1
             // 
@@ -115,21 +118,30 @@
             // 
             // button4
             // 
-            button4.Location = new Point(555, 22);
+            button4.Location = new Point(656, 22);
             button4.Name = "button4";
-            button4.Size = new Size(150, 30);
+            button4.Size = new Size(159, 30);
             button4.TabIndex = 3;
             button4.Text = "采购单生成";
             button4.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            button3.Location = new Point(331, 22);
+            button3.Location = new Point(451, 22);
             button3.Name = "button3";
-            button3.Size = new Size(150, 30);
+            button3.Size = new Size(159, 30);
             button3.TabIndex = 2;
             button3.Text = "加工单生成";
             button3.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(246, 22);
+            button1.Name = "button1";
+            button1.Size = new Size(159, 30);
+            button1.TabIndex = 5;
+            button1.Text = "保存需求";
+            button1.UseVisualStyleBackColor = true;
             // 
             // MRP生成
             // 
@@ -155,5 +167,6 @@
         private Button button7;
         private Button button4;
         private Button button3;
+        private Button button1;
     }
 }
