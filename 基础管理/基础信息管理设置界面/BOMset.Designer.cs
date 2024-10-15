@@ -278,9 +278,9 @@
             label16.AutoSize = true;
             label16.Location = new Point(140, 130);
             label16.Name = "label16";
-            label16.Size = new Size(46, 24);
+            label16.Size = new Size(82, 24);
             label16.TabIndex = 58;
-            label16.Text = "性别";
+            label16.Text = "物料编码";
             // 
             // textBox5
             // 
@@ -399,7 +399,7 @@
             label2.Name = "label2";
             label2.Size = new Size(82, 24);
             label2.TabIndex = 43;
-            label2.Text = "员工姓名";
+            label2.Text = "父项编码";
             // 
             // label1
             // 
