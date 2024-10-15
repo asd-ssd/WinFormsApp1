@@ -222,11 +222,11 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(448, 363);
+            label10.Location = new Point(428, 363);
             label10.Name = "label10";
-            label10.Size = new Size(46, 24);
+            label10.Size = new Size(82, 24);
             label10.TabIndex = 64;
-            label10.Text = "民族";
+            label10.Text = "制造费用";
             // 
             // label11
             // 
@@ -244,16 +244,17 @@
             label12.Name = "label12";
             label12.Size = new Size(82, 24);
             label12.TabIndex = 62;
-            label12.Text = "身份证号";
+            label12.Text = "材料费用";
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(448, 212);
+            label13.Location = new Point(428, 212);
             label13.Name = "label13";
-            label13.Size = new Size(46, 24);
+            label13.Size = new Size(82, 24);
             label13.TabIndex = 61;
-            label13.Text = "状态";
+            label13.Text = "计量单位";
+            label13.Click += label13_Click;
             // 
             // label14
             // 
@@ -267,16 +268,16 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(448, 130);
+            label15.Location = new Point(428, 130);
             label15.Name = "label15";
-            label15.Size = new Size(46, 24);
+            label15.Size = new Size(82, 24);
             label15.TabIndex = 59;
-            label15.Text = "部门";
+            label15.Text = "物料名称";
             // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(140, 130);
+            label16.Location = new Point(122, 130);
             label16.Name = "label16";
             label16.Size = new Size(82, 24);
             label16.TabIndex = 58;
@@ -350,11 +351,11 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(140, 360);
+            label7.Location = new Point(122, 360);
             label7.Name = "label7";
-            label7.Size = new Size(46, 24);
+            label7.Size = new Size(82, 24);
             label7.TabIndex = 48;
-            label7.Text = "籍贯";
+            label7.Text = "人工费用";
             // 
             // label6
             // 
@@ -372,16 +373,16 @@
             label5.Name = "label5";
             label5.Size = new Size(82, 24);
             label5.TabIndex = 46;
-            label5.Text = "联系方式";
+            label5.Text = "单位用量";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(140, 212);
+            label4.Location = new Point(122, 212);
             label4.Name = "label4";
-            label4.Size = new Size(46, 24);
+            label4.Size = new Size(82, 24);
             label4.TabIndex = 45;
-            label4.Text = "职务";
+            label4.Text = "物料分类";
             // 
             // label3
             // 

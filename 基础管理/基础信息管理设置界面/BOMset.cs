@@ -21,5 +21,10 @@ namespace WinFormsApp1.基础信息管理设置界面
         {
 
         }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
