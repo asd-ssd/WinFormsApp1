@@ -16,5 +16,10 @@ namespace WinFormsApp1.基础信息管理工作界面
         {
             InitializeComponent();
         }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
     }
 }

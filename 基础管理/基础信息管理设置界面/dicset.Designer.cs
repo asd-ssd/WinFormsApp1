@@ -34,7 +34,7 @@
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 732);
             Name = "dicset";
             Text = "dicset";
             ResumeLayout(false);
