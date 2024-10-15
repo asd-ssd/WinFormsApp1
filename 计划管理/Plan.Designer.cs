@@ -38,6 +38,8 @@
             panel1 = new Panel();
             label4 = new Label();
             label3 = new Label();
+            button2 = new Button();
+            label5 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -96,6 +98,8 @@
             panel1.Controls.Add(button_chejian);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(button1);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(button2);
             resources.ApplyResources(panel1, "panel1");
             panel1.Name = "panel1";
             // 
@@ -111,6 +115,20 @@
             label3.BackColor = SystemColors.ControlLightLight;
             resources.ApplyResources(label3, "label3");
             label3.Name = "label3";
+            // 
+            // button2
+            // 
+            button2.BackColor = SystemColors.ControlLightLight;
+            button2.BackgroundImage = Properties.Resource1.主计划管理;
+            resources.ApplyResources(button2, "button2");
+            button2.Name = "button2";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // label5
+            // 
+            label5.BackColor = SystemColors.ControlLightLight;
+            resources.ApplyResources(label5, "label5");
+            label5.Name = "label5";
             // 
             // Plan
             // 
@@ -133,5 +151,7 @@
         private Panel panel1;
         private Label label4;
         private Label label3;
+        private Button button2;
+        private Label label5;
     }
 }

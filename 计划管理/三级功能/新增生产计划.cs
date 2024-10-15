@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WinFormsApp1.Forth
 {
-    public partial class MPS写入 : Form
+    public partial class 新增生产计划 : Form
     {
-        public MPS写入()
+        public 新增生产计划()
         {
             InitializeComponent();
         }

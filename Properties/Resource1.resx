@@ -130,6 +130,9 @@
   <data name="工艺路线" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\工艺路线1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Receiving goods-query" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Receiving goods-query.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="系统维护" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\系统维护.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -151,7 +154,22 @@
   <data name="文档管理系统-文档管理系统图标" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\文档管理系统-文档管理系统图标1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Receiving goods-query" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Receiving goods-query.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MRP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MRP1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="采购管理" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\采购管理1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="车间计划" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\车间计划1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="派工单管理" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\派工单管理1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="设备点检" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\设备点检1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="主计划管理" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\主计划管理.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

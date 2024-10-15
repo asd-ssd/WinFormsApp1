@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp1.Forth
 {
-    partial class MPS写入
+    partial class 新增生产计划
     {
         /// <summary>
         /// Required designer variable.
@@ -180,10 +180,9 @@
             button2.Text = "取消";
             button2.UseVisualStyleBackColor = true;
             // 
-            // MPS写入
+            // 新增生产计划
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.Inherit;
             ClientSize = new Size(611, 458);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -201,8 +200,8 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(textBox1);
-            Name = "MPS写入";
-            Text = "MPS写入";
+            Name = "新增生产计划";
+            Text = "新增生产计划";
             ResumeLayout(false);
             PerformLayout();
         }
