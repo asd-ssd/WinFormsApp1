@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsApp1
+namespace WinFormsApp1.销售管理
 {
-    public partial class orderform : UserControl
+    public partial class Order2nd : UserControl
     {
-        public orderform()
+        public Order2nd()
         {
             InitializeComponent();
-        }
-
-        private void ssave_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

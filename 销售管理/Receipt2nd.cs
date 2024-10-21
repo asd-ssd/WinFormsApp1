@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsApp1
+namespace WinFormsApp1.销售管理
 {
-    public partial class orderform : UserControl
+    public partial class Receipt2nd : UserControl
     {
-        public orderform()
+        public Receipt2nd()
         {
             InitializeComponent();
         }
 
-        private void ssave_Click(object sender, EventArgs e)
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }

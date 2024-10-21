@@ -45,12 +45,14 @@
             ccnumber = new Label();
             ccname = new Label();
             ctextBox1 = new TextBox();
+            ctype = new Label();
+            textBox1 = new TextBox();
             SuspendLayout();
             // 
             // ccreat
             // 
             ccreat.BackColor = SystemColors.GradientInactiveCaption;
-            ccreat.Location = new Point(65, 23);
+            ccreat.Location = new Point(50, 30);
             ccreat.Name = "ccreat";
             ccreat.Size = new Size(100, 40);
             ccreat.TabIndex = 0;
@@ -60,7 +62,7 @@
             // cedit
             // 
             cedit.BackColor = SystemColors.GradientInactiveCaption;
-            cedit.Location = new Point(171, 23);
+            cedit.Location = new Point(156, 30);
             cedit.Name = "cedit";
             cedit.Size = new Size(100, 40);
             cedit.TabIndex = 1;
@@ -70,7 +72,7 @@
             // cdelete
             // 
             cdelete.BackColor = SystemColors.GradientInactiveCaption;
-            cdelete.Location = new Point(277, 23);
+            cdelete.Location = new Point(262, 30);
             cdelete.Name = "cdelete";
             cdelete.Size = new Size(100, 40);
             cdelete.TabIndex = 2;
@@ -80,7 +82,7 @@
             // csave
             // 
             csave.BackColor = SystemColors.GradientInactiveCaption;
-            csave.Location = new Point(383, 23);
+            csave.Location = new Point(368, 30);
             csave.Name = "csave";
             csave.Size = new Size(100, 40);
             csave.TabIndex = 3;
@@ -90,7 +92,7 @@
             // csaveas
             // 
             csaveas.BackColor = SystemColors.GradientInactiveCaption;
-            csaveas.Location = new Point(489, 23);
+            csaveas.Location = new Point(474, 30);
             csaveas.Name = "csaveas";
             csaveas.Size = new Size(100, 40);
             csaveas.TabIndex = 4;
@@ -193,10 +195,28 @@
             ctextBox1.Size = new Size(150, 30);
             ctextBox1.TabIndex = 25;
             // 
+            // ctype
+            // 
+            ctype.AutoSize = true;
+            ctype.Location = new Point(65, 306);
+            ctype.Name = "ctype";
+            ctype.Size = new Size(82, 24);
+            ctype.TabIndex = 37;
+            ctype.Text = "客户类型";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(153, 306);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(150, 30);
+            textBox1.TabIndex = 38;
+            // 
             // clientform
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(textBox1);
+            Controls.Add(ctype);
             Controls.Add(cgphone);
             Controls.Add(csaleman);
             Controls.Add(caddress);
@@ -239,5 +259,7 @@
         private Label ccnumber;
         private Label ccname;
         private TextBox ctextBox1;
+        private Label ctype;
+        private TextBox textBox1;
     }
 }
