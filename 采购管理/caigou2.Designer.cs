@@ -49,6 +49,7 @@
             button7.Text = "订单查询";
             button7.TextAlign = ContentAlignment.BottomCenter;
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // button6
             // 
@@ -63,6 +64,7 @@
             button6.Text = "供应商";
             button6.TextAlign = ContentAlignment.BottomCenter;
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // button5
             // 
@@ -91,6 +93,7 @@
             button3.Text = "退货";
             button3.TextAlign = ContentAlignment.BottomCenter;
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -106,6 +109,7 @@
             button2.Text = "采购";
             button2.TextAlign = ContentAlignment.BottomCenter;
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // caigou2
             // 
@@ -119,6 +123,7 @@
             Controls.Add(button2);
             Name = "caigou2";
             Size = new Size(351, 777);
+            Load += caigou2_Load;
             ResumeLayout(false);
         }
 

@@ -59,6 +59,7 @@
             crafconbutton.Text = "工艺路线管理";
             crafconbutton.TextAlign = ContentAlignment.BottomCenter;
             crafconbutton.UseVisualStyleBackColor = true;
+            crafconbutton.Click += crafconbutton_Click;
             // 
             // empconbutton
             // 
@@ -71,6 +72,7 @@
             empconbutton.Text = "员工信息";
             empconbutton.TextAlign = ContentAlignment.BottomCenter;
             empconbutton.UseVisualStyleBackColor = true;
+            empconbutton.Click += empconbutton_Click;
             // 
             // partconbutton
             // 
@@ -83,6 +85,7 @@
             partconbutton.Text = "企业部门";
             partconbutton.TextAlign = ContentAlignment.BottomCenter;
             partconbutton.UseVisualStyleBackColor = true;
+            partconbutton.Click += partconbutton_Click;
             // 
             // dicconbutton
             // 

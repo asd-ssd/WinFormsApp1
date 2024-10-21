@@ -46,6 +46,7 @@
             userconbutton.Text = "角色管理";
             userconbutton.TextAlign = ContentAlignment.BottomCenter;
             userconbutton.UseVisualStyleBackColor = true;
+            userconbutton.Click += userconbutton_Click;
             // 
             // texconbutton
             // 
@@ -59,6 +60,7 @@
             texconbutton.Text = "日志信息";
             texconbutton.TextAlign = ContentAlignment.BottomCenter;
             texconbutton.UseVisualStyleBackColor = true;
+            texconbutton.Click += texconbutton_Click;
             // 
             // syswhconbutton
             // 
@@ -86,6 +88,7 @@
             syssetconbutton.Text = "系统设置";
             syssetconbutton.TextAlign = ContentAlignment.BottomCenter;
             syssetconbutton.UseVisualStyleBackColor = true;
+            syssetconbutton.Click += syssetconbutton_Click;
             // 
             // systemcon
             // 

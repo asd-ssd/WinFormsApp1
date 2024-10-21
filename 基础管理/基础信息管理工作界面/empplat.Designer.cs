@@ -41,7 +41,7 @@
             dataGridView2.Location = new Point(3, 80);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 62;
-            dataGridView2.Size = new Size(1682, 824);
+            dataGridView2.Size = new Size(1465, 824);
             dataGridView2.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -58,6 +58,7 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 229F));
             tableLayoutPanel2.Size = new Size(1688, 1136);
             tableLayoutPanel2.TabIndex = 3;
+            tableLayoutPanel2.Paint += tableLayoutPanel2_Paint;
             // 
             // empplat
             // 
@@ -66,6 +67,7 @@
             Controls.Add(tableLayoutPanel2);
             Name = "empplat";
             Size = new Size(1688, 1136);
+            Load += empplat_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             tableLayoutPanel2.ResumeLayout(false);
             ResumeLayout(false);

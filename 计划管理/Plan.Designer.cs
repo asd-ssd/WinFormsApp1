@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Plan));
-
             button_lingliao = new Button();
             button_paigong = new Button();
             button_chejian = new Button();
@@ -37,8 +36,8 @@
             panel1 = new Panel();
             label4 = new Label();
             label3 = new Label();
-            button2 = new Button();
             label5 = new Label();
+            button2 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -49,6 +48,7 @@
             resources.ApplyResources(button_lingliao, "button_lingliao");
             button_lingliao.Name = "button_lingliao";
             button_lingliao.UseVisualStyleBackColor = false;
+            button_lingliao.Click += button_lingliao_Click;
             // 
             // button_paigong
             // 
@@ -57,6 +57,7 @@
             resources.ApplyResources(button_paigong, "button_paigong");
             button_paigong.Name = "button_paigong";
             button_paigong.UseVisualStyleBackColor = false;
+            button_paigong.Click += button_paigong_Click;
             // 
             // button_chejian
             // 
@@ -65,6 +66,7 @@
             resources.ApplyResources(button_chejian, "button_chejian");
             button_chejian.Name = "button_chejian";
             button_chejian.UseVisualStyleBackColor = false;
+            button_chejian.Click += button_chejian_Click;
             // 
             // label2
             // 
@@ -98,6 +100,12 @@
             resources.ApplyResources(label3, "label3");
             label3.Name = "label3";
             // 
+            // label5
+            // 
+            label5.BackColor = SystemColors.ControlLightLight;
+            resources.ApplyResources(label5, "label5");
+            label5.Name = "label5";
+            // 
             // button2
             // 
             button2.BackColor = SystemColors.ControlLightLight;
@@ -105,12 +113,7 @@
             resources.ApplyResources(button2, "button2");
             button2.Name = "button2";
             button2.UseVisualStyleBackColor = false;
-            // 
-            // label5
-            // 
-            label5.BackColor = SystemColors.ControlLightLight;
-            resources.ApplyResources(label5, "label5");
-            label5.Name = "label5";
+            button2.Click += button2_Click;
             // 
             // Plan
             // 

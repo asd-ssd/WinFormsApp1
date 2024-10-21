@@ -291,6 +291,7 @@
             button4.TabIndex = 25;
             button4.Text = "计划生产";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button5
             // 
@@ -303,6 +304,7 @@
             button5.TabIndex = 26;
             button5.Text = "采购管理";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // button6
             // 
@@ -315,6 +317,7 @@
             button6.TabIndex = 27;
             button6.Text = "销售管理";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // button7
             // 
@@ -327,6 +330,7 @@
             button7.TabIndex = 28;
             button7.Text = "仓库管理";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // button8
             // 
@@ -339,6 +343,7 @@
             button8.TabIndex = 29;
             button8.Text = "系统管理";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // label7
             // 
@@ -397,7 +402,7 @@
             // 
             toolStripStatusLabel2.BorderSides = ToolStripStatusLabelBorderSides.Left | ToolStripStatusLabelBorderSides.Right;
             toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            toolStripStatusLabel2.Size = new Size(2220, 32);
+            toolStripStatusLabel2.Size = new Size(2266, 32);
             toolStripStatusLabel2.Spring = true;
             toolStripStatusLabel2.Text = " ";
             // 

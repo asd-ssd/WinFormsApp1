@@ -281,6 +281,7 @@
             Controls.Add(panel1);
             Name = "生产计划及MRP";
             Size = new Size(1688, 1136);
+            Load += 生产计划及MRP_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -288,6 +289,7 @@
             ResumeLayout(false);
         }
 
+      
         #endregion
 
         private DataGridView dataGridView1;

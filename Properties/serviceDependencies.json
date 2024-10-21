@@ -5,8 +5,15 @@
     },
     "mssql1": {
       "type": "mssql",
-      "connectionId": "ConnectionStrings",
-      "dynamicId": null
+      "connectionId": "Systemconnnect"
+    },
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "planconnect"
+    },
+    "mssql3": {
+      "type": "mssql",
+      "connectionId": "wareconnect"
     }
   }
 }

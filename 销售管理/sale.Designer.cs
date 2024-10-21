@@ -56,6 +56,7 @@
             client.Text = "客户资料";
             client.TextAlign = ContentAlignment.BottomCenter;
             client.UseVisualStyleBackColor = false;
+            client.Click += client_Click;
             // 
             // xsdd
             // 
@@ -69,6 +70,7 @@
             xsdd.Text = "销售订单";
             xsdd.TextAlign = ContentAlignment.BottomCenter;
             xsdd.UseVisualStyleBackColor = true;
+            xsdd.Click += xsdd_Click;
             // 
             // sfh
             // 
@@ -82,6 +84,7 @@
             sfh.Text = "发货";
             sfh.TextAlign = ContentAlignment.BottomCenter;
             sfh.UseVisualStyleBackColor = true;
+            sfh.Click += sfh_Click;
             // 
             // bbfx
             // 
@@ -95,6 +98,7 @@
             bbfx.Text = "报表分析";
             bbfx.TextAlign = ContentAlignment.BottomCenter;
             bbfx.UseVisualStyleBackColor = true;
+            bbfx.Click += bbfx_Click;
             // 
             // salelable1
             // 

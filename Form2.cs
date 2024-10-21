@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.Second;
+using WinFormsApp1.二级菜单;
 using WinFormsApp1.工作界面;
 using static System.Windows.Forms.DataFormats;
 
@@ -15,8 +17,17 @@ namespace WinFormsApp1
     public partial class Form2 : Form
     {
         public static Form2 form;
-        public workplatform work1;
+        //工作平台
+
         public workplat1 plat1;
+        //二级菜单
+        public workplatform work1;
+        public basecon basecon1;
+        public systemcon systemcon1;
+        public Plan Plan1;
+        public caigou2 caigou21;
+        public sale sale1;
+        public warehouse_usercontrol warehouse_Usercontrol1;
         public Form2()
         {
             InitializeComponent();
@@ -34,7 +45,6 @@ namespace WinFormsApp1
             panel2.Controls.Clear();    //清空原容器上的控件
             panel2.Controls.Add(plat1);    //将窗体一加入容器panel2
                                            //修改其显示为当前时间
-
             this.toolStripStatusLabel3.Text = "系统当前时间：" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
 
             //对timer1进行相关设置
@@ -52,7 +62,10 @@ namespace WinFormsApp1
         }
         private void button3_Click(object sender, EventArgs e)
         {
+            basecon1 = new basecon();
+            basecon1.Show();
             panel1.Controls.Clear();    //清空原容器上的控件
+            panel1.Controls.Add(basecon1);    //将窗体一加入容器panel1
             panel2.Controls.Clear();    //清空原容器上的控件
         }
         private void 主菜单ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -136,7 +149,49 @@ namespace WinFormsApp1
             this.toolStripStatusLabel3.Text = "系统当前时间：" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Plan1 = new Plan();
+            basecon1.Show();
+            panel1.Controls.Clear();    //清空原容器上的控件
+            panel1.Controls.Add(Plan1);    //将窗体一加入容器panel1
+            panel2.Controls.Clear();    //清空原容器上的控件
+        }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            caigou21 = new caigou2();
+            basecon1.Show();
+            panel1.Controls.Clear();    //清空原容器上的控件
+            panel1.Controls.Add(caigou21);    //将窗体一加入容器panel1
+            panel2.Controls.Clear();    //清空原容器上的控件
+        }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            sale1 = new sale();
+            basecon1.Show();
+            panel1.Controls.Clear();    //清空原容器上的控件
+            panel1.Controls.Add(sale1);    //将窗体一加入容器panel1
+            panel2.Controls.Clear();    //清空原容器上的控件
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            warehouse_Usercontrol1 = new warehouse_usercontrol();
+            basecon1.Show();
+            panel1.Controls.Clear();    //清空原容器上的控件
+            panel1.Controls.Add(warehouse_Usercontrol1);    //将窗体一加入容器panel1
+            panel2.Controls.Clear();    //清空原容器上的控件
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            systemcon1 = new systemcon();
+            basecon1.Show();
+            panel1.Controls.Clear();    //清空原容器上的控件
+            panel1.Controls.Add(systemcon1);    //将窗体一加入容器panel1
+            panel2.Controls.Clear();    //清空原容器上的控件
+        }
     }
 }

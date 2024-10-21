@@ -118,20 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-
   <data name="button_lingliao.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
   </data>
   <data name="button_lingliao.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="button_lingliao.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 480</value>
+    <value>0, 518</value>
   </data>
   <data name="button_lingliao.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 120</value>
+    <value>147, 120</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="button_lingliao.TabIndex" type="System.Int32, mscorlib">
@@ -156,10 +154,10 @@
     <value>Top</value>
   </data>
   <data name="button_paigong.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 320</value>
+    <value>0, 361</value>
   </data>
   <data name="button_paigong.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 120</value>
+    <value>147, 120</value>
   </data>
   <data name="button_paigong.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -183,11 +181,10 @@
     <value>Top</value>
   </data>
   <data name="button_chejian.Location" type="System.Drawing.Point, System.Drawing">
-
-    <value>0, 160</value>
+    <value>0, 180</value>
   </data>
   <data name="button_chejian.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 120</value>
+    <value>147, 120</value>
   </data>
   <data name="button_chejian.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -204,25 +201,20 @@
   <data name="&gt;&gt;button_chejian.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-
   <data name="label2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-
-    <value>0, 280</value>
+    <value>0, 300</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 40</value>
-
+    <value>147, 61</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-
     <value>车间生产作业计划展开</value>
-
   </data>
   <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -243,12 +235,10 @@
     <value>Top</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-
-    <value>0, 600</value>
+    <value>0, 638</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 40</value>
-
+    <value>147, 40</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -275,12 +265,10 @@
     <value>Top</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-
-    <value>0, 440</value>
+    <value>0, 481</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 40</value>
-
+    <value>147, 37</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -303,7 +291,6 @@
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-
   <data name="label5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -311,7 +298,7 @@
     <value>0, 120</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 40</value>
+    <value>147, 60</value>
   </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -344,7 +331,7 @@
     <value>0, 0</value>
   </data>
   <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 120</value>
+    <value>147, 120</value>
   </data>
   <data name="button2.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -362,10 +349,10 @@
     <value>7</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 68</value>
+    <value>94, 42</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 640</value>
+    <value>147, 682</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>

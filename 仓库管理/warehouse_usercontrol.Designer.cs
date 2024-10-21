@@ -43,65 +43,70 @@
             warehouse_move.BackgroundImage = (Image)resources.GetObject("warehouse_move.BackgroundImage");
             warehouse_move.BackgroundImageLayout = ImageLayout.Zoom;
             warehouse_move.Location = new Point(4, 636);
-            warehouse_move.Margin = new Padding(4, 4, 4, 4);
+            warehouse_move.Margin = new Padding(4);
             warehouse_move.Name = "warehouse_move";
             warehouse_move.Size = new Size(98, 126);
             warehouse_move.TabIndex = 4;
             warehouse_move.Text = "物料移库";
             warehouse_move.TextAlign = ContentAlignment.BottomCenter;
             warehouse_move.UseVisualStyleBackColor = true;
+            warehouse_move.Click += warehouse_move_Click;
             // 
             // warehouse_in
             // 
             warehouse_in.BackgroundImage = (Image)resources.GetObject("warehouse_in.BackgroundImage");
             warehouse_in.BackgroundImageLayout = ImageLayout.Zoom;
             warehouse_in.Location = new Point(4, 320);
-            warehouse_in.Margin = new Padding(4, 4, 4, 4);
+            warehouse_in.Margin = new Padding(4);
             warehouse_in.Name = "warehouse_in";
             warehouse_in.Size = new Size(98, 126);
             warehouse_in.TabIndex = 2;
             warehouse_in.Text = "物料入库";
             warehouse_in.TextAlign = ContentAlignment.BottomCenter;
             warehouse_in.UseVisualStyleBackColor = true;
+            warehouse_in.Click += warehouse_in_Click;
             // 
             // warehouse_edit
             // 
             warehouse_edit.BackgroundImage = (Image)resources.GetObject("warehouse_edit.BackgroundImage");
             warehouse_edit.BackgroundImageLayout = ImageLayout.Zoom;
             warehouse_edit.Location = new Point(4, 162);
-            warehouse_edit.Margin = new Padding(4, 4, 4, 4);
+            warehouse_edit.Margin = new Padding(4);
             warehouse_edit.Name = "warehouse_edit";
             warehouse_edit.Size = new Size(98, 126);
             warehouse_edit.TabIndex = 5;
             warehouse_edit.Text = "仓库维护";
             warehouse_edit.TextAlign = ContentAlignment.BottomCenter;
             warehouse_edit.UseVisualStyleBackColor = true;
+            warehouse_edit.Click += warehouse_edit_Click;
             // 
             // warehouse_out
             // 
             warehouse_out.BackgroundImage = (Image)resources.GetObject("warehouse_out.BackgroundImage");
             warehouse_out.BackgroundImageLayout = ImageLayout.Zoom;
             warehouse_out.Location = new Point(4, 478);
-            warehouse_out.Margin = new Padding(4, 4, 4, 4);
+            warehouse_out.Margin = new Padding(4);
             warehouse_out.Name = "warehouse_out";
             warehouse_out.Size = new Size(98, 126);
             warehouse_out.TabIndex = 3;
             warehouse_out.Text = "物料出库";
             warehouse_out.TextAlign = ContentAlignment.BottomCenter;
             warehouse_out.UseVisualStyleBackColor = true;
+            warehouse_out.Click += warehouse_out_Click;
             // 
             // warehouse_inquiry
             // 
             warehouse_inquiry.BackgroundImage = Properties.Resource1.Receiving_goods_query;
             warehouse_inquiry.BackgroundImageLayout = ImageLayout.Zoom;
             warehouse_inquiry.Location = new Point(4, 4);
-            warehouse_inquiry.Margin = new Padding(4, 4, 4, 4);
+            warehouse_inquiry.Margin = new Padding(4);
             warehouse_inquiry.Name = "warehouse_inquiry";
             warehouse_inquiry.Size = new Size(98, 126);
             warehouse_inquiry.TabIndex = 0;
             warehouse_inquiry.Text = "库存查询";
             warehouse_inquiry.TextAlign = ContentAlignment.BottomCenter;
             warehouse_inquiry.UseVisualStyleBackColor = true;
+            warehouse_inquiry.Click += warehouse_inquiry_Click;
             // 
             // tableLayoutPanel1
             // 
@@ -115,7 +120,7 @@
             tableLayoutPanel1.Controls.Add(warehouse_out, 0, 3);
             tableLayoutPanel1.ForeColor = SystemColors.ControlText;
             tableLayoutPanel1.Location = new Point(153, 60);
-            tableLayoutPanel1.Margin = new Padding(4, 4, 4, 4);
+            tableLayoutPanel1.Margin = new Padding(4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 5;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
@@ -132,7 +137,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
             Controls.Add(tableLayoutPanel1);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "warehouse_usercontrol";
             Size = new Size(429, 932);
             Load += warehouse_usercontrol_Load;

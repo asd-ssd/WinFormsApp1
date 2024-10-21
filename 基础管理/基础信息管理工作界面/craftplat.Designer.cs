@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(craftplat));
             tableLayoutPanel2 = new TableLayoutPanel();
             dataGridView2 = new DataGridView();
             tableLayoutPanel2.SuspendLayout();
@@ -36,36 +37,26 @@
             // 
             // tableLayoutPanel2
             // 
-            tableLayoutPanel2.ColumnCount = 1;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            resources.ApplyResources(tableLayoutPanel2, "tableLayoutPanel2");
             tableLayoutPanel2.Controls.Add(dataGridView2, 0, 1);
-            tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(0, 0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 3;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 830F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 229F));
-            tableLayoutPanel2.Size = new Size(1688, 1136);
-            tableLayoutPanel2.TabIndex = 1;
+            tableLayoutPanel2.Paint += tableLayoutPanel2_Paint;
             // 
             // dataGridView2
             // 
             dataGridView2.BackgroundColor = SystemColors.ControlLight;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(3, 80);
+            resources.ApplyResources(dataGridView2, "dataGridView2");
             dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 62;
-            dataGridView2.Size = new Size(1682, 824);
-            dataGridView2.TabIndex = 0;
+            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
             // craftplat
             // 
-            AutoScaleDimensions = new SizeF(11F, 24F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tableLayoutPanel2);
             Name = "craftplat";
-            Size = new Size(1688, 1136);
+            Load += craftplat_Load;
             tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);

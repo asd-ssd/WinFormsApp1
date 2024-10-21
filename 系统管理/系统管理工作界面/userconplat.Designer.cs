@@ -41,7 +41,7 @@
             dataGridView2.Location = new Point(3, 80);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 62;
-            dataGridView2.Size = new Size(1682, 824);
+            dataGridView2.Size = new Size(1588, 824);
             dataGridView2.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -66,6 +66,7 @@
             Controls.Add(tableLayoutPanel2);
             Name = "userconplat";
             Size = new Size(1688, 1136);
+            Load += userconplat_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             tableLayoutPanel2.ResumeLayout(false);
             ResumeLayout(false);
