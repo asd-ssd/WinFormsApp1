@@ -262,7 +262,6 @@
             button5.TabIndex = 4;
             button5.Text = "MRP生成";
             button5.UseVisualStyleBackColor = true;
-            button5.Click += this.button5_Click;
             // 
             // button6
             // 
