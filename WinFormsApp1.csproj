@@ -12,10 +12,13 @@
   <ItemGroup>
     <Compile Remove="基础管理\二级菜单\systemcon.cs" />
     <Compile Remove="基础管理\二级菜单\systemcon.Designer.cs" />
+    <Compile Remove="采购管理\cg申请.cs" />
+    <Compile Remove="采购管理\cg申请.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Remove="基础管理\二级菜单\systemcon.resx" />
+    <EmbeddedResource Remove="采购管理\cg申请.resx" />
   </ItemGroup>
 
   <ItemGroup>
@@ -57,10 +60,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="采购管理\" />
   </ItemGroup>
 
 </Project>

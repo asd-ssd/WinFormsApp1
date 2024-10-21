@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace WinFormsApp1.采购管理
 {
-    public partial class cgsh : UserControl
+    public partial class gys : UserControl
     {
-        public cgsh()
+        public gys()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

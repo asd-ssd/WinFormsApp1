@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WinFormsApp1.采购管理
 {
-    public partial class cgsh : UserControl
+    public partial class thsq : UserControl
     {
-        public cgsh()
+        public thsq()
         {
             InitializeComponent();
         }
