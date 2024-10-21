@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsApp1.Forth
+namespace WinFormsApp1.计划管理.三级
 {
-    public partial class MPS写入 : Form
+    public partial class 生产计划及MRP : UserControl
     {
-        public MPS写入()
+        public 生产计划及MRP()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
