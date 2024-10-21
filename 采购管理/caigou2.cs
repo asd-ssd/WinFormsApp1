@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsApp1.基础信息管理工作界面
+namespace WinFormsApp1
 {
-    public partial class partplat : UserControl
+    public partial class caigou2 : UserControl
     {
-        public partplat()
+        public caigou2()
         {
             InitializeComponent();
-        }
-
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-
         }
     }
 }

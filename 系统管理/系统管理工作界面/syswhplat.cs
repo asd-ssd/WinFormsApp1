@@ -16,5 +16,11 @@ namespace WinFormsApp1.系统管理工作界面
         {
             InitializeComponent();
         }
+
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

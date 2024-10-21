@@ -8,16 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsApp1.基础信息管理工作界面
+namespace WinFormsApp1.Forth
 {
-    public partial class partplat : UserControl
+    public partial class MRP生成 : Form
     {
-        public partplat()
+        public MRP生成()
         {
             InitializeComponent();
         }
 
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
         {
 
         }

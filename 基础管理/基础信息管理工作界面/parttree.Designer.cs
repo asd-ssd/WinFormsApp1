@@ -1,6 +1,6 @@
-﻿namespace WinFormsApp1.基础信息管理设置界面
+﻿namespace WinFormsApp1.基础管理.基础信息管理工作界面
 {
-    partial class dicset
+    partial class parttree
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            treeView1 = new TreeView();
             SuspendLayout();
             // 
-            // dicset
+            // treeView1
+            // 
+            treeView1.AllowDrop = true;
+            treeView1.Dock = DockStyle.Fill;
+            treeView1.Location = new Point(0, 0);
+            treeView1.Name = "treeView1";
+            treeView1.Size = new Size(573, 713);
+            treeView1.TabIndex = 0;
+            // 
+            // parttree
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 732);
-            Name = "dicset";
-            Text = "dicset";
+            ClientSize = new Size(573, 713);
+            Controls.Add(treeView1);
+            Name = "parttree";
+            Text = "parttree";
             ResumeLayout(false);
         }
 
         #endregion
+
+        private TreeView treeView1;
     }
 }

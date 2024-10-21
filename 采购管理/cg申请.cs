@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsApp1.基础信息管理工作界面
+namespace WinFormsApp1
 {
-    public partial class partplat : UserControl
+    public partial class cg申请 : Form
     {
-        public partplat()
+        public cg申请()
         {
             InitializeComponent();
         }
 
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

@@ -29,25 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Plan));
-            button1 = new Button();
+
             button_lingliao = new Button();
             button_paigong = new Button();
             button_chejian = new Button();
-            label1 = new Label();
             label2 = new Label();
             panel1 = new Panel();
             label4 = new Label();
             label3 = new Label();
+            button2 = new Button();
+            label5 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // button1
-            // 
-            button1.BackColor = SystemColors.ControlLightLight;
-            button1.BackgroundImage = Properties.Resources.MRP;
-            resources.ApplyResources(button1, "button1");
-            button1.Name = "button1";
-            button1.UseVisualStyleBackColor = false;
             // 
             // button_lingliao
             // 
@@ -73,13 +66,6 @@
             button_chejian.Name = "button_chejian";
             button_chejian.UseVisualStyleBackColor = false;
             // 
-            // label1
-            // 
-            label1.BackColor = SystemColors.ControlLightLight;
-            resources.ApplyResources(label1, "label1");
-            label1.Name = "label1";
-            label1.Click += label1_Click;
-            // 
             // label2
             // 
             label2.BackColor = SystemColors.ControlLightLight;
@@ -94,8 +80,8 @@
             panel1.Controls.Add(button_paigong);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(button_chejian);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(button2);
             resources.ApplyResources(panel1, "panel1");
             panel1.Name = "panel1";
             // 
@@ -112,6 +98,20 @@
             resources.ApplyResources(label3, "label3");
             label3.Name = "label3";
             // 
+            // button2
+            // 
+            button2.BackColor = SystemColors.ControlLightLight;
+            button2.BackgroundImage = Properties.Resource1.主计划管理;
+            resources.ApplyResources(button2, "button2");
+            button2.Name = "button2";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // label5
+            // 
+            label5.BackColor = SystemColors.ControlLightLight;
+            resources.ApplyResources(label5, "label5");
+            label5.Name = "label5";
+            // 
             // Plan
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
@@ -127,11 +127,11 @@
         private Button button_lingliao;
         private Button button_paigong;
         private Button button_chejian;
-        private Button button1;
-        private Label label1;
         private Label label2;
         private Panel panel1;
         private Label label4;
         private Label label3;
+        private Button button2;
+        private Label label5;
     }
 }

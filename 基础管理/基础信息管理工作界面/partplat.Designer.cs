@@ -28,27 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView2 = new DataGridView();
+
             tableLayoutPanel2 = new TableLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            dataGridView1 = new DataGridView();
             tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.BackgroundColor = SystemColors.ControlLight;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(3, 80);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 62;
-            dataGridView2.Size = new Size(1682, 824);
-            dataGridView2.TabIndex = 0;
             // 
             // tableLayoutPanel2
             // 
             tableLayoutPanel2.ColumnCount = 1;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Controls.Add(dataGridView2, 0, 1);
+
+            tableLayoutPanel2.Controls.Add(dataGridView1, 0, 1);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(0, 0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -59,6 +51,16 @@
             tableLayoutPanel2.Size = new Size(1688, 1136);
             tableLayoutPanel2.TabIndex = 2;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(3, 80);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 62;
+            dataGridView1.Size = new Size(1682, 824);
+            dataGridView1.TabIndex = 0;
+            // 
             // partplat
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
@@ -66,14 +68,13 @@
             Controls.Add(tableLayoutPanel2);
             Name = "partplat";
             Size = new Size(1688, 1136);
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private DataGridView dataGridView2;
         private TableLayoutPanel tableLayoutPanel2;
+        private DataGridView dataGridView1;
     }
 }

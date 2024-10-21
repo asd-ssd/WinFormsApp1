@@ -1,6 +1,6 @@
-﻿namespace WinFormsApp1.基础信息管理设置界面
+﻿namespace WinFormsApp1
 {
-    partial class dicset
+    partial class cg申请
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            label1 = new Label();
             SuspendLayout();
             // 
-            // dicset
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 50);
+            label1.Name = "label1";
+            label1.Size = new Size(0, 24);
+            label1.TabIndex = 5;
+            // 
+            // cg申请
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 732);
-            Name = "dicset";
-            Text = "dicset";
+            ClientSize = new Size(1313, 798);
+            Controls.Add(label1);
+            Name = "cg申请";
+            Text = "Form3";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+        private Label label1;
     }
 }
