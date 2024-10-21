@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Plan));
+
             button_lingliao = new Button();
             button_paigong = new Button();
             button_chejian = new Button();

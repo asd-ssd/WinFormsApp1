@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             SuspendLayout();
             // 
             // sysset
@@ -38,6 +39,7 @@
             Name = "sysset";
             Text = "sysset";
             ResumeLayout(false);
+
         }
 
         #endregion

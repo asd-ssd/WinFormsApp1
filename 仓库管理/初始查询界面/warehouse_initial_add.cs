@@ -8,19 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsApp1.系统管理工作界面
+namespace WinFormsApp1.仓库管理.初始查询界面
 {
-    public partial class syswhplat : UserControl
+    public partial class warehouse_initial_add : Form
     {
-        public syswhplat()
+        public warehouse_initial_add()
         {
             InitializeComponent();
-        }
-
-
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             button2 = new Button();
             button1 = new Button();
             textBox12 = new TextBox();
@@ -40,6 +41,7 @@
             label13 = new Label();
             label15 = new Label();
             label16 = new Label();
+
             textBox7 = new TextBox();
             textBox8 = new TextBox();
             textBox3 = new TextBox();
@@ -138,7 +140,7 @@
             label13.TabIndex = 61;
             label13.Text = "计量单位";
             label13.Click += label13_Click;
-            // 
+         // 
             // label15
             // 
             label15.AutoSize = true;
@@ -160,26 +162,32 @@
             // textBox7
             // 
             textBox7.Location = new Point(227, 589);
+
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(150, 30);
             textBox7.TabIndex = 55;
             // 
             // textBox8
             // 
+
             textBox8.Location = new Point(227, 503);
+
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(150, 30);
             textBox8.TabIndex = 54;
             // 
             // textBox3
             // 
+
             textBox3.Location = new Point(517, 347);
+
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(150, 30);
             textBox3.TabIndex = 53;
             // 
             // textBox4
             // 
+
             textBox4.Location = new Point(227, 254);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(150, 30);
@@ -188,6 +196,7 @@
             // textBox2
             // 
             textBox2.Location = new Point(227, 174);
+
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(150, 30);
             textBox2.TabIndex = 51;

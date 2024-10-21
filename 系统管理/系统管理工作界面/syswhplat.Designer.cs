@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             TreeNode treeNode1 = new TreeNode("角色1");
             TreeNode treeNode2 = new TreeNode("角色组", new TreeNode[] { treeNode1 });
             tableLayoutPanel2 = new TableLayoutPanel();
@@ -48,7 +49,9 @@
             // 
             tableLayoutPanel2.ColumnCount = 1;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+
             tableLayoutPanel2.Controls.Add(tableLayoutPanel1, 0, 1);
+
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(0, 0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";

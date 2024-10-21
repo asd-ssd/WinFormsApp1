@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             tableLayoutPanel2 = new TableLayoutPanel();
             dataGridView1 = new DataGridView();
             tableLayoutPanel2.SuspendLayout();
@@ -38,6 +39,7 @@
             // 
             tableLayoutPanel2.ColumnCount = 1;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+
             tableLayoutPanel2.Controls.Add(dataGridView1, 0, 1);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(0, 0);

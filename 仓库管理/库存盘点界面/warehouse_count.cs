@@ -8,19 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsApp1.系统管理工作界面
+namespace WinFormsApp1.仓库管理.库存盘点界面
 {
-    public partial class syswhplat : UserControl
+    public partial class warehouse_count : UserControl
     {
-        public syswhplat()
+        public warehouse_count()
         {
             InitializeComponent();
-        }
-
-
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

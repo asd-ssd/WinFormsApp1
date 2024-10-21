@@ -8,17 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsApp1.系统管理工作界面
+namespace WinFormsApp1.仓库管理.入库界面
 {
-    public partial class syswhplat : UserControl
+    public partial class Is : UserControl
     {
-        public syswhplat()
+        public Is()
         {
             InitializeComponent();
         }
 
-
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        private void Is_Load(object sender, EventArgs e)
         {
 
         }

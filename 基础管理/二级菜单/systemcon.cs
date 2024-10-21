@@ -8,17 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsApp1.系统管理工作界面
+namespace WinFormsApp1.二级菜单
 {
-    public partial class syswhplat : UserControl
+    public partial class systemcon : UserControl
     {
-        public syswhplat()
+        public systemcon()
         {
             InitializeComponent();
         }
 
+        private void syswhconbutton_Click(object sender, EventArgs e)
+        {
 
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        }
+
+        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
         {
 
         }
