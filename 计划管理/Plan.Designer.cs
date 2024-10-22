@@ -32,11 +32,7 @@
             button_lingliao = new Button();
             button_paigong = new Button();
             button_chejian = new Button();
-            label2 = new Label();
             panel1 = new Panel();
-            label4 = new Label();
-            label3 = new Label();
-            label5 = new Label();
             button2 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -44,7 +40,6 @@
             // button_lingliao
             // 
             button_lingliao.BackColor = SystemColors.ControlLightLight;
-            button_lingliao.BackgroundImage = Properties.Resources.采购管理;
             resources.ApplyResources(button_lingliao, "button_lingliao");
             button_lingliao.Name = "button_lingliao";
             button_lingliao.UseVisualStyleBackColor = false;
@@ -53,7 +48,6 @@
             // button_paigong
             // 
             button_paigong.BackColor = SystemColors.ControlLightLight;
-            button_paigong.BackgroundImage = Properties.Resources.派工单管理;
             resources.ApplyResources(button_paigong, "button_paigong");
             button_paigong.Name = "button_paigong";
             button_paigong.UseVisualStyleBackColor = false;
@@ -62,54 +56,23 @@
             // button_chejian
             // 
             button_chejian.BackColor = SystemColors.ControlLightLight;
-            button_chejian.BackgroundImage = Properties.Resources.车间计划;
             resources.ApplyResources(button_chejian, "button_chejian");
             button_chejian.Name = "button_chejian";
             button_chejian.UseVisualStyleBackColor = false;
             button_chejian.Click += button_chejian_Click;
             // 
-            // label2
-            // 
-            label2.BackColor = SystemColors.ControlLightLight;
-            resources.ApplyResources(label2, "label2");
-            label2.Name = "label2";
-            // 
             // panel1
             // 
-            panel1.Controls.Add(label4);
             panel1.Controls.Add(button_lingliao);
-            panel1.Controls.Add(label3);
             panel1.Controls.Add(button_paigong);
-            panel1.Controls.Add(label2);
             panel1.Controls.Add(button_chejian);
-            panel1.Controls.Add(label5);
             panel1.Controls.Add(button2);
             resources.ApplyResources(panel1, "panel1");
             panel1.Name = "panel1";
             // 
-            // label4
-            // 
-            label4.BackColor = SystemColors.ControlLightLight;
-            resources.ApplyResources(label4, "label4");
-            label4.Name = "label4";
-            label4.Click += label4_Click;
-            // 
-            // label3
-            // 
-            label3.BackColor = SystemColors.ControlLightLight;
-            resources.ApplyResources(label3, "label3");
-            label3.Name = "label3";
-            // 
-            // label5
-            // 
-            label5.BackColor = SystemColors.ControlLightLight;
-            resources.ApplyResources(label5, "label5");
-            label5.Name = "label5";
-            // 
             // button2
             // 
             button2.BackColor = SystemColors.ControlLightLight;
-            button2.BackgroundImage = Properties.Resource1.主计划管理;
             resources.ApplyResources(button2, "button2");
             button2.Name = "button2";
             button2.UseVisualStyleBackColor = false;
@@ -130,11 +93,7 @@
         private Button button_lingliao;
         private Button button_paigong;
         private Button button_chejian;
-        private Label label2;
         private Panel panel1;
-        private Label label4;
-        private Label label3;
         private Button button2;
-        private Label label5;
     }
 }

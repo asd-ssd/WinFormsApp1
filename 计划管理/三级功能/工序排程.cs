@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsApp1.计划管理.三级
+namespace WinFormsApp1.计划管理.三级功能
 {
-    public partial class 领料单 : UserControl
+    public partial class 工序排程 : Form
     {
-        public 领料单()
+        public 工序排程()
         {
             InitializeComponent();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

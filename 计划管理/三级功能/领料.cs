@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsApp1.计划管理.三级
+namespace WinFormsApp1.计划管理.三级功能
 {
-    public partial class 领料单 : UserControl
+    public partial class 领料 : Form
     {
-        public 领料单()
+        public 领料()
         {
             InitializeComponent();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }
