@@ -39,7 +39,13 @@ namespace WinFormsApp1
             label12 = new Label();
             label14 = new Label();
             textBox1 = new TextBox();
+            panel1 = new Panel();
+            dateTimePicker1 = new DateTimePicker();
+            dateTimePicker2 = new DateTimePicker();
+            label1 = new Label();
+            label2 = new Label();
             tableLayoutPanel2.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -56,6 +62,7 @@ namespace WinFormsApp1
             tableLayoutPanel2.Controls.Add(label8, 0, 0);
             tableLayoutPanel2.Controls.Add(label12, 0, 4);
             tableLayoutPanel2.Controls.Add(label14, 0, 7);
+            tableLayoutPanel2.Controls.Add(panel1, 0, 6);
             tableLayoutPanel2.Controls.Add(textBox1, 0, 8);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(0, 0);
@@ -74,6 +81,7 @@ namespace WinFormsApp1
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
             tableLayoutPanel2.Size = new Size(351, 777);
             tableLayoutPanel2.TabIndex = 16;
+            tableLayoutPanel2.Paint += tableLayoutPanel2_Paint;
             // 
             // button1
             // 
@@ -84,7 +92,7 @@ namespace WinFormsApp1
             button1.TabIndex = 17;
             button1.Text = "查询";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += this.button1_Click;
+            button1.Click += button1_Click;
             // 
             // label13
             // 
@@ -96,7 +104,8 @@ namespace WinFormsApp1
             label13.Size = new Size(335, 62);
             label13.TabIndex = 5;
             label13.Text = "日期范围";
-            label13.TextAlign = ContentAlignment.MiddleLeft;
+            label13.TextAlign = ContentAlignment.MiddleCenter;
+            label13.Click += label13_Click;
             // 
             // label11
             // 
@@ -173,7 +182,7 @@ namespace WinFormsApp1
             label14.Size = new Size(335, 38);
             label14.TabIndex = 6;
             label14.Text = "关键词";
-            label14.TextAlign = ContentAlignment.MiddleLeft;
+            label14.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // textBox1
             // 
@@ -183,6 +192,53 @@ namespace WinFormsApp1
             textBox1.Size = new Size(150, 30);
             textBox1.TabIndex = 7;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(dateTimePicker2);
+            panel1.Controls.Add(dateTimePicker1);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(6, 370);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(339, 141);
+            panel1.TabIndex = 18;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(36, 22);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(300, 30);
+            dateTimePicker1.TabIndex = 0;
+            // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Location = new Point(37, 88);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(300, 30);
+            dateTimePicker2.TabIndex = 1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.MintCream;
+            label1.Location = new Point(3, 22);
+            label1.Name = "label1";
+            label1.Size = new Size(28, 24);
+            label1.TabIndex = 2;
+            label1.Text = "从";
+            label1.Click += label1_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.MintCream;
+            label2.Location = new Point(2, 88);
+            label2.Name = "label2";
+            label2.Size = new Size(28, 24);
+            label2.TabIndex = 3;
+            label2.Text = "到";
+            // 
             // workplatform
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
@@ -191,10 +247,12 @@ namespace WinFormsApp1
             Size = new Size(351, 777);
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
-        
+
 
         #endregion
 
@@ -208,5 +266,10 @@ namespace WinFormsApp1
         private Label label12;
         private Label label14;
         private TextBox textBox1;
+        private Panel panel1;
+        private Label label1;
+        private DateTimePicker dateTimePicker2;
+        private DateTimePicker dateTimePicker1;
+        private Label label2;
     }
 }

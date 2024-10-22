@@ -44,8 +44,14 @@
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Column12 = new DataGridViewTextBoxColumn();
+            button5 = new Button();
+            panel1 = new Panel();
+            button4 = new Button();
+            button2 = new Button();
+            button1 = new Button();
             tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel3
@@ -53,6 +59,7 @@
             tableLayoutPanel3.BackColor = Color.White;
             tableLayoutPanel3.ColumnCount = 1;
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel3.Controls.Add(panel1, 0, 0);
             tableLayoutPanel3.Controls.Add(dataGridView1, 0, 1);
             tableLayoutPanel3.Dock = DockStyle.Fill;
             tableLayoutPanel3.Location = new Point(0, 0);
@@ -172,6 +179,54 @@
             Column12.MinimumWidth = 8;
             Column12.Name = "Column12";
             // 
+            // button5
+            // 
+            button5.Location = new Point(345, 1);
+            button5.Name = "button5";
+            button5.Size = new Size(108, 65);
+            button5.TabIndex = 4;
+            button5.Text = "删除";
+            button5.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(button5);
+            panel1.Controls.Add(button4);
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(button1);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(3, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1682, 69);
+            panel1.TabIndex = 2;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(231, 0);
+            button4.Name = "button4";
+            button4.Size = new Size(108, 65);
+            button4.TabIndex = 3;
+            button4.Text = "修改";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(117, 3);
+            button2.Name = "button2";
+            button2.Size = new Size(108, 65);
+            button2.TabIndex = 1;
+            button2.Text = "新增";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(3, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(108, 65);
+            button1.TabIndex = 0;
+            button1.Text = "刷新";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // workplat1
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
@@ -180,6 +235,7 @@
             Size = new Size(1688, 1136);
             tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -199,5 +255,10 @@
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column12;
+        private Panel panel1;
+        private Button button5;
+        private Button button4;
+        private Button button2;
+        private Button button1;
     }
 }

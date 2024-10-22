@@ -1,6 +1,6 @@
-﻿namespace WinFormsApp1.基础信息管理设置界面
+﻿namespace WinFormsApp1
 {
-    partial class BOMset
+    partial class BOMres
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,16 @@
         {
             button2 = new Button();
             button1 = new Button();
+            label9 = new Label();
+            textBox13 = new TextBox();
+            textBox12 = new TextBox();
+            textBox11 = new TextBox();
+            textBox10 = new TextBox();
+            textBox9 = new TextBox();
+            textBox6 = new TextBox();
+            label8 = new Label();
+            textBox5 = new TextBox();
+            label6 = new Label();
             label10 = new Label();
             label12 = new Label();
             label13 = new Label();
@@ -47,255 +57,273 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            textBox5 = new TextBox();
-            label6 = new Label();
-            textBox6 = new TextBox();
-            label8 = new Label();
-            textBox9 = new TextBox();
-            textBox10 = new TextBox();
-            textBox11 = new TextBox();
-            textBox12 = new TextBox();
-            textBox13 = new TextBox();
+            textBox14 = new TextBox();
+            label11 = new Label();
             SuspendLayout();
             // 
             // button2
             // 
-            button2.Location = new Point(461, 746);
+            button2.Location = new Point(474, 798);
             button2.Name = "button2";
             button2.Size = new Size(133, 46);
-            button2.TabIndex = 75;
-            button2.Text = "返回";
+            button2.TabIndex = 103;
+            button2.Text = "取消";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
             // button1
             // 
-            button1.Location = new Point(218, 746);
+            button1.Location = new Point(190, 798);
             button1.Name = "button1";
             button1.Size = new Size(133, 46);
-            button1.TabIndex = 74;
+            button1.TabIndex = 102;
             button1.Text = "确定";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // label9
+            // 
+            label9.BackColor = SystemColors.ActiveBorder;
+            label9.ForeColor = SystemColors.ActiveCaptionText;
+            label9.Location = new Point(263, 44);
+            label9.Name = "label9";
+            label9.Size = new Size(217, 39);
+            label9.TabIndex = 108;
+            label9.Text = "请输入查询条件";
+            label9.TextAlign = ContentAlignment.MiddleCenter;
+            label9.Click += label9_Click;
+            // 
+            // textBox13
+            // 
+            textBox13.Location = new Point(233, 651);
+            textBox13.Name = "textBox13";
+            textBox13.Size = new Size(150, 30);
+            textBox13.TabIndex = 134;
+            // 
+            // textBox12
+            // 
+            textBox12.Location = new Point(523, 565);
+            textBox12.Name = "textBox12";
+            textBox12.Size = new Size(150, 30);
+            textBox12.TabIndex = 133;
+            // 
+            // textBox11
+            // 
+            textBox11.Location = new Point(233, 568);
+            textBox11.Name = "textBox11";
+            textBox11.Size = new Size(150, 30);
+            textBox11.TabIndex = 132;
+            // 
+            // textBox10
+            // 
+            textBox10.Location = new Point(523, 489);
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(150, 30);
+            textBox10.TabIndex = 131;
+            // 
+            // textBox9
+            // 
+            textBox9.Location = new Point(233, 489);
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(150, 30);
+            textBox9.TabIndex = 130;
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(523, 322);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(150, 30);
+            textBox6.TabIndex = 129;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(396, 322);
+            label8.Name = "label8";
+            label8.Size = new Size(100, 24);
+            label8.TabIndex = 128;
+            label8.Text = "安全库存量";
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(233, 316);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(150, 30);
+            textBox5.TabIndex = 127;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(124, 409);
+            label6.Name = "label6";
+            label6.Size = new Size(64, 24);
+            label6.TabIndex = 126;
+            label6.Text = "提前期";
+            // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(406, 506);
+            label10.Location = new Point(412, 568);
             label10.Name = "label10";
             label10.Size = new Size(82, 24);
-            label10.TabIndex = 64;
+            label10.TabIndex = 125;
             label10.Text = "制造费用";
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(408, 433);
+            label12.Location = new Point(414, 495);
             label12.Name = "label12";
             label12.Size = new Size(82, 24);
-            label12.TabIndex = 62;
+            label12.TabIndex = 124;
             label12.Text = "材料费用";
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(408, 347);
+            label13.Location = new Point(414, 409);
             label13.Name = "label13";
             label13.Size = new Size(82, 24);
-            label13.TabIndex = 61;
+            label13.TabIndex = 123;
             label13.Text = "计量单位";
-            label13.Click += label13_Click;
             // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(408, 177);
+            label15.Location = new Point(414, 239);
             label15.Name = "label15";
             label15.Size = new Size(82, 24);
-            label15.TabIndex = 59;
+            label15.TabIndex = 122;
             label15.Text = "物料名称";
             // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(102, 177);
+            label16.Location = new Point(108, 239);
             label16.Name = "label16";
             label16.Size = new Size(82, 24);
-            label16.TabIndex = 58;
+            label16.TabIndex = 121;
             label16.Text = "物料编码";
             // 
             // textBox7
             // 
-            textBox7.Location = new Point(227, 341);
+            textBox7.Location = new Point(233, 403);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(150, 30);
-            textBox7.TabIndex = 55;
+            textBox7.TabIndex = 120;
             // 
             // textBox8
             // 
-            textBox8.Location = new Point(517, 347);
+            textBox8.Location = new Point(523, 409);
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(150, 30);
-            textBox8.TabIndex = 54;
+            textBox8.TabIndex = 119;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(227, 171);
+            textBox3.Location = new Point(233, 233);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(150, 30);
-            textBox3.TabIndex = 53;
+            textBox3.TabIndex = 118;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(517, 174);
+            textBox4.Location = new Point(523, 236);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(150, 30);
-            textBox4.TabIndex = 52;
+            textBox4.TabIndex = 117;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(517, 83);
+            textBox2.Location = new Point(523, 145);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(150, 30);
-            textBox2.TabIndex = 51;
+            textBox2.TabIndex = 116;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(227, 83);
+            textBox1.Location = new Point(233, 145);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(150, 30);
-            textBox1.TabIndex = 50;
+            textBox1.TabIndex = 115;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(102, 506);
+            label7.Location = new Point(108, 568);
             label7.Name = "label7";
             label7.Size = new Size(82, 24);
-            label7.TabIndex = 48;
+            label7.TabIndex = 114;
             label7.Text = "人工费用";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(102, 436);
+            label5.Location = new Point(108, 498);
             label5.Name = "label5";
             label5.Size = new Size(82, 24);
-            label5.TabIndex = 46;
+            label5.TabIndex = 113;
             label5.Text = "单位用量";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(102, 260);
+            label4.Location = new Point(108, 322);
             label4.Name = "label4";
             label4.Size = new Size(82, 24);
-            label4.TabIndex = 45;
+            label4.TabIndex = 112;
             label4.Text = "物料分类";
-            label4.Click += label4_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(136, 595);
+            label3.Location = new Point(142, 657);
             label3.Name = "label3";
             label3.Size = new Size(46, 24);
-            label3.TabIndex = 44;
+            label3.TabIndex = 111;
             label3.Text = "单价";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(408, 83);
+            label2.Location = new Point(414, 145);
             label2.Name = "label2";
             label2.Size = new Size(82, 24);
-            label2.TabIndex = 43;
+            label2.TabIndex = 110;
             label2.Text = "父项编码";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(118, 83);
+            label1.Location = new Point(124, 145);
             label1.Name = "label1";
             label1.Size = new Size(64, 24);
-            label1.TabIndex = 42;
+            label1.TabIndex = 109;
             label1.Text = "层次号";
-            label1.Click += label1_Click;
             // 
-            // textBox5
+            // textBox14
             // 
-            textBox5.Location = new Point(227, 254);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(150, 30);
-            textBox5.TabIndex = 77;
+            textBox14.Location = new Point(523, 651);
+            textBox14.Name = "textBox14";
+            textBox14.Size = new Size(150, 30);
+            textBox14.TabIndex = 136;
             // 
-            // label6
+            // label11
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(118, 347);
-            label6.Name = "label6";
-            label6.Size = new Size(64, 24);
-            label6.TabIndex = 76;
-            label6.Text = "提前期";
+            label11.AutoSize = true;
+            label11.Location = new Point(432, 657);
+            label11.Name = "label11";
+            label11.Size = new Size(46, 24);
+            label11.TabIndex = 135;
+            label11.Text = "小计";
             // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(517, 260);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(150, 30);
-            textBox6.TabIndex = 79;
-            textBox6.TextChanged += textBox6_TextChanged;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(390, 260);
-            label8.Name = "label8";
-            label8.Size = new Size(100, 24);
-            label8.TabIndex = 78;
-            label8.Text = "安全库存量";
-            label8.Click += label8_Click;
-            // 
-            // textBox9
-            // 
-            textBox9.Location = new Point(227, 427);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(150, 30);
-            textBox9.TabIndex = 80;
-            // 
-            // textBox10
-            // 
-            textBox10.Location = new Point(517, 427);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(150, 30);
-            textBox10.TabIndex = 81;
-            // 
-            // textBox11
-            // 
-            textBox11.Location = new Point(227, 506);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(150, 30);
-            textBox11.TabIndex = 82;
-            // 
-            // textBox12
-            // 
-            textBox12.Location = new Point(517, 503);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(150, 30);
-            textBox12.TabIndex = 83;
-            // 
-            // textBox13
-            // 
-            textBox13.Location = new Point(227, 589);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(150, 30);
-            textBox13.TabIndex = 84;
-            // 
-            // BOMset
+            // BOMres
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 912);
+            Controls.Add(textBox14);
+            Controls.Add(label11);
             Controls.Add(textBox13);
             Controls.Add(textBox12);
             Controls.Add(textBox11);
@@ -305,8 +333,6 @@
             Controls.Add(label8);
             Controls.Add(textBox5);
             Controls.Add(label6);
-            Controls.Add(button2);
-            Controls.Add(button1);
             Controls.Add(label10);
             Controls.Add(label12);
             Controls.Add(label13);
@@ -324,11 +350,11 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            MdiChildrenMinimizedAnchorBottom = false;
-            Name = "BOMset";
-            ShowIcon = false;
-            Text = "添加BOM";
-            Load += BOMset_Load;
+            Controls.Add(label9);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Name = "BOMres";
+            Text = "查询BOM";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -336,6 +362,16 @@
         #endregion
         private Button button2;
         private Button button1;
+        private Label label9;
+        private TextBox textBox13;
+        private TextBox textBox12;
+        private TextBox textBox11;
+        private TextBox textBox10;
+        private TextBox textBox9;
+        private TextBox textBox6;
+        private Label label8;
+        private TextBox textBox5;
+        private Label label6;
         private Label label10;
         private Label label12;
         private Label label13;
@@ -353,14 +389,7 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private TextBox textBox5;
-        private Label label6;
-        private TextBox textBox6;
-        private Label label8;
-        private TextBox textBox9;
-        private TextBox textBox10;
-        private TextBox textBox11;
-        private TextBox textBox12;
-        private TextBox textBox13;
+        private TextBox textBox14;
+        private Label label11;
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-
             TreeNode treeNode1 = new TreeNode("角色1");
             TreeNode treeNode2 = new TreeNode("角色组", new TreeNode[] { treeNode1 });
             tableLayoutPanel2 = new TableLayoutPanel();
@@ -40,25 +39,27 @@
             checkedListBox3 = new CheckedListBox();
             checkedListBox4 = new CheckedListBox();
             checkedListBox5 = new CheckedListBox();
+            panel1 = new Panel();
+            button1 = new Button();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel2
             // 
             tableLayoutPanel2.ColumnCount = 1;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-
+            tableLayoutPanel2.Controls.Add(panel1, 0, 0);
             tableLayoutPanel2.Controls.Add(tableLayoutPanel1, 0, 1);
-
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(0, 0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 3;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 830F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 229F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 989F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 70F));
             tableLayoutPanel2.Size = new Size(1688, 1136);
             tableLayoutPanel2.TabIndex = 4;
             // 
@@ -74,7 +75,7 @@
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(1682, 824);
+            tableLayoutPanel1.Size = new Size(1682, 983);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // treeView1
@@ -90,7 +91,7 @@
             treeNode2.Name = "节点0";
             treeNode2.Text = "角色组";
             treeView1.Nodes.AddRange(new TreeNode[] { treeNode2 });
-            treeView1.Size = new Size(248, 818);
+            treeView1.Size = new Size(248, 977);
             treeView1.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -184,6 +185,24 @@
             checkedListBox5.Size = new Size(235, 426);
             checkedListBox5.TabIndex = 5;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(button1);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(3, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1682, 71);
+            panel1.TabIndex = 2;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(3, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(108, 65);
+            button1.TabIndex = 0;
+            button1.Text = "刷新";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // syswhplat
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
@@ -194,6 +213,7 @@
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel3.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -207,5 +227,7 @@
         private CheckedListBox checkedListBox3;
         private CheckedListBox checkedListBox4;
         private CheckedListBox checkedListBox5;
+        private Panel panel1;
+        private Button button1;
     }
 }

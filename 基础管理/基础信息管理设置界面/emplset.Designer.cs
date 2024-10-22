@@ -40,11 +40,9 @@
             textBox2 = new TextBox();
             textBox3 = new TextBox();
             textBox4 = new TextBox();
-            textBox5 = new TextBox();
             textBox6 = new TextBox();
             textBox7 = new TextBox();
             textBox8 = new TextBox();
-            textBox9 = new TextBox();
             textBox10 = new TextBox();
             textBox11 = new TextBox();
             textBox12 = new TextBox();
@@ -64,12 +62,14 @@
             button2 = new Button();
             textBox17 = new TextBox();
             label17 = new Label();
-            textBox18 = new TextBox();
             label18 = new Label();
             textBox19 = new TextBox();
             label19 = new Label();
             textBox20 = new TextBox();
             label20 = new Label();
+            dateTimePicker2 = new DateTimePicker();
+            dateTimePicker3 = new DateTimePicker();
+            dateTimePicker1 = new DateTimePicker();
             SuspendLayout();
             // 
             // label1
@@ -139,7 +139,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(84, 660);
+            label8.Location = new Point(71, 660);
             label8.Name = "label8";
             label8.Size = new Size(118, 24);
             label8.TabIndex = 7;
@@ -173,13 +173,6 @@
             textBox4.Size = new Size(150, 30);
             textBox4.TabIndex = 10;
             // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(218, 577);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(150, 30);
-            textBox5.TabIndex = 15;
-            // 
             // textBox6
             // 
             textBox6.Location = new Point(218, 504);
@@ -200,13 +193,6 @@
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(150, 30);
             textBox8.TabIndex = 12;
-            // 
-            // textBox9
-            // 
-            textBox9.Location = new Point(508, 577);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(150, 30);
-            textBox9.TabIndex = 31;
             // 
             // textBox10
             // 
@@ -331,7 +317,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(218, 807);
+            button1.Location = new Point(215, 833);
             button1.Name = "button1";
             button1.Size = new Size(133, 46);
             button1.TabIndex = 32;
@@ -340,7 +326,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(459, 807);
+            button2.Location = new Point(458, 833);
             button2.Name = "button2";
             button2.Size = new Size(133, 46);
             button2.TabIndex = 33;
@@ -362,13 +348,6 @@
             label17.Size = new Size(100, 24);
             label17.TabIndex = 36;
             label17.Text = "受教育程度";
-            // 
-            // textBox18
-            // 
-            textBox18.Location = new Point(215, 654);
-            textBox18.Name = "textBox18";
-            textBox18.Size = new Size(150, 30);
-            textBox18.TabIndex = 35;
             // 
             // label18
             // 
@@ -411,23 +390,44 @@
             label20.TabIndex = 38;
             label20.Text = "备注";
             // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Location = new Point(195, 580);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(198, 30);
+            dateTimePicker2.TabIndex = 43;
+            // 
+            // dateTimePicker3
+            // 
+            dateTimePicker3.Location = new Point(487, 580);
+            dateTimePicker3.Name = "dateTimePicker3";
+            dateTimePicker3.Size = new Size(198, 30);
+            dateTimePicker3.TabIndex = 44;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(195, 655);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(198, 30);
+            dateTimePicker1.TabIndex = 42;
+            // 
             // emplset
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(832, 890);
-            ControlBox = false;
+            ClientSize = new Size(832, 931);
+            Controls.Add(dateTimePicker3);
+            Controls.Add(dateTimePicker2);
+            Controls.Add(dateTimePicker1);
             Controls.Add(textBox19);
             Controls.Add(label19);
             Controls.Add(textBox20);
             Controls.Add(label20);
             Controls.Add(textBox17);
             Controls.Add(label17);
-            Controls.Add(textBox18);
             Controls.Add(label18);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(textBox9);
             Controls.Add(textBox10);
             Controls.Add(textBox11);
             Controls.Add(textBox12);
@@ -443,7 +443,6 @@
             Controls.Add(label14);
             Controls.Add(label15);
             Controls.Add(label16);
-            Controls.Add(textBox5);
             Controls.Add(textBox6);
             Controls.Add(textBox7);
             Controls.Add(textBox8);
@@ -480,11 +479,9 @@
         private TextBox textBox2;
         private TextBox textBox3;
         private TextBox textBox4;
-        private TextBox textBox5;
         private TextBox textBox6;
         private TextBox textBox7;
         private TextBox textBox8;
-        private TextBox textBox9;
         private TextBox textBox10;
         private TextBox textBox11;
         private TextBox textBox12;
@@ -504,11 +501,13 @@
         private Button button2;
         private TextBox textBox17;
         private Label label17;
-        private TextBox textBox18;
         private Label label18;
         private TextBox textBox19;
         private Label label19;
         private TextBox textBox20;
         private Label label20;
+        private DateTimePicker dateTimePicker2;
+        private DateTimePicker dateTimePicker3;
+        private DateTimePicker dateTimePicker1;
     }
 }

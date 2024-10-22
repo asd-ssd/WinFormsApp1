@@ -370,9 +370,10 @@
             // panel2
             // 
             panel2.BackColor = Color.Transparent;
+            panel2.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             panel2.Location = new Point(675, 143);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1867, 1425);
+            panel2.Size = new Size(1867, 1427);
             panel2.TabIndex = 19;
             // 
             // statusStrip1
@@ -470,12 +471,12 @@
         private Button button6;
         private Button button7;
         private Button button8;
-        private Panel panel1;
         public Panel panel2;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel toolStripStatusLabel1;
         private ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.Timer timer1;
         private ToolStripStatusLabel toolStripStatusLabel3;
+        public Panel panel1;
     }
 }

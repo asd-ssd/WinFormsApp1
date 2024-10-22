@@ -11,32 +11,20 @@ using WinFormsApp1.工作界面;
 
 namespace WinFormsApp1
 {
-    public partial class workplatform : UserControl
+    public partial class login : UserControl
     {
-
-        public workplatform()
+        public Panel panel1 = Form1.form1.panel1;
+        public login()
         {
             InitializeComponent();
-
         }
         private void button1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
+            Form1 f1 = new Form1();
+            Form2 f2 = new Form2();
+            f1.Hide();
+            f2.ShowDialog();
+            f1.Dispose();
         }
     }
 }
