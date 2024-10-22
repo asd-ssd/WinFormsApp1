@@ -33,11 +33,6 @@
             button2 = new Button();
             button4 = new Button();
             panel2 = new Panel();
-            button1 = new Button();
-            textBox3 = new TextBox();
-            checkBox5 = new CheckBox();
-            textBox1 = new TextBox();
-            checkBox4 = new CheckBox();
             dateTimePicker2 = new DateTimePicker();
             label2 = new Label();
             dateTimePicker1 = new DateTimePicker();
@@ -47,6 +42,13 @@
             checkBox1 = new CheckBox();
             dataGridView1 = new DataGridView();
             button5 = new Button();
+            textBox2 = new TextBox();
+            button1 = new Button();
+            textBox3 = new TextBox();
+            checkBox5 = new CheckBox();
+            textBox1 = new TextBox();
+            checkBox4 = new CheckBox();
+            checkBox6 = new CheckBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -97,6 +99,8 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(textBox2);
+            panel2.Controls.Add(checkBox6);
             panel2.Controls.Add(button1);
             panel2.Controls.Add(textBox3);
             panel2.Controls.Add(checkBox5);
@@ -114,49 +118,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1688, 120);
             panel2.TabIndex = 6;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(577, 66);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 12;
-            button1.Text = "查询";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(381, 69);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(160, 27);
-            textBox3.TabIndex = 11;
-            // 
-            // checkBox5
-            // 
-            checkBox5.AutoSize = true;
-            checkBox5.Location = new Point(311, 69);
-            checkBox5.Name = "checkBox5";
-            checkBox5.Size = new Size(76, 24);
-            checkBox5.TabIndex = 9;
-            checkBox5.Text = "单号：";
-            checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(121, 69);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(160, 27);
-            textBox1.TabIndex = 8;
-            // 
-            // checkBox4
-            // 
-            checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(51, 69);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(76, 24);
-            checkBox4.TabIndex = 7;
-            checkBox4.Text = "产品：";
-            checkBox4.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker2
             // 
@@ -241,6 +202,66 @@
             button5.Text = "生产排程";
             button5.UseVisualStyleBackColor = true;
             // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(753, 67);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(125, 27);
+            textBox2.TabIndex = 23;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(896, 66);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 21;
+            button1.Text = "查询";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(431, 67);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(160, 27);
+            textBox3.TabIndex = 20;
+            // 
+            // checkBox5
+            // 
+            checkBox5.AutoSize = true;
+            checkBox5.Location = new Point(303, 68);
+            checkBox5.Name = "checkBox5";
+            checkBox5.Size = new Size(136, 24);
+            checkBox5.TabIndex = 19;
+            checkBox5.Text = "生产计划编号：";
+            checkBox5.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(122, 67);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(160, 27);
+            textBox1.TabIndex = 18;
+            // 
+            // checkBox4
+            // 
+            checkBox4.AutoSize = true;
+            checkBox4.Location = new Point(51, 69);
+            checkBox4.Name = "checkBox4";
+            checkBox4.Size = new Size(76, 24);
+            checkBox4.TabIndex = 17;
+            checkBox4.Text = "产品：";
+            checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox6
+            // 
+            checkBox6.AutoSize = true;
+            checkBox6.Location = new Point(597, 68);
+            checkBox6.Name = "checkBox6";
+            checkBox6.Size = new Size(166, 24);
+            checkBox6.TabIndex = 22;
+            checkBox6.Text = "车间作业计划编号：";
+            checkBox6.UseVisualStyleBackColor = true;
+            // 
             // 车间作业
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
@@ -265,11 +286,6 @@
         private Button button2;
         private Button button4;
         private Panel panel2;
-        private Button button1;
-        private TextBox textBox3;
-        private CheckBox checkBox5;
-        private TextBox textBox1;
-        private CheckBox checkBox4;
         private DateTimePicker dateTimePicker2;
         private Label label2;
         private DateTimePicker dateTimePicker1;
@@ -279,5 +295,12 @@
         private CheckBox checkBox1;
         private DataGridView dataGridView1;
         private Button button5;
+        private TextBox textBox2;
+        private Button button1;
+        private TextBox textBox3;
+        private CheckBox checkBox5;
+        private TextBox textBox1;
+        private CheckBox checkBox4;
+        private CheckBox checkBox6;
     }
 }

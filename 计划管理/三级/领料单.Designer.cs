@@ -84,7 +84,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(577, 66);
+            button1.Location = new Point(599, 68);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 12;
@@ -93,7 +93,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(381, 69);
+            textBox3.Location = new Point(417, 69);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(160, 27);
             textBox3.TabIndex = 11;
@@ -101,16 +101,16 @@
             // checkBox5
             // 
             checkBox5.AutoSize = true;
-            checkBox5.Location = new Point(311, 69);
+            checkBox5.Location = new Point(325, 70);
             checkBox5.Name = "checkBox5";
-            checkBox5.Size = new Size(76, 24);
+            checkBox5.Size = new Size(106, 24);
             checkBox5.TabIndex = 9;
-            checkBox5.Text = "单号：";
+            checkBox5.Text = "派工单号：";
             checkBox5.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(121, 69);
+            textBox1.Location = new Point(151, 69);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(160, 27);
             textBox1.TabIndex = 8;
@@ -118,16 +118,16 @@
             // checkBox4
             // 
             checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(51, 69);
+            checkBox4.Location = new Point(51, 70);
             checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(76, 24);
+            checkBox4.Size = new Size(106, 24);
             checkBox4.TabIndex = 7;
-            checkBox4.Text = "产品：";
+            checkBox4.Text = "领料单号：";
             checkBox4.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(531, 25);
+            dateTimePicker2.Location = new Point(556, 24);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(140, 27);
             dateTimePicker2.TabIndex = 6;
@@ -135,7 +135,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(491, 25);
+            label2.Location = new Point(513, 27);
             label2.Name = "label2";
             label2.Size = new Size(24, 20);
             label2.TabIndex = 5;
@@ -143,7 +143,7 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(341, 25);
+            dateTimePicker1.Location = new Point(354, 24);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(140, 27);
             dateTimePicker1.TabIndex = 4;
@@ -151,7 +151,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(311, 25);
+            label1.Location = new Point(314, 27);
             label1.Name = "label1";
             label1.Size = new Size(24, 20);
             label1.TabIndex = 3;
