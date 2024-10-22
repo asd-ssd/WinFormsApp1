@@ -45,9 +45,10 @@
             user_name.Anchor = AnchorStyles.None;
             user_name.BackColor = Color.Aquamarine;
             user_name.ForeColor = Color.FromArgb(64, 0, 0);
-            user_name.Location = new Point(519, 326);
+            user_name.Location = new Point(425, 272);
+            user_name.Margin = new Padding(2, 0, 2, 0);
             user_name.Name = "user_name";
-            user_name.Size = new Size(70, 24);
+            user_name.Size = new Size(57, 20);
             user_name.TabIndex = 0;
             user_name.Text = "用户名";
             user_name.TextAlign = ContentAlignment.MiddleCenter;
@@ -58,9 +59,10 @@
             password.Anchor = AnchorStyles.None;
             password.BackColor = Color.Aquamarine;
             password.ForeColor = Color.FromArgb(64, 0, 0);
-            password.Location = new Point(519, 393);
+            password.Location = new Point(425, 328);
+            password.Margin = new Padding(2, 0, 2, 0);
             password.Name = "password";
-            password.Size = new Size(70, 24);
+            password.Size = new Size(57, 20);
             password.TabIndex = 1;
             password.Text = "密码";
             password.TextAlign = ContentAlignment.MiddleCenter;
@@ -70,27 +72,30 @@
             // 
             username_text.Anchor = AnchorStyles.None;
             username_text.BackColor = SystemColors.Info;
-            username_text.Location = new Point(629, 320);
+            username_text.Location = new Point(515, 267);
+            username_text.Margin = new Padding(2);
             username_text.Name = "username_text";
-            username_text.Size = new Size(183, 30);
+            username_text.Size = new Size(150, 27);
             username_text.TabIndex = 2;
             // 
             // password_text
             // 
             password_text.Anchor = AnchorStyles.None;
             password_text.BackColor = SystemColors.Info;
-            password_text.Location = new Point(629, 393);
+            password_text.Location = new Point(515, 328);
+            password_text.Margin = new Padding(2);
             password_text.Name = "password_text";
-            password_text.Size = new Size(183, 30);
+            password_text.Size = new Size(150, 27);
             password_text.TabIndex = 3;
             // 
             // admin_mode
             // 
             admin_mode.Anchor = AnchorStyles.None;
             admin_mode.BackColor = SystemColors.MenuHighlight;
-            admin_mode.Location = new Point(629, 562);
+            admin_mode.Location = new Point(515, 468);
+            admin_mode.Margin = new Padding(2);
             admin_mode.Name = "admin_mode";
-            admin_mode.Size = new Size(162, 46);
+            admin_mode.Size = new Size(133, 38);
             admin_mode.TabIndex = 4;
             admin_mode.Text = "管理员模式";
             admin_mode.UseVisualStyleBackColor = false;
@@ -101,9 +106,10 @@
             login.Anchor = AnchorStyles.None;
             login.BackColor = Color.Transparent;
             login.ForeColor = Color.Black;
-            login.Location = new Point(519, 476);
+            login.Location = new Point(425, 397);
+            login.Margin = new Padding(2);
             login.Name = "login";
-            login.Size = new Size(381, 52);
+            login.Size = new Size(312, 43);
             login.TabIndex = 5;
             login.Text = "登录";
             login.UseVisualStyleBackColor = false;
@@ -114,9 +120,10 @@
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.BorderStyle = BorderStyle.Fixed3D;
-            pictureBox1.Location = new Point(277, 142);
+            pictureBox1.Location = new Point(227, 118);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(910, 503);
+            pictureBox1.Size = new Size(745, 420);
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
@@ -127,9 +134,10 @@
             find_pass.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             find_pass.BackColor = SystemColors.ButtonHighlight;
             find_pass.ForeColor = Color.OrangeRed;
-            find_pass.Location = new Point(865, 393);
+            find_pass.Location = new Point(708, 328);
+            find_pass.Margin = new Padding(2);
             find_pass.Name = "find_pass";
-            find_pass.Size = new Size(121, 31);
+            find_pass.Size = new Size(99, 26);
             find_pass.TabIndex = 7;
             find_pass.Text = "找回密码";
             find_pass.UseVisualStyleBackColor = false;
@@ -139,22 +147,23 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("华文隶书", 41.9999962F, FontStyle.Regular, GraphicsUnit.Point, 134);
             label3.ForeColor = Color.RoyalBlue;
-            label3.Location = new Point(472, 160);
+            label3.Location = new Point(386, 133);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(491, 124);
+            label3.Size = new Size(402, 103);
             label3.TabIndex = 9;
             label3.Text = "橘猫管家";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(11F, 24F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = SystemColors.Highlight;
             BackgroundImage = Properties.Resources.ERP;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1503, 806);
+            ClientSize = new Size(1230, 672);
             Controls.Add(label3);
             Controls.Add(find_pass);
             Controls.Add(login);
@@ -165,6 +174,7 @@
             Controls.Add(user_name);
             Controls.Add(pictureBox1);
             ForeColor = Color.White;
+            Margin = new Padding(2);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

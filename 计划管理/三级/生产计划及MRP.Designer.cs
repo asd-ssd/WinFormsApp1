@@ -30,6 +30,8 @@
         {
             dataGridView1 = new DataGridView();
             panel2 = new Panel();
+            checkBox7 = new CheckBox();
+            checkBox6 = new CheckBox();
             button8 = new Button();
             button7 = new Button();
             button1 = new Button();
@@ -50,8 +52,6 @@
             button4 = new Button();
             button5 = new Button();
             button6 = new Button();
-            checkBox6 = new CheckBox();
-            checkBox7 = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
@@ -69,6 +69,7 @@
             // 
             // panel2
             // 
+            panel2.BackColor = Color.Gainsboro;
             panel2.Controls.Add(checkBox7);
             panel2.Controls.Add(checkBox6);
             panel2.Controls.Add(button8);
@@ -90,6 +91,26 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1688, 120);
             panel2.TabIndex = 5;
+            // 
+            // checkBox7
+            // 
+            checkBox7.AutoSize = true;
+            checkBox7.Location = new Point(449, 21);
+            checkBox7.Name = "checkBox7";
+            checkBox7.Size = new Size(61, 24);
+            checkBox7.TabIndex = 16;
+            checkBox7.Text = "采购";
+            checkBox7.UseVisualStyleBackColor = true;
+            // 
+            // checkBox6
+            // 
+            checkBox6.AutoSize = true;
+            checkBox6.Location = new Point(373, 21);
+            checkBox6.Name = "checkBox6";
+            checkBox6.Size = new Size(61, 24);
+            checkBox6.TabIndex = 15;
+            checkBox6.Text = "生产";
+            checkBox6.UseVisualStyleBackColor = true;
             // 
             // button8
             // 
@@ -216,6 +237,7 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.LightGray;
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button4);
@@ -266,6 +288,7 @@
             button5.TabIndex = 4;
             button5.Text = "MRP生成";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // button6
             // 
@@ -276,26 +299,7 @@
             button6.TabIndex = 5;
             button6.Text = "新增主生产计划";
             button6.UseVisualStyleBackColor = true;
-            // 
-            // checkBox6
-            // 
-            checkBox6.AutoSize = true;
-            checkBox6.Location = new Point(373, 21);
-            checkBox6.Name = "checkBox6";
-            checkBox6.Size = new Size(61, 24);
-            checkBox6.TabIndex = 15;
-            checkBox6.Text = "生产";
-            checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // checkBox7
-            // 
-            checkBox7.AutoSize = true;
-            checkBox7.Location = new Point(449, 21);
-            checkBox7.Name = "checkBox7";
-            checkBox7.Size = new Size(61, 24);
-            checkBox7.TabIndex = 16;
-            checkBox7.Text = "采购";
-            checkBox7.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // 生产计划及MRP
             // 

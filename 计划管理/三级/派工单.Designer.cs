@@ -43,11 +43,11 @@
             checkBox2 = new CheckBox();
             checkBox1 = new CheckBox();
             panel1 = new Panel();
+            button6 = new Button();
+            button5 = new Button();
             button3 = new Button();
             button2 = new Button();
             button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
@@ -65,6 +65,7 @@
             // 
             // panel2
             // 
+            panel2.BackColor = Color.Gainsboro;
             panel2.Controls.Add(button1);
             panel2.Controls.Add(textBox3);
             panel2.Controls.Add(checkBox5);
@@ -190,6 +191,7 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.LightGray;
             panel1.Controls.Add(button6);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button3);
@@ -200,6 +202,27 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1688, 50);
             panel1.TabIndex = 8;
+            // 
+            // button6
+            // 
+            button6.Dock = DockStyle.Left;
+            button6.Location = new Point(376, 0);
+            button6.Name = "button6";
+            button6.Size = new Size(94, 50);
+            button6.TabIndex = 5;
+            button6.Text = "领料";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
+            // button5
+            // 
+            button5.Dock = DockStyle.Left;
+            button5.Location = new Point(282, 0);
+            button5.Name = "button5";
+            button5.Size = new Size(94, 50);
+            button5.TabIndex = 4;
+            button5.Text = "导出打印";
+            button5.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -230,26 +253,6 @@
             button4.TabIndex = 3;
             button4.Text = "刷新";
             button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            button5.Dock = DockStyle.Left;
-            button5.Location = new Point(282, 0);
-            button5.Name = "button5";
-            button5.Size = new Size(94, 50);
-            button5.TabIndex = 4;
-            button5.Text = "导出打印";
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            button6.Dock = DockStyle.Left;
-            button6.Location = new Point(376, 0);
-            button6.Name = "button6";
-            button6.Size = new Size(94, 50);
-            button6.TabIndex = 5;
-            button6.Text = "领料";
-            button6.UseVisualStyleBackColor = true;
             // 
             // 派工单
             // 

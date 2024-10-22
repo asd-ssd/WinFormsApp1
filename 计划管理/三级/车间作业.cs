@@ -8,11 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.计划管理.三级功能;
+
 
 namespace WinFormsApp1.计划管理.三级
 {
+    
     public partial class 车间作业 : UserControl
     {
+        public 工序排程 gong1;
         public 车间作业()
         {
             InitializeComponent();
@@ -42,6 +46,12 @@ namespace WinFormsApp1.计划管理.三级
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            gong1 = new 工序排程();
+            gong1.Show();
         }
     }
 }

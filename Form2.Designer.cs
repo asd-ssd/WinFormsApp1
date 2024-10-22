@@ -79,7 +79,7 @@
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(9, 3, 0, 3);
             menuStrip1.RightToLeft = RightToLeft.Yes;
-            menuStrip1.Size = new Size(2542, 46);
+            menuStrip1.Size = new Size(1924, 41);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -87,14 +87,14 @@
             // 
             帮助ToolStripMenuItem.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 134);
             帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
-            帮助ToolStripMenuItem.Size = new Size(87, 40);
+            帮助ToolStripMenuItem.Size = new Size(76, 35);
             帮助ToolStripMenuItem.Text = "帮助";
             // 
             // 主菜单ToolStripMenuItem
             // 
             主菜单ToolStripMenuItem.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 134);
             主菜单ToolStripMenuItem.Name = "主菜单ToolStripMenuItem";
-            主菜单ToolStripMenuItem.Size = new Size(87, 40);
+            主菜单ToolStripMenuItem.Size = new Size(76, 35);
             主菜单ToolStripMenuItem.Text = "菜单";
             主菜单ToolStripMenuItem.Click += 主菜单ToolStripMenuItem_Click;
             // 
@@ -103,25 +103,25 @@
             文件ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { 注销ToolStripMenuItem, 修改密码ToolStripMenuItem, 退出ToolStripMenuItem });
             文件ToolStripMenuItem.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 134);
             文件ToolStripMenuItem.Name = "文件ToolStripMenuItem";
-            文件ToolStripMenuItem.Size = new Size(87, 40);
+            文件ToolStripMenuItem.Size = new Size(76, 35);
             文件ToolStripMenuItem.Text = "用户";
             // 
             // 注销ToolStripMenuItem
             // 
             注销ToolStripMenuItem.Name = "注销ToolStripMenuItem";
-            注销ToolStripMenuItem.Size = new Size(232, 44);
+            注销ToolStripMenuItem.Size = new Size(198, 36);
             注销ToolStripMenuItem.Text = "个人资料";
             // 
             // 修改密码ToolStripMenuItem
             // 
             修改密码ToolStripMenuItem.Name = "修改密码ToolStripMenuItem";
-            修改密码ToolStripMenuItem.Size = new Size(232, 44);
+            修改密码ToolStripMenuItem.Size = new Size(198, 36);
             修改密码ToolStripMenuItem.Text = "修改密码";
             // 
             // 退出ToolStripMenuItem
             // 
             退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            退出ToolStripMenuItem.Size = new Size(232, 44);
+            退出ToolStripMenuItem.Size = new Size(198, 36);
             退出ToolStripMenuItem.Text = "退出";
             // 
             // tableLayoutPanel1
@@ -370,6 +370,7 @@
             // panel2
             // 
             panel2.BackColor = Color.Transparent;
+            panel2.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             panel2.Location = new Point(675, 143);
             panel2.Name = "panel2";
             panel2.Size = new Size(1867, 1425);
@@ -380,41 +381,41 @@
             statusStrip1.Font = new Font("Microsoft YaHei UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
             statusStrip1.ImageScalingSize = new Size(24, 24);
             statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1, toolStripStatusLabel3, toolStripStatusLabel2 });
-            statusStrip1.Location = new Point(0, 1531);
+            statusStrip1.Location = new Point(0, 1021);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(2542, 39);
+            statusStrip1.Size = new Size(1924, 34);
             statusStrip1.TabIndex = 20;
             statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
             toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            toolStripStatusLabel1.Size = new Size(243, 32);
+            toolStripStatusLabel1.Size = new Size(208, 28);
             toolStripStatusLabel1.Text = "您好！欢迎使用本系统！";
             // 
             // toolStripStatusLabel3
             // 
             toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            toolStripStatusLabel3.Size = new Size(18, 32);
+            toolStripStatusLabel3.Size = new Size(15, 28);
             toolStripStatusLabel3.Text = " ";
             // 
             // toolStripStatusLabel2
             // 
             toolStripStatusLabel2.BorderSides = ToolStripStatusLabelBorderSides.Left | ToolStripStatusLabelBorderSides.Right;
             toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            toolStripStatusLabel2.Size = new Size(2266, 32);
+            toolStripStatusLabel2.Size = new Size(1686, 28);
             toolStripStatusLabel2.Spring = true;
             toolStripStatusLabel2.Text = " ";
             // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(17F, 36F);
+            AutoScaleDimensions = new SizeF(14F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             BackgroundImage = Properties.Resources._true;
             BackgroundImageLayout = ImageLayout.Stretch;
             CausesValidation = false;
-            ClientSize = new Size(2542, 1570);
+            ClientSize = new Size(1924, 1055);
             Controls.Add(statusStrip1);
             Controls.Add(panel2);
             Controls.Add(panel1);

@@ -7,14 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.计划管理.三级功能;
 
 namespace WinFormsApp1.计划管理.三级
 {
     public partial class 派工单 : UserControl
     {
+        public 领料 ling1;
         public 派工单()
         {
             InitializeComponent();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ling1 = new 领料();
+            ling1.Show();
         }
     }
 }
