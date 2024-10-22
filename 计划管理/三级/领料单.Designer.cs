@@ -61,6 +61,7 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1688, 966);
             dataGridView1.TabIndex = 10;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // panel2
             // 
@@ -200,6 +201,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1688, 50);
             panel1.TabIndex = 8;
+            panel1.Paint += panel1_Paint;
             // 
             // button5
             // 
@@ -256,11 +258,11 @@
             panel2.PerformLayout();
             panel1.ResumeLayout(false);
             ResumeLayout(false);
+            Load += 领料单_Load;
         }
 
+       
         #endregion
-
-        private DataGridView dataGridView1;
         private Panel panel2;
         private Button button1;
         private TextBox textBox3;
@@ -279,5 +281,6 @@
         private Button button2;
         private Button button4;
         private Button button5;
+        public DataGridView dataGridView1;
     }
 }

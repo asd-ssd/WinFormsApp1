@@ -268,7 +268,10 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            Load += 派工单_Load;
         }
+
+        
 
         #endregion
         private Panel panel2;

@@ -88,7 +88,10 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            Load += 下达派工单_Load;
         }
+
+      
 
         #endregion
 

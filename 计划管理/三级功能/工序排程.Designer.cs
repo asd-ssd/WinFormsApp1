@@ -111,7 +111,10 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            Load += 工序排程_Load;
         }
+
+      
 
         #endregion
 

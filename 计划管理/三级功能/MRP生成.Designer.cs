@@ -156,7 +156,10 @@
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            Load += MRP_Load;
         }
+
+        
 
         #endregion
         private Panel panel1;

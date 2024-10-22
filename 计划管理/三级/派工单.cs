@@ -26,7 +26,6 @@ namespace WinFormsApp1.计划管理.三级
             DataTable table = new DataTable();
             adapter.Fill(table);
             dataGridView1.DataSource = table;
-            dataGridView1.Columns.Clear();
         }
 
         private void button6_Click(object sender, EventArgs e)

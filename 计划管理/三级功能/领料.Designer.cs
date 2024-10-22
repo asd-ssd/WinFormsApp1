@@ -181,6 +181,7 @@
             Controls.Add(panel2);
             Name = "领料";
             Text = "领料";
+            Load += 领料_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
@@ -189,6 +190,8 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
+
+
 
         #endregion
 

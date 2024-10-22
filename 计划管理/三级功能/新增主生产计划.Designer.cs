@@ -204,7 +204,10 @@
             Text = "新增生产计划";
             ResumeLayout(false);
             PerformLayout();
+            
         }
+
+        
 
         #endregion
 
