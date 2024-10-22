@@ -16,5 +16,10 @@ namespace WinFormsApp1.计划管理.三级功能
         {
             InitializeComponent();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

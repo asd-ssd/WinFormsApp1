@@ -31,12 +31,12 @@ namespace WinFormsApp1.计划管理.三级
         private void 车间作业_Load(object sender, EventArgs e)
         {
             SqlConnection sc1;
-            string connstr1 = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=计划管理;Integrated Security=True";
+            string connstr1 = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=计划管理;Persist Security Info=True;User ID=sa;Password=978123thy";
             DataTable dt = new DataTable();
             using (sc1 = new SqlConnection(connstr1))
             {
                 sc1.Open();
-                string sql = "select * from Workorder";
+                string sql = "select * from MRP";
                 SqlDataAdapter sdr = new SqlDataAdapter(sql, sc1);
                 sdr.Fill(dt);
             }

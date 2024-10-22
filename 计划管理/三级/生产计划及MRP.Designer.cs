@@ -52,6 +52,9 @@
             button4 = new Button();
             button5 = new Button();
             button6 = new Button();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
@@ -60,6 +63,7 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3 });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 170);
             dataGridView1.Name = "dataGridView1";
@@ -248,6 +252,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1688, 50);
             panel1.TabIndex = 4;
+            panel1.Paint += panel1_Paint;
             // 
             // button3
             // 
@@ -301,6 +306,30 @@
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
             // 
+            // Column1
+            // 
+            Column1.HeaderText = "主生产计划编号";
+            Column1.MinimumWidth = 6;
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "物料编号";
+            Column2.MinimumWidth = 6;
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            Column2.Width = 125;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "物料名称";
+            Column3.MinimumWidth = 6;
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            Column3.Width = 125;
+            // 
             // 生产计划及MRP
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
@@ -344,5 +373,8 @@
         private Button button8;
         private CheckBox checkBox7;
         private CheckBox checkBox6;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
     }
 }

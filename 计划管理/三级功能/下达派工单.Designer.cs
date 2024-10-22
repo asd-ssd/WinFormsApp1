@@ -75,6 +75,7 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(800, 410);
             dataGridView1.TabIndex = 1;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // 下达派工单
             // 

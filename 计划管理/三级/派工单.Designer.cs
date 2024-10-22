@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
             panel2 = new Panel();
             button1 = new Button();
             textBox3 = new TextBox();
@@ -48,20 +47,11 @@
             button3 = new Button();
             button2 = new Button();
             button4 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            dataGridView1 = new DataGridView();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(0, 170);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1688, 966);
-            dataGridView1.TabIndex = 10;
             // 
             // panel2
             // 
@@ -254,6 +244,16 @@
             button4.Text = "刷新";
             button4.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(0, 170);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(1688, 966);
+            dataGridView1.TabIndex = 10;
+            // 
             // 派工单
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
@@ -263,16 +263,14 @@
             Controls.Add(panel1);
             Name = "派工单";
             Size = new Size(1688, 1136);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private DataGridView dataGridView1;
         private Panel panel2;
         private Button button1;
         private TextBox textBox3;
@@ -292,5 +290,6 @@
         private Button button4;
         private Button button5;
         private Button button6;
+        private DataGridView dataGridView1;
     }
 }
