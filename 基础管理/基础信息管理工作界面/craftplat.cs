@@ -94,7 +94,7 @@ namespace WinFormsApp1.基础信息管理工作界面
             string strcolumn = dataGridView2.Columns[e.ColumnIndex].HeaderText;//获取列标题
             string strrow = dataGridView2.Rows[e.RowIndex].Cells["工序"].Value.ToString();//获取焦点触发行的第一个值
             string value = dataGridView2.CurrentCell.Value.ToString();//获取当前点击的活动单元格的值
-            strcomm[n] = "update 工艺路线表 set " + strcolumn + "='" + value + "'where 工序 = " + strrow;
+            strcomm[n] = $"UPDATE 工艺路线表 SET {strcolumn} = '{value}' WHERE 工序 = '{strrow}'";
             n++;
         }
 
@@ -120,7 +120,7 @@ namespace WinFormsApp1.基础信息管理工作界面
                 strcomm = new string[100];
             }
         }
-        private void button7_Click(object sender, EventArgs e)
+        private void button7_Click_1(object sender, EventArgs e)
         {
             if (MessageBox.Show("修改仍未保存，是否退出？", "询问", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -131,5 +131,7 @@ namespace WinFormsApp1.基础信息管理工作界面
                 strcomm = new string[100];
             }
         }
+
+        
     }
 }

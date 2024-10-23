@@ -55,6 +55,7 @@
             dataGridView2.RowHeadersWidth = 62;
             dataGridView2.Size = new Size(1682, 824);
             dataGridView2.TabIndex = 0;
+            dataGridView2.CellValueChanged += dataGridView1_CellValueChanged;
             // 
             // tableLayoutPanel2
             // 

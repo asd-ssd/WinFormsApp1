@@ -69,6 +69,7 @@
             resources.ApplyResources(button7, "button7");
             button7.Name = "button7";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click_1;
             // 
             // button6
             // 

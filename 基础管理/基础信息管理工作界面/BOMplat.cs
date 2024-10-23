@@ -107,7 +107,7 @@ namespace WinFormsApp1.工作界面
             string strcolumn = dataGridView1.Columns[e.ColumnIndex].HeaderText;//获取列标题
             string strrow = dataGridView1.Rows[e.RowIndex].Cells["物料编码"].Value.ToString();//获取焦点触发行的第一个值
             string value = dataGridView1.CurrentCell.Value.ToString();//获取当前点击的活动单元格的值
-            strcomm[n] = "update BOM表 set " + strcolumn + "='" + value + "'where 物料编码 = " + strrow;
+            strcomm[n] = $"UPDATE BOM表 SET {strcolumn} = '{value}' WHERE 物料编码 = '{strrow}'";
             n++;
         }
 
