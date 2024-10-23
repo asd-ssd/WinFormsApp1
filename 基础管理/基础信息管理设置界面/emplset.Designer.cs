@@ -40,16 +40,8 @@
             textBox2 = new TextBox();
             textBox3 = new TextBox();
             textBox4 = new TextBox();
-            textBox6 = new TextBox();
             textBox7 = new TextBox();
             textBox8 = new TextBox();
-            textBox10 = new TextBox();
-            textBox11 = new TextBox();
-            textBox12 = new TextBox();
-            textBox13 = new TextBox();
-            textBox14 = new TextBox();
-            textBox15 = new TextBox();
-            textBox16 = new TextBox();
             label9 = new Label();
             label10 = new Label();
             label11 = new Label();
@@ -60,16 +52,24 @@
             label16 = new Label();
             button1 = new Button();
             button2 = new Button();
-            textBox17 = new TextBox();
             label17 = new Label();
             label18 = new Label();
-            textBox19 = new TextBox();
             label19 = new Label();
-            textBox20 = new TextBox();
             label20 = new Label();
             dateTimePicker2 = new DateTimePicker();
             dateTimePicker3 = new DateTimePicker();
             dateTimePicker1 = new DateTimePicker();
+            textBox5 = new TextBox();
+            textBox9 = new TextBox();
+            textBox10 = new TextBox();
+            textBox11 = new TextBox();
+            textBox12 = new TextBox();
+            textBox13 = new TextBox();
+            textBox14 = new TextBox();
+            textBox15 = new TextBox();
+            textBox16 = new TextBox();
+            textBox17 = new TextBox();
+            comboBox1 = new ComboBox();
             SuspendLayout();
             // 
             // label1
@@ -154,94 +154,38 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(218, 122);
+            textBox2.Location = new Point(505, 52);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(150, 30);
             textBox2.TabIndex = 9;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(218, 274);
+            textBox3.Location = new Point(218, 119);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(150, 30);
             textBox3.TabIndex = 11;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(218, 201);
+            textBox4.Location = new Point(505, 119);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(150, 30);
             textBox4.TabIndex = 10;
             // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(218, 504);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(150, 30);
-            textBox6.TabIndex = 14;
-            // 
             // textBox7
             // 
-            textBox7.Location = new Point(218, 425);
+            textBox7.Location = new Point(215, 280);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(150, 30);
             textBox7.TabIndex = 13;
             // 
             // textBox8
             // 
-            textBox8.Location = new Point(218, 352);
+            textBox8.Location = new Point(505, 280);
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(150, 30);
             textBox8.TabIndex = 12;
-            // 
-            // textBox10
-            // 
-            textBox10.Location = new Point(508, 504);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(150, 30);
-            textBox10.TabIndex = 30;
-            // 
-            // textBox11
-            // 
-            textBox11.Location = new Point(508, 425);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(150, 30);
-            textBox11.TabIndex = 29;
-            // 
-            // textBox12
-            // 
-            textBox12.Location = new Point(508, 352);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(150, 30);
-            textBox12.TabIndex = 28;
-            // 
-            // textBox13
-            // 
-            textBox13.Location = new Point(508, 274);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(150, 30);
-            textBox13.TabIndex = 27;
-            // 
-            // textBox14
-            // 
-            textBox14.Location = new Point(508, 201);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(150, 30);
-            textBox14.TabIndex = 26;
-            // 
-            // textBox15
-            // 
-            textBox15.Location = new Point(508, 122);
-            textBox15.Name = "textBox15";
-            textBox15.Size = new Size(150, 30);
-            textBox15.TabIndex = 25;
-            // 
-            // textBox16
-            // 
-            textBox16.Location = new Point(508, 49);
-            textBox16.Name = "textBox16";
-            textBox16.Size = new Size(150, 30);
-            textBox16.TabIndex = 24;
             // 
             // label9
             // 
@@ -251,6 +195,7 @@
             label9.Size = new Size(82, 24);
             label9.TabIndex = 23;
             label9.Text = "离职日期";
+            label9.Visible = false;
             // 
             // label10
             // 
@@ -323,6 +268,7 @@
             button1.TabIndex = 32;
             button1.Text = "确定";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -332,18 +278,12 @@
             button2.TabIndex = 33;
             button2.Text = "返回";
             button2.UseVisualStyleBackColor = true;
-            // 
-            // textBox17
-            // 
-            textBox17.Location = new Point(505, 654);
-            textBox17.Name = "textBox17";
-            textBox17.Size = new Size(150, 30);
-            textBox17.TabIndex = 37;
+            button2.Click += button2_Click;
             // 
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(399, 654);
+            label17.Location = new Point(89, 724);
             label17.Name = "label17";
             label17.Size = new Size(100, 24);
             label17.TabIndex = 36;
@@ -358,28 +298,14 @@
             label18.TabIndex = 34;
             label18.Text = "入职日期";
             // 
-            // textBox19
-            // 
-            textBox19.Location = new Point(505, 721);
-            textBox19.Name = "textBox19";
-            textBox19.Size = new Size(150, 30);
-            textBox19.TabIndex = 41;
-            // 
             // label19
             // 
             label19.AutoSize = true;
-            label19.Location = new Point(111, 724);
+            label19.Location = new Point(419, 654);
             label19.Name = "label19";
             label19.Size = new Size(46, 24);
             label19.TabIndex = 40;
             label19.Text = "职称";
-            // 
-            // textBox20
-            // 
-            textBox20.Location = new Point(215, 721);
-            textBox20.Name = "textBox20";
-            textBox20.Size = new Size(150, 30);
-            textBox20.TabIndex = 39;
             // 
             // label20
             // 
@@ -403,6 +329,7 @@
             dateTimePicker3.Name = "dateTimePicker3";
             dateTimePicker3.Size = new Size(198, 30);
             dateTimePicker3.TabIndex = 44;
+            dateTimePicker3.Visible = false;
             // 
             // dateTimePicker1
             // 
@@ -411,30 +338,112 @@
             dateTimePicker1.Size = new Size(198, 30);
             dateTimePicker1.TabIndex = 42;
             // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(215, 204);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(150, 30);
+            textBox5.TabIndex = 45;
+            // 
+            // textBox9
+            // 
+            textBox9.Location = new Point(215, 358);
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(150, 30);
+            textBox9.TabIndex = 46;
+            // 
+            // textBox10
+            // 
+            textBox10.Location = new Point(505, 358);
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(150, 30);
+            textBox10.TabIndex = 47;
+            // 
+            // textBox11
+            // 
+            textBox11.Location = new Point(218, 431);
+            textBox11.Name = "textBox11";
+            textBox11.Size = new Size(150, 30);
+            textBox11.TabIndex = 48;
+            // 
+            // textBox12
+            // 
+            textBox12.Location = new Point(505, 428);
+            textBox12.Name = "textBox12";
+            textBox12.Size = new Size(150, 30);
+            textBox12.TabIndex = 49;
+            // 
+            // textBox13
+            // 
+            textBox13.Location = new Point(215, 501);
+            textBox13.Name = "textBox13";
+            textBox13.Size = new Size(150, 30);
+            textBox13.TabIndex = 50;
+            // 
+            // textBox14
+            // 
+            textBox14.Location = new Point(505, 507);
+            textBox14.Name = "textBox14";
+            textBox14.Size = new Size(150, 30);
+            textBox14.TabIndex = 51;
+            // 
+            // textBox15
+            // 
+            textBox15.Location = new Point(505, 648);
+            textBox15.Name = "textBox15";
+            textBox15.Size = new Size(150, 30);
+            textBox15.TabIndex = 52;
+            // 
+            // textBox16
+            // 
+            textBox16.Location = new Point(218, 721);
+            textBox16.Name = "textBox16";
+            textBox16.Size = new Size(150, 30);
+            textBox16.TabIndex = 53;
+            // 
+            // textBox17
+            // 
+            textBox17.Location = new Point(505, 721);
+            textBox17.Name = "textBox17";
+            textBox17.Size = new Size(150, 30);
+            textBox17.TabIndex = 54;
+            // 
+            // comboBox1
+            // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "在职", "离职" });
+            comboBox1.Location = new Point(503, 207);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(152, 32);
+            comboBox1.TabIndex = 55;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
             // emplset
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(832, 931);
+            Controls.Add(comboBox1);
+            Controls.Add(textBox17);
+            Controls.Add(textBox16);
+            Controls.Add(textBox15);
+            Controls.Add(textBox14);
+            Controls.Add(textBox13);
+            Controls.Add(textBox12);
+            Controls.Add(textBox11);
+            Controls.Add(textBox10);
+            Controls.Add(textBox9);
+            Controls.Add(textBox5);
             Controls.Add(dateTimePicker3);
             Controls.Add(dateTimePicker2);
             Controls.Add(dateTimePicker1);
-            Controls.Add(textBox19);
             Controls.Add(label19);
-            Controls.Add(textBox20);
             Controls.Add(label20);
-            Controls.Add(textBox17);
             Controls.Add(label17);
             Controls.Add(label18);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(textBox10);
-            Controls.Add(textBox11);
-            Controls.Add(textBox12);
-            Controls.Add(textBox13);
-            Controls.Add(textBox14);
-            Controls.Add(textBox15);
-            Controls.Add(textBox16);
             Controls.Add(label9);
             Controls.Add(label10);
             Controls.Add(label11);
@@ -443,7 +452,6 @@
             Controls.Add(label14);
             Controls.Add(label15);
             Controls.Add(label16);
-            Controls.Add(textBox6);
             Controls.Add(textBox7);
             Controls.Add(textBox8);
             Controls.Add(textBox3);
@@ -479,16 +487,8 @@
         private TextBox textBox2;
         private TextBox textBox3;
         private TextBox textBox4;
-        private TextBox textBox6;
         private TextBox textBox7;
         private TextBox textBox8;
-        private TextBox textBox10;
-        private TextBox textBox11;
-        private TextBox textBox12;
-        private TextBox textBox13;
-        private TextBox textBox14;
-        private TextBox textBox15;
-        private TextBox textBox16;
         private Label label9;
         private Label label10;
         private Label label11;
@@ -499,15 +499,23 @@
         private Label label16;
         private Button button1;
         private Button button2;
-        private TextBox textBox17;
         private Label label17;
         private Label label18;
-        private TextBox textBox19;
         private Label label19;
-        private TextBox textBox20;
         private Label label20;
         private DateTimePicker dateTimePicker2;
         private DateTimePicker dateTimePicker3;
         private DateTimePicker dateTimePicker1;
+        private TextBox textBox5;
+        private TextBox textBox9;
+        private TextBox textBox10;
+        private TextBox textBox11;
+        private TextBox textBox12;
+        private TextBox textBox13;
+        private TextBox textBox14;
+        private TextBox textBox15;
+        private TextBox textBox16;
+        private TextBox textBox17;
+        private ComboBox comboBox1;
     }
 }

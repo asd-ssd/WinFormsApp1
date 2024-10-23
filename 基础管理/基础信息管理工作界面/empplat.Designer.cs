@@ -30,12 +30,14 @@
         {
             dataGridView2 = new DataGridView();
             tableLayoutPanel2 = new TableLayoutPanel();
-            button5 = new Button();
             panel1 = new Panel();
+            button5 = new Button();
             button4 = new Button();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
+            button6 = new Button();
+            button7 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             tableLayoutPanel2.SuspendLayout();
             panel1.SuspendLayout();
@@ -43,12 +45,15 @@
             // 
             // dataGridView2
             // 
+            dataGridView2.AllowUserToAddRows = false;
             dataGridView2.BackgroundColor = SystemColors.ControlLight;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Dock = DockStyle.Fill;
             dataGridView2.Location = new Point(3, 80);
             dataGridView2.Name = "dataGridView2";
+            dataGridView2.ReadOnly = true;
             dataGridView2.RowHeadersWidth = 62;
-            dataGridView2.Size = new Size(1465, 824);
+            dataGridView2.Size = new Size(1682, 824);
             dataGridView2.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -68,17 +73,10 @@
             tableLayoutPanel2.TabIndex = 3;
             tableLayoutPanel2.Paint += tableLayoutPanel2_Paint;
             // 
-            // button5
-            // 
-            button5.Location = new Point(459, 3);
-            button5.Name = "button5";
-            button5.Size = new Size(108, 65);
-            button5.TabIndex = 4;
-            button5.Text = "删除";
-            button5.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
+            panel1.Controls.Add(button7);
+            panel1.Controls.Add(button6);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button4);
             panel1.Controls.Add(button3);
@@ -90,6 +88,16 @@
             panel1.Size = new Size(1682, 71);
             panel1.TabIndex = 2;
             // 
+            // button5
+            // 
+            button5.Location = new Point(459, 3);
+            button5.Name = "button5";
+            button5.Size = new Size(108, 65);
+            button5.TabIndex = 4;
+            button5.Text = "删除";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
             // button4
             // 
             button4.Location = new Point(345, 3);
@@ -98,6 +106,7 @@
             button4.TabIndex = 3;
             button4.Text = "修改";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button3
             // 
@@ -107,6 +116,7 @@
             button3.TabIndex = 2;
             button3.Text = "查询";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -116,6 +126,7 @@
             button2.TabIndex = 1;
             button2.Text = "新增";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -125,6 +136,29 @@
             button1.TabIndex = 0;
             button1.Text = "刷新";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(715, 24);
+            button6.Name = "button6";
+            button6.Size = new Size(112, 34);
+            button6.TabIndex = 5;
+            button6.Text = "修改成功";
+            button6.UseVisualStyleBackColor = true;
+            button6.Visible = false;
+            button6.Click += button6_Click;
+            // 
+            // button7
+            // 
+            button7.Location = new Point(862, 24);
+            button7.Name = "button7";
+            button7.Size = new Size(112, 34);
+            button7.TabIndex = 6;
+            button7.Text = "取消";
+            button7.UseVisualStyleBackColor = true;
+            button7.Visible = false;
+            button7.Click += button7_Click;
             // 
             // empplat
             // 
@@ -141,8 +175,6 @@
         }
 
         #endregion
-
-        private DataGridView dataGridView2;
         private TableLayoutPanel tableLayoutPanel2;
         private Panel panel1;
         private Button button5;
@@ -150,5 +182,8 @@
         private Button button3;
         private Button button2;
         private Button button1;
+        public DataGridView dataGridView2;
+        private Button button7;
+        private Button button6;
     }
 }

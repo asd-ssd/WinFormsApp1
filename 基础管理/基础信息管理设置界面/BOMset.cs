@@ -27,7 +27,7 @@ namespace WinFormsApp1.基础信息管理设置界面
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
-        private void GetDataGridView()
+        private void  GetDataGridView()
         {
             try
             {
