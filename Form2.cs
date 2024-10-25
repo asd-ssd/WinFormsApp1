@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using WinFormsApp1.Second;
 using WinFormsApp1.二级菜单;
 using WinFormsApp1.工作界面;
+using WinFormsApp1.销售管理;
 using static System.Windows.Forms.DataFormats;
 
 namespace WinFormsApp1
@@ -27,7 +28,7 @@ namespace WinFormsApp1
         public systemcon systemcon1;
         public Plan Plan1;
         public caigou2 caigou21;
-        public sale sale1;
+        public SaleForm sale1;
         public warehouse_usercontrol warehouse_Usercontrol1;
         public Form2()
         {
@@ -114,7 +115,8 @@ namespace WinFormsApp1
 
         private void button6_Click(object sender, EventArgs e)
         {
-            sale1 = new sale();
+
+            sale1 = new SaleForm();
             sale1.Show();
             panel1.Controls.Clear();    //清空原容器上的控件
             panel1.Controls.Add(sale1);    //将窗体一加入容器panel1
