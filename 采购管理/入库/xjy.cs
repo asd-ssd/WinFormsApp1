@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsApp1.采购管理
+namespace WinFormsApp1.采购管理.入库
 {
-    public partial class thsq : UserControl
+    public partial class xjy : Form
     {
-        public thsq()
+        public xjy()
         {
             InitializeComponent();
         }

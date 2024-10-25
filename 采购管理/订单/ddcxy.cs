@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsApp1.采购管理
+namespace WinFormsApp1.采购管理.订单
 {
-    public partial class cgsq1 : UserControl
+    public partial class ddcxy : Form
     {
-        public cgsq1()
+        public ddcxy()
         {
             InitializeComponent();
         }

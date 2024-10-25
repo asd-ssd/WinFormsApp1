@@ -9,16 +9,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.系统管理工作界面;
 using WinFormsApp1.采购管理;
+using WinFormsApp1.采购管理.入库;
+
+using WinFormsApp1.采购管理.采购;
+using WinFormsApp1.采购管理.采购审核;
 
 namespace WinFormsApp1
 {
     public partial class caigou2 : UserControl
     {
         public Panel panel = Form2.form.panel2;
-        public cgsq cgsq1;
+        public cgsqy cgsqy1;
         public thsq thsq1;
         public gys gys1;
         public ddcx ddcx1;
+        public shx shx1;
+        
+        public ruku ruku1;
+
 
         public caigou2()
         {
@@ -27,10 +35,10 @@ namespace WinFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            cgsq1 = new cgsq();
-            cgsq1.Show();   //将窗体一进行显示
+            cgsqy1 = new cgsqy();
+            cgsqy1.Show();   //将窗体一进行显示
             panel.Controls.Clear();    //清空原容器上的控件
-            panel.Controls.Add(cgsq1);    //将窗体一加入容器panel2
+            panel.Controls.Add(cgsqy1);    //将窗体一加入容器panel2
         }
 
         private void caigou2_Load(object sender, EventArgs e)
@@ -60,6 +68,24 @@ namespace WinFormsApp1
             ddcx1.Show();   //将窗体一进行显示
             panel.Controls.Clear();    //清空原容器上的控件
             panel.Controls.Add(ddcx1);    //将窗体一加入容器panel2
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            shx1 = new shx();
+            shx1.Show();   //将窗体一进行显示
+            panel.Controls.Clear();    //清空原容器上的控件
+            panel.Controls.Add(shx1);    //将窗体一加入容器panel2
+        }
+
+        
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ruku1 = new ruku();
+            ruku1.Show();   //将窗体一进行显示
+            panel.Controls.Clear();    //清空原容器上的控件
+            panel.Controls.Add(ruku1);    //将窗体一加入容器panel2
         }
     }
 }

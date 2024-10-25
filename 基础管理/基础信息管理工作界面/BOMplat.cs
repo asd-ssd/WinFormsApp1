@@ -23,6 +23,7 @@ namespace WinFormsApp1.工作界面
             BOMplat1 = this;
         }
         private SqlConnection connection()
+
         {
             string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Integrated Security=True";
             SqlConnection conn = new SqlConnection(strconn);
@@ -114,6 +115,7 @@ namespace WinFormsApp1.工作界面
 
         private void button6_Click(object sender, EventArgs e)
         {
+
             if (MessageBox.Show("确定要修改数据吗？", "询问", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 SqlConnection conn = connection();
@@ -147,6 +149,7 @@ namespace WinFormsApp1.工作界面
                 dataGridView1.ReadOnly = true;//整个表格只读
                 strcomm = new string[100];
             }
+
         }
     }
 }

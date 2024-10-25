@@ -171,6 +171,7 @@ namespace WinFormsApp1
             label12.TabIndex = 4;
             label12.Text = "查询";
             label12.TextAlign = ContentAlignment.MiddleCenter;
+            label12.Click += label12_Click;
             // 
             // label14
             // 

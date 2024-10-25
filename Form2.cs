@@ -117,6 +117,7 @@ namespace WinFormsApp1
         {
 
             sale1 = new SaleForm();
+
             sale1.Show();
             panel1.Controls.Clear();    //清空原容器上的控件
             panel1.Controls.Add(sale1);    //将窗体一加入容器panel1
