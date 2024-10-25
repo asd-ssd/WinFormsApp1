@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using WinFormsApp1.Second;
 using WinFormsApp1.二级菜单;
 using WinFormsApp1.工作界面;
+using WinFormsApp1.销售管理;
 using static System.Windows.Forms.DataFormats;
 
 namespace WinFormsApp1
@@ -26,7 +27,7 @@ namespace WinFormsApp1
         public systemcon systemcon1;
         public Plan Plan1;
         public caigou2 caigou21;
-        public sale sale1;
+        public SaleForm sale1;
         public warehouse_usercontrol warehouse_Usercontrol1;
         public Form2()
         {
@@ -152,7 +153,7 @@ namespace WinFormsApp1
         private void button4_Click(object sender, EventArgs e)
         {
             Plan1 = new Plan();
-            basecon1.Show();
+            Plan1.Show();
             panel1.Controls.Clear();    //清空原容器上的控件
             panel1.Controls.Add(Plan1);    //将窗体一加入容器panel1
             panel2.Controls.Clear();    //清空原容器上的控件
@@ -161,7 +162,7 @@ namespace WinFormsApp1
         private void button5_Click(object sender, EventArgs e)
         {
             caigou21 = new caigou2();
-            basecon1.Show();
+            caigou21.Show();
             panel1.Controls.Clear();    //清空原容器上的控件
             panel1.Controls.Add(caigou21);    //将窗体一加入容器panel1
             panel2.Controls.Clear();    //清空原容器上的控件
@@ -169,8 +170,8 @@ namespace WinFormsApp1
 
         private void button6_Click(object sender, EventArgs e)
         {
-            sale1 = new sale();
-            basecon1.Show();
+            sale1 = new SaleForm();
+            sale1.Show();
             panel1.Controls.Clear();    //清空原容器上的控件
             panel1.Controls.Add(sale1);    //将窗体一加入容器panel1
             panel2.Controls.Clear();    //清空原容器上的控件
@@ -179,7 +180,7 @@ namespace WinFormsApp1
         private void button7_Click(object sender, EventArgs e)
         {
             warehouse_Usercontrol1 = new warehouse_usercontrol();
-            basecon1.Show();
+            warehouse_Usercontrol1.Show();
             panel1.Controls.Clear();    //清空原容器上的控件
             panel1.Controls.Add(warehouse_Usercontrol1);    //将窗体一加入容器panel1
             panel2.Controls.Clear();    //清空原容器上的控件
@@ -188,7 +189,7 @@ namespace WinFormsApp1
         private void button8_Click(object sender, EventArgs e)
         {
             systemcon1 = new systemcon();
-            basecon1.Show();
+            systemcon1.Show();
             panel1.Controls.Clear();    //清空原容器上的控件
             panel1.Controls.Add(systemcon1);    //将窗体一加入容器panel1
             panel2.Controls.Clear();    //清空原容器上的控件
