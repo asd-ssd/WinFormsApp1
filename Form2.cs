@@ -179,7 +179,7 @@ namespace WinFormsApp1
         private void button7_Click(object sender, EventArgs e)
         {
             warehouse_Usercontrol1 = new warehouse_usercontrol();
-            basecon1.Show();
+            warehouse_Usercontrol1.Show();
             panel1.Controls.Clear();    //清空原容器上的控件
             panel1.Controls.Add(warehouse_Usercontrol1);    //将窗体一加入容器panel1
             panel2.Controls.Clear();    //清空原容器上的控件

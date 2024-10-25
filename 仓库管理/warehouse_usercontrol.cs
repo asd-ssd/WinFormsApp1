@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.仓库管理.入库界面;
 using WinFormsApp1.仓库管理.出库界面;
+using WinFormsApp1.仓库管理.移库界面;
 using WinFormsApp1.仓库管理.初始查询界面;
 using WinFormsApp1.仓库管理.库存盘点界面;
 using WinFormsApp1.系统管理工作界面;
@@ -20,13 +21,14 @@ namespace WinFormsApp1
         public Panel panel = Form2.form.panel2;
         public Os os1;
         public Is Is1;
+        public Ms ms1;
         public warehouse_initial warehouse_Initial1;
         public count_push count_Push1;
 
         public warehouse_usercontrol()
         {
             InitializeComponent();
-            this.warehouse_in.Click += new EventHandler(this.showTip);
+            //this.warehouse_in.Click += new EventHandler(this.showTip);
         }
 
         //2.Button的Click点击事件（手动添加）
@@ -76,7 +78,10 @@ namespace WinFormsApp1
 
         private void warehouse_move_Click(object sender, EventArgs e)
         {
-
+            ms1 = new Ms();
+            ms1.Show();   //将窗体一进行显示
+            panel.Controls.Clear();    //清空原容器上的控件
+            panel.Controls.Add(ms1);    //将窗体一加入容器panel2
         }
     }
 }
