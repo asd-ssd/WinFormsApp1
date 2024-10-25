@@ -17,6 +17,21 @@ namespace WinFormsApp1.仓库管理.入库界面
             InitializeComponent();
         }
 
-      
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

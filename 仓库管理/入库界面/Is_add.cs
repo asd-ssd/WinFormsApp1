@@ -1,27 +1,166 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.仓库管理.初始查询界面;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WinFormsApp1.仓库管理.入库界面
 {
     public partial class Is_add : Form
     {
+        public Is_select_item Is_item1;
+        public Is_select_location Is_location1;
+        public Is_select_people Is_people1;
+        public DataGridView dataGridView1 = Is.is1.dataGridView1;
+        public static Is_add is_Add1;
+        private string Is_number;
+        //public string Is_select_people_number;
         public Is_add()
         {
             InitializeComponent();
+            is_Add1 = this;
+        }
+        private SqlConnection connection()
+        {
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=lwx;Password=luowenxin";
+            SqlConnection conn = new SqlConnection(strconn);
+            return conn;
         }
 
         private void Is_add_Load(object sender, EventArgs e)
         {
-
+            SqlConnection conn = connection();
+            conn.Open();
+            string query = "SELECT 入库单编号 FROM 入库单表 ORDER BY 入库单编号 DESC OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY";
+            SqlCommand comm = new SqlCommand(query, conn);
+            object result = comm.ExecuteScalar();
+            Is_number = result.ToString();
+            textBox4.Text = Numberplus(Is_number);
+            conn.Close();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            addDataGridView();
+            //addDataGridView1();
+            GetDataGridView();
+            this.Close();
+        }
+        private void addDataGridView()
+        {
+            SqlConnection conn = connection();
+            conn.Open();
+
+            string strda = "INSERT INTO 入库单表 (入库单编号,库位号, 物料编码, 入库数量,入库人姓名,入库人编号,入库日期,入库类别) VALUES ('" + textBox4.Text.Trim() + "','" + textBox2.Text.Trim() + "','" + textBox1.Text.Trim() + "','" + textBox16.Text.Trim() + "','" + textBox15.Text.Trim() + "','" + textBox3.Text.Trim() + "','" + dateTimePicker1.Value + "','" + comboBox1.Text + "')";
+            SqlCommand comm = new SqlCommand(strda, conn);
+            comm.ExecuteNonQuery();
+            conn.Close();
+        }
+        /*private void addDataGridView1()
+        {
+            int number;
+            if (int.TryParse(textBox16.Text, out number))
+            {
+                SqlConnection conn1 = connection();
+                conn1.Open();
+                
+                string strUpdate = "UPDATE 库存管理表 SET 库位库存量 = 库位库存量 + @入库数量 WHERE 库位号 = @库位号";
+                using (SqlCommand comm1 = new SqlCommand(strUpdate, conn1))
+                {
+                    comm1.Parameters.AddWithValue("@入库数量", number);
+                    string str = number.ToString();
+                    MessageBox.Show(str);
+                    comm1.Parameters.AddWithValue("@库位号", textBox2.Text.Trim());
+                    comm1.ExecuteNonQuery();
+                }
+
+                conn1.Close();
+            }
+            else
+                MessageBox.Show("数量错误");
+
+        }*/
+        private void GetDataGridView()
+        {
+            try
+            {
+                string strda = "select * from 入库单表";
+                SqlConnection conn = connection();
+                conn.Open();
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(strda, conn);
+                da.Fill(dt);
+                conn.Close();
+                //dataGridView1.AutoGenerateColumns = true;//自动创建列
+                //dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;//单击单元格编辑
+                dataGridView1.DataSource = dt;
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.Message.ToString());
+            }
+        }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Is_item1 = new Is_select_item();
+            Is_item1.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Is_location1 = new Is_select_location();
+            Is_location1.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Is_people1 = new Is_select_people();
+            Is_people1.Show();
+        }
+        public static string Numberplus(string str)
+        {
+            // 使用正则表达式找到字符串中的数字部分  
+            Match match = Regex.Match(str, @"\d+");
+            if (!match.Success)
+            {
+                // 如果没有找到数字部分，直接返回原字符串  
+                return str;
+            }
+
+            // 将找到的数字部分转换为整数并加一  
+            string numberPart = match.Value;
+            int number = int.Parse(numberPart);
+            number++;
+
+            // 将加一的数字部分转换回字符串，并确保其长度与原数字部分相同（使用前导零）  
+            string incrementedNumberPart = number.ToString(new string('0', numberPart.Length));
+
+            // 使用正则表达式替换原字符串中的数字部分为加一的数字部分  
+            return Regex.Replace(str, @"\d+", incrementedNumberPart);
+        }
+
+        /* string strcolumn = dataGridView1.Columns[e.ColumnIndex].HeaderText;//获取列标题
+         string strrow = dataGridView1.Rows[e.RowIndex].Cells["物料编码"].Value.ToString();//获取焦点触发行的第一个值
+         string value = dataGridView1.CurrentCell.Value.ToString();//获取当前点击的活动单元格的值
+         strcomm[n] = $"UPDATE BOM表 SET {strcolumn}='{value}’ WHERE 物料编码 =’{strrow}’"; 
+             n++;*/
     }
 }

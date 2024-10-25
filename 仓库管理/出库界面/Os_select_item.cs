@@ -7,22 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WinFormsApp1.仓库管理.入库界面;
 
 namespace WinFormsApp1.仓库管理.出库界面
 {
-    public partial class Os_add : Form
+    public partial class Os_select_item : Form
     {
-        public Os_select_item Os_item1;
-        public Os_add()
+        public Os_select_item()
         {
             InitializeComponent();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Os_item1 = new Os_select_item();
-            Os_item1.Show();
         }
     }
 }
