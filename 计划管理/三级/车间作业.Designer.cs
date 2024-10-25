@@ -34,6 +34,9 @@
             button2 = new Button();
             button4 = new Button();
             panel2 = new Panel();
+            button7 = new Button();
+            label3 = new Label();
+            button6 = new Button();
             textBox2 = new TextBox();
             checkBox6 = new CheckBox();
             button1 = new Button();
@@ -75,7 +78,7 @@
             button5.Name = "button5";
             button5.Size = new Size(94, 50);
             button5.TabIndex = 4;
-            button5.Text = "生产排程";
+            button5.Text = "工序排程";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 
@@ -88,6 +91,7 @@
             button3.TabIndex = 2;
             button3.Text = "删除";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -98,6 +102,7 @@
             button2.TabIndex = 1;
             button2.Text = "修改";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button4
             // 
@@ -108,10 +113,14 @@
             button4.TabIndex = 3;
             button4.Text = "刷新";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // panel2
             // 
             panel2.BackColor = Color.Gainsboro;
+            panel2.Controls.Add(button7);
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(button6);
             panel2.Controls.Add(textBox2);
             panel2.Controls.Add(checkBox6);
             panel2.Controls.Add(button1);
@@ -131,6 +140,34 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1688, 120);
             panel2.TabIndex = 6;
+            // 
+            // button7
+            // 
+            button7.Location = new Point(1053, 72);
+            button7.Name = "button7";
+            button7.Size = new Size(94, 29);
+            button7.TabIndex = 6;
+            button7.Text = "取消修改";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
+            // 
+            // label3
+            // 
+            label3.BorderStyle = BorderStyle.Fixed3D;
+            label3.Location = new Point(1011, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(2, 121);
+            label3.TabIndex = 24;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(1053, 19);
+            button6.Name = "button6";
+            button6.Size = new Size(94, 29);
+            button6.TabIndex = 5;
+            button6.Text = "修改完成";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // textBox2
             // 
@@ -157,6 +194,7 @@
             button1.TabIndex = 21;
             button1.Text = "查询";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // textBox3
             // 
@@ -194,7 +232,7 @@
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(531, 25);
+            dateTimePicker2.Location = new Point(545, 25);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(140, 27);
             dateTimePicker2.TabIndex = 6;
@@ -202,7 +240,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(491, 25);
+            label2.Location = new Point(521, 25);
             label2.Name = "label2";
             label2.Size = new Size(24, 20);
             label2.TabIndex = 5;
@@ -210,7 +248,7 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(341, 25);
+            dateTimePicker1.Location = new Point(381, 25);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(140, 27);
             dateTimePicker1.TabIndex = 4;
@@ -218,7 +256,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(311, 25);
+            label1.Location = new Point(357, 25);
             label1.Name = "label1";
             label1.Size = new Size(24, 20);
             label1.TabIndex = 3;
@@ -229,9 +267,9 @@
             checkBox3.AutoSize = true;
             checkBox3.Location = new Point(251, 25);
             checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(76, 24);
+            checkBox3.Size = new Size(106, 24);
             checkBox3.TabIndex = 1;
-            checkBox3.Text = "日期：";
+            checkBox3.Text = "开始日期：";
             checkBox3.UseVisualStyleBackColor = true;
             // 
             // checkBox2
@@ -256,14 +294,17 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 170);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1688, 966);
             dataGridView1.TabIndex = 7;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
             // 
             // 车间作业
             // 
@@ -296,7 +337,6 @@
         private CheckBox checkBox3;
         private CheckBox checkBox2;
         private CheckBox checkBox1;
-        private DataGridView dataGridView1;
         private Button button5;
         private TextBox textBox2;
         private Button button1;
@@ -305,5 +345,9 @@
         private TextBox textBox1;
         private CheckBox checkBox4;
         private CheckBox checkBox6;
+        public DataGridView dataGridView1;
+        private Button button7;
+        private Button button6;
+        private Label label3;
     }
 }

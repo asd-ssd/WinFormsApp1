@@ -96,6 +96,7 @@
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 40);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(800, 410);
             dataGridView1.TabIndex = 1;
@@ -108,13 +109,13 @@
             Controls.Add(panel1);
             Name = "工序排程";
             Text = "工序排程";
+            Load += 工序排程_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
-            Load += 工序排程_Load;
         }
 
-      
+
 
         #endregion
 
@@ -123,6 +124,6 @@
         private Button button3;
         private Button button2;
         private Button button1;
-        private DataGridView dataGridView1;
+        public DataGridView dataGridView1;
     }
 }

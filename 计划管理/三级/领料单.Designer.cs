@@ -30,6 +30,9 @@
         {
             dataGridView1 = new DataGridView();
             panel2 = new Panel();
+            button8 = new Button();
+            label4 = new Label();
+            button9 = new Button();
             button1 = new Button();
             textBox3 = new TextBox();
             checkBox5 = new CheckBox();
@@ -54,18 +57,24 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 170);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1688, 966);
             dataGridView1.TabIndex = 10;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
             // 
             // panel2
             // 
             panel2.BackColor = Color.Gainsboro;
+            panel2.Controls.Add(button8);
+            panel2.Controls.Add(label4);
+            panel2.Controls.Add(button9);
             panel2.Controls.Add(button1);
             panel2.Controls.Add(textBox3);
             panel2.Controls.Add(checkBox5);
@@ -84,6 +93,34 @@
             panel2.Size = new Size(1688, 120);
             panel2.TabIndex = 9;
             // 
+            // button8
+            // 
+            button8.Location = new Point(758, 72);
+            button8.Name = "button8";
+            button8.Size = new Size(94, 29);
+            button8.TabIndex = 26;
+            button8.Text = "取消修改";
+            button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
+            // 
+            // label4
+            // 
+            label4.BorderStyle = BorderStyle.Fixed3D;
+            label4.Location = new Point(716, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(2, 121);
+            label4.TabIndex = 27;
+            // 
+            // button9
+            // 
+            button9.Location = new Point(758, 19);
+            button9.Name = "button9";
+            button9.Size = new Size(94, 29);
+            button9.TabIndex = 25;
+            button9.Text = "修改完成";
+            button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
+            // 
             // button1
             // 
             button1.Location = new Point(599, 68);
@@ -92,6 +129,7 @@
             button1.TabIndex = 12;
             button1.Text = "查询";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // textBox3
             // 
@@ -223,6 +261,7 @@
             button3.TabIndex = 2;
             button3.Text = "删除";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -233,6 +272,7 @@
             button2.TabIndex = 1;
             button2.Text = "修改";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button4
             // 
@@ -243,6 +283,7 @@
             button4.TabIndex = 3;
             button4.Text = "刷新";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // 领料单
             // 
@@ -253,15 +294,15 @@
             Controls.Add(panel1);
             Name = "领料单";
             Size = new Size(1688, 1136);
+            Load += 领料单_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel1.ResumeLayout(false);
             ResumeLayout(false);
-            Load += 领料单_Load;
         }
 
-       
+
         #endregion
         private Panel panel2;
         private Button button1;
@@ -282,5 +323,8 @@
         private Button button4;
         private Button button5;
         public DataGridView dataGridView1;
+        private Button button8;
+        private Label label4;
+        private Button button9;
     }
 }

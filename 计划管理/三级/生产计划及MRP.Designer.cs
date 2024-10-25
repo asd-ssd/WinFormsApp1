@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
             panel2 = new Panel();
+            button9 = new Button();
+            label3 = new Label();
             checkBox7 = new CheckBox();
             checkBox6 = new CheckBox();
             button8 = new Button();
@@ -55,6 +54,7 @@
             button4 = new Button();
             button5 = new Button();
             button6 = new Button();
+            button10 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
@@ -62,43 +62,24 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3 });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 170);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1688, 966);
             dataGridView1.TabIndex = 6;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "主生产计划编号";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "物料编号";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "物料名称";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            Column3.Width = 125;
+            dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
             // 
             // panel2
             // 
             panel2.BackColor = Color.Gainsboro;
+            panel2.Controls.Add(button9);
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(button10);
             panel2.Controls.Add(checkBox7);
             panel2.Controls.Add(checkBox6);
             panel2.Controls.Add(button8);
@@ -120,6 +101,24 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1688, 120);
             panel2.TabIndex = 5;
+            // 
+            // button9
+            // 
+            button9.Location = new Point(1003, 72);
+            button9.Name = "button9";
+            button9.Size = new Size(94, 29);
+            button9.TabIndex = 26;
+            button9.Text = "取消修改";
+            button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
+            // 
+            // label3
+            // 
+            label3.BorderStyle = BorderStyle.Fixed3D;
+            label3.Location = new Point(961, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(2, 121);
+            label3.TabIndex = 27;
             // 
             // checkBox7
             // 
@@ -149,6 +148,7 @@
             button8.TabIndex = 14;
             button8.Text = "物料需求计划";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // button7
             // 
@@ -158,6 +158,7 @@
             button7.TabIndex = 13;
             button7.Text = "生产计划";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // button1
             // 
@@ -167,6 +168,7 @@
             button1.TabIndex = 12;
             button1.Text = "查询";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // textBox3
             // 
@@ -288,6 +290,7 @@
             button3.TabIndex = 2;
             button3.Text = "删除";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -298,6 +301,7 @@
             button2.TabIndex = 1;
             button2.Text = "修改";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button4
             // 
@@ -308,6 +312,7 @@
             button4.TabIndex = 3;
             button4.Text = "刷新";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button5
             // 
@@ -330,6 +335,16 @@
             button6.Text = "新增主生产计划";
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
+            // 
+            // button10
+            // 
+            button10.Location = new Point(1003, 19);
+            button10.Name = "button10";
+            button10.Size = new Size(94, 29);
+            button10.TabIndex = 25;
+            button10.Text = "修改完成";
+            button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click;
             // 
             // 生产计划及MRP
             // 
@@ -371,9 +386,9 @@
         private Button button8;
         private CheckBox checkBox7;
         private CheckBox checkBox6;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
         public DataGridView dataGridView1;
+        private Button button9;
+        private Label label3;
+        private Button button10;
     }
 }

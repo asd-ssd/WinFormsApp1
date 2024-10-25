@@ -72,6 +72,7 @@
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 40);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(800, 410);
             dataGridView1.TabIndex = 1;
@@ -85,19 +86,19 @@
             Controls.Add(panel1);
             Name = "下达派工单";
             Text = "下达派工单";
+            Load += 下达派工单_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
-            Load += 下达派工单_Load;
         }
 
-      
+
 
         #endregion
 
         private Panel panel1;
         private Button button2;
         private Button button1;
-        private DataGridView dataGridView1;
+        public DataGridView dataGridView1;
     }
 }
