@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsApp1.采购管理
+namespace WinFormsApp1.采购管理.退货
 {
-    public partial class ddcx : UserControl
+    public partial class thcxy : Form
     {
-        public ddcx()
+        public thcxy()
         {
             InitializeComponent();
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

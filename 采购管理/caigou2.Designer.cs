@@ -34,6 +34,7 @@
             button5 = new Button();
             button3 = new Button();
             button2 = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // button7
@@ -42,7 +43,7 @@
             button7.BackgroundImage = (Image)resources.GetObject("button7.BackgroundImage");
             button7.BackgroundImageLayout = ImageLayout.Zoom;
             button7.Font = new Font("宋体", 7.5F);
-            button7.Location = new Point(134, 560);
+            button7.Location = new Point(131, 336);
             button7.Name = "button7";
             button7.Size = new Size(80, 105);
             button7.TabIndex = 14;
@@ -57,7 +58,7 @@
             button6.BackgroundImage = (Image)resources.GetObject("button6.BackgroundImage");
             button6.BackgroundImageLayout = ImageLayout.Zoom;
             button6.Font = new Font("宋体", 7.5F);
-            button6.Location = new Point(134, 449);
+            button6.Location = new Point(131, 558);
             button6.Name = "button6";
             button6.Size = new Size(80, 105);
             button6.TabIndex = 13;
@@ -72,13 +73,14 @@
             button5.BackgroundImage = (Image)resources.GetObject("button5.BackgroundImage");
             button5.BackgroundImageLayout = ImageLayout.Zoom;
             button5.Font = new Font("宋体", 7.5F);
-            button5.Location = new Point(134, 338);
+            button5.Location = new Point(131, 447);
             button5.Name = "button5";
             button5.Size = new Size(80, 105);
             button5.TabIndex = 12;
             button5.Text = "采购接收";
             button5.TextAlign = ContentAlignment.BottomCenter;
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // button3
             // 
@@ -86,7 +88,7 @@
             button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
             button3.BackgroundImageLayout = ImageLayout.Zoom;
             button3.Font = new Font("宋体", 7.5F);
-            button3.Location = new Point(134, 227);
+            button3.Location = new Point(131, 225);
             button3.Name = "button3";
             button3.Size = new Size(80, 105);
             button3.TabIndex = 11;
@@ -102,7 +104,7 @@
             button2.BackgroundImageLayout = ImageLayout.Zoom;
             button2.Font = new Font("宋体", 7.5F);
             button2.ImageAlign = ContentAlignment.TopCenter;
-            button2.Location = new Point(134, 116);
+            button2.Location = new Point(131, 3);
             button2.Name = "button2";
             button2.Size = new Size(80, 105);
             button2.TabIndex = 10;
@@ -111,11 +113,26 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // button1
+            // 
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Zoom;
+            button1.Font = new Font("宋体", 7.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            button1.Location = new Point(131, 114);
+            button1.Name = "button1";
+            button1.Size = new Size(80, 105);
+            button1.TabIndex = 15;
+            button1.Text = "采购审核";
+            button1.TextAlign = ContentAlignment.BottomCenter;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // caigou2
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
+            Controls.Add(button1);
             Controls.Add(button7);
             Controls.Add(button6);
             Controls.Add(button5);
@@ -133,5 +150,6 @@
         private Button button5;
         private Button button3;
         private Button button2;
+        private Button button1;
     }
 }

@@ -84,7 +84,7 @@ namespace WinFormsApp1
             button1.TabIndex = 17;
             button1.Text = "查询";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += this.button1_Click;
+            button1.Click += button1_Click;
             // 
             // label13
             // 
@@ -162,6 +162,7 @@ namespace WinFormsApp1
             label12.TabIndex = 4;
             label12.Text = "查询";
             label12.TextAlign = ContentAlignment.MiddleCenter;
+            label12.Click += label12_Click;
             // 
             // label14
             // 
@@ -194,7 +195,7 @@ namespace WinFormsApp1
             ResumeLayout(false);
         }
 
-        
+
 
         #endregion
 

@@ -17,8 +17,8 @@ namespace WinFormsApp1.工作界面
         {
             InitializeComponent();
         }
-        
-private void BOMplat_Load(object sender, EventArgs e)
+
+        private void BOMplat_Load(object sender, EventArgs e)
         {
             SqlConnection sc;
             DataSet dss = new DataSet();
@@ -40,7 +40,12 @@ private void BOMplat_Load(object sender, EventArgs e)
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

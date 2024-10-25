@@ -13,15 +13,20 @@ namespace WinFormsApp1
 {
     public partial class workplatform : UserControl
     {
-        
+
         public workplatform()
         {
             InitializeComponent();
-            
+
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

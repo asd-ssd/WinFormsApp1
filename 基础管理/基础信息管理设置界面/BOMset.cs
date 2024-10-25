@@ -45,5 +45,15 @@ namespace WinFormsApp1.基础信息管理设置界面
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
