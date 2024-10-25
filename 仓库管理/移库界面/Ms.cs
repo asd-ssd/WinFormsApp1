@@ -9,16 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsApp1.仓库管理.库存盘点界面
+namespace WinFormsApp1.仓库管理.移库界面
 {
-    public partial class count_add : Form
+    public partial class Ms : UserControl
     {
-        public count_add()
+        public Ms()
         {
             InitializeComponent();
         }
 
-        private void count_add_Load(object sender, EventArgs e)
+        private void Ms_Load(object sender, EventArgs e)
         {
             SqlConnection sc1;
             string connstr1 = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=lwx;Password=luowenxin";
@@ -26,7 +26,7 @@ namespace WinFormsApp1.仓库管理.库存盘点界面
             using (sc1 = new SqlConnection(connstr1))
             {
                 sc1.Open();
-                string sql = "select * from 库存盘点表";
+                string sql = "select * from 移库单表";
                 SqlDataAdapter sdr = new SqlDataAdapter(sql, sc1);
                 sdr.Fill(dt);
             }

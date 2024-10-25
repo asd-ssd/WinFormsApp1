@@ -42,6 +42,13 @@
             dateTimePicker1 = new DateTimePicker();
             textBox3 = new TextBox();
             label4 = new Label();
+            button3 = new Button();
+            button4 = new Button();
+            button5 = new Button();
+            textBox4 = new TextBox();
+            label5 = new Label();
+            comboBox1 = new ComboBox();
+            label6 = new Label();
             SuspendLayout();
             // 
             // button2
@@ -53,6 +60,7 @@
             button2.TabIndex = 75;
             button2.Text = "返回";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -63,10 +71,11 @@
             button1.TabIndex = 74;
             button1.Text = "确定";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // textBox15
             // 
-            textBox15.Location = new Point(468, 160);
+            textBox15.Location = new Point(219, 217);
             textBox15.Margin = new Padding(2);
             textBox15.Name = "textBox15";
             textBox15.Size = new Size(123, 27);
@@ -74,7 +83,7 @@
             // 
             // textBox16
             // 
-            textBox16.Location = new Point(468, 96);
+            textBox16.Location = new Point(452, 96);
             textBox16.Margin = new Padding(2);
             textBox16.Name = "textBox16";
             textBox16.Size = new Size(123, 27);
@@ -83,12 +92,12 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(378, 162);
+            label15.Location = new Point(385, 222);
             label15.Margin = new Padding(2, 0, 2, 0);
             label15.Name = "label15";
-            label15.Size = new Size(54, 20);
+            label15.Size = new Size(84, 20);
             label15.TabIndex = 59;
-            label15.Text = "入库人";
+            label15.Text = "入库人编号";
             // 
             // label16
             // 
@@ -120,7 +129,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(378, 99);
+            label2.Location = new Point(385, 99);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(39, 20);
@@ -140,7 +149,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(123, 267);
+            label3.Location = new Point(126, 274);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(69, 20);
@@ -149,14 +158,14 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(219, 267);
+            dateTimePicker1.Location = new Point(219, 274);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(250, 27);
             dateTimePicker1.TabIndex = 78;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(219, 216);
+            textBox3.Location = new Point(473, 219);
             textBox3.Margin = new Padding(2);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(123, 27);
@@ -165,18 +174,93 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(129, 218);
+            label4.Location = new Point(127, 224);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(69, 20);
+            label4.Size = new Size(54, 20);
             label4.TabIndex = 79;
-            label4.Text = "入库类别";
+            label4.Text = "入库人";
+            // 
+            // button3
+            // 
+            button3.Location = new Point(329, 97);
+            button3.Name = "button3";
+            button3.Size = new Size(30, 30);
+            button3.TabIndex = 81;
+            button3.Text = "...";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(329, 158);
+            button4.Name = "button4";
+            button4.Size = new Size(30, 30);
+            button4.TabIndex = 82;
+            button4.Text = "...";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(347, 217);
+            button5.Name = "button5";
+            button5.Size = new Size(30, 30);
+            button5.TabIndex = 83;
+            button5.Text = "...";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(214, 45);
+            textBox4.Margin = new Padding(2);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(123, 27);
+            textBox4.TabIndex = 85;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(127, 45);
+            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(69, 20);
+            label5.TabIndex = 84;
+            label5.Text = "入库单号";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "采购入库", "生产入库", "其它入库" });
+            comboBox1.Location = new Point(452, 162);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(151, 28);
+            comboBox1.TabIndex = 86;
+            comboBox1.Text = "采购入库";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(378, 166);
+            label6.Margin = new Padding(2, 0, 2, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(69, 20);
+            label6.TabIndex = 87;
+            label6.Text = "入库类别";
             // 
             // Is_add
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(846, 471);
+            Controls.Add(label6);
+            Controls.Add(comboBox1);
+            Controls.Add(textBox4);
+            Controls.Add(label5);
+            Controls.Add(button5);
+            Controls.Add(button4);
+            Controls.Add(button3);
             Controls.Add(textBox3);
             Controls.Add(label4);
             Controls.Add(dateTimePicker1);
@@ -201,17 +285,24 @@
         #endregion
         private Button button2;
         private Button button1;
-        private TextBox textBox15;
         private TextBox textBox16;
         private Label label15;
         private Label label16;
-        private TextBox textBox2;
-        private TextBox textBox1;
         private Label label2;
         private Label label1;
         private Label label3;
         private DateTimePicker dateTimePicker1;
-        private TextBox textBox3;
         private Label label4;
+        private Button button3;
+        private Button button4;
+        private Button button5;
+        private TextBox textBox4;
+        private Label label5;
+        public TextBox textBox15;
+        public TextBox textBox2;
+        public TextBox textBox1;
+        private ComboBox comboBox1;
+        private Label label6;
+        public TextBox textBox3;
     }
 }
