@@ -21,6 +21,7 @@ namespace WinFormsApp1.基础信息管理设置界面
         public partset()
         {
             InitializeComponent();
+            initcombobox();
         }
         private SqlConnection connection()
         {
@@ -39,61 +40,136 @@ namespace WinFormsApp1.基础信息管理设置界面
             da.Fill(dt);
             dataGridView1.DataSource = dt;
             InitModuleTree(dt);
-
         }
+        private void initcombobox()
+        {
+            string strda = "select * from 部门信息表";
+            SqlConnection conn = connection();
+            conn.Open();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(strda, conn);
+            da.Fill(dt);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (dt.Rows[i]["部门名称"].ToString() != "")
+                {
+                    comboBox1.Items.Add(dt.Rows[i]["部门名称"]);
+                }
+            }
+        }
+
         //绑定TrreView
         private void InitModuleTree(DataTable dt)
         {
-            //清空treeview上所有节点
+            // 清空TreeView上的所有节点
             this.treeView1.Nodes.Clear();
-            int[] gen = new int[dt.Rows.Count]; //用于存储父节点Tag
-            int[] zi = new int[dt.Rows.Count];  //用于存储子节点Tag
-            for (int i = 0; i < gen.Length; i++)
+
+            // 用于存储所有根节点
+            for (int i = 0; i < dt.Rows.Count; i++)
             {
-                string zhi = dt.Rows[i]["部门层级"].ToString();//获取节点Tag值   eg：1-2
-                if (zhi.Length > 1)   //表示是子节点   eg：1-2
+                string zhi = dt.Rows[i]["部门层级"].ToString(); // 获取节点层级Tag值 例如：1, 1-2, 1-2-3
+                if (!zhi.Contains("-")) // 根节点，即只有一层的节点
                 {
-                    gen[i] = int.Parse(zhi.Substring(0, zhi.IndexOf('-')));
-                    zi[i] = int.Parse(zhi.Substring(zhi.IndexOf('-') + 1));
-                }
-                else    //表示是根节点   eg：2
-                {
-                    //将所有父节点加到treeview上
-                    zi[i] = int.Parse(zhi);
-                    TreeNode nodeParent = new TreeNode();
-                    nodeParent.Tag = (zi[i]).ToString();
-                    nodeParent.Text = dt.Rows[i][1].ToString();
-                    treeView1.Nodes.Add(nodeParent);
+                    TreeNode rootNode = new TreeNode
+                    {
+                        Tag = zhi,
+                        Text = dt.Rows[i][1].ToString()
+                    };
+                    treeView1.Nodes.Add(rootNode); // 将根节点添加到TreeView
                 }
             }
-            bindChildNote(dt, gen, zi);
-        }
-        //绑定子节点
-        private void bindChildNote(DataTable dt, int[] gen, int[] zi)
-        {
-            for (int i = 0; i < gen.Length; i++)
+
+            // 调用递归绑定子节点
+            for (int i = 0; i < dt.Rows.Count; i++)
             {
-                if (gen[i] != 0 && zi[i] != 0)        //便利所有节点，找到所有子节点
+                bindChildNote(dt, dt.Rows[i]["部门层级"].ToString());
+            }
+        }
+
+        //绑定子节点
+        private void bindChildNote(DataTable dt, string parentTag)
+        {
+            foreach (DataRow row in dt.Rows)
+            {
+                string zhi = row["部门层级"].ToString(); // 获取当前节点层级Tag值 例如：1-2, 1-2-3
+
+                // 检查当前节点是否是parentTag的直接子节点
+                if (IsDirectChild(parentTag, zhi))
                 {
-                    TreeNode childNode = new TreeNode();
-                    foreach (TreeNode item in treeView1.Nodes)   //便历treeview上所有父节点
+                    string[] levels = zhi.Split('-');
+                    string currentTag = zhi; // 获取完整层次的Tag
+                    TreeNode childNode = new TreeNode
                     {
-                        if (item.Tag.ToString() == gen[i].ToString())  //找到当前子节点的父节点
+                        Tag = currentTag, // 设置完整的层级Tag
+                        Text = row[1].ToString()
+                    };
+
+                    // 查找父节点
+                    TreeNode parentNode = FindNodeByTag(treeView1.Nodes, parentTag);
+                    if (parentNode != null)
+                    {
+                        // 检查父节点是否已经包含当前子节点，避免重复添加
+                        bool nodeExists = false;
+                        foreach (TreeNode existingNode in parentNode.Nodes)
                         {
-                            childNode.Tag = zi[i].ToString();
-                            childNode.Text = dt.Rows[i][1].ToString();
-                            item.Nodes.Add(childNode);
+                            if (existingNode.Tag.ToString() == currentTag)
+                            {
+                                nodeExists = true;
+                                break;
+                            }
+                        }
+
+                        if (!nodeExists)
+                        {
+                            parentNode.Nodes.Add(childNode);
                         }
                     }
+
+                    // 递归调用，继续查找这个节点的子节点
+                    bindChildNote(dt, zhi);
                 }
             }
-            treeView1.ExpandAll();      //展开整棵树
+
+            treeView1.ExpandAll(); // 展开整棵树
         }
+
+        // 判断是否是直接子节点
+        private bool IsDirectChild(string parentTag, string childTag)
+        {
+            // 判断childTag是否是parentTag的直接子节点，要求childTag比parentTag多一层
+            string[] parentLevels = parentTag.Split('-');
+            string[] childLevels = childTag.Split('-');
+
+            return childLevels.Length == parentLevels.Length + 1 && childTag.StartsWith(parentTag + "-");
+        }
+
+
+
+        private TreeNode FindNodeByTag(TreeNodeCollection nodes, string tag)
+        {
+            foreach (TreeNode node in nodes)
+            {
+                if (node.Tag.ToString() == tag)
+                {
+                    return node; // 找到匹配的父节点
+                }
+
+                // 递归查找子节点
+                TreeNode foundNode = FindNodeByTag(node.Nodes, tag);
+                if (foundNode != null)
+                {
+                    return foundNode;
+                }
+            }
+            return null; // 没有找到
+        }
+
+
         private void addDataGridView()
         {
             SqlConnection conn = connection();
             conn.Open();
-            string strda = "insert into 部门信息表(上级部门,部门名称,部门位置,部门负责人,负责人联系电话,部门层级) values('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "')";
+            string strda = "insert into 部门信息表(上级部门,部门名称,部门位置,部门负责人,负责人联系电话,部门层级) values('" + comboBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "')";
             SqlCommand comm = new SqlCommand(strda, conn);
             comm.ExecuteNonQuery();
             conn.Close();
@@ -102,6 +178,8 @@ namespace WinFormsApp1.基础信息管理设置界面
         {
             addDataGridView();
             GetTreeView();
+            SysLogService.AddSysLog(new SysLog("增加部门信息表数据", "触发", LogTye.操作记录, login.login1.userid));
+
             MessageBox.Show("添加成功！");
             this.Close();
         }
@@ -112,6 +190,29 @@ namespace WinFormsApp1.基础信息管理设置界面
             {
                 this.Close();
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string strda = "select * from 部门信息表";
+            SqlConnection conn = connection();
+            conn.Open();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(strda, conn);
+            da.Fill(dt);
+            int k = 1;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (comboBox1.Text.ToString() == dt.Rows[i]["部门名称"].ToString())
+                {
+                    textBox6.Text = dt.Rows[i]["部门层级"].ToString() + "-";
+                }
+                if (comboBox1.Text.ToString() == dt.Rows[i]["上级部门"].ToString())
+                {
+                    k++;
+                }
+            }
+            textBox6.Text += k.ToString();
         }
     }
 }

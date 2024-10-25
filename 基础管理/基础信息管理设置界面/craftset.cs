@@ -62,6 +62,8 @@ namespace WinFormsApp1.基础信息管理设置界面
             addDataGridView();
             GetDataGridView();
             MessageBox.Show("添加成功！");
+            SysLogService.AddSysLog(new SysLog("增加工艺路线表数据", "触发", LogTye.操作记录, login.login1.userid));
+
             this.Close();
         }
 

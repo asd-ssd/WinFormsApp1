@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -51,7 +52,8 @@ namespace WinFormsApp1.基础信息管理设置界面
         {
             SqlConnection conn = connection();
             conn.Open();
-            string strda = "insert into BOM表(层次号,父项编码,物料编码,物料名称,物料分类,安全库存量,提前期,计量单位,单位用量,材料费用,人工费用,制造费用,单价) values('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "','" + textBox7.Text + "','" + textBox8.Text + "','" + textBox9.Text + "','" + textBox10.Text + "','" + textBox11.Text + "','" + textBox12.Text + "','" + textBox13.Text + "')";
+            float sum = float.Parse(textBox10.Text.Trim())+ float.Parse(textBox11.Text.Trim())+ float.Parse(textBox12.Text.Trim());
+            string strda = "insert into BOM表(层次号,父项编码,物料编码,物料名称,物料分类,安全库存量,提前期,计量单位,单位用量,材料费用,人工费用,制造费用,单价,物料来源,小计) values('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + comboBox2.Text + "','" + textBox6.Text + "','" + textBox7.Text + "','" + textBox8.Text + "','" + textBox9.Text + "','" + textBox10.Text + "','" + textBox11.Text + "','" + textBox12.Text + "','" + textBox13.Text + "','" + comboBox1.Text + "','" + sum.ToString() + "')";
             SqlCommand comm = new SqlCommand(strda, conn);
             comm.ExecuteNonQuery();
             conn.Close();
@@ -90,6 +92,7 @@ namespace WinFormsApp1.基础信息管理设置界面
             addDataGridView();
             GetDataGridView();
             MessageBox.Show("添加成功！");
+            SysLogService.AddSysLog(new SysLog("新增BOM表数据", "触发", LogTye.操作记录, login.login1.userid));
             this.Close();
         }
 

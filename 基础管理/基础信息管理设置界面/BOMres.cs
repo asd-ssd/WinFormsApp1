@@ -51,9 +51,9 @@ namespace WinFormsApp1
             {
                 selectsql += "and 物料名称 like'%" + textBox4.Text + "%'";
             }
-            if (textBox5.Text != "")
+            if (comboBox2.Text != "")
             {
-                selectsql += "and 物料分类 like'%" + textBox5.Text + "%'";
+                selectsql += "and 物料分类 like'%" + comboBox2.Text + "%'";
             }
             if (textBox6.Text != "")
             {
@@ -90,6 +90,10 @@ namespace WinFormsApp1
             if (textBox14.Text != "")
             {
                 selectsql += "and 小计 like'%" + textBox14.Text + "%'";
+            }
+            if (comboBox1.Text != "")
+            {
+                selectsql += "and 物料来源 like'%" + comboBox1.Text + "%'";
             }
             SqlConnection conn = connection();
             conn.Open();

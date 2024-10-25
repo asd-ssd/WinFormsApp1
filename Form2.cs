@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,8 +33,13 @@ namespace WinFormsApp1
         {
             InitializeComponent();
             form = this;
+            this.FormClosed += Form2_FormClosed;
         }
-
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // 退出整个应用程序
+            Application.Exit();
+        }
         private void Form2_Load(object sender, EventArgs e)
         {
             work1 = new workplatform();    //实例化work1
@@ -73,81 +79,20 @@ namespace WinFormsApp1
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void label7_Click(object sender, EventArgs e)
         {
 
         }
 
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            this.toolStripStatusLabel3.Text = "系统当前时间：" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
-        }
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -192,6 +137,21 @@ namespace WinFormsApp1
             panel1.Controls.Clear();    //清空原容器上的控件
             panel1.Controls.Add(systemcon1);    //将窗体一加入容器panel1
             panel2.Controls.Clear();    //清空原容器上的控件
+        }
+
+        private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("你确定要退出系统吗？", "退出确认", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            // 如果用户点击"是"，则退出应用程序
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            this.toolStripStatusLabel3.Text = "系统当前时间：" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
         }
     }
 }

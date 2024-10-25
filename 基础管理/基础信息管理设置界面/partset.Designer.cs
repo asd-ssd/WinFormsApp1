@@ -34,7 +34,6 @@
             label16 = new Label();
             textBox4 = new TextBox();
             textBox2 = new TextBox();
-            textBox1 = new TextBox();
             label4 = new Label();
             label1 = new Label();
             button1 = new Button();
@@ -92,13 +91,6 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(150, 30);
             textBox2.TabIndex = 85;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(244, 59);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(150, 30);
-            textBox1.TabIndex = 84;
             // 
             // label4
             // 
@@ -164,10 +156,11 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(244, 12);
+            comboBox1.Location = new Point(232, 54);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(182, 32);
             comboBox1.TabIndex = 100;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // partset
             // 
@@ -187,7 +180,6 @@
             Controls.Add(label16);
             Controls.Add(textBox4);
             Controls.Add(textBox2);
-            Controls.Add(textBox1);
             Controls.Add(label4);
             Controls.Add(label1);
             Name = "partset";
@@ -204,7 +196,6 @@
         private Label label16;
         private TextBox textBox4;
         private TextBox textBox2;
-        private TextBox textBox1;
         private Label label4;
         private Label label1;
         private Button button1;

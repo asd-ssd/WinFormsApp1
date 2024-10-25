@@ -112,6 +112,7 @@ namespace WinFormsApp1.基础信息管理工作界面
                         conn.Close();
                     }
                 }
+                SysLogService.AddSysLog(new SysLog("修改工艺路线表数据", "触发", LogTye.操作记录, login.login1.userid));
                 GetDataGridView();
                 n = 0;
                 button6.Visible = false;
@@ -131,7 +132,30 @@ namespace WinFormsApp1.基础信息管理工作界面
                 strcomm = new string[100];
             }
         }
-
-        
+        //删除
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("确实要删除该行吗?", "询问", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                DataGridViewSelectedRowCollection selectedRows = dataGridView2.SelectedRows;
+                foreach (DataGridViewRow row in selectedRows)
+                {
+                    //获取要删除行的ID值
+                    string id = row.Cells["工序号"].Value.ToString();
+                    string delesql = "DELETE FROM BOM表 WHERE 工序号 = @工序号";
+                    using (SqlConnection conn = connection())
+                    {
+                        using (SqlCommand comm = new SqlCommand(delesql, conn))
+                        {
+                            comm.Parameters.AddWithValue("@工序号", id);
+                            conn.Open();
+                            comm.ExecuteNonQuery();
+                        }
+                    }
+                    dataGridView2.Rows.Remove(row);
+                }
+                SysLogService.AddSysLog(new SysLog("删除工艺路线表数据", "触发", LogTye.操作记录, login.login1.userid));
+            }
+        }
     }
 }

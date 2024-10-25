@@ -95,6 +95,8 @@ namespace WinFormsApp1.工作界面
         {
             addDataGridView();
             GetDataGridView();
+            SysLogService.AddSysLog(new SysLog("增加员工信息表数据", "触发", LogTye.操作记录, login.login1.userid));
+
             MessageBox.Show("添加成功！");
             this.Close();
         }

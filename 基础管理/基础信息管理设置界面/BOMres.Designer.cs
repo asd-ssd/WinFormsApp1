@@ -38,7 +38,6 @@
             textBox9 = new TextBox();
             textBox6 = new TextBox();
             label8 = new Label();
-            textBox5 = new TextBox();
             label6 = new Label();
             label10 = new Label();
             label12 = new Label();
@@ -59,6 +58,9 @@
             label1 = new Label();
             textBox14 = new TextBox();
             label11 = new Label();
+            label14 = new Label();
+            comboBox1 = new ComboBox();
+            comboBox2 = new ComboBox();
             SuspendLayout();
             // 
             // button2
@@ -143,13 +145,6 @@
             label8.Size = new Size(100, 24);
             label8.TabIndex = 128;
             label8.Text = "安全库存量";
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(233, 316);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(150, 30);
-            textBox5.TabIndex = 127;
             // 
             // label6
             // 
@@ -317,11 +312,41 @@
             label11.TabIndex = 135;
             label11.Text = "小计";
             // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(108, 723);
+            label14.Name = "label14";
+            label14.Size = new Size(82, 24);
+            label14.TabIndex = 137;
+            label14.Text = "物料来源";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "采购", "生产" });
+            comboBox1.Location = new Point(233, 723);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(150, 32);
+            comboBox1.TabIndex = 139;
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "A类", "B类", "C类" });
+            comboBox2.Location = new Point(233, 314);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(150, 32);
+            comboBox2.TabIndex = 140;
+            // 
             // BOMres
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 912);
+            Controls.Add(comboBox2);
+            Controls.Add(comboBox1);
+            Controls.Add(label14);
             Controls.Add(textBox14);
             Controls.Add(label11);
             Controls.Add(textBox13);
@@ -331,7 +356,6 @@
             Controls.Add(textBox9);
             Controls.Add(textBox6);
             Controls.Add(label8);
-            Controls.Add(textBox5);
             Controls.Add(label6);
             Controls.Add(label10);
             Controls.Add(label12);
@@ -370,7 +394,6 @@
         private TextBox textBox9;
         private TextBox textBox6;
         private Label label8;
-        private TextBox textBox5;
         private Label label6;
         private Label label10;
         private Label label12;
@@ -391,5 +414,8 @@
         private Label label1;
         private TextBox textBox14;
         private Label label11;
+        private Label label14;
+        private ComboBox comboBox1;
+        private ComboBox comboBox2;
     }
 }

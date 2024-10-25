@@ -172,6 +172,7 @@
             treeView1.Size = new Size(362, 818);
             treeView1.TabIndex = 0;
             treeView1.AfterSelect += treeView1_AfterSelect_1;
+            treeView1.NodeMouseDoubleClick += TreeView1_NodeMouseDoubleClick;
             // 
             // dataGridView1
             // 
@@ -199,6 +200,8 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
+
+
 
 
 

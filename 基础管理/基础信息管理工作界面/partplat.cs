@@ -43,61 +43,113 @@ namespace WinFormsApp1.基础信息管理工作界面
             da.Fill(dt);
             dataGridView1.DataSource = dt;
             InitModuleTree(dt);
-            
         }
         //绑定TrreView
         private void InitModuleTree(DataTable dt)
         {
-            //清空treeview上所有节点
+            // 清空TreeView上的所有节点
             this.treeView1.Nodes.Clear();
-            int[] gen = new int[dt.Rows.Count]; //用于存储父节点Tag
-            int[] zi = new int[dt.Rows.Count];  //用于存储子节点Tag
-            for (int i = 0; i < gen.Length; i++)
+
+            // 用于存储所有根节点
+            for (int i = 0; i < dt.Rows.Count; i++)
             {
-                string zhi = dt.Rows[i]["部门层级"].ToString();//获取节点Tag值   eg：1-2
-                if (zhi.Length > 1)   //表示是子节点   eg：1-2
+                string zhi = dt.Rows[i]["部门层级"].ToString(); // 获取节点层级Tag值 例如：1, 1-2, 1-2-3
+                if (!zhi.Contains("-")) // 根节点，即只有一层的节点
                 {
-                    gen[i] = int.Parse(zhi.Substring(0, zhi.IndexOf('-')));
-                    zi[i] = int.Parse(zhi.Substring(zhi.IndexOf('-') + 1));
-                }
-                else    //表示是根节点   eg：2
-                {
-                    //将所有父节点加到treeview上
-                    zi[i] = int.Parse(zhi);
-                    TreeNode nodeParent = new TreeNode();
-                    nodeParent.Tag = (zi[i]).ToString();
-                    nodeParent.Text = dt.Rows[i][1].ToString();
-                    treeView1.Nodes.Add(nodeParent);
+                    TreeNode rootNode = new TreeNode
+                    {
+                        Tag = zhi,
+                        Text = dt.Rows[i][1].ToString()
+                    };
+                    treeView1.Nodes.Add(rootNode); // 将根节点添加到TreeView
                 }
             }
-            bindChildNote(dt, gen, zi);
+
+            // 调用递归绑定子节点
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                bindChildNote(dt, dt.Rows[i]["部门层级"].ToString());
+            }
         }
         //绑定子节点
-        private void bindChildNote(DataTable dt, int[] gen, int[] zi)
+        private void bindChildNote(DataTable dt, string parentTag)
         {
-            for (int i = 0; i < gen.Length; i++)
+            foreach (DataRow row in dt.Rows)
             {
-                if (gen[i] != 0 && zi[i] != 0)        //便利所有节点，找到所有子节点
+                string zhi = row["部门层级"].ToString(); // 获取当前节点层级Tag值 例如：1-2, 1-2-3
+
+                // 检查当前节点是否是parentTag的直接子节点
+                if (IsDirectChild(parentTag, zhi))
                 {
-                    TreeNode childNode = new TreeNode();
-                    foreach (TreeNode item in treeView1.Nodes)   //便历treeview上所有父节点
+                    string[] levels = zhi.Split('-');
+                    string currentTag = zhi; // 获取完整层次的Tag
+                    TreeNode childNode = new TreeNode
                     {
-                        if (item.Tag.ToString() == gen[i].ToString())  //找到当前子节点的父节点
+                        Tag = currentTag, // 设置完整的层级Tag
+                        Text = row[1].ToString()
+                    };
+
+                    // 查找父节点
+                    TreeNode parentNode = FindNodeByTag(treeView1.Nodes, parentTag);
+                    if (parentNode != null)
+                    {
+                        // 检查父节点是否已经包含当前子节点，避免重复添加
+                        bool nodeExists = false;
+                        foreach (TreeNode existingNode in parentNode.Nodes)
                         {
-                            childNode.Tag = zi[i].ToString();
-                            childNode.Text = dt.Rows[i][1].ToString();
-                            item.Nodes.Add(childNode);
+                            if (existingNode.Tag.ToString() == currentTag)
+                            {
+                                nodeExists = true;
+                                break;
+                            }
+                        }
+
+                        if (!nodeExists)
+                        {
+                            parentNode.Nodes.Add(childNode);
                         }
                     }
+
+                    // 递归调用，继续查找这个节点的子节点
+                    bindChildNote(dt, zhi);
                 }
             }
-            treeView1.ExpandAll();      //展开整棵树
+
+            treeView1.ExpandAll(); // 展开整棵树
+        }
+        // 判断是否是直接子节点
+        private bool IsDirectChild(string parentTag, string childTag)
+        {
+            // 判断childTag是否是parentTag的直接子节点，要求childTag比parentTag多一层
+            string[] parentLevels = parentTag.Split('-');
+            string[] childLevels = childTag.Split('-');
+
+            return childLevels.Length == parentLevels.Length + 1 && childTag.StartsWith(parentTag + "-");
+        }
+        private TreeNode FindNodeByTag(TreeNodeCollection nodes, string tag)
+        {
+            foreach (TreeNode node in nodes)
+            {
+                if (node.Tag.ToString() == tag)
+                {
+                    return node; // 找到匹配的父节点
+                }
+
+                // 递归查找子节点
+                TreeNode foundNode = FindNodeByTag(node.Nodes, tag);
+                if (foundNode != null)
+                {
+                    return foundNode;
+                }
+            }
+            return null; // 没有找到
         }
 
         private void treeView1_AfterSelect_1(object sender, TreeViewEventArgs e)
         {
 
         }
+
         //刷新
         private void button1_Click(object sender, EventArgs e)
         {
@@ -154,6 +206,8 @@ namespace WinFormsApp1.基础信息管理工作界面
                     }
                     dataGridView1.Rows.Remove(row);
                 }
+                SysLogService.AddSysLog(new SysLog("删除部门信息表数据", "触发", LogTye.操作记录, login.login1.userid));
+
                 GetTreeView();
             }
         }
@@ -172,6 +226,7 @@ namespace WinFormsApp1.基础信息管理工作界面
                         conn.Close();
                     }
                 }
+                SysLogService.AddSysLog(new SysLog("修改部门信息表数据", "触发", LogTye.操作记录, login.login1.userid));
                 GetTreeView();
                 n = 0;
                 button6.Visible = false;
@@ -192,5 +247,75 @@ namespace WinFormsApp1.基础信息管理工作界面
                 strcomm = new string[100];
             }
         }
+
+        private void TreeView1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            TreeNode selectedNode = e.Node;
+
+            // 创建一个集合存储所有相关节点（包括子节点、孙节点等）
+            List<TreeNode> allNodes = new List<TreeNode>();
+
+            // 获取当前节点及其所有子节点
+            GetAllChildNodes(selectedNode, allNodes);
+
+            // 查询这些节点的数据库信息
+            QueryNodesInfoFromDatabase(allNodes);
+        }
+        private void GetAllChildNodes(TreeNode node, List<TreeNode> nodeList)
+        {
+            // 添加当前节点到列表
+            nodeList.Add(node);
+
+            // 递归获取所有子节点
+            foreach (TreeNode childNode in node.Nodes)
+            {
+                GetAllChildNodes(childNode, nodeList);
+            }
+        }
+
+        private void QueryNodesInfoFromDatabase(List<TreeNode> nodes)
+        {
+            // 定义数据库连接字符串
+
+            // 定义SQL查询，
+            string query = "SELECT * FROM 部门信息表 WHERE 部门层级 like @NodeTag ";
+
+            // 使用ADO.NET查询数据库
+            using (SqlConnection connection1 = connection())
+            {
+                // 创建DataTable来存储所有结果
+                DataTable allNodesInfo = new DataTable();
+
+                foreach (TreeNode node in nodes)
+                {
+                    string nodeTag = node.Tag.ToString();
+
+                    // 使用SqlDataAdapter来执行查询
+                    SqlDataAdapter da = new SqlDataAdapter(query, connection1);
+                    da.SelectCommand.Parameters.AddWithValue("@NodeTag", nodeTag);
+
+                    try
+                    {
+                        // 填充DataTable
+                        connection1.Open();
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        connection1.Close();
+
+                        // 合并到总的DataTable中
+                        allNodesInfo.Merge(dt);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"查询数据库时出错: {ex.Message}");
+                    }
+                }
+
+                // 将结果绑定到DataGridView
+                dataGridView1.DataSource = allNodesInfo;
+            }
+        
+        }
+
     }
 }

@@ -30,12 +30,11 @@
         {
             components = new System.ComponentModel.Container();
             menuStrip1 = new MenuStrip();
-            帮助ToolStripMenuItem = new ToolStripMenuItem();
-            主菜单ToolStripMenuItem = new ToolStripMenuItem();
             文件ToolStripMenuItem = new ToolStripMenuItem();
-            注销ToolStripMenuItem = new ToolStripMenuItem();
             修改密码ToolStripMenuItem = new ToolStripMenuItem();
             退出ToolStripMenuItem = new ToolStripMenuItem();
+            帮助ToolStripMenuItem = new ToolStripMenuItem();
+            主菜单ToolStripMenuItem = new ToolStripMenuItem();
             tableLayoutPanel1 = new TableLayoutPanel();
             pictureBox5 = new PictureBox();
             pictureBox6 = new PictureBox();
@@ -74,14 +73,34 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(24, 24);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { 帮助ToolStripMenuItem, 主菜单ToolStripMenuItem, 文件ToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { 文件ToolStripMenuItem, 帮助ToolStripMenuItem, 主菜单ToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(9, 3, 0, 3);
-            menuStrip1.RightToLeft = RightToLeft.Yes;
-            menuStrip1.Size = new Size(2542, 46);
+            menuStrip1.Size = new Size(2179, 46);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
+            // 
+            // 文件ToolStripMenuItem
+            // 
+            文件ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { 修改密码ToolStripMenuItem, 退出ToolStripMenuItem });
+            文件ToolStripMenuItem.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            文件ToolStripMenuItem.Name = "文件ToolStripMenuItem";
+            文件ToolStripMenuItem.Size = new Size(87, 40);
+            文件ToolStripMenuItem.Text = "用户";
+            // 
+            // 修改密码ToolStripMenuItem
+            // 
+            修改密码ToolStripMenuItem.Name = "修改密码ToolStripMenuItem";
+            修改密码ToolStripMenuItem.Size = new Size(232, 44);
+            修改密码ToolStripMenuItem.Text = "修改密码";
+            // 
+            // 退出ToolStripMenuItem
+            // 
+            退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
+            退出ToolStripMenuItem.Size = new Size(232, 44);
+            退出ToolStripMenuItem.Text = "退出";
+            退出ToolStripMenuItem.Click += 退出ToolStripMenuItem_Click;
             // 
             // 帮助ToolStripMenuItem
             // 
@@ -97,32 +116,6 @@
             主菜单ToolStripMenuItem.Size = new Size(87, 40);
             主菜单ToolStripMenuItem.Text = "菜单";
             主菜单ToolStripMenuItem.Click += 主菜单ToolStripMenuItem_Click;
-            // 
-            // 文件ToolStripMenuItem
-            // 
-            文件ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { 注销ToolStripMenuItem, 修改密码ToolStripMenuItem, 退出ToolStripMenuItem });
-            文件ToolStripMenuItem.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            文件ToolStripMenuItem.Name = "文件ToolStripMenuItem";
-            文件ToolStripMenuItem.Size = new Size(87, 40);
-            文件ToolStripMenuItem.Text = "用户";
-            // 
-            // 注销ToolStripMenuItem
-            // 
-            注销ToolStripMenuItem.Name = "注销ToolStripMenuItem";
-            注销ToolStripMenuItem.Size = new Size(232, 44);
-            注销ToolStripMenuItem.Text = "个人资料";
-            // 
-            // 修改密码ToolStripMenuItem
-            // 
-            修改密码ToolStripMenuItem.Name = "修改密码ToolStripMenuItem";
-            修改密码ToolStripMenuItem.Size = new Size(232, 44);
-            修改密码ToolStripMenuItem.Text = "修改密码";
-            // 
-            // 退出ToolStripMenuItem
-            // 
-            退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            退出ToolStripMenuItem.Size = new Size(232, 44);
-            退出ToolStripMenuItem.Text = "退出";
             // 
             // tableLayoutPanel1
             // 
@@ -381,9 +374,9 @@
             statusStrip1.Font = new Font("Microsoft YaHei UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
             statusStrip1.ImageScalingSize = new Size(24, 24);
             statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1, toolStripStatusLabel3, toolStripStatusLabel2 });
-            statusStrip1.Location = new Point(0, 1531);
+            statusStrip1.Location = new Point(0, 1307);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(2542, 39);
+            statusStrip1.Size = new Size(2179, 39);
             statusStrip1.TabIndex = 20;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -403,9 +396,13 @@
             // 
             toolStripStatusLabel2.BorderSides = ToolStripStatusLabelBorderSides.Left | ToolStripStatusLabelBorderSides.Right;
             toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            toolStripStatusLabel2.Size = new Size(2266, 32);
+            toolStripStatusLabel2.Size = new Size(1903, 32);
             toolStripStatusLabel2.Spring = true;
             toolStripStatusLabel2.Text = " ";
+            // 
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick_1;
             // 
             // Form2
             // 
@@ -415,7 +412,7 @@
             BackgroundImage = Properties.Resources._true;
             BackgroundImageLayout = ImageLayout.Stretch;
             CausesValidation = false;
-            ClientSize = new Size(2542, 1570);
+            ClientSize = new Size(2179, 1346);
             Controls.Add(statusStrip1);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -427,9 +424,10 @@
             Margin = new Padding(5, 4, 5, 4);
             Name = "Form2";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form2";
+            Text = "橘猫ERP系统";
             WindowState = FormWindowState.Maximized;
             Load += Form2_Load;
+            
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
@@ -452,7 +450,6 @@
         private ToolStripMenuItem 文件ToolStripMenuItem;
         private ToolStripMenuItem 主菜单ToolStripMenuItem;
         private ToolStripMenuItem 帮助ToolStripMenuItem;
-        private ToolStripMenuItem 注销ToolStripMenuItem;
         private ToolStripMenuItem 修改密码ToolStripMenuItem;
         private ToolStripMenuItem 退出ToolStripMenuItem;
         private TableLayoutPanel tableLayoutPanel1;

@@ -91,6 +91,7 @@ namespace WinFormsApp1.工作界面
                     }
                     dataGridView1.Rows.Remove(row);
                 }
+                SysLogService.AddSysLog(new SysLog("删除BOM表数据", "触发", LogTye.操作记录, login.login1.userid));
             }
         }
         //修改
@@ -125,7 +126,7 @@ namespace WinFormsApp1.工作界面
                         conn.Close();
                     }
                 }
-
+                SysLogService.AddSysLog(new SysLog("修改BOM表数据", "触发", LogTye.操作记录, login.login1.userid));
                 GetDataGridView();
                 n = 0;
 
