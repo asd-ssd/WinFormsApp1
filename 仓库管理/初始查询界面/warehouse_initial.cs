@@ -45,6 +45,7 @@ namespace WinFormsApp1.仓库管理.初始查询界面
         }
         private void warehouse_initial_Load(object sender, EventArgs e)
         {
+
             GetDataGridView();
         }
         int n = 0;
@@ -73,6 +74,7 @@ namespace WinFormsApp1.仓库管理.初始查询界面
         private void button12_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("确定要修改数据吗？", "询问", MessageBoxButtons.YesNo) == DialogResult.Yes)
+
             {
                 SqlConnection conn = connection();
                 for (int i = 0; i < n; i++)

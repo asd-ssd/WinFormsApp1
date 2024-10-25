@@ -71,6 +71,7 @@ namespace WinFormsApp1.仓库管理.入库界面
         {
             string selectsql = "select * from 入库单表 where 1=1";
             /*if (textBox1.Text != "")
+
             {
                 selectsql += "and 物料名称 like'%" + textBox1.Text + "%'";
             }*/
