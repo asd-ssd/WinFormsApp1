@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WinFormsApp1.仓库管理.库存盘点界面
 {
-    public partial class count_push : UserControl
+    public partial class count_push_new : Form
     {
-        public count_push()
+        public count_push_new()
         {
             InitializeComponent();
         }

@@ -8,14 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.仓库管理.出库界面;
 
 namespace WinFormsApp1.仓库管理.初始查询界面
 {
     public partial class warehouse_initial : UserControl
     {
+        public warehouse_initial_add warehouse_add1;
+        public static warehouse_initial warehouse_initial1;
         public warehouse_initial()
         {
             InitializeComponent();
+            warehouse_initial1 = this; 
         }
         private SqlConnection connection()
         {
@@ -135,6 +139,12 @@ namespace WinFormsApp1.仓库管理.初始查询界面
         private void button8_Click(object sender, EventArgs e)
         {
             GetDataGridView();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            warehouse_add1 = new warehouse_initial_add();
+            warehouse_add1.Show();
         }
     }
 }

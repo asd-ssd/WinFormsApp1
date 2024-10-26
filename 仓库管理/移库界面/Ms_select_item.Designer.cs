@@ -1,6 +1,6 @@
-﻿namespace WinFormsApp1.仓库管理.出库界面
+﻿namespace WinFormsApp1.仓库管理.移库界面
 {
-    partial class Os_select_item
+    partial class Ms_select_item
     {
         /// <summary>
         /// Required designer variable.
@@ -63,7 +63,7 @@
             // 
             // button7
             // 
-            button7.Location = new Point(27, 6);
+            button7.Location = new Point(355, 16);
             button7.Name = "button7";
             button7.Size = new Size(47, 43);
             button7.TabIndex = 83;
@@ -74,7 +74,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(117, 39);
+            label2.Location = new Point(40, 43);
             label2.Name = "label2";
             label2.Size = new Size(69, 20);
             label2.TabIndex = 82;
@@ -82,7 +82,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(267, 36);
+            textBox2.Location = new Point(190, 40);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(125, 27);
             textBox2.TabIndex = 81;
@@ -90,7 +90,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(132, 6);
+            label1.Location = new Point(55, 10);
             label1.Name = "label1";
             label1.Size = new Size(54, 20);
             label1.TabIndex = 80;
@@ -98,7 +98,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(267, -1);
+            textBox1.Location = new Point(190, 3);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(125, 27);
             textBox1.TabIndex = 79;
@@ -111,9 +111,8 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(746, 379);
             dataGridView1.TabIndex = 78;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // Os_select_item
+            // Ms_select_item
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -126,8 +125,9 @@
             Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(dataGridView1);
-            Name = "Os_select_item";
-            Text = "Os_select_item";
+            Name = "Ms_select_item";
+            Text = "Ms_select_item";
+            Load += Ms_select_item_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

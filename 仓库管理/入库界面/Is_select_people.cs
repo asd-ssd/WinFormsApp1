@@ -83,7 +83,13 @@ namespace WinFormsApp1.仓库管理.入库界面
 
         private void button1_Click(object sender, EventArgs e)
         {
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            {
+                //获取要选中行的ID值
+                Is_select_people_number = row.Cells["员工编号"].Value.ToString();
+                Is_select_people_name = row.Cells["员工姓名"].Value.ToString();
 
+            }
             Is_select_people_textBox1.Text = Is_select_people_name;
             Is_select_people_textBox2.Text = Is_select_people_number;
             this.Close();
@@ -92,8 +98,8 @@ namespace WinFormsApp1.仓库管理.入库界面
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Is_select_people_name=dataGridView1.Rows[e.RowIndex].Cells["员工姓名"].Value.ToString();
-            Is_select_people_number = dataGridView1.Rows[e.RowIndex].Cells["员工编号"].Value.ToString();
+          /*  Is_select_people_name=dataGridView1.Rows[e.RowIndex].Cells["员工姓名"].Value.ToString();
+            Is_select_people_number = dataGridView1.Rows[e.RowIndex].Cells["员工编号"].Value.ToString();*/
 
         }
     }

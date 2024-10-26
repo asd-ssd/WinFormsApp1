@@ -29,35 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(warehouse_usercontrol));
-            warehouse_move = new Button();
             warehouse_in = new Button();
+            warehouse_move = new Button();
             warehouse_edit = new Button();
-            warehouse_out = new Button();
             warehouse_inquiry = new Button();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            tableLayoutPanel1.SuspendLayout();
+            warehouse_out = new Button();
+            saleformlable1 = new Label();
+            label1 = new Label();
+            label3 = new Label();
             SuspendLayout();
-            // 
-            // warehouse_move
-            // 
-            warehouse_move.BackgroundImage = (Image)resources.GetObject("warehouse_move.BackgroundImage");
-            warehouse_move.BackgroundImageLayout = ImageLayout.Zoom;
-            warehouse_move.Font = new Font("宋体", 7.5F);
-            warehouse_move.Location = new Point(3, 527);
-            warehouse_move.Name = "warehouse_move";
-            warehouse_move.Size = new Size(80, 105);
-            warehouse_move.TabIndex = 4;
-            warehouse_move.Text = "物料移库";
-            warehouse_move.TextAlign = ContentAlignment.BottomCenter;
-            warehouse_move.UseVisualStyleBackColor = true;
-            warehouse_move.Click += warehouse_move_Click;
             // 
             // warehouse_in
             // 
             warehouse_in.BackgroundImage = (Image)resources.GetObject("warehouse_in.BackgroundImage");
             warehouse_in.BackgroundImageLayout = ImageLayout.Zoom;
             warehouse_in.Font = new Font("宋体", 7.5F);
-            warehouse_in.Location = new Point(3, 265);
+            warehouse_in.Location = new Point(3, 419);
             warehouse_in.Name = "warehouse_in";
             warehouse_in.Size = new Size(80, 105);
             warehouse_in.TabIndex = 2;
@@ -66,12 +53,26 @@
             warehouse_in.UseVisualStyleBackColor = true;
             warehouse_in.Click += warehouse_in_Click;
             // 
+            // warehouse_move
+            // 
+            warehouse_move.BackgroundImage = (Image)resources.GetObject("warehouse_move.BackgroundImage");
+            warehouse_move.BackgroundImageLayout = ImageLayout.Zoom;
+            warehouse_move.Font = new Font("宋体", 7.5F);
+            warehouse_move.Location = new Point(203, 419);
+            warehouse_move.Name = "warehouse_move";
+            warehouse_move.Size = new Size(80, 105);
+            warehouse_move.TabIndex = 4;
+            warehouse_move.Text = "物料移库";
+            warehouse_move.TextAlign = ContentAlignment.BottomCenter;
+            warehouse_move.UseVisualStyleBackColor = true;
+            warehouse_move.Click += warehouse_move_Click;
+            // 
             // warehouse_edit
             // 
             warehouse_edit.BackgroundImage = (Image)resources.GetObject("warehouse_edit.BackgroundImage");
             warehouse_edit.BackgroundImageLayout = ImageLayout.Zoom;
             warehouse_edit.Font = new Font("宋体", 7.5F);
-            warehouse_edit.Location = new Point(3, 134);
+            warehouse_edit.Location = new Point(3, 221);
             warehouse_edit.Name = "warehouse_edit";
             warehouse_edit.Size = new Size(80, 105);
             warehouse_edit.TabIndex = 5;
@@ -80,12 +81,26 @@
             warehouse_edit.UseVisualStyleBackColor = true;
             warehouse_edit.Click += warehouse_edit_Click;
             // 
+            // warehouse_inquiry
+            // 
+            warehouse_inquiry.BackgroundImage = Properties.Resource1.Receiving_goods_query;
+            warehouse_inquiry.BackgroundImageLayout = ImageLayout.Zoom;
+            warehouse_inquiry.Font = new Font("宋体", 7.5F);
+            warehouse_inquiry.Location = new Point(3, 37);
+            warehouse_inquiry.Name = "warehouse_inquiry";
+            warehouse_inquiry.Size = new Size(80, 105);
+            warehouse_inquiry.TabIndex = 0;
+            warehouse_inquiry.Text = "查询与维护";
+            warehouse_inquiry.TextAlign = ContentAlignment.BottomCenter;
+            warehouse_inquiry.UseVisualStyleBackColor = true;
+            warehouse_inquiry.Click += warehouse_inquiry_Click_1;
+            // 
             // warehouse_out
             // 
             warehouse_out.BackgroundImage = (Image)resources.GetObject("warehouse_out.BackgroundImage");
             warehouse_out.BackgroundImageLayout = ImageLayout.Zoom;
             warehouse_out.Font = new Font("宋体", 7.5F);
-            warehouse_out.Location = new Point(3, 396);
+            warehouse_out.Location = new Point(101, 419);
             warehouse_out.Name = "warehouse_out";
             warehouse_out.Size = new Size(80, 105);
             warehouse_out.TabIndex = 3;
@@ -94,62 +109,71 @@
             warehouse_out.UseVisualStyleBackColor = true;
             warehouse_out.Click += warehouse_out_Click;
             // 
-            // warehouse_inquiry
+            // saleformlable1
             // 
-            warehouse_inquiry.BackgroundImage = Properties.Resource1.Receiving_goods_query;
-            warehouse_inquiry.BackgroundImageLayout = ImageLayout.Zoom;
-            warehouse_inquiry.Font = new Font("宋体", 7.5F);
-            warehouse_inquiry.Location = new Point(3, 3);
-            warehouse_inquiry.Name = "warehouse_inquiry";
-            warehouse_inquiry.Size = new Size(80, 105);
-            warehouse_inquiry.TabIndex = 0;
-            warehouse_inquiry.Text = "库存查询";
-            warehouse_inquiry.TextAlign = ContentAlignment.BottomCenter;
-            warehouse_inquiry.UseVisualStyleBackColor = true;
-            warehouse_inquiry.Click += warehouse_inquiry_Click;
+            saleformlable1.AutoSize = true;
+            saleformlable1.Font = new Font("Microsoft YaHei UI", 10.5F, FontStyle.Bold, GraphicsUnit.Point, 134);
+            saleformlable1.ForeColor = SystemColors.Desktop;
+            saleformlable1.Location = new Point(3, 0);
+            saleformlable1.Margin = new Padding(2, 0, 2, 0);
+            saleformlable1.Name = "saleformlable1";
+            saleformlable1.Size = new Size(84, 25);
+            saleformlable1.TabIndex = 18;
+            saleformlable1.Text = "库存维护";
             // 
-            // tableLayoutPanel1
+            // label1
             // 
-            tableLayoutPanel1.Anchor = AnchorStyles.Left;
-            tableLayoutPanel1.ColumnCount = 1;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(warehouse_in, 0, 2);
-            tableLayoutPanel1.Controls.Add(warehouse_move, 0, 4);
-            tableLayoutPanel1.Controls.Add(warehouse_edit, 0, 1);
-            tableLayoutPanel1.Controls.Add(warehouse_inquiry, 0, 0);
-            tableLayoutPanel1.Controls.Add(warehouse_out, 0, 3);
-            tableLayoutPanel1.ForeColor = SystemColors.ControlText;
-            tableLayoutPanel1.Location = new Point(125, 50);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 5;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.Size = new Size(90, 658);
-            tableLayoutPanel1.TabIndex = 6;
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft YaHei UI", 10.5F, FontStyle.Bold, GraphicsUnit.Point, 134);
+            label1.ForeColor = SystemColors.Desktop;
+            label1.Location = new Point(-1, 180);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(84, 25);
+            label1.TabIndex = 19;
+            label1.Text = "库存盘点";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Microsoft YaHei UI", 10.5F, FontStyle.Bold, GraphicsUnit.Point, 134);
+            label3.ForeColor = SystemColors.Desktop;
+            label3.Location = new Point(3, 381);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(84, 25);
+            label3.TabIndex = 21;
+            label3.Text = "库存操作";
             // 
             // warehouse_usercontrol
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.GradientInactiveCaption;
-            Controls.Add(tableLayoutPanel1);
+            BackColor = Color.Transparent;
+            Controls.Add(label3);
+            Controls.Add(label1);
+            Controls.Add(saleformlable1);
+            Controls.Add(warehouse_move);
+            Controls.Add(warehouse_in);
+            Controls.Add(warehouse_out);
+            Controls.Add(warehouse_inquiry);
+            Controls.Add(warehouse_edit);
             Name = "warehouse_usercontrol";
-            Size = new Size(351, 777);
+            Size = new Size(436, 777);
             Load += warehouse_usercontrol_Load;
-            tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Button warehouse_move;
         private Button warehouse_in;
+        private Button warehouse_move;
         private Button warehouse_edit;
-        private Button warehouse_out;
         private Button warehouse_inquiry;
-        private TableLayoutPanel tableLayoutPanel1;
+        private Button warehouse_out;
+        private Label saleformlable1;
+        private Label label1;
+        private Label label3;
     }
 }

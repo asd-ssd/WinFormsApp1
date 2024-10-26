@@ -8,27 +8,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using WinFormsApp1.仓库管理.入库界面;
+//using static System.Windows.Forms.VMsualStyles.VMsualStyleElement;
 
-namespace WinFormsApp1.仓库管理.出库界面
+namespace WinFormsApp1.仓库管理.移库界面
 {
-    public partial class Os_select_item : Form
+    public partial class Ms_select_item : Form
     {
         private int n;
         private string[] strcomm;
-        private string Os_select_item_name;
-        private string Os_select_item_number;
-        public TextBox Os_select_item_textBox1 = Os_add.Os_Add1.textBox1;//绑定Os_add的入库人格
-        public TextBox Os_select_item_textBox2 = Os_add.Os_Add1.textBox5;
-        public Os_select_item()
+        private string Ms_select_item_name;
+        private string Ms_select_item_number;
+        public TextBox Ms_select_item_textBox1 = Ms_add.Ms_Add1.textBox1;//绑定Ms_add的移库人格
+        public TextBox Ms_select_item_textBox2 = Ms_add.Ms_Add1.textBox5;
+        public Ms_select_item()
         {
             InitializeComponent();
             GetDataGridView();
         }
         private SqlConnection connection()
         {
-            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=lwx;Password=luowenxin";
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;PersMst Security Info=True;User ID=lwx;Password=luowenxin";
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
@@ -52,7 +51,6 @@ namespace WinFormsApp1.仓库管理.出库界面
                 MessageBox.Show(ee.Message.ToString());
             }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -60,10 +58,10 @@ namespace WinFormsApp1.仓库管理.出库界面
         private void button7_Click(object sender, EventArgs e)
         {
             string selectsql = "select * from BOM表 where 1=1";
-            if (textBox1.Text != "")
+            /*if (textBox1.Text != "")
             {
                 selectsql += "and 物料名称 like'%" + textBox1.Text + "%'";
-            }
+            }*/
             if (textBox2.Text != "")
             {
                 selectsql += "and 物料编码 like'%" + textBox2.Text + "%'";
@@ -86,16 +84,22 @@ namespace WinFormsApp1.仓库管理.出库界面
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {
                 //获取要选中行的ID值
-                Os_select_item_number = row.Cells["物料编码"].Value.ToString();
-                Os_select_item_name = row.Cells["物料名称"].Value.ToString();
+                Ms_select_item_number = row.Cells["物料编码"].Value.ToString();
+                Ms_select_item_name = row.Cells["物料名称"].Value.ToString();
 
             }
-            Os_select_item_textBox1.Text = Os_select_item_name;
-            Os_select_item_textBox2.Text = Os_select_item_number;
+            Ms_select_item_textBox1.Text = Ms_select_item_name;
+            Ms_select_item_textBox2.Text = Ms_select_item_number;
             this.Close();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+        }
+
+        private void Ms_select_item_Load(object sender, EventArgs e)
         {
 
         }
