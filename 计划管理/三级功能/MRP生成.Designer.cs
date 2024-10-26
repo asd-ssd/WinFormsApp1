@@ -28,88 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            button5 = new Button();
             button3 = new Button();
             panel2 = new Panel();
-            button8 = new Button();
-            button7 = new Button();
             dataGridView1 = new DataGridView();
             label1 = new Label();
-            panel1.SuspendLayout();
+            panel1 = new Panel();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.Gainsboro;
-            panel1.Controls.Add(button5);
-            panel1.Controls.Add(button3);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(857, 74);
-            panel1.TabIndex = 2;
-            // 
-            // button5
-            // 
-            button5.Location = new Point(41, 22);
-            button5.Name = "button5";
-            button5.Size = new Size(159, 30);
-            button5.TabIndex = 4;
-            button5.Text = "需求计算";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
             // 
             // button3
             // 
-            button3.Location = new Point(280, 22);
+            button3.Location = new Point(629, 19);
             button3.Name = "button3";
-            button3.Size = new Size(201, 30);
+            button3.Size = new Size(216, 67);
             button3.TabIndex = 2;
             button3.Text = "车间生产和采购计划生成";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // panel2
             // 
-            panel2.Controls.Add(button8);
-            panel2.Controls.Add(button7);
             panel2.Controls.Add(dataGridView1);
             panel2.Controls.Add(label1);
+            panel2.Controls.Add(panel1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 74);
+            panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(857, 439);
+            panel2.Size = new Size(857, 513);
             panel2.TabIndex = 3;
-            // 
-            // button8
-            // 
-            button8.Location = new Point(730, 399);
-            button8.Name = "button8";
-            button8.Size = new Size(94, 29);
-            button8.TabIndex = 3;
-            button8.Text = "全不选";
-            button8.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            button7.Location = new Point(600, 399);
-            button7.Name = "button7";
-            button7.Size = new Size(94, 29);
-            button7.TabIndex = 2;
-            button7.Text = "全选";
-            button7.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Top;
+            dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 35);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(857, 354);
+            dataGridView1.Size = new Size(857, 380);
             dataGridView1.TabIndex = 1;
             // 
             // label1
@@ -121,33 +79,35 @@
             label1.Size = new Size(857, 35);
             label1.TabIndex = 0;
             label1.Text = "物料需求表";
-            label1.Click += label1_Click;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(button3);
+            panel1.Dock = DockStyle.Bottom;
+            panel1.Location = new Point(0, 415);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(857, 98);
+            panel1.TabIndex = 3;
             // 
             // MRP生成
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
             ClientSize = new Size(857, 513);
             Controls.Add(panel2);
-            Controls.Add(panel1);
             Name = "MRP生成";
             Text = "MRP生成";
             Load += MRP_Load;
-            panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
-
-
         #endregion
-        private Panel panel1;
         private Panel panel2;
         private Label label1;
-        private Button button5;
-        private Button button8;
-        private Button button7;
         private Button button3;
         public DataGridView dataGridView1;
+        private Panel panel1;
     }
 }

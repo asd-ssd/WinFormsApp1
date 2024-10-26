@@ -20,7 +20,7 @@ namespace WinFormsApp1.计划管理.三级功能
         private void 下达派工单_Load(object sender, EventArgs e)
         {
             string sql = "select * from 工艺路线表";
-            SqlDataAdapter adapter = new SqlDataAdapter(sql, "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=sa;Password=978123thy");
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=hhr;Password=aa1628381531");
             DataTable table = new DataTable();
             adapter.Fill(table);
             dataGridView1.DataSource = table;
