@@ -51,6 +51,7 @@
             checkBox1 = new CheckBox();
             panel1 = new Panel();
             button11 = new Button();
+            button12 = new Button();
             button3 = new Button();
             button2 = new Button();
             button4 = new Button();
@@ -283,6 +284,7 @@
             // 
             panel1.BackColor = Color.LightGray;
             panel1.Controls.Add(button11);
+            panel1.Controls.Add(button12);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button4);
@@ -298,13 +300,24 @@
             // button11
             // 
             button11.Dock = DockStyle.Left;
-            button11.Location = new Point(470, 0);
+            button11.Location = new Point(564, 0);
             button11.Name = "button11";
             button11.Size = new Size(94, 50);
             button11.TabIndex = 6;
             button11.Text = "完成";
             button11.UseVisualStyleBackColor = true;
             button11.Click += button11_Click;
+            // 
+            // button12
+            // 
+            button12.Dock = DockStyle.Left;
+            button12.Location = new Point(470, 0);
+            button12.Name = "button12";
+            button12.Size = new Size(94, 50);
+            button12.TabIndex = 7;
+            button12.Text = "导出";
+            button12.UseVisualStyleBackColor = true;
+            button12.Click += button12_Click;
             // 
             // button3
             // 
@@ -406,5 +419,6 @@
         private Label label3;
         private Button button10;
         private Button button11;
+        private Button button12;
     }
 }

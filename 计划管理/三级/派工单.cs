@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -181,5 +182,48 @@ namespace WinFormsApp1.计划管理.三级
             paiw.Show();
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            DataTable dt = DgvToDt(dataGridView1);
+
+            SaveFileDialog save = new SaveFileDialog();
+            //设置文件类型
+            save.Filter = "Excel表格（*.xls）|*.xls|Excel表格（*.xlsx）|*.xlsx";
+            //设置默认文件类型显⽰顺序
+            save.FilterIndex = 1;
+            //保存对话框是否记忆上次打开的记录
+            save.RestoreDirectory = true;
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                //string localFilePath = save.FileName.ToString(); //获得⽂件路径
+                //string fileNameExt =localFilePath.Substring(localFilePath.LastIndexOf("\\") + 1); //获取⽂件名，不带路径
+
+                NPOIExcel.TableToExcel(dt, save.FileName);
+                sw.Stop();
+                MessageBox.Show("数据导出完成");
+            }
+        }
+        private DataTable DgvToDt(DataGridView dgv)
+        {
+            DataTable dt = new DataTable();
+            //把DataGridView控件数据，转成DataTable
+            for (int count = 0; count < dgv.Columns.Count; count++)
+            {
+                DataColumn dc = new DataColumn(dgv.Columns[count].Name.ToString());
+                dt.Columns.Add(dc);
+            }
+            for (int count = 0; count < dgv.Rows.Count; count++)
+            {
+                DataRow dr = dt.NewRow();
+                for (int countsub = 0; countsub < dgv.Columns.Count; countsub++)
+                {
+                    dr[countsub] = Convert.ToString(dgv.Rows[count].Cells[countsub].Value);
+                }
+                dt.Rows.Add(dr);
+            }
+            return dt;
+        }
     }
 }

@@ -248,8 +248,9 @@
             button5.Name = "button5";
             button5.Size = new Size(94, 50);
             button5.TabIndex = 4;
-            button5.Text = "导出打印";
+            button5.Text = "导出";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // button3
             // 
