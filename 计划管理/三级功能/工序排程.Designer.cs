@@ -85,6 +85,7 @@
             Controls.Add(dataGridView1);
             Controls.Add(panel1);
             Name = "工序排程";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "工序排程";
             Load += 工序排程_Load;
             panel1.ResumeLayout(false);

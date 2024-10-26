@@ -98,6 +98,7 @@
             Controls.Add(panel3);
             Controls.Add(panel2);
             Name = "领料";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "领料";
             Load += 领料_Load;
             panel2.ResumeLayout(false);

@@ -32,7 +32,7 @@ namespace WinFormsApp1.计划管理.三级
 
         string[] strcomm = new string[100];
         int n = 0;
-        private void GetDataGridView()
+        public void GetDataGridView()
         {
             try
             {

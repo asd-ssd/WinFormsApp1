@@ -95,6 +95,7 @@
             ClientSize = new Size(857, 513);
             Controls.Add(panel2);
             Name = "MRP生成";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "MRP生成";
             Load += MRP_Load;
             panel2.ResumeLayout(false);

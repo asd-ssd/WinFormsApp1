@@ -59,6 +59,7 @@
             button2.TabIndex = 5;
             button2.Text = "取消";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -68,6 +69,7 @@
             button1.TabIndex = 4;
             button1.Text = "确定完成";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // 派工单完成
             // 
@@ -79,6 +81,7 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Name = "派工单完成";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "派工单完成";
             ResumeLayout(false);
             PerformLayout();

@@ -81,6 +81,7 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Name = "MPS完成";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "MPS完成";
             ResumeLayout(false);
             PerformLayout();

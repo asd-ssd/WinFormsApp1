@@ -81,6 +81,7 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Name = "车间完成";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "车间完成";
             ResumeLayout(false);
             PerformLayout();

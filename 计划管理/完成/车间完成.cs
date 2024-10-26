@@ -36,7 +36,7 @@ namespace WinFormsApp1.计划管理.完成
                 conn.Open();
 
                 // 定义SQL更新语句
-                string sql = "UPDATE MRP SET 状态 = '已完成',完成日期 = GETDATE() WHERE MRP编号 = @MRP编号";
+                string sql = "UPDATE MRP SET 状态 = '已完成',完成日期 = CONVERT(VARCHAR, GETDATE(), 23) WHERE MRP编号 = @MRP编号";
 
                 // 创建SqlCommand对象
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
@@ -60,6 +60,7 @@ namespace WinFormsApp1.计划管理.完成
 
                 // 关闭数据库连接
                 conn.Close();
+                车间作业.chejian1.GetDataGridView();
                 this.Close();
             }
             catch (Exception ex)

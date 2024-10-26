@@ -96,6 +96,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "物料选择";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "物料选择";
             Load += 物料选择_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

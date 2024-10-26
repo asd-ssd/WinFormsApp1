@@ -61,6 +61,7 @@ namespace WinFormsApp1.计划管理.完成
 
                 // 关闭数据库连接
                 conn.Close();
+                生产计划及MRP.shengchan1.GetDataGridView();
                 this.Close();
             }
             catch (Exception ex)
