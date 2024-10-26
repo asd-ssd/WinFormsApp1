@@ -8,18 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using WinFormsApp1.销售管理.收发货管理.退货;
 
-namespace WinFormsApp1.销售管理.收发货管理.发货
+namespace WinFormsApp1.销售管理.销售订单管理.收款单
 {
-    public partial class DSelectPeople : Form
+    public partial class RSPeople : Form
     {
-
         private int n;
         private string[] strcomm;
-        private string Dpeople_number;
-        public TextBox Dpeopele_textBox3 = De2.de2.textBox3;//绑定is_add的入库人格
-        public DSelectPeople()
+        private string RTselect_people_number;
+
+        public TextBox RTselect_people_textBox2 = Receipt2nd.receipt2Nd.textBox2;
+        public RSPeople()
         {
             InitializeComponent();
             GetDataGridView();
@@ -50,22 +50,6 @@ namespace WinFormsApp1.销售管理.收发货管理.发货
                 MessageBox.Show(ee.Message.ToString());
             }
         }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            Dpeople_number = dataGridView1.Rows[e.RowIndex].Cells["员工姓名"].Value.ToString();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Dpeopele_textBox3.Text = Dpeople_number;
-            this.Close();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             string selectsql = "select * from 员工信息表 where 1=1";
@@ -79,6 +63,7 @@ namespace WinFormsApp1.销售管理.收发货管理.发货
             }
 
 
+
             SqlConnection conn = connection();
             conn.Open();
             DataTable dt1 = new DataTable();
@@ -89,9 +74,26 @@ namespace WinFormsApp1.销售管理.收发货管理.发货
             MessageBox.Show("查询成功！");
         }
 
-        private void DSelectPeople_Load(object sender, EventArgs e)
+        private void RSPeople_Load(object sender, EventArgs e)
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            RTselect_people_textBox2.Text = RTselect_people_number;
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            RTselect_people_number = dataGridView1.Rows[e.RowIndex].Cells["员工姓名"].Value.ToString();
+        }
+
     }
 }

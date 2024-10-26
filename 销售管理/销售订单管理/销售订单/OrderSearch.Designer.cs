@@ -35,7 +35,6 @@
             textBox8 = new TextBox();
             textBox7 = new TextBox();
             textBox6 = new TextBox();
-            textBox5 = new TextBox();
             textBox4 = new TextBox();
             textBox3 = new TextBox();
             textBox2 = new TextBox();
@@ -44,18 +43,19 @@
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
-            label6 = new Label();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            lable11 = new Label();
+            textBox10 = new TextBox();
             SuspendLayout();
             // 
             // button1
             // 
             button1.BackColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(268, 329);
+            button1.Location = new Point(258, 372);
             button1.Name = "button1";
             button1.Size = new Size(100, 40);
             button1.TabIndex = 127;
@@ -65,7 +65,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(394, 329);
+            button2.Location = new Point(384, 372);
             button2.Name = "button2";
             button2.Size = new Size(100, 40);
             button2.TabIndex = 141;
@@ -107,13 +107,6 @@
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(150, 30);
             textBox6.TabIndex = 158;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(439, 155);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(150, 30);
-            textBox5.TabIndex = 157;
             // 
             // textBox4
             // 
@@ -168,7 +161,7 @@
             label8.Name = "label8";
             label8.Size = new Size(82, 24);
             label8.TabIndex = 150;
-            label8.Text = "商品编号";
+            label8.Text = "商品数量";
             // 
             // label7
             // 
@@ -179,15 +172,6 @@
             label7.TabIndex = 149;
             label7.Text = "商品单价";
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(348, 158);
-            label6.Name = "label6";
-            label6.Size = new Size(82, 24);
-            label6.TabIndex = 148;
-            label6.Text = "商品名称";
-            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -195,7 +179,7 @@
             label5.Name = "label5";
             label5.Size = new Size(82, 24);
             label5.TabIndex = 147;
-            label5.Text = "销售仓库";
+            label5.Text = "商品名称";
             // 
             // label4
             // 
@@ -233,17 +217,34 @@
             label1.TabIndex = 143;
             label1.Text = "订单编号";
             // 
+            // lable11
+            // 
+            lable11.AutoSize = true;
+            lable11.Location = new Point(348, 158);
+            lable11.Name = "lable11";
+            lable11.Size = new Size(82, 24);
+            lable11.TabIndex = 163;
+            lable11.Text = "商品编码";
+            // 
+            // textBox10
+            // 
+            textBox10.Location = new Point(439, 152);
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(150, 30);
+            textBox10.TabIndex = 164;
+            // 
             // OrderSearch
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 444);
+            Controls.Add(textBox10);
+            Controls.Add(lable11);
             Controls.Add(dateTimePicker1);
             Controls.Add(textBox9);
             Controls.Add(textBox8);
             Controls.Add(textBox7);
             Controls.Add(textBox6);
-            Controls.Add(textBox5);
             Controls.Add(textBox4);
             Controls.Add(textBox3);
             Controls.Add(textBox2);
@@ -252,7 +253,6 @@
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(label7);
-            Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -262,6 +262,7 @@
             Controls.Add(button1);
             Name = "OrderSearch";
             Text = "查询订单";
+            Load += OrderSearch_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -274,7 +275,6 @@
         private TextBox textBox8;
         private TextBox textBox7;
         private TextBox textBox6;
-        private TextBox textBox5;
         private TextBox textBox4;
         private TextBox textBox3;
         private TextBox textBox2;
@@ -283,11 +283,12 @@
         private Label label9;
         private Label label8;
         private Label label7;
-        private Label label6;
         private Label label5;
         private Label label4;
         private Label label3;
         private Label label2;
         private Label label1;
+        private Label lable11;
+        private TextBox textBox10;
     }
 }

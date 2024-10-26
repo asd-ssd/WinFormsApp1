@@ -8,24 +8,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace WinFormsApp1.销售管理.收发货管理.退货
+namespace WinFormsApp1.销售管理.销售订单管理.销售订单
 {
-    public partial class RTPeople : Form
+    public partial class OSItem : Form
     {
         private int n;
         private string[] strcomm;
-        private string RTselect_people_number;
+        private string RTselect_people_number4;
+        private string RTselect_people_number6;
+        private string RTselect_people_number10;
+        public TextBox RTselect_people_textBox4 = Order2nd.order2Nd.textBox4;
+        public TextBox RTselect_people_textBox6 = Order2nd.order2Nd.textBox6;
+        public TextBox RTselect_people_textBox10 = Order2nd.order2Nd.textBox10;
 
-        public TextBox RTselect_people_textBox4 = RT2.rT2.textBox4;//订单
-                                                                   //仓库绑定is_add的入库人格
-        public RTPeople()
+        public OSItem()
         {
             InitializeComponent();
             GetDataGridView();
         }
-
         private SqlConnection connection()
         {
             string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=xlh;Password=123456";
@@ -36,7 +37,7 @@ namespace WinFormsApp1.销售管理.收发货管理.退货
         {
             try
             {
-                string strda = "select * from 员工信息表";
+                string strda = "select * from BOM表";
                 SqlConnection conn = connection();
                 conn.Open();
                 DataTable dt = new DataTable();
@@ -55,14 +56,18 @@ namespace WinFormsApp1.销售管理.收发货管理.退货
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string selectsql = "select * from 员工信息表 where 1=1";
+            string selectsql = "select * from BOM表 where 1=1";
             /*if (textBox1.Text != "")
             {
                 selectsql += "and 物料名称 like'%" + textBox1.Text + "%'";
             }*/
             if (textBox1.Text != "")
             {
-                selectsql += "and 员工姓名 like'%" + textBox1.Text + "%'";
+                selectsql += "and 物料名称 like'%" + textBox1.Text + "%'";
+            }
+            if (textBox2.Text != "")
+            {
+                selectsql += "and 物料编码 like'%" + textBox1.Text + "%'";
             }
 
 
@@ -79,7 +84,9 @@ namespace WinFormsApp1.销售管理.收发货管理.退货
 
         private void button2_Click(object sender, EventArgs e)
         {
-            RTselect_people_textBox4.Text = RTselect_people_number;
+            RTselect_people_textBox4.Text = RTselect_people_number4;
+            RTselect_people_textBox6.Text = RTselect_people_number6;
+            RTselect_people_textBox10.Text = RTselect_people_number10;
             this.Close();
         }
 
@@ -90,10 +97,12 @@ namespace WinFormsApp1.销售管理.收发货管理.退货
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            RTselect_people_number = dataGridView1.Rows[e.RowIndex].Cells["员工姓名"].Value.ToString();
+            RTselect_people_number4 = dataGridView1.Rows[e.RowIndex].Cells["物料名称"].Value.ToString();
+            RTselect_people_number6 = dataGridView1.Rows[e.RowIndex].Cells["单价"].Value.ToString();
+            RTselect_people_number10 = dataGridView1.Rows[e.RowIndex].Cells["物料编码"].Value.ToString();
         }
 
-        private void RTPeople_Load(object sender, EventArgs e)
+        private void OSItem_Load(object sender, EventArgs e)
         {
 
         }

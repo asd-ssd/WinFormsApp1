@@ -30,7 +30,7 @@ namespace WinFormsApp1.销售管理.收发货管理.退货
         }
         private SqlConnection connection()
         {
-            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=xlh;Persist Security Info=True;User ID=xlh;Password=123456";
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=xlh;Password=123456";
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
@@ -58,7 +58,7 @@ namespace WinFormsApp1.销售管理.收发货管理.退货
         {
             SqlConnection conn = connection();
             conn.Open();
-            string strda = "insert into 退货单(退回编号,退回日期,仓库编号,收货人,订单编号,客户编号) values('" + textBox1.Text + "','" + textBox2.Value + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "')";
+            string strda = "insert into 退货单(退回编号,退回日期,收货人,订单编号,客户编号) values('" + textBox1.Text + "','" + textBox2.Value + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "')";
             SqlCommand comm = new SqlCommand(strda, conn);
             comm.ExecuteNonQuery();
             conn.Close();
@@ -113,7 +113,7 @@ namespace WinFormsApp1.销售管理.收发货管理.退货
         private void button3_Click(object sender, EventArgs e)
         {
             RTPeople = new RTPeople();
-            RTSelect.Show();
+            RTPeople.Show();
         }
     }
 }

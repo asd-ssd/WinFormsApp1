@@ -28,247 +28,315 @@
         /// </summary>
         private void InitializeComponent()
         {
-            e2zhuangtai = new Label();
-            e2skdate = new Label();
-            e2shdate = new Label();
-            e2shuliang = new Label();
-            e2name = new Label();
-            e2zongjia = new Label();
-            e2saleman = new Label();
-            e2cangku = new Label();
-            e2shaddress = new Label();
-            e2client = new Label();
-            e2date = new Label();
-            e2number = new Label();
-            e2button1 = new Button();
-            e2shenhedate = new Label();
-            e2dateTimePicker1 = new DateTimePicker();
-            e2shenheyuan = new Label();
-            e2textBox1 = new TextBox();
-            e2radioButton1 = new RadioButton();
-            e2radioButton2 = new RadioButton();
+            label11 = new Label();
+            textBox10 = new TextBox();
+            textBox9 = new TextBox();
+            textBox8 = new TextBox();
+            textBox7 = new TextBox();
+            textBox6 = new TextBox();
+            textBox4 = new TextBox();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            label10 = new Label();
+            label9 = new Label();
+            label8 = new Label();
+            label7 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label1 = new Label();
+            button1 = new Button();
+            label12 = new Label();
+            textBox12 = new TextBox();
+            button2 = new Button();
+            label13 = new Label();
+            textBox13 = new TextBox();
+            button3 = new Button();
+            button4 = new Button();
             SuspendLayout();
             // 
-            // e2zhuangtai
+            // label11
             // 
-            e2zhuangtai.AutoSize = true;
-            e2zhuangtai.Location = new Point(71, 387);
-            e2zhuangtai.Name = "e2zhuangtai";
-            e2zhuangtai.Size = new Size(82, 24);
-            e2zhuangtai.TabIndex = 150;
-            e2zhuangtai.Text = "审批结果";
+            label11.AutoSize = true;
+            label11.Location = new Point(420, 182);
+            label11.Name = "label11";
+            label11.Size = new Size(82, 24);
+            label11.TabIndex = 151;
+            label11.Text = "商品编码";
             // 
-            // e2skdate
+            // textBox10
             // 
-            e2skdate.AutoSize = true;
-            e2skdate.Location = new Point(389, 205);
-            e2skdate.Name = "e2skdate";
-            e2skdate.Size = new Size(118, 24);
-            e2skdate.TabIndex = 144;
-            e2skdate.Text = "计划收款日期";
+            textBox10.Location = new Point(513, 179);
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(150, 30);
+            textBox10.TabIndex = 150;
             // 
-            // e2shdate
+            // textBox9
             // 
-            e2shdate.AutoSize = true;
-            e2shdate.Location = new Point(389, 261);
-            e2shdate.Name = "e2shdate";
-            e2shdate.Size = new Size(118, 24);
-            e2shdate.TabIndex = 143;
-            e2shdate.Text = "计划送货日期";
+            textBox9.Location = new Point(190, 292);
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(150, 30);
+            textBox9.TabIndex = 145;
             // 
-            // e2shuliang
+            // textBox8
             // 
-            e2shuliang.AutoSize = true;
-            e2shuliang.Location = new Point(389, 148);
-            e2shuliang.Name = "e2shuliang";
-            e2shuliang.Size = new Size(82, 24);
-            e2shuliang.TabIndex = 142;
-            e2shuliang.Text = "商品数量";
+            textBox8.Location = new Point(513, 292);
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(150, 30);
+            textBox8.TabIndex = 144;
             // 
-            // e2name
+            // textBox7
             // 
-            e2name.AutoSize = true;
-            e2name.Location = new Point(71, 148);
-            e2name.Name = "e2name";
-            e2name.Size = new Size(82, 24);
-            e2name.TabIndex = 141;
-            e2name.Text = "商品名称";
+            textBox7.Location = new Point(513, 244);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(150, 30);
+            textBox7.TabIndex = 143;
             // 
-            // e2zongjia
+            // textBox6
             // 
-            e2zongjia.AutoSize = true;
-            e2zongjia.Location = new Point(71, 205);
-            e2zongjia.Name = "e2zongjia";
-            e2zongjia.Size = new Size(64, 24);
-            e2zongjia.TabIndex = 140;
-            e2zongjia.Text = "总金额";
+            textBox6.Location = new Point(190, 244);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(150, 30);
+            textBox6.TabIndex = 142;
             // 
-            // e2saleman
+            // textBox4
             // 
-            e2saleman.AutoSize = true;
-            e2saleman.Location = new Point(389, 97);
-            e2saleman.Name = "e2saleman";
-            e2saleman.Size = new Size(64, 24);
-            e2saleman.TabIndex = 139;
-            e2saleman.Text = "销售员";
+            textBox4.Location = new Point(190, 179);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(150, 30);
+            textBox4.TabIndex = 140;
             // 
-            // e2cangku
+            // textBox3
             // 
-            e2cangku.AutoSize = true;
-            e2cangku.Location = new Point(71, 261);
-            e2cangku.Name = "e2cangku";
-            e2cangku.Size = new Size(82, 24);
-            e2cangku.TabIndex = 138;
-            e2cangku.Text = "销售仓库";
+            textBox3.Location = new Point(513, 123);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(150, 30);
+            textBox3.TabIndex = 139;
             // 
-            // e2shaddress
+            // textBox2
             // 
-            e2shaddress.AutoSize = true;
-            e2shaddress.Location = new Point(71, 328);
-            e2shaddress.Name = "e2shaddress";
-            e2shaddress.Size = new Size(82, 24);
-            e2shaddress.TabIndex = 137;
-            e2shaddress.Text = "送货地址";
+            textBox2.Location = new Point(190, 123);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(150, 30);
+            textBox2.TabIndex = 138;
             // 
-            // e2client
+            // textBox1
             // 
-            e2client.AutoSize = true;
-            e2client.Location = new Point(71, 97);
-            e2client.Name = "e2client";
-            e2client.Size = new Size(46, 24);
-            e2client.TabIndex = 136;
-            e2client.Text = "客户";
+            textBox1.Location = new Point(190, 66);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(150, 30);
+            textBox1.TabIndex = 137;
             // 
-            // e2date
+            // label10
             // 
-            e2date.AutoSize = true;
-            e2date.Location = new Point(389, 45);
-            e2date.Name = "e2date";
-            e2date.Size = new Size(82, 24);
-            e2date.TabIndex = 131;
-            e2date.Text = "订单日期";
+            label10.AutoSize = true;
+            label10.Location = new Point(86, 292);
+            label10.Name = "label10";
+            label10.Size = new Size(82, 24);
+            label10.TabIndex = 136;
+            label10.Text = "送货地址";
             // 
-            // e2number
+            // label9
             // 
-            e2number.AutoSize = true;
-            e2number.Location = new Point(71, 48);
-            e2number.Name = "e2number";
-            e2number.Size = new Size(82, 24);
-            e2number.TabIndex = 130;
-            e2number.Text = "订单编号";
+            label9.AutoSize = true;
+            label9.Location = new Point(420, 298);
+            label9.Name = "label9";
+            label9.Size = new Size(46, 24);
+            label9.TabIndex = 135;
+            label9.Text = "总价";
             // 
-            // e2button1
+            // label8
             // 
-            e2button1.Location = new Point(801, 476);
-            e2button1.Name = "e2button1";
-            e2button1.Size = new Size(112, 34);
-            e2button1.TabIndex = 152;
-            e2button1.Text = "提交";
-            e2button1.UseVisualStyleBackColor = true;
+            label8.AutoSize = true;
+            label8.Location = new Point(422, 244);
+            label8.Name = "label8";
+            label8.Size = new Size(82, 24);
+            label8.TabIndex = 134;
+            label8.Text = "商品数量";
             // 
-            // e2shenhedate
+            // label7
             // 
-            e2shenhedate.AutoSize = true;
-            e2shenhedate.Location = new Point(409, 387);
-            e2shenhedate.Name = "e2shenhedate";
-            e2shenhedate.Size = new Size(82, 24);
-            e2shenhedate.TabIndex = 153;
-            e2shenhedate.Text = "审核时间";
+            label7.AutoSize = true;
+            label7.Location = new Point(86, 244);
+            label7.Name = "label7";
+            label7.Size = new Size(82, 24);
+            label7.TabIndex = 133;
+            label7.Text = "商品单价";
             // 
-            // e2dateTimePicker1
+            // label5
             // 
-            e2dateTimePicker1.Location = new Point(512, 387);
-            e2dateTimePicker1.Name = "e2dateTimePicker1";
-            e2dateTimePicker1.Size = new Size(300, 30);
-            e2dateTimePicker1.TabIndex = 154;
+            label5.AutoSize = true;
+            label5.Location = new Point(86, 182);
+            label5.Name = "label5";
+            label5.Size = new Size(82, 24);
+            label5.TabIndex = 131;
+            label5.Text = "商品名称";
             // 
-            // e2shenheyuan
+            // label4
             // 
-            e2shenheyuan.AutoSize = true;
-            e2shenheyuan.Location = new Point(409, 442);
-            e2shenheyuan.Name = "e2shenheyuan";
-            e2shenheyuan.Size = new Size(64, 24);
-            e2shenheyuan.TabIndex = 155;
-            e2shenheyuan.Text = "审核人";
+            label4.AutoSize = true;
+            label4.Location = new Point(422, 123);
+            label4.Name = "label4";
+            label4.Size = new Size(64, 24);
+            label4.TabIndex = 130;
+            label4.Text = "销售员";
             // 
-            // e2textBox1
+            // label3
             // 
-            e2textBox1.Location = new Point(512, 442);
-            e2textBox1.Name = "e2textBox1";
-            e2textBox1.Size = new Size(150, 30);
-            e2textBox1.TabIndex = 156;
+            label3.AutoSize = true;
+            label3.Location = new Point(86, 123);
+            label3.Name = "label3";
+            label3.Size = new Size(82, 24);
+            label3.TabIndex = 129;
+            label3.Text = "客户名称";
             // 
-            // e2radioButton1
+            // label1
             // 
-            e2radioButton1.AutoSize = true;
-            e2radioButton1.Location = new Point(170, 385);
-            e2radioButton1.Name = "e2radioButton1";
-            e2radioButton1.Size = new Size(71, 28);
-            e2radioButton1.TabIndex = 157;
-            e2radioButton1.TabStop = true;
-            e2radioButton1.Text = "通过";
-            e2radioButton1.UseVisualStyleBackColor = true;
+            label1.AutoSize = true;
+            label1.Location = new Point(86, 68);
+            label1.Name = "label1";
+            label1.Size = new Size(82, 24);
+            label1.TabIndex = 127;
+            label1.Text = "订单编号";
             // 
-            // e2radioButton2
+            // button1
             // 
-            e2radioButton2.AutoSize = true;
-            e2radioButton2.Location = new Point(170, 419);
-            e2radioButton2.Name = "e2radioButton2";
-            e2radioButton2.Size = new Size(89, 28);
-            e2radioButton2.TabIndex = 158;
-            e2radioButton2.TabStop = true;
-            e2radioButton2.Text = "不通过";
-            e2radioButton2.UseVisualStyleBackColor = true;
+            button1.BackColor = SystemColors.ControlLightLight;
+            button1.Location = new Point(548, 443);
+            button1.Name = "button1";
+            button1.Size = new Size(100, 40);
+            button1.TabIndex = 126;
+            button1.Text = "通过";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(86, 350);
+            label12.Name = "label12";
+            label12.Size = new Size(64, 24);
+            label12.TabIndex = 153;
+            label12.Text = "审核员";
+            // 
+            // textBox12
+            // 
+            textBox12.Location = new Point(190, 350);
+            textBox12.Name = "textBox12";
+            textBox12.Size = new Size(150, 30);
+            textBox12.TabIndex = 155;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(346, 66);
+            button2.Name = "button2";
+            button2.Size = new Size(32, 34);
+            button2.TabIndex = 156;
+            button2.Text = "...";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(422, 68);
+            label13.Name = "label13";
+            label13.Size = new Size(82, 24);
+            label13.TabIndex = 157;
+            label13.Text = "订单日期";
+            // 
+            // textBox13
+            // 
+            textBox13.Location = new Point(513, 65);
+            textBox13.Name = "textBox13";
+            textBox13.Size = new Size(150, 30);
+            textBox13.TabIndex = 158;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(346, 346);
+            button3.Name = "button3";
+            button3.Size = new Size(32, 34);
+            button3.TabIndex = 159;
+            button3.Text = "...";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(667, 443);
+            button4.Name = "button4";
+            button4.Size = new Size(100, 40);
+            button4.TabIndex = 160;
+            button4.Text = "不通过";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // Examine2nd
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(978, 544);
-            Controls.Add(e2radioButton2);
-            Controls.Add(e2radioButton1);
-            Controls.Add(e2textBox1);
-            Controls.Add(e2shenheyuan);
-            Controls.Add(e2dateTimePicker1);
-            Controls.Add(e2shenhedate);
-            Controls.Add(e2button1);
-            Controls.Add(e2zhuangtai);
-            Controls.Add(e2skdate);
-            Controls.Add(e2shdate);
-            Controls.Add(e2shuliang);
-            Controls.Add(e2name);
-            Controls.Add(e2zongjia);
-            Controls.Add(e2saleman);
-            Controls.Add(e2cangku);
-            Controls.Add(e2shaddress);
-            Controls.Add(e2client);
-            Controls.Add(e2date);
-            Controls.Add(e2number);
+            ClientSize = new Size(857, 544);
+            Controls.Add(button4);
+            Controls.Add(button3);
+            Controls.Add(textBox13);
+            Controls.Add(label13);
+            Controls.Add(button2);
+            Controls.Add(textBox12);
+            Controls.Add(label12);
+            Controls.Add(label11);
+            Controls.Add(textBox10);
+            Controls.Add(textBox9);
+            Controls.Add(textBox8);
+            Controls.Add(textBox7);
+            Controls.Add(textBox6);
+            Controls.Add(textBox4);
+            Controls.Add(textBox3);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
+            Controls.Add(label10);
+            Controls.Add(label9);
+            Controls.Add(label8);
+            Controls.Add(label7);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label1);
+            Controls.Add(button1);
             Name = "Examine2nd";
             Text = "审批订单";
+            Load += Examine2nd_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Label e2zhuangtai;
-        private Label e2skdate;
-        private Label e2shdate;
-        private Label e2shuliang;
-        private Label e2name;
-        private Label e2zongjia;
-        private Label e2saleman;
-        private Label e2cangku;
-        private Label e2shaddress;
-        private Label e2client;
-        private Label e2date;
-        private Label e2number;
-        private Button e2button1;
-        private Label e2shenhedate;
-        private DateTimePicker e2dateTimePicker1;
-        private Label e2shenheyuan;
-        private TextBox e2textBox1;
-        private RadioButton e2radioButton1;
-        private RadioButton e2radioButton2;
+        private Label label11;
+        public TextBox textBox10;
+        public TextBox textBox9;
+        public TextBox textBox7;
+        public TextBox textBox6;
+        public TextBox textBox4;
+        public TextBox textBox3;
+        public TextBox textBox2;
+        private Label label10;
+        private Label label9;
+        private Label label8;
+        private Label label7;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private Label label1;
+        private Button button1;
+        private Label label12;
+        private Button button2;
+        public TextBox textBox8;
+        public TextBox textBox1;
+        private Label label13;
+        public TextBox textBox13;
+        private Button button3;
+        public TextBox textBox12;
+        private Button button4;
     }
 }

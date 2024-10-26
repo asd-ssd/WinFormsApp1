@@ -37,6 +37,7 @@ namespace WinFormsApp1.销售管理
             rfdataGridView1 = new DataGridView();
             rcancel = new Button();
             redit2 = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)rfdataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -87,39 +88,53 @@ namespace WinFormsApp1.销售管理
             // rfdataGridView1
             // 
             rfdataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            rfdataGridView1.Location = new Point(50, 237);
+            rfdataGridView1.Location = new Point(50, 187);
             rfdataGridView1.Name = "rfdataGridView1";
             rfdataGridView1.RowHeadersWidth = 62;
-            rfdataGridView1.Size = new Size(1550, 833);
+            rfdataGridView1.Size = new Size(831, 471);
             rfdataGridView1.TabIndex = 68;
             rfdataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
             // 
             // rcancel
             // 
             rcancel.BackColor = SystemColors.GradientInactiveCaption;
-            rcancel.Location = new Point(770, 42);
+            rcancel.Location = new Point(194, 97);
             rcancel.Name = "rcancel";
             rcancel.Size = new Size(138, 40);
             rcancel.TabIndex = 77;
             rcancel.Text = "取消修改";
             rcancel.UseVisualStyleBackColor = false;
+            rcancel.Visible = false;
             rcancel.Click += rcancel_Click;
             // 
             // redit2
             // 
             redit2.BackColor = SystemColors.GradientInactiveCaption;
-            redit2.Location = new Point(626, 42);
+            redit2.Location = new Point(50, 97);
             redit2.Name = "redit2";
             redit2.Size = new Size(138, 40);
             redit2.TabIndex = 76;
             redit2.Text = "修改完成";
             redit2.UseVisualStyleBackColor = false;
+            redit2.Visible = false;
             redit2.Click += redit2_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.GradientInactiveCaption;
+            button1.Location = new Point(626, 42);
+            button1.Name = "button1";
+            button1.Size = new Size(138, 40);
+            button1.TabIndex = 78;
+            button1.Text = "刷新";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // ReceiptForm
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(button1);
             Controls.Add(rcancel);
             Controls.Add(redit2);
             Controls.Add(rfdataGridView1);
@@ -143,5 +158,6 @@ namespace WinFormsApp1.销售管理
         private Button rcancel;
         private Button redit2;
         public DataGridView rfdataGridView1;
+        private Button button1;
     }
 }
