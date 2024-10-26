@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             button1 = new Button();
-            button2 = new Button();
             button3 = new Button();
             dataGridView1 = new DataGridView();
             label1 = new Label();
@@ -41,23 +40,13 @@
             // 
             // button1
             // 
-            button1.Location = new Point(453, 372);
+            button1.Location = new Point(571, 372);
             button1.Name = "button1";
             button1.Size = new Size(112, 34);
             button1.TabIndex = 0;
             button1.Text = "查询";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(571, 372);
-            button2.Name = "button2";
-            button2.Size = new Size(112, 34);
-            button2.TabIndex = 1;
-            button2.Text = "关闭";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -72,17 +61,17 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 92);
+            dataGridView1.Location = new Point(12, 81);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(789, 253);
+            dataGridView1.Size = new Size(789, 285);
             dataGridView1.TabIndex = 3;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(46, 31);
+            label1.Location = new Point(34, 31);
             label1.Name = "label1";
             label1.Size = new Size(82, 24);
             label1.TabIndex = 4;
@@ -92,15 +81,15 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(407, 31);
+            label2.Location = new Point(338, 34);
             label2.Name = "label2";
             label2.Size = new Size(82, 24);
             label2.TabIndex = 5;
-            label2.Text = "商品单价";
+            label2.Text = "商品编号";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(171, 28);
+            textBox1.Location = new Point(159, 28);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(150, 30);
             textBox1.TabIndex = 6;
@@ -108,10 +97,11 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(533, 28);
+            textBox2.Location = new Point(464, 31);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(150, 30);
             textBox2.TabIndex = 7;
+            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // cgxz
             // 
@@ -124,7 +114,6 @@
             Controls.Add(label1);
             Controls.Add(dataGridView1);
             Controls.Add(button3);
-            Controls.Add(button2);
             Controls.Add(button1);
             Name = "cgxz";
             Text = "cgxz";
@@ -137,7 +126,6 @@
         #endregion
 
         private Button button1;
-        private Button button2;
         private Button button3;
         private DataGridView dataGridView1;
         private Label label1;

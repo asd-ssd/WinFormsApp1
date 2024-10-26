@@ -19,7 +19,7 @@ namespace WinFormsApp1.采购管理.采购
         public DataGridView dataGridView1 = cgsqy.cgsqy1.dataGridView1;
         private SqlConnection connection()
         {
-            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=zyx;Persist Security Info=True;User ID=zyx;Password=123456";
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=hhr;Password=aa1628381531";
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
@@ -51,7 +51,14 @@ namespace WinFormsApp1.采购管理.采购
             {
                 selectsql += "and 申请人员 like'%" + textBox1.Text + "%'";
             }
-            
+            if (textBox8.Text != "")
+            {
+                selectsql += "and 员工编号 like'%" + textBox8.Text + "%'";
+            }
+            if (textBox9.Text != "")
+            {
+                selectsql += "and 商品编号 like'%" + textBox9.Text + "%'";
+            }
             if (textBox3.Text != "")
             {
                 selectsql += "and 采购商品 like'%" + textBox3.Text + "%'";

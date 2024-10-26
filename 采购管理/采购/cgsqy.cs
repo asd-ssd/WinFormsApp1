@@ -16,9 +16,10 @@ namespace WinFormsApp1.采购管理.采购
         public cgcxy cgcxy1;
         public sgsqy sgsqy1;
         public static cgsqy cgsqy1;
+        public PL PL1;
         private SqlConnection connection()
         {
-            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=zyx;Persist Security Info=True;User ID=zyx;Password=123456";
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=hhr;Password=aa1628381531";
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
@@ -112,7 +113,7 @@ namespace WinFormsApp1.采购管理.采购
 
                 GetDataGridView();
                 n = 0;
-                
+
             }
         }
 
@@ -126,6 +127,17 @@ namespace WinFormsApp1.采购管理.采购
         {
             cgcxy1 = new cgcxy();
             cgcxy1.Show();   //将窗体一进行显示
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            GetDataGridView();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            PL1 = new PL();
+            PL1.Show();
         }
     }
 }

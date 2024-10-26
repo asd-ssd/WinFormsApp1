@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace WinFormsApp1.采购管理.入库
 {
-    public partial class ruku : UserControl
+    public partial class SE : UserControl
     {
         public cxy cxy1;
         public xjy xjy1;
 
         private SqlConnection connection()
         {
-            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=zyx;Persist Security Info=True;User ID=zyx;Password=123456";
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=hhr;Password=aa1628381531";
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
@@ -42,7 +42,7 @@ namespace WinFormsApp1.采购管理.入库
                 MessageBox.Show(ee.Message.ToString());
             }
         }
-        public ruku()
+        public SE()
         {
             InitializeComponent();
         }
@@ -63,5 +63,7 @@ namespace WinFormsApp1.采购管理.入库
             cxy1 = new cxy();
             cxy1.Show();
         }
+
+        
     }
 }

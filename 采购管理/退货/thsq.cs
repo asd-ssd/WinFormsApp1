@@ -16,10 +16,11 @@ namespace WinFormsApp1.采购管理
     {
         public thsq1 thsq11;
         public thcxy thcxy1;
+        public static thsq thsq1;
 
         private SqlConnection connection()
         {
-            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=zyx;Persist Security Info=True;User ID=zyx;Password=123456";
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=hhr;Password=aa1628381531";
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
@@ -43,9 +44,11 @@ namespace WinFormsApp1.采购管理
                 MessageBox.Show(ee.Message.ToString());
             }
         }
+        
         public thsq()
         {
             InitializeComponent();
+            thsq1 = this;
         }
 
         private void label10_Click(object sender, EventArgs e)
@@ -56,6 +59,7 @@ namespace WinFormsApp1.采购管理
         private void thsq_Load(object sender, EventArgs e)
         {
             GetDataGridView();
+            
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -68,6 +72,12 @@ namespace WinFormsApp1.采购管理
         {
             thcxy1 = new thcxy();
             thcxy1.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            GetDataGridView();
+            
         }
     }
 }

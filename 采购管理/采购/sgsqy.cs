@@ -22,18 +22,40 @@ namespace WinFormsApp1.采购管理
     {
         public string Is_number;
         public cgxz cgxz1;
+        public gys1 gys12;
+        public SQR SQR1;
         public static sgsqy sgsqy1;
-        
+
         public DataGridView dataGridView1 = cgsqy.cgsqy1.dataGridView1;
-        
+
         public sgsqy()
         {
             InitializeComponent();
             GetDataGridView();
+            textBox4.TextChanged += TextBox_TextChanged;
+            textBox5.TextChanged += TextBox_TextChanged;
+        }
+
+        private void TextBox_TextChanged(object sender, EventArgs e)
+        {
+            // 尝试从 textBox1 和 textBox2 中获取整数值  
+            if (int.TryParse(textBox4.Text, out int number1) && int.TryParse(textBox5.Text, out int number2))
+            {
+                // 计算乘积并更新 textBox3 的文本  
+                int product = number1 * number2;
+                textBox6.Text = product.ToString();
+            }
+            else
+            {
+                // 如果转换失败，清空 textBox3 或显示错误信息（可选）  
+                textBox6.Text = string.Empty; // 清空 textBox3  
+                // 或者显示错误消息（不推荐在 TextChanged 事件中频繁使用）  
+                // MessageBox.Show("请输入有效的整数。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);  
+            }
         }
         private SqlConnection connection()
         {
-            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=zyx;Persist Security Info=True;User ID=zyx;Password=123456";
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=hhr;Password=aa1628381531";
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
@@ -57,19 +79,19 @@ namespace WinFormsApp1.采购管理
                 MessageBox.Show(ee.Message.ToString());
             }
         }
-        
-        
+
+
         private void addDataGridView()
         {
             SqlConnection conn = connection();
             conn.Open();
-            string strda = "insert into 采购表(订单编号,申请人员,申请日期,采购商品,商品单价,采购数量,采购总价,供应商) values('" + textBox2.Text + "','" + textBox1.Text + "','" + dateTimePicker1.Value + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "','" + textBox7.Text + "')";
+            string strda = "insert into 采购表(订单编号,申请人员,员工编号,申请日期,采购商品,商品编号,商品单价,采购数量,采购总价,供应商) values('" + textBox2.Text + "','" + textBox1.Text + "','" + textBox8.Text + "','" + dateTimePicker1.Value + "','" + textBox3.Text + "','" + textBox9.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "','" + textBox7.Text + "')";
             SqlCommand comm = new SqlCommand(strda, conn);
             comm.ExecuteNonQuery();
             conn.Close();
 
         }
-        
+
         private void button1_Click(object sender, EventArgs e)
         {
             addDataGridView();
@@ -114,7 +136,7 @@ namespace WinFormsApp1.采购管理
         }
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -157,13 +179,25 @@ namespace WinFormsApp1.采购管理
 
         }
 
-       
 
- 
+
+
         private void button2_Click_1(object sender, EventArgs e)
         {
             cgxz1 = new cgxz();
             cgxz1.Show();   //将窗体一进行显示
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            gys12 = new gys1();
+            gys12.Show();   //将窗体一进行显示
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SQR1 = new SQR();
+            SQR1.Show();   //将窗体一进行显示
         }
     }
 }
