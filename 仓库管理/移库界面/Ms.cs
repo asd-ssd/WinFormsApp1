@@ -30,7 +30,7 @@ namespace WinFormsApp1.仓库管理.移库界面
         private void Ms_Load(object sender, EventArgs e)
         {
             SqlConnection sc1;
-            string connstr1 = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=lwx;Password=luowenxin";
+            string connstr1 = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=hhr;Password=aa1628381531";
             DataTable dt = new DataTable();
             using (sc1 = new SqlConnection(connstr1))
             {

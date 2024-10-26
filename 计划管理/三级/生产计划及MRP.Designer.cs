@@ -50,6 +50,8 @@
             checkBox2 = new CheckBox();
             checkBox1 = new CheckBox();
             panel1 = new Panel();
+            button11 = new Button();
+            button12 = new Button();
             button3 = new Button();
             button2 = new Button();
             button4 = new Button();
@@ -110,6 +112,7 @@
             button9.TabIndex = 26;
             button9.Text = "取消修改";
             button9.UseVisualStyleBackColor = true;
+            button9.Visible = false;
             button9.Click += button9_Click;
             // 
             // label3
@@ -128,6 +131,7 @@
             button10.TabIndex = 25;
             button10.Text = "修改完成";
             button10.UseVisualStyleBackColor = true;
+            button10.Visible = false;
             button10.Click += button10_Click;
             // 
             // checkBox7
@@ -279,6 +283,8 @@
             // panel1
             // 
             panel1.BackColor = Color.LightGray;
+            panel1.Controls.Add(button11);
+            panel1.Controls.Add(button12);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button4);
@@ -290,6 +296,28 @@
             panel1.Size = new Size(1688, 50);
             panel1.TabIndex = 4;
             panel1.Paint += panel1_Paint;
+            // 
+            // button11
+            // 
+            button11.Dock = DockStyle.Left;
+            button11.Location = new Point(564, 0);
+            button11.Name = "button11";
+            button11.Size = new Size(94, 50);
+            button11.TabIndex = 6;
+            button11.Text = "完成";
+            button11.UseVisualStyleBackColor = true;
+            button11.Click += button11_Click;
+            // 
+            // button12
+            // 
+            button12.Dock = DockStyle.Left;
+            button12.Location = new Point(470, 0);
+            button12.Name = "button12";
+            button12.Size = new Size(94, 50);
+            button12.TabIndex = 7;
+            button12.Text = "导出";
+            button12.UseVisualStyleBackColor = true;
+            button12.Click += button12_Click;
             // 
             // button3
             // 
@@ -390,5 +418,7 @@
         private Button button9;
         private Label label3;
         private Button button10;
+        private Button button11;
+        private Button button12;
     }
 }

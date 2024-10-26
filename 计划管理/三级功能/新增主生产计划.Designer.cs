@@ -240,6 +240,7 @@
             Controls.Add(label1);
             Controls.Add(textBox1);
             Name = "新增主生产计划";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "新增生产计划";
             ResumeLayout(false);
             PerformLayout();

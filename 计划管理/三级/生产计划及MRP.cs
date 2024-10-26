@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.Forth;
 using WinFormsApp1.数据库支持类;
+using WinFormsApp1.计划管理.完成;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WinFormsApp1.计划管理.三级
@@ -21,6 +23,8 @@ namespace WinFormsApp1.计划管理.三级
         public static 生产计划及MRP shengchan1;
         public MRP生成 MRP1;
         public 新增主生产计划 zhu1;
+        public MPS完成 MPSw;
+
         public 生产计划及MRP()
         {
             InitializeComponent();
@@ -34,12 +38,13 @@ namespace WinFormsApp1.计划管理.三级
             permissionManager.ApplyPermissions(this);
         }
         public string MPS_number = null;
+        public string MRP_number = null;
         public string Item_number = null;
         public string MPS_am = null;
         public string MPS_end = null;
         private SqlConnection connection()
         {
-            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=sa;Password=978123thy";
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=hhr;Password=aa1628381531";
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
@@ -47,7 +52,7 @@ namespace WinFormsApp1.计划管理.三级
         string[] strcomm = new string[100];
         int n = 0;
 
-        private void GetDataGridView()
+        public void GetDataGridView()
         {
             try
             {
@@ -84,14 +89,24 @@ namespace WinFormsApp1.计划管理.三级
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (MPS_number != null)
+            if (which == 0)
             {
-                MRP1 = new MRP生成();
-                MRP1.Show();
-            }
-            else
-            {
-                MessageBox.Show("未选中！");
+                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                {
+                    MPS_number = row.Cells["主计划编号"].Value.ToString();
+                    Item_number = row.Cells["物料编号"].Value.ToString();
+                    MPS_am = row.Cells["计划数量"].Value.ToString();
+                    MPS_end = row.Cells["计划完成日期"].Value.ToString();
+                }
+                if (MPS_number != null)
+                {
+                    MRP1 = new MRP生成();
+                    MRP1.Show();
+                }
+                else
+                {
+                    MessageBox.Show("未选中！");
+                }
             }
         }
 
@@ -108,10 +123,7 @@ namespace WinFormsApp1.计划管理.三级
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            MPS_number = dataGridView1.Rows[e.RowIndex].Cells["主计划编号"].Value.ToString();
-            Item_number= dataGridView1.Rows[e.RowIndex].Cells["物料编号"].Value.ToString();
-            MPS_am= dataGridView1.Rows[e.RowIndex].Cells["计划数量"].Value.ToString();
-            MPS_end = dataGridView1.Rows[e.RowIndex].Cells["计划完成日期"].Value.ToString();
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -185,12 +197,15 @@ namespace WinFormsApp1.计划管理.三级
 
         private void button7_Click(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = null;
             which = 0;
             GetDataGridView();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
+            button11.Visible = false;
+            dataGridView1.DataSource = null;
             which = 1;
             GetDataGridView();
         }
@@ -219,14 +234,14 @@ namespace WinFormsApp1.计划管理.三级
             {
                 selectsql = "select * from MRP where 1=1";
             }
-            
+
             if (checkBox1.Checked)
             {
-                selectsql += "and 状态 like'%" + "未完成" + "%'";
+                selectsql += "and 状态 ='%" + "未完成" + "%'";
             }
             if (checkBox2.Checked)
             {
-                selectsql += "and 状态 like'%" + "已完成" + "%'";
+                selectsql += "and 状态 ='%" + "已完成" + "%'";
             }
             if (checkBox6.Checked)
             {
@@ -275,5 +290,60 @@ namespace WinFormsApp1.计划管理.三级
                 button9.Visible = false;
             }
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            {
+                MPS_number = row.Cells["主计划编号"].Value.ToString();
+            }
+            MPSw = new MPS完成();
+            MPSw.Show();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            DataTable dt = DgvToDt(dataGridView1);
+
+            SaveFileDialog save = new SaveFileDialog();
+            //设置文件类型
+            save.Filter = "Excel表格（*.xls）|*.xls|Excel表格（*.xlsx）|*.xlsx";
+            //设置默认文件类型显⽰顺序
+            save.FilterIndex = 1;
+            //保存对话框是否记忆上次打开的记录
+            save.RestoreDirectory = true;
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                //string localFilePath = save.FileName.ToString(); //获得⽂件路径
+                //string fileNameExt =localFilePath.Substring(localFilePath.LastIndexOf("\\") + 1); //获取⽂件名，不带路径
+
+                NPOIExcel.TableToExcel(dt, save.FileName);
+                sw.Stop();
+                MessageBox.Show("数据导出完成");
+            }
+        }
+        private DataTable DgvToDt(DataGridView dgv)
+        {
+            DataTable dt = new DataTable();
+            //把DataGridView控件数据，转成DataTable
+            for (int count = 0; count < dgv.Columns.Count; count++)
+            {
+                DataColumn dc = new DataColumn(dgv.Columns[count].Name.ToString());
+                dt.Columns.Add(dc);
+            }
+            for (int count = 0; count < dgv.Rows.Count; count++)
+            {
+                DataRow dr = dt.NewRow();
+                for (int countsub = 0; countsub < dgv.Columns.Count; countsub++)
+                {
+                    dr[countsub] = Convert.ToString(dgv.Rows[count].Cells[countsub].Value);
+                }
+                dt.Rows.Add(dr);
+            }
+            return dt;
+        }  
+
     }
 }
