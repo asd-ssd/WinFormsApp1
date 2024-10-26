@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.仓库管理.入库界面;
 using WinFormsApp1.数据库支持类;
+using WinFormsApp1.仓库管理.出库界面;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace WinFormsApp1.仓库管理.出库界面
@@ -18,6 +19,7 @@ namespace WinFormsApp1.仓库管理.出库界面
     {
         private readonly PermissionService _permissionService;
         public Os_add Os_add1;
+        public static Os Os1;
         public Os()
         {
             InitializeComponent();
@@ -28,6 +30,7 @@ namespace WinFormsApp1.仓库管理.出库界面
             _permissionService = new PermissionService(dbHelper);
             var permissionManager = new PermissionManager(_permissionService, moduleId: 5); // 1是模块ID
             permissionManager.ApplyPermissions(this);
+            Os1 = this;
         }
 
         private void Os_Load(object sender, EventArgs e)
@@ -77,10 +80,10 @@ namespace WinFormsApp1.仓库管理.出库界面
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             //string strcolumn = dataGridView1.Columns[e.ColumnIndex].HeaderText;//获取列标题
-            //string strrow = dataGridView1.Rows[e.RowIndex].Cells["入库单编号"].Value.ToString();//获取焦点触发行的第一个值
+            //string strrow = dataGridView1.Rows[e.RowIndex].Cells["出库单编号"].Value.ToString();//获取焦点触发行的第一个值
             //string value = dataGridView1.CurrentCell.Value.ToString();//获取当前点击的活动单元格的值
 
-            //strcomm[n] = "update 入库单表 set " + strcolumn + "='" + value + "'where 入库单编号 = " + strrow;
+            //strcomm[n] = "update 出库单表 set " + strcolumn + "='" + value + "'where 出库单编号 = " + strrow;
 
             string strcolumn = dataGridView1.Columns[e.ColumnIndex].HeaderText;//获取列标题
             string strrow = dataGridView1.Rows[e.RowIndex].Cells["出库单编号"].Value.ToString();//获取焦点触发行的第一个值
@@ -166,22 +169,9 @@ namespace WinFormsApp1.仓库管理.出库界面
 
         private void button7_Click(object sender, EventArgs e)
         {
-            string Date_start1 = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd");
-            //取开始时间的0点，大于等于开始日期的0点；
-            string Date_end1 = dateTimePicker2.Value.AddDays(1).Date.ToString("yyyy-MM-dd");
-            //取结束时间第二天的0点，小于（没有等于）结束第二天的0点；
-            
-            
             string selectsql = "select * from 出库单表 where 1=1";
-            /*if (radioButton1.Checked)
-            {
-
-                selectsql += "and 出库日期 >= @Date_start1 AND 出库日期 <@Date_end1";
-
-
-            }*/
-            
             if (textBox1.Text != "")
+
             {
                 selectsql += "and 物料名称 like'%" + textBox1.Text + "%'";
             }
@@ -193,19 +183,38 @@ namespace WinFormsApp1.仓库管理.出库界面
             {
                 selectsql += "and 出库单编号 like'%" + textBox3.Text + "%'";
             }
-            if (radioButton1.Checked)
-            {
-                selectsql += "select * from 出库单表 where 出库日期 in（" + Date_start1 + "," + Date_end1 + "）";
-            }
 
+            string start1 = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd");
+            //取开始时间的0点，大于等于开始日期的0点；
+            string end1 = dateTimePicker2.Value.AddDays(1).Date.ToString("yyyy-MM-dd");
+            //取结束时间第二天的0点，小于（没有等于）结束第二天的0点；
+
+            var paras = new Dictionary<string, string> { { "start1", start1 }, { "end1", end1 } };
+            if (checkBox1.Checked)
+            {
+
+                selectsql += "and 出库日期 >= @start1 AND 出库日期 <@end1";
+
+
+            }
             SqlConnection conn = connection();
             conn.Open();
             DataTable dt1 = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(selectsql, conn);
+            foreach (var par in paras)
+            {
+                //设置sqlCommand的参数
+                da.SelectCommand.Parameters.AddWithValue(par.Key, par.Value);
+            }
             da.Fill(dt1);
             conn.Close();
             dataGridView1.DataSource = dt1;
-            MessageBox.Show("查询成功！");
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

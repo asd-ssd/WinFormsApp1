@@ -1,6 +1,6 @@
-﻿namespace WinFormsApp1.仓库管理.出库界面
+﻿namespace WinFormsApp1.仓库管理.入库界面
 {
-    partial class Os_select_item
+    partial class Is_select_dingdan
     {
         /// <summary>
         /// Required designer variable.
@@ -45,7 +45,7 @@
             button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(109, 38);
-            button2.TabIndex = 85;
+            button2.TabIndex = 101;
             button2.Text = "返回";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
@@ -56,17 +56,17 @@
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(109, 38);
-            button1.TabIndex = 84;
+            button1.TabIndex = 100;
             button1.Text = "确定";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // button7
             // 
-            button7.Location = new Point(27, 6);
+            button7.Location = new Point(365, 7);
             button7.Name = "button7";
-            button7.Size = new Size(47, 43);
-            button7.TabIndex = 83;
+            button7.Size = new Size(52, 48);
+            button7.TabIndex = 99;
             button7.Text = "查询";
             button7.UseVisualStyleBackColor = true;
             button7.Click += button7_Click;
@@ -74,34 +74,34 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(117, 39);
+            label2.Location = new Point(53, 43);
             label2.Name = "label2";
             label2.Size = new Size(69, 20);
-            label2.TabIndex = 82;
-            label2.Text = "物料编号";
+            label2.TabIndex = 98;
+            label2.Text = "订单编号";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(267, 36);
+            textBox2.Location = new Point(203, 40);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(125, 27);
-            textBox2.TabIndex = 81;
+            textBox2.TabIndex = 97;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(132, 6);
+            label1.Location = new Point(68, 10);
             label1.Name = "label1";
             label1.Size = new Size(54, 20);
-            label1.TabIndex = 80;
+            label1.TabIndex = 96;
             label1.Text = "物料名";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(267, -1);
+            textBox1.Location = new Point(203, 3);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 79;
+            textBox1.TabIndex = 95;
             // 
             // dataGridView1
             // 
@@ -110,10 +110,10 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(746, 379);
-            dataGridView1.TabIndex = 78;
+            dataGridView1.TabIndex = 94;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // Os_select_item
+            // Is_select_dingdan
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -126,8 +126,9 @@
             Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(dataGridView1);
-            Name = "Os_select_item";
-            Text = "Os_select_item";
+            Name = "Is_select_dingdan";
+            Text = "Is_select_dingdan";
+            Load += Is_select_dingdan_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

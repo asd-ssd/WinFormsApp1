@@ -13,18 +13,15 @@ using WinFormsApp1.仓库管理.入库界面;
 
 namespace WinFormsApp1.仓库管理.出库界面
 {
-    public partial class Os_select_item : Form
+    public partial class Os_select_people : Form
     {
-        private int n;
-        private string[] strcomm;
-        private string Os_select_item_name;
-        private string Os_select_item_number;
-        public TextBox Os_select_item_textBox1 = Os_add.Os_Add1.textBox1;//绑定Os_add的入库人格
-        public TextBox Os_select_item_textBox2 = Os_add.Os_Add1.textBox5;
-        public Os_select_item()
+        private string Os_select_people_name;
+        private string Os_select_people_number;
+        public TextBox Os_select_people_textBox1 = Os_add.Os_Add1.textBox15;//绑定Os_add的入库人格
+        public TextBox Os_select_people_textBox2 = Os_add.Os_Add1.textBox3;
+        public Os_select_people()
         {
             InitializeComponent();
-            GetDataGridView();
         }
         private SqlConnection connection()
         {
@@ -32,11 +29,20 @@ namespace WinFormsApp1.仓库管理.出库界面
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Os_select_people_Load(object sender, EventArgs e)
+        {
+            GetDataGridView();
+        }
         private void GetDataGridView()
         {
             try
             {
-                string strda = "select * from BOM表";
+                string strda = "select * from 员工信息表";
                 SqlConnection conn = connection();
                 conn.Open();
                 DataTable dt = new DataTable();
@@ -53,20 +59,18 @@ namespace WinFormsApp1.仓库管理.出库界面
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+
+
         private void button7_Click(object sender, EventArgs e)
         {
-            string selectsql = "select * from BOM表 where 1=1";
+            string selectsql = "select * from 员工信息表 where 1=1";
             if (textBox1.Text != "")
             {
-                selectsql += "and 物料名称 like'%" + textBox1.Text + "%'";
+                selectsql += "and 员工姓名 like'%" + textBox1.Text + "%'";
             }
             if (textBox2.Text != "")
             {
-                selectsql += "and 物料编码 like'%" + textBox2.Text + "%'";
+                selectsql += "and 员工编号 like'%" + textBox2.Text + "%'";
             }
 
 
@@ -75,10 +79,10 @@ namespace WinFormsApp1.仓库管理.出库界面
             DataTable dt1 = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(selectsql, conn);
             da.Fill(dt1);
+
             conn.Close();
             dataGridView1.DataSource = dt1;
-            MessageBox.Show("查询成功！");
-
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -86,18 +90,22 @@ namespace WinFormsApp1.仓库管理.出库界面
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {
                 //获取要选中行的ID值
-                Os_select_item_number = row.Cells["物料编码"].Value.ToString();
-                Os_select_item_name = row.Cells["物料名称"].Value.ToString();
+                Os_select_people_number = row.Cells["员工编号"].Value.ToString();
+                Os_select_people_name = row.Cells["员工姓名"].Value.ToString();
 
             }
-            Os_select_item_textBox1.Text = Os_select_item_name;
-            Os_select_item_textBox2.Text = Os_select_item_number;
+            Os_select_people_textBox1.Text = Os_select_people_name;
+            Os_select_people_textBox2.Text = Os_select_people_number;
             this.Close();
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+
         }
+
+     
     }
 }

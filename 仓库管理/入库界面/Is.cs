@@ -9,7 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.数据库支持类;
+using static System.Windows.Forms.AxHost;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace WinFormsApp1.仓库管理.入库界面
 {
@@ -79,11 +81,11 @@ namespace WinFormsApp1.仓库管理.入库界面
         private void button7_Click(object sender, EventArgs e)
         {
             string selectsql = "select * from 入库单表 where 1=1";
-            /*if (textBox1.Text != "")
+            if (textBox1.Text != "")
 
             {
                 selectsql += "and 物料名称 like'%" + textBox1.Text + "%'";
-            }*/
+            }
             if (textBox2.Text != "")
             {
                 selectsql += "and 物料编码 like'%" + textBox2.Text + "%'";
@@ -92,39 +94,35 @@ namespace WinFormsApp1.仓库管理.入库界面
             {
                 selectsql += "and 入库单编号 like'%" + textBox3.Text + "%'";
             }
-            if (Date_start1 != 0 || Date_end1 != 0)
-            {
-                selectsql += "select * from 入库单表 where 入库时间 in（" + Date_start + "," + Date_end + "）";
-            }
 
+            string start1 = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd");
+            //取开始时间的0点，大于等于开始日期的0点；
+            string end1 = dateTimePicker2.Value.AddDays(1).Date.ToString("yyyy-MM-dd");
+            //取结束时间第二天的0点，小于（没有等于）结束第二天的0点；
+
+            var paras = new Dictionary<string, string> { { "start1", start1 }, { "end1", end1 } };
+            if (checkBox1.Checked)
+            {
+
+                selectsql += "and 入库日期 >= @start1 AND 入库日期 <@end1";
+
+
+            }
             SqlConnection conn = connection();
             conn.Open();
             DataTable dt1 = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(selectsql, conn);
+            foreach (var par in paras) {
+                //设置sqlCommand的参数
+                da.SelectCommand.Parameters.AddWithValue(par.Key, par.Value);
+               }
             da.Fill(dt1);
             conn.Close();
             dataGridView1.DataSource = dt1;
-            MessageBox.Show("查询成功！");
 
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            // 假设已经有一个名为dateTimePicker1的DateTimePicker控件  
-            DateTime selectedDate = dateTimePicker1.Value;
-            Date_start = selectedDate.ToString("yyyy-MM-dd");
-            Date_start1 = 1;
-            MessageBox.Show("选中的日期和时间是：" + Date_start);
-        }
 
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-            // 假设已经有一个名为dateTimePicker1的DateTimePicker控件  
-            DateTime selectedDate = dateTimePicker2.Value;
-            Date_end = selectedDate.ToString("yyyy-MM-dd");
-            Date_end1 = 0;
-            MessageBox.Show("选中的日期和时间是：" + Date_end);
-        }
         int n = 0;
         string[] strcomm = new string[100];
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -210,32 +208,11 @@ namespace WinFormsApp1.仓库管理.入库界面
                 }
             }
         }
+
+        
+
+
+        
     }
 }
-        /* private void button7_Click(object sender, EventArgs e)
-{
-String str1 = textBox3.Text;
-String str2 = "SELECT NAME,SEX FROM PERSON WHERE P#='" + str1 + "'";
-
-dataGridView1.DataSource = d1;   //将查询结果放入到dataGridView；
-
-
-
-}
-public DataTable SelectData()
-{
-DataTable dataTable = new DataTable();
-
-string query = "SELECT * FROM YourTableName";
-using (SqlCommand command = new SqlCommand(query, connection))
-{
-   using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-   {
-       connection.Open();
-       adapter.Fill(dataTable);
-   }
-}
-
-return dataTable;
-}*/
 

@@ -11,10 +11,10 @@ using WinFormsApp1.数据库支持类;
 
 namespace WinFormsApp1.仓库管理.库存盘点界面
 {
-    public partial class count_push : UserControl
+    public partial class count_push_new : Form
     {
         private readonly PermissionService _permissionService;
-        public count_push()
+        public count_push_new()
         {
             InitializeComponent();
             this.button1.Tag = "Create";

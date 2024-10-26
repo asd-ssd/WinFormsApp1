@@ -9,12 +9,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.数据库支持类;
+using WinFormsApp1.仓库管理.出库界面;
 
 namespace WinFormsApp1.仓库管理.初始查询界面
 {
     public partial class warehouse_initial : UserControl
     {
         private readonly PermissionService _permissionService;
+        public warehouse_initial_add warehouse_add1;
+        public static warehouse_initial warehouse_initial1;
         public warehouse_initial()
         {
             InitializeComponent();
@@ -25,6 +28,7 @@ namespace WinFormsApp1.仓库管理.初始查询界面
             _permissionService = new PermissionService(dbHelper);
             var permissionManager = new PermissionManager(_permissionService, moduleId: 5); // 1是模块ID
             permissionManager.ApplyPermissions(this);
+            warehouse_initial1 = this; 
         }
         private SqlConnection connection()
         {
@@ -144,6 +148,12 @@ namespace WinFormsApp1.仓库管理.初始查询界面
         private void button8_Click(object sender, EventArgs e)
         {
             GetDataGridView();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            warehouse_add1 = new warehouse_initial_add();
+            warehouse_add1.Show();
         }
     }
 }
