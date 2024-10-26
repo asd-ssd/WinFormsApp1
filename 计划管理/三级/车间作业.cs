@@ -24,6 +24,9 @@ namespace WinFormsApp1.计划管理.三级
             InitializeComponent();
             chejian1 = this;
         }
+        public string Item_number;
+        public string Item_am;
+        public string Start;
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -67,7 +70,9 @@ namespace WinFormsApp1.计划管理.三级
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            Item_number = dataGridView1.Rows[e.RowIndex].Cells["物料编号"].Value.ToString();
+            Item_am = dataGridView1.Rows[e.RowIndex].Cells["需求量"].Value.ToString();
+            Start = dataGridView1.Rows[e.RowIndex].Cells["开始日期"].Value.ToString();
         }
 
         private void button5_Click(object sender, EventArgs e)

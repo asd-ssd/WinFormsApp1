@@ -213,7 +213,7 @@ namespace WinFormsApp1.Forth
                     }
                 }
 
-                MessageBox.Show("数据已成功添加到数据库！");
+                MessageBox.Show("已成功添加！");
             }
             catch (Exception ex)
             {
