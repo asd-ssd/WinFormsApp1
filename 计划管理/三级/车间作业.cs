@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.计划管理.三级功能;
+using WinFormsApp1.计划管理.完成;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 
@@ -19,6 +20,8 @@ namespace WinFormsApp1.计划管理.三级
     {
         public static 车间作业 chejian1;
         public 工序排程 gong1;
+        public 领料 ling1;
+        public 车间完成 chew;
         public 车间作业()
         {
             InitializeComponent();
@@ -27,6 +30,7 @@ namespace WinFormsApp1.计划管理.三级
         public string Item_number;
         public string Item_am;
         public string Start;
+        public string MRP_number;
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -53,6 +57,7 @@ namespace WinFormsApp1.计划管理.三级
                 SqlDataAdapter da = new SqlDataAdapter(strda, conn);
                 da.Fill(dt);
                 conn.Close();
+
                 //dataGridView1.AutoGenerateColumns = true;//自动创建列
                 //dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;//单击单元格编辑
                 dataGridView1.DataSource = dt;
@@ -70,13 +75,18 @@ namespace WinFormsApp1.计划管理.三级
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Item_number = dataGridView1.Rows[e.RowIndex].Cells["物料编号"].Value.ToString();
-            Item_am = dataGridView1.Rows[e.RowIndex].Cells["需求量"].Value.ToString();
-            Start = dataGridView1.Rows[e.RowIndex].Cells["开始日期"].Value.ToString();
+            
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            {
+                Item_number = row.Cells["物料编号"].Value.ToString();
+                Item_am = row.Cells["需求量"].Value.ToString();
+                Start = row.Cells["开始日期"].Value.ToString();
+                MRP_number = row.Cells["MRP编号"].Value.ToString();
+            }
             gong1 = new 工序排程();
             gong1.Show();
         }
@@ -200,6 +210,32 @@ namespace WinFormsApp1.计划管理.三级
                 button6.Visible = false;
                 button7.Visible = false;
             }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            {
+                Item_number = row.Cells["物料编号"].Value.ToString();
+                Item_am = row.Cells["需求量"].Value.ToString();
+                Start = row.Cells["开始日期"].Value.ToString();
+                MRP_number = row.Cells["MRP编号"].Value.ToString();
+            }
+            ling1 = new 领料();
+            ling1.Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            {
+                Item_number = row.Cells["物料编号"].Value.ToString();
+                Item_am = row.Cells["需求量"].Value.ToString();
+                Start = row.Cells["开始日期"].Value.ToString();
+                MRP_number = row.Cells["MRP编号"].Value.ToString();
+            }
+            chew = new 车间完成();
+            chew.Show();
         }
     }
 }

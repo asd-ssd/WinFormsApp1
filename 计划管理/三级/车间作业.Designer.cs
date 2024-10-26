@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            button9 = new Button();
+            button8 = new Button();
             button5 = new Button();
             button3 = new Button();
             button2 = new Button();
@@ -60,6 +62,8 @@
             // panel1
             // 
             panel1.BackColor = Color.LightGray;
+            panel1.Controls.Add(button9);
+            panel1.Controls.Add(button8);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
@@ -70,6 +74,28 @@
             panel1.Size = new Size(1688, 50);
             panel1.TabIndex = 5;
             panel1.Paint += panel1_Paint;
+            // 
+            // button9
+            // 
+            button9.Dock = DockStyle.Left;
+            button9.Location = new Point(470, 0);
+            button9.Name = "button9";
+            button9.Size = new Size(94, 50);
+            button9.TabIndex = 7;
+            button9.Text = "完成";
+            button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
+            // 
+            // button8
+            // 
+            button8.Dock = DockStyle.Left;
+            button8.Location = new Point(376, 0);
+            button8.Name = "button8";
+            button8.Size = new Size(94, 50);
+            button8.TabIndex = 6;
+            button8.Text = "领料";
+            button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // button5
             // 
@@ -149,6 +175,7 @@
             button7.TabIndex = 6;
             button7.Text = "取消修改";
             button7.UseVisualStyleBackColor = true;
+            button7.Visible = false;
             button7.Click += button7_Click;
             // 
             // label3
@@ -167,6 +194,7 @@
             button6.TabIndex = 5;
             button6.Text = "修改完成";
             button6.UseVisualStyleBackColor = true;
+            button6.Visible = false;
             button6.Click += button6_Click;
             // 
             // textBox2
@@ -349,5 +377,7 @@
         private Button button7;
         private Button button6;
         private Label label3;
+        private Button button8;
+        private Button button9;
     }
 }

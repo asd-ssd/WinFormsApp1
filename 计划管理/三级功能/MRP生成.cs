@@ -186,6 +186,7 @@ namespace WinFormsApp1.Forth
                 // 假设你已经有了一个填充了数据的DataTable dt
                 DataTable MRP = dataGridView1.DataSource as DataTable;
                 MRP.Columns.Add("MRP编号", Type.GetType("System.Int32"));
+                MRP.Columns.Add("状态", Type.GetType("System.String"));
                 MRP.Columns.Remove("父项编码");
                 MRP.Columns.Remove("单位用量");
                 MRP.Columns.Remove("层次号");
@@ -200,6 +201,7 @@ namespace WinFormsApp1.Forth
 
                         // 可以配置批量复制的其他选项，例如列映射、批量大小等
                         bulkCopy.ColumnMappings.Add("MRP编号", "MRP编号");
+                        bulkCopy.ColumnMappings.Add("状态", "状态");
                         bulkCopy.ColumnMappings.Add("主计划编号", "主计划编号");
                         bulkCopy.ColumnMappings.Add("物料编码", "物料编号");
                         bulkCopy.ColumnMappings.Add("物料名称", "物料名称");

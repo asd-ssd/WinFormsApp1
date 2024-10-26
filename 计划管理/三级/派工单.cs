@@ -9,13 +9,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.计划管理.三级功能;
+using WinFormsApp1.计划管理.完成;
 
 namespace WinFormsApp1.计划管理.三级
 {
     public partial class 派工单 : UserControl
     {
         public static 派工单 paigong1;
-        public 领料 ling1;
+        public 派工单完成 paiw;
+        public string Workorder_number;
         public 派工单()
         {
             InitializeComponent();
@@ -56,11 +58,7 @@ namespace WinFormsApp1.计划管理.三级
             GetDataGridView();
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            ling1 = new 领料();
-            ling1.Show();
-        }
+
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -69,10 +67,10 @@ namespace WinFormsApp1.计划管理.三级
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             string strcolumn = dataGridView1.Columns[e.ColumnIndex].HeaderText;//获取列标题
-            string strrow = dataGridView1.Rows[e.RowIndex].Cells["领料单编号"].Value.ToString();//获取焦点触发行的第一个值
+            string strrow = dataGridView1.Rows[e.RowIndex].Cells["派工单编号"].Value.ToString();//获取焦点触发行的第一个值
             string value = dataGridView1.CurrentCell.Value.ToString();//获取当前点击的活动单元格的值
 
-            strcomm[n] = $"UPDATE Issue SET {strcolumn} = '{value}' WHERE 领料单编号 = '{strrow}'";
+            strcomm[n] = $"UPDATE Issue SET {strcolumn} = '{value}' WHERE 派工单编号 = '{strrow}'";
             n++;
         }
         private void button9_Click(object sender, EventArgs e)
@@ -106,7 +104,7 @@ namespace WinFormsApp1.计划管理.三级
                 {
                     //获取要删除行的ID值
                     string id = row.Cells["派工单编号"].Value.ToString();
-                    string delesql = "DELETE FROM BOM表 WHERE 派工单编号 = @派工单编号";
+                    string delesql = "DELETE FROM Workorder WHERE 派工单编号 = @派工单编号";
                     using (SqlConnection conn = connection())
                     {
                         using (SqlCommand comm = new SqlCommand(delesql, conn))
@@ -172,5 +170,16 @@ namespace WinFormsApp1.计划管理.三级
                 button9.Visible = false;
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            {
+                Workorder_number = row.Cells["派工单编号"].Value.ToString();
+            }
+            paiw = new 派工单完成();
+            paiw.Show();
+        }
+
     }
 }

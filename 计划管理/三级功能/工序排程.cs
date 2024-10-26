@@ -22,6 +22,7 @@ namespace WinFormsApp1.计划管理.三级功能
         string Item_number = 车间作业.chejian1.Item_number;
         string Item_Am = 车间作业.chejian1.Item_am;
         string Start = 车间作业.chejian1.Start;
+        string MRP_number = 车间作业.chejian1.MRP_number;
         private SqlConnection connection()
         {
             string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=hhr;Password=aa1628381531";
@@ -47,16 +48,19 @@ namespace WinFormsApp1.计划管理.三级功能
                 int leadTime = Convert.ToInt32(total) / 24;
                 DateTime.TryParse(Start, out DateTime startdate);
                 DateTime enddate = startdate.AddDays(leadTime);
+                dt.Columns.Add("MRP编号", Type.GetType("System.String"));
                 dt.Columns.Add("加工数量", Type.GetType("System.String"));
                 dt.Columns.Add("计划开始时间", Type.GetType("System.String"));
                 dt.Columns.Add("计划结束时间", Type.GetType("System.String"));
                 foreach (DataRow row in dt.Rows)
                 {
+                    row["MRP编号"] = MRP_number;
                     row["加工数量"] = Item_Am;
                     row["计划开始时间"] = Start;
                     row["计划结束时间"] = enddate.ToString("yyyy-MM-dd");
                 }
                 dt.Columns["物料编码"].SetOrdinal(0);
+                dt.Columns["MRP编号"].SetOrdinal(0);
                 dt.Columns.Remove("ID");
                 dt.Columns.Remove("工序1");
                 dt.Columns.Remove("外协费");
@@ -102,6 +106,7 @@ namespace WinFormsApp1.计划管理.三级功能
 
                         // 可以配置批量复制的其他选项，例如列映射、批量大小等
                         bulkCopy.ColumnMappings.Add("派工单编号", "派工单编号");
+                        bulkCopy.ColumnMappings.Add("MRP编号", "MRP编号");
                         bulkCopy.ColumnMappings.Add("物料编码", "物料编号");
                         bulkCopy.ColumnMappings.Add("工序", "工序");
                         bulkCopy.ColumnMappings.Add("工序名称", "工序名称");

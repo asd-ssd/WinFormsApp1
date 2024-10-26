@@ -32,6 +32,7 @@
             panel2 = new Panel();
             button9 = new Button();
             label3 = new Label();
+            button10 = new Button();
             checkBox7 = new CheckBox();
             checkBox6 = new CheckBox();
             button8 = new Button();
@@ -49,12 +50,12 @@
             checkBox2 = new CheckBox();
             checkBox1 = new CheckBox();
             panel1 = new Panel();
+            button11 = new Button();
             button3 = new Button();
             button2 = new Button();
             button4 = new Button();
             button5 = new Button();
             button6 = new Button();
-            button10 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
@@ -110,6 +111,7 @@
             button9.TabIndex = 26;
             button9.Text = "取消修改";
             button9.UseVisualStyleBackColor = true;
+            button9.Visible = false;
             button9.Click += button9_Click;
             // 
             // label3
@@ -119,6 +121,17 @@
             label3.Name = "label3";
             label3.Size = new Size(2, 121);
             label3.TabIndex = 27;
+            // 
+            // button10
+            // 
+            button10.Location = new Point(1003, 19);
+            button10.Name = "button10";
+            button10.Size = new Size(94, 29);
+            button10.TabIndex = 25;
+            button10.Text = "修改完成";
+            button10.UseVisualStyleBackColor = true;
+            button10.Visible = false;
+            button10.Click += button10_Click;
             // 
             // checkBox7
             // 
@@ -269,6 +282,7 @@
             // panel1
             // 
             panel1.BackColor = Color.LightGray;
+            panel1.Controls.Add(button11);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button4);
@@ -280,6 +294,17 @@
             panel1.Size = new Size(1688, 50);
             panel1.TabIndex = 4;
             panel1.Paint += panel1_Paint;
+            // 
+            // button11
+            // 
+            button11.Dock = DockStyle.Left;
+            button11.Location = new Point(470, 0);
+            button11.Name = "button11";
+            button11.Size = new Size(94, 50);
+            button11.TabIndex = 6;
+            button11.Text = "完成";
+            button11.UseVisualStyleBackColor = true;
+            button11.Click += button11_Click;
             // 
             // button3
             // 
@@ -336,16 +361,6 @@
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
             // 
-            // button10
-            // 
-            button10.Location = new Point(1003, 19);
-            button10.Name = "button10";
-            button10.Size = new Size(94, 29);
-            button10.TabIndex = 25;
-            button10.Text = "修改完成";
-            button10.UseVisualStyleBackColor = true;
-            button10.Click += button10_Click;
-            // 
             // 生产计划及MRP
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
@@ -390,5 +405,6 @@
         private Button button9;
         private Label label3;
         private Button button10;
+        private Button button11;
     }
 }

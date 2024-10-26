@@ -112,7 +112,7 @@ namespace WinFormsApp1.计划管理.三级
                 {
                     //获取要删除行的ID值
                     string id = row.Cells["领料单编号"].Value.ToString();
-                    string delesql = "DELETE FROM BOM表 WHERE 领料单编号 = @领料单编号";
+                    string delesql = "DELETE FROM Issue WHERE 领料单编号 = @领料单编号";
                     using (SqlConnection conn = connection())
                     {
                         using (SqlCommand comm = new SqlCommand(delesql, conn))
@@ -183,6 +183,11 @@ namespace WinFormsApp1.计划管理.三级
                 button8.Visible = false;
                 button9.Visible = false;
             }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

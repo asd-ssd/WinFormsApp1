@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.Forth;
+using WinFormsApp1.计划管理.完成;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WinFormsApp1.计划管理.三级
@@ -19,12 +20,15 @@ namespace WinFormsApp1.计划管理.三级
         public static 生产计划及MRP shengchan1;
         public MRP生成 MRP1;
         public 新增主生产计划 zhu1;
+        public MPS完成 MPSw;
+
         public 生产计划及MRP()
         {
             InitializeComponent();
             shengchan1 = this;
         }
         public string MPS_number = null;
+        public string MRP_number = null;
         public string Item_number = null;
         public string MPS_am = null;
         public string MPS_end = null;
@@ -75,14 +79,24 @@ namespace WinFormsApp1.计划管理.三级
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (MPS_number != null)
+            if (which == 0)
             {
-                MRP1 = new MRP生成();
-                MRP1.Show();
-            }
-            else
-            {
-                MessageBox.Show("未选中！");
+                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                {
+                    MPS_number = row.Cells["主计划编号"].Value.ToString();
+                    Item_number = row.Cells["物料编号"].Value.ToString();
+                    MPS_am = row.Cells["计划数量"].Value.ToString();
+                    MPS_end = row.Cells["计划完成日期"].Value.ToString();
+                }
+                if (MPS_number != null)
+                {
+                    MRP1 = new MRP生成();
+                    MRP1.Show();
+                }
+                else
+                {
+                    MessageBox.Show("未选中！");
+                }
             }
         }
 
@@ -99,10 +113,7 @@ namespace WinFormsApp1.计划管理.三级
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            MPS_number = dataGridView1.Rows[e.RowIndex].Cells["主计划编号"].Value.ToString();
-            Item_number= dataGridView1.Rows[e.RowIndex].Cells["物料编号"].Value.ToString();
-            MPS_am= dataGridView1.Rows[e.RowIndex].Cells["计划数量"].Value.ToString();
-            MPS_end = dataGridView1.Rows[e.RowIndex].Cells["计划完成日期"].Value.ToString();
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -176,12 +187,15 @@ namespace WinFormsApp1.计划管理.三级
 
         private void button7_Click(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = null;
             which = 0;
             GetDataGridView();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
+            button11.Visible = false;
+            dataGridView1.DataSource = null;
             which = 1;
             GetDataGridView();
         }
@@ -210,14 +224,14 @@ namespace WinFormsApp1.计划管理.三级
             {
                 selectsql = "select * from MRP where 1=1";
             }
-            
+
             if (checkBox1.Checked)
             {
-                selectsql += "and 状态 like'%" + "未完成" + "%'";
+                selectsql += "and 状态 ='%" + "未完成" + "%'";
             }
             if (checkBox2.Checked)
             {
-                selectsql += "and 状态 like'%" + "已完成" + "%'";
+                selectsql += "and 状态 ='%" + "已完成" + "%'";
             }
             if (checkBox6.Checked)
             {
@@ -265,6 +279,16 @@ namespace WinFormsApp1.计划管理.三级
                 button10.Visible = false;
                 button9.Visible = false;
             }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            {
+                MPS_number = row.Cells["主计划编号"].Value.ToString();
+            }
+            MPSw = new MPS完成();
+            MPSw.Show();
         }
     }
 }

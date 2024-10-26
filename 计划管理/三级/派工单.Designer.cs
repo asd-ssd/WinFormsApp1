@@ -88,6 +88,7 @@
             button8.TabIndex = 29;
             button8.Text = "取消修改";
             button8.UseVisualStyleBackColor = true;
+            button8.Visible = false;
             button8.Click += button8_Click;
             // 
             // label4
@@ -106,6 +107,7 @@
             button9.TabIndex = 28;
             button9.Text = "修改完成";
             button9.UseVisualStyleBackColor = true;
+            button9.Visible = false;
             button9.Click += button9_Click;
             // 
             // button1
@@ -235,7 +237,7 @@
             button6.Name = "button6";
             button6.Size = new Size(94, 50);
             button6.TabIndex = 5;
-            button6.Text = "领料";
+            button6.Text = "完成";
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
             // 
@@ -332,10 +334,10 @@
         private Button button2;
         private Button button4;
         private Button button5;
-        private Button button6;
         public DataGridView dataGridView1;
         private Button button8;
         private Label label4;
         private Button button9;
+        private Button button6;
     }
 }
