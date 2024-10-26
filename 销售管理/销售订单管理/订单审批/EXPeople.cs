@@ -8,24 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace WinFormsApp1.销售管理.收发货管理.退货
+namespace WinFormsApp1.销售管理.销售订单管理.订单审批
 {
-    public partial class RTPeople : Form
+    public partial class EXPeople : Form
     {
         private int n;
         private string[] strcomm;
-        private string RTselect_people_number;
-
-        public TextBox RTselect_people_textBox4 = RT2.rT2.textBox4;//订单
-                                                                   //仓库绑定is_add的入库人格
-        public RTPeople()
+        private string RTselect_people_number1;
+        public TextBox RTselect_people_textBox12 = Examine2nd.examine2Nd.textBox12;
+        public EXPeople()
         {
             InitializeComponent();
             GetDataGridView();
         }
-
         private SqlConnection connection()
         {
             string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=xlh;Password=123456";
@@ -66,7 +62,6 @@ namespace WinFormsApp1.销售管理.收发货管理.退货
             }
 
 
-
             SqlConnection conn = connection();
             conn.Open();
             DataTable dt1 = new DataTable();
@@ -79,7 +74,7 @@ namespace WinFormsApp1.销售管理.收发货管理.退货
 
         private void button2_Click(object sender, EventArgs e)
         {
-            RTselect_people_textBox4.Text = RTselect_people_number;
+            RTselect_people_textBox12.Text = RTselect_people_number1;
             this.Close();
         }
 
@@ -90,10 +85,10 @@ namespace WinFormsApp1.销售管理.收发货管理.退货
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            RTselect_people_number = dataGridView1.Rows[e.RowIndex].Cells["员工姓名"].Value.ToString();
+            RTselect_people_number1 = dataGridView1.Rows[e.RowIndex].Cells["员工姓名"].Value.ToString();
         }
 
-        private void RTPeople_Load(object sender, EventArgs e)
+        private void EXPeople_Load(object sender, EventArgs e)
         {
 
         }

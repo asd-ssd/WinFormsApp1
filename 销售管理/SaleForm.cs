@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.销售管理.客户管理;
-using WinFormsApp1.销售管理.报表分析.产品销量;
-using WinFormsApp1.销售管理.报表分析.客户销量统计;
+
+
 using WinFormsApp1.销售管理.收发货管理.发货;
 
 namespace WinFormsApp1.销售管理
@@ -23,11 +23,11 @@ namespace WinFormsApp1.销售管理
         public orderform orderform1;
         public Receipt2nd receipt2Nd1;
         public ReceiptForm ReceiptForm1;
-        public StateForm StateForm1;
+        
         public ExamineForm examineForm1;
         public ReturnForm returnForm1;
-        public CustomSales customSales1;
-        public ProductSales productSales1;
+        
+        
         public SaleForm()
         {
             InitializeComponent();
@@ -58,13 +58,7 @@ namespace WinFormsApp1.销售管理
             panel.Controls.Add(ReceiptForm1);    //将窗体一加入容器panel2
         }
 
-        private void salelirun_Click(object sender, EventArgs e)
-        {
-            StateForm1 = new StateForm();
-            StateForm1.Show();   //将窗体一进行显示
-            panel.Controls.Clear();    //清空原容器上的控件
-            panel.Controls.Add(StateForm1);    //将窗体一加入容器panel2
-        }
+        
 
         private void saleddsp_Click(object sender, EventArgs e)
         {
@@ -90,20 +84,8 @@ namespace WinFormsApp1.销售管理
             panel.Controls.Add(delievery);    //将窗体一加入容器panel2
         }
 
-        private void salekehu_Click(object sender, EventArgs e)
-        {
-            customSales1 = new CustomSales();
-            customSales1.Show();
-            panel.Controls.Clear();    //清空原容器上的控件
-            panel.Controls.Add(customSales1);    //将窗体一加入容器panel2
-        }
+        
 
-        private void salechanpin_Click(object sender, EventArgs e)
-        {
-            productSales1 = new ProductSales();
-            productSales1.Show();
-            panel.Controls.Clear();    //清空原容器上的控件
-            panel.Controls.Add(productSales1);    //将窗体一加入容器panel2
-        }
+        
     }
 }

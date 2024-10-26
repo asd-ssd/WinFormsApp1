@@ -5,7 +5,9 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,9 +19,14 @@ namespace WinFormsApp1.销售管理
     public partial class Receipt2nd : Form
     {
         public DataGridView rfdataGridView1 = ReceiptForm.receiptForm.rfdataGridView1;
+        private string Is_number;
+        public RS RS;
+        public RSPeople RSPeople;
+        public static Receipt2nd receipt2Nd;
         public Receipt2nd()
         {
             InitializeComponent();
+            receipt2Nd = this;
         }
 
         private void r2date_Click(object sender, EventArgs e)
@@ -38,7 +45,7 @@ namespace WinFormsApp1.销售管理
         }
         private SqlConnection connection()
         {
-            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=xlh;Persist Security Info=True;User ID=xlh;Password=123456";
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=xlh;Password=123456";
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
@@ -66,7 +73,7 @@ namespace WinFormsApp1.销售管理
         {
             SqlConnection conn = connection();
             conn.Open();
-            string strda = "insert into 收款单(收款单编号,收款日期,客户,收款人,收款金额) values('" + textBox1.Text + "','" + dateTimePicker1.Value + "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "')";
+            string strda = "insert into 收款单(收款单编号,收款日期,客户,收款人,收款金额,订单编号) values('" + textBox1.Text + "','" + dateTimePicker1.Value + "','" + textBox3.Text + "','" + textBox2.Text + "','" + textBox4.Text + "','" + textBox5.Text + "')";
             SqlCommand comm = new SqlCommand(strda, conn);
             comm.ExecuteNonQuery();
             conn.Close();
@@ -86,7 +93,47 @@ namespace WinFormsApp1.销售管理
 
         private void Receipt2nd_Load(object sender, EventArgs e)
         {
+            SqlConnection conn = connection();
+            conn.Open();
+            string query = "SELECT 收款单编号 FROM 收款单 ORDER BY 收款单编号 DESC OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY";
+            SqlCommand comm = new SqlCommand(query, conn);
+            object result = comm.ExecuteScalar();
+            Is_number = result.ToString();
+            textBox1.Text = Numberplus(Is_number);
+            conn.Close();
+        }
+        public static string Numberplus(string str)
+        {
+            // 使用正则表达式找到字符串中的数字部分  
+            Match match = Regex.Match(str, @"\d+");
+            if (!match.Success)
+            {
+                // 如果没有找到数字部分，直接返回原字符串  
+                return str;
+            }
 
+            // 将找到的数字部分转换为整数并加一  
+            string numberPart = match.Value;
+            int number = int.Parse(numberPart);
+            number++;
+
+            // 将加一的数字部分转换回字符串，并确保其长度与原数字部分相同（使用前导零）  
+            string incrementedNumberPart = number.ToString(new string('0', numberPart.Length));
+
+            // 使用正则表达式替换原字符串中的数字部分为加一的数字部分  
+            return Regex.Replace(str, @"\d+", incrementedNumberPart);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RSPeople = new RSPeople();
+            RSPeople.Show();   //将窗体一进行显示
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            RS = new RS();
+            RS.Show();   //将窗体一进行显示
         }
     }
 }

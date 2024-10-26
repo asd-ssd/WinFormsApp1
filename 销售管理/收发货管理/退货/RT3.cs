@@ -21,7 +21,7 @@ namespace WinFormsApp1.销售管理.收发货管理.退货
         }
         private SqlConnection connection()
         {
-            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=xlh;Persist Security Info=True;User ID=xlh;Password=123456";
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=xlh;Password=123456";
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
@@ -33,10 +33,7 @@ namespace WinFormsApp1.销售管理.收发货管理.退货
             {
                 selectsql += "and 退回编号 like'%" + textBox1.Text + "%'";
             }
-            if (textBox2.Text != "")
-            {
-                selectsql += "and 仓库编号 like'%" + textBox2.Text + "%'";
-            }
+            
             if (textBox3.Text != "")
             {
                 selectsql += "and 收货人 like'%" + textBox3.Text + "%'";
@@ -68,6 +65,11 @@ namespace WinFormsApp1.销售管理.收发货管理.退货
             {
                 this.Close();
             }
+        }
+
+        private void RT3_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

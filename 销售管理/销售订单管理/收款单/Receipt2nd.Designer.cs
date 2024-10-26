@@ -39,6 +39,10 @@
             textBox2 = new TextBox();
             textBox3 = new TextBox();
             textBox4 = new TextBox();
+            button1 = new Button();
+            label1 = new Label();
+            textBox5 = new TextBox();
+            button2 = new Button();
             SuspendLayout();
             // 
             // r2number
@@ -73,7 +77,7 @@
             // r2client
             // 
             r2client.AutoSize = true;
-            r2client.Location = new Point(464, 183);
+            r2client.Location = new Point(464, 239);
             r2client.Name = "r2client";
             r2client.Size = new Size(46, 24);
             r2client.TabIndex = 3;
@@ -123,7 +127,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(552, 183);
+            textBox3.Location = new Point(555, 239);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(150, 30);
             textBox3.TabIndex = 105;
@@ -135,11 +139,51 @@
             textBox4.Size = new Size(150, 30);
             textBox4.TabIndex = 106;
             // 
+            // button1
+            // 
+            button1.Location = new Point(392, 183);
+            button1.Name = "button1";
+            button1.Size = new Size(33, 32);
+            button1.TabIndex = 107;
+            button1.Text = "...";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(467, 183);
+            label1.Name = "label1";
+            label1.Size = new Size(82, 24);
+            label1.TabIndex = 108;
+            label1.Text = "订单编号";
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(555, 180);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(150, 30);
+            textBox5.TabIndex = 109;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(711, 178);
+            button2.Name = "button2";
+            button2.Size = new Size(33, 32);
+            button2.TabIndex = 110;
+            button2.Text = "...";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // Receipt2nd
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(978, 844);
+            ClientSize = new Size(978, 444);
+            Controls.Add(button2);
+            Controls.Add(textBox5);
+            Controls.Add(label1);
+            Controls.Add(button1);
             Controls.Add(textBox4);
             Controls.Add(textBox3);
             Controls.Add(textBox2);
@@ -168,8 +212,12 @@
         private Button r2save;
         private DateTimePicker dateTimePicker1;
         private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private Button button1;
+        private Label label1;
+        private Button button2;
+        public TextBox textBox2;
+        public TextBox textBox3;
+        public TextBox textBox4;
+        public TextBox textBox5;
     }
 }

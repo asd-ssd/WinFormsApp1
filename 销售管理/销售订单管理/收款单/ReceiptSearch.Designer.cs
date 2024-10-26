@@ -40,6 +40,8 @@
             r2date = new Label();
             r2number = new Label();
             button2 = new Button();
+            textBox5 = new TextBox();
+            label1 = new Label();
             SuspendLayout();
             // 
             // textBox4
@@ -144,11 +146,29 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(482, 226);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(150, 30);
+            textBox5.TabIndex = 119;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(394, 229);
+            label1.Name = "label1";
+            label1.Size = new Size(82, 24);
+            label1.TabIndex = 120;
+            label1.Text = "订单编号";
+            // 
             // ReceiptSearch
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 444);
+            Controls.Add(label1);
+            Controls.Add(textBox5);
             Controls.Add(button2);
             Controls.Add(textBox4);
             Controls.Add(textBox3);
@@ -163,6 +183,7 @@
             Controls.Add(r2number);
             Name = "ReceiptSearch";
             Text = "查询收款单";
+            Load += ReceiptSearch_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -181,5 +202,7 @@
         private Label r2date;
         private Label r2number;
         private Button button2;
+        private TextBox textBox5;
+        private Label label1;
     }
 }

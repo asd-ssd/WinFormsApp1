@@ -86,39 +86,42 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(50, 168);
+            dataGridView1.Location = new Point(50, 183);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1550, 900);
+            dataGridView1.Size = new Size(873, 552);
             dataGridView1.TabIndex = 78;
+           
             dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
             // 
             // button1
             // 
             button1.BackColor = SystemColors.GradientInactiveCaption;
-            button1.Location = new Point(566, 30);
+            button1.Location = new Point(50, 100);
             button1.Name = "button1";
             button1.Size = new Size(123, 40);
             button1.TabIndex = 79;
             button1.Text = "确认修改";
             button1.UseVisualStyleBackColor = false;
+            button1.Visible = false;
             button1.Click += button1_Click;
             // 
             // button2
             // 
             button2.BackColor = SystemColors.GradientInactiveCaption;
-            button2.Location = new Point(695, 30);
+            button2.Location = new Point(179, 100);
             button2.Name = "button2";
             button2.Size = new Size(123, 40);
             button2.TabIndex = 80;
             button2.Text = "取消修改";
             button2.UseVisualStyleBackColor = false;
+            button2.Visible = false;
             button2.Click += button2_Click;
             // 
             // button3
             // 
             button3.BackColor = SystemColors.GradientInactiveCaption;
-            button3.Location = new Point(50, 89);
+            button3.Location = new Point(566, 30);
             button3.Name = "button3";
             button3.Size = new Size(123, 40);
             button3.TabIndex = 81;

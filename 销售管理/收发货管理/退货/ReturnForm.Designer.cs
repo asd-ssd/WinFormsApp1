@@ -35,13 +35,14 @@
             dataGridView1 = new DataGridView();
             sredit2 = new Button();
             srcancel = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // srsearch
             // 
             srsearch.BackColor = SystemColors.GradientInactiveCaption;
-            srsearch.Location = new Point(770, 52);
+            srsearch.Location = new Point(482, 52);
             srsearch.Name = "srsearch";
             srsearch.Size = new Size(138, 40);
             srsearch.TabIndex = 70;
@@ -52,7 +53,7 @@
             // srdelete
             // 
             srdelete.BackColor = SystemColors.GradientInactiveCaption;
-            srdelete.Location = new Point(626, 52);
+            srdelete.Location = new Point(338, 52);
             srdelete.Name = "srdelete";
             srdelete.Size = new Size(138, 40);
             srdelete.TabIndex = 69;
@@ -85,39 +86,53 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(50, 131);
+            dataGridView1.Location = new Point(50, 192);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1550, 939);
+            dataGridView1.Size = new Size(840, 574);
             dataGridView1.TabIndex = 73;
             dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
             // 
             // sredit2
             // 
             sredit2.BackColor = SystemColors.GradientInactiveCaption;
-            sredit2.Location = new Point(338, 52);
+            sredit2.Location = new Point(50, 109);
             sredit2.Name = "sredit2";
             sredit2.Size = new Size(138, 40);
             sredit2.TabIndex = 74;
             sredit2.Text = "修改完成";
             sredit2.UseVisualStyleBackColor = false;
+            sredit2.Visible = false;
             sredit2.Click += sredit2_Click;
             // 
             // srcancel
             // 
             srcancel.BackColor = SystemColors.GradientInactiveCaption;
-            srcancel.Location = new Point(482, 52);
+            srcancel.Location = new Point(194, 109);
             srcancel.Name = "srcancel";
             srcancel.Size = new Size(138, 40);
             srcancel.TabIndex = 75;
             srcancel.Text = "取消修改";
             srcancel.UseVisualStyleBackColor = false;
+            srcancel.Visible = false;
             srcancel.Click += srcancel_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.GradientInactiveCaption;
+            button1.Location = new Point(626, 52);
+            button1.Name = "button1";
+            button1.Size = new Size(138, 40);
+            button1.TabIndex = 76;
+            button1.Text = "刷新";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // ReturnForm
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(button1);
             Controls.Add(srcancel);
             Controls.Add(sredit2);
             Controls.Add(dataGridView1);
@@ -141,5 +156,6 @@
         private Button sredit2;
         private Button srcancel;
         public DataGridView dataGridView1;
+        private Button button1;
     }
 }

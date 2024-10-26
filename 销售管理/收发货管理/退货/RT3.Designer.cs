@@ -31,12 +31,10 @@
             textBox5 = new TextBox();
             textBox4 = new TextBox();
             textBox3 = new TextBox();
-            textBox2 = new TextBox();
             textBox1 = new TextBox();
             sr11label6 = new Label();
             sr11label5 = new Label();
             sr11label4 = new Label();
-            sr11label3 = new Label();
             sr11label1 = new Label();
             button1 = new Button();
             button2 = new Button();
@@ -58,17 +56,10 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(510, 146);
+            textBox3.Location = new Point(510, 85);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(150, 30);
             textBox3.TabIndex = 96;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(141, 146);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(150, 30);
-            textBox2.TabIndex = 95;
             // 
             // textBox1
             // 
@@ -98,20 +89,11 @@
             // sr11label4
             // 
             sr11label4.AutoSize = true;
-            sr11label4.Location = new Point(380, 146);
+            sr11label4.Location = new Point(380, 85);
             sr11label4.Name = "sr11label4";
             sr11label4.Size = new Size(64, 24);
             sr11label4.TabIndex = 91;
             sr11label4.Text = "收货人";
-            // 
-            // sr11label3
-            // 
-            sr11label3.AutoSize = true;
-            sr11label3.Location = new Point(22, 146);
-            sr11label3.Name = "sr11label3";
-            sr11label3.Size = new Size(82, 24);
-            sr11label3.TabIndex = 90;
-            sr11label3.Text = "仓库编号";
             // 
             // sr11label1
             // 
@@ -152,15 +134,14 @@
             Controls.Add(textBox5);
             Controls.Add(textBox4);
             Controls.Add(textBox3);
-            Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(sr11label6);
             Controls.Add(sr11label5);
             Controls.Add(sr11label4);
-            Controls.Add(sr11label3);
             Controls.Add(sr11label1);
             Name = "RT3";
             Text = "查询";
+            Load += RT3_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -169,12 +150,10 @@
         private TextBox textBox5;
         private TextBox textBox4;
         private TextBox textBox3;
-        private TextBox textBox2;
         private TextBox textBox1;
         private Label sr11label6;
         private Label sr11label5;
         private Label sr11label4;
-        private Label sr11label3;
         private Label sr11label1;
         private Button button1;
         private Button button2;

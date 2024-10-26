@@ -16,7 +16,7 @@ namespace WinFormsApp1.销售管理.销售订单管理.收款单
         public DataGridView rfdataGridView1 = ReceiptForm.receiptForm.rfdataGridView1;
         private SqlConnection connection()
         {
-            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=xlh;Persist Security Info=True;User ID=xlh;Password=123456";
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=xlh;Password=123456";
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
@@ -44,7 +44,11 @@ namespace WinFormsApp1.销售管理.销售订单管理.收款单
             {
                 selectsql += "and 收款金额 like'%" + textBox4.Text + "%'";
             }
-            
+            if (textBox4.Text != "")
+            {
+                selectsql += "and 订单编号 like'%" + textBox4.Text + "%'";
+            }
+
 
             SqlConnection conn = connection();
             conn.Open();
@@ -63,6 +67,11 @@ namespace WinFormsApp1.销售管理.销售订单管理.收款单
             {
                 this.Close();
             }
+        }
+
+        private void ReceiptSearch_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

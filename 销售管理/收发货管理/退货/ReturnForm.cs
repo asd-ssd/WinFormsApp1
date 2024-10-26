@@ -34,7 +34,7 @@ namespace WinFormsApp1.销售管理
 
         private SqlConnection connection()
         {
-            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=xlh;Persist Security Info=True;User ID=xlh;Password=123456";
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=xlh;Password=123456";
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
@@ -58,7 +58,7 @@ namespace WinFormsApp1.销售管理
                 MessageBox.Show(ee.Message.ToString());
             }
         }
-        
+
 
         private void srcreat_Click(object sender, EventArgs e)
         {
@@ -66,7 +66,7 @@ namespace WinFormsApp1.销售管理
             RT2.Show();   //将窗体一进行显示
         }
 
-       
+
 
         private void sredit_Click(object sender, EventArgs e)
         {
@@ -152,6 +152,11 @@ namespace WinFormsApp1.销售管理
         {
             RT3 = new RT3();
             RT3.Show();   //将窗体一进行显示
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            GetDataGridView();
         }
     }
 }

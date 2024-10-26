@@ -171,6 +171,7 @@
             Controls.Add(c12textBox1);
             Name = "CSearch";
             Text = "查询";
+            Load += CSearch_Load;
             ResumeLayout(false);
             PerformLayout();
         }

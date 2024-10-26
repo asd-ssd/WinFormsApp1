@@ -55,6 +55,7 @@
             button2.TabIndex = 1;
             button2.Text = "确认";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -64,6 +65,7 @@
             button3.TabIndex = 2;
             button3.Text = "取消";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // label1
             // 
@@ -89,6 +91,7 @@
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(654, 266);
             dataGridView1.TabIndex = 5;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // RTPeople
             // 
@@ -103,6 +106,7 @@
             Controls.Add(button1);
             Name = "RTPeople";
             Text = "收货人";
+            Load += RTPeople_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

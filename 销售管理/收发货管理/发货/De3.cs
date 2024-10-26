@@ -22,34 +22,20 @@ namespace WinFormsApp1.销售管理.收发货管理.发货
         }
         private SqlConnection connection()
         {
-            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=xlh;Persist Security Info=True;User ID=xlh;Password=123456";
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=xlh;Password=123456";
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string selectsql = "select * from 发货单 where 1=1";
-            if (textBox1.Text != "")
-            {
-                selectsql += "and 出库单编号 like'%" + textBox1.Text + "%'";
-            }
-            if (textBox2.Text != "")
-            {
-                selectsql += "and 仓库编号 like'%" + textBox2.Text + "%'";
-            }
-            if (textBox3.Text != "")
-            {
-                selectsql += "and 发货人 like'%" + textBox3.Text + "%'";
-            }
+            string selectsql = "select * from 出库单表 where 1=1";
+            
             if (textBox4.Text != "")
             {
-                selectsql += "and 订单编号 like'%" + textBox4.Text + "%'";
+                selectsql += "and 销售订单编号 like'%" + textBox4.Text + "%'";
             }
-            if (textBox5.Text != "")
-            {
-                selectsql += "and 客户编号 like'%" + textBox5.Text + "%'";
-            }
+            
 
             SqlConnection conn = connection();
             conn.Open();

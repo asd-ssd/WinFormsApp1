@@ -34,7 +34,6 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            label6 = new Label();
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
@@ -43,12 +42,16 @@
             textBox2 = new TextBox();
             textBox3 = new TextBox();
             textBox4 = new TextBox();
-            textBox5 = new TextBox();
             textBox6 = new TextBox();
             textBox7 = new TextBox();
             textBox8 = new TextBox();
             textBox9 = new TextBox();
             dateTimePicker1 = new DateTimePicker();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
+            textBox10 = new TextBox();
+            label11 = new Label();
             SuspendLayout();
             // 
             // button1
@@ -74,7 +77,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(332, 48);
+            label2.Location = new Point(381, 49);
             label2.Name = "label2";
             label2.Size = new Size(82, 24);
             label2.TabIndex = 101;
@@ -92,7 +95,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(332, 103);
+            label4.Location = new Point(381, 103);
             label4.Name = "label4";
             label4.Size = new Size(64, 24);
             label4.TabIndex = 103;
@@ -105,16 +108,7 @@
             label5.Name = "label5";
             label5.Size = new Size(82, 24);
             label5.TabIndex = 104;
-            label5.Text = "销售仓库";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(332, 162);
-            label6.Name = "label6";
-            label6.Size = new Size(82, 24);
-            label6.TabIndex = 105;
-            label6.Text = "商品名称";
+            label5.Text = "商品名称";
             // 
             // label7
             // 
@@ -128,16 +122,16 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(332, 224);
+            label8.Location = new Point(381, 224);
             label8.Name = "label8";
             label8.Size = new Size(82, 24);
             label8.TabIndex = 107;
-            label8.Text = "商品编号";
+            label8.Text = "商品数量";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(45, 271);
+            label9.Location = new Point(379, 278);
             label9.Name = "label9";
             label9.Size = new Size(46, 24);
             label9.TabIndex = 108;
@@ -146,7 +140,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(332, 271);
+            label10.Location = new Point(45, 272);
             label10.Name = "label10";
             label10.Size = new Size(82, 24);
             label10.TabIndex = 109;
@@ -168,7 +162,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(423, 103);
+            textBox3.Location = new Point(472, 103);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(150, 30);
             textBox3.TabIndex = 112;
@@ -180,13 +174,6 @@
             textBox4.Size = new Size(150, 30);
             textBox4.TabIndex = 113;
             // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(423, 159);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(150, 30);
-            textBox5.TabIndex = 114;
-            // 
             // textBox6
             // 
             textBox6.Location = new Point(149, 224);
@@ -196,43 +183,93 @@
             // 
             // textBox7
             // 
-            textBox7.Location = new Point(423, 224);
+            textBox7.Location = new Point(472, 224);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(150, 30);
             textBox7.TabIndex = 116;
             // 
             // textBox8
             // 
-            textBox8.Location = new Point(149, 271);
+            textBox8.Location = new Point(472, 272);
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(150, 30);
             textBox8.TabIndex = 117;
             // 
             // textBox9
             // 
-            textBox9.Location = new Point(423, 271);
+            textBox9.Location = new Point(149, 272);
             textBox9.Name = "textBox9";
             textBox9.Size = new Size(150, 30);
             textBox9.TabIndex = 118;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(423, 48);
+            dateTimePicker1.Location = new Point(472, 49);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(249, 30);
             dateTimePicker1.TabIndex = 119;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(305, 103);
+            button2.Name = "button2";
+            button2.Size = new Size(32, 30);
+            button2.TabIndex = 120;
+            button2.Text = "...";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(628, 103);
+            button3.Name = "button3";
+            button3.Size = new Size(32, 30);
+            button3.TabIndex = 121;
+            button3.Text = "...";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(305, 162);
+            button4.Name = "button4";
+            button4.Size = new Size(32, 30);
+            button4.TabIndex = 122;
+            button4.Text = "...";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
+            // textBox10
+            // 
+            textBox10.Location = new Point(472, 159);
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(150, 30);
+            textBox10.TabIndex = 123;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(379, 162);
+            label11.Name = "label11";
+            label11.Size = new Size(82, 24);
+            label11.TabIndex = 124;
+            label11.Text = "商品编码";
             // 
             // Order2nd
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 444);
+            Controls.Add(label11);
+            Controls.Add(textBox10);
+            Controls.Add(button4);
+            Controls.Add(button3);
+            Controls.Add(button2);
             Controls.Add(dateTimePicker1);
             Controls.Add(textBox9);
             Controls.Add(textBox8);
             Controls.Add(textBox7);
             Controls.Add(textBox6);
-            Controls.Add(textBox5);
             Controls.Add(textBox4);
             Controls.Add(textBox3);
             Controls.Add(textBox2);
@@ -241,7 +278,6 @@
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(label7);
-            Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -272,20 +308,23 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private Label label6;
         private Label label7;
         private Label label8;
         private Label label9;
         private Label label10;
         private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox7;
         private TextBox textBox8;
-        private TextBox textBox9;
         private DateTimePicker dateTimePicker1;
+        private Button button2;
+        private Button button3;
+        private Button button4;
+        public TextBox textBox2;
+        public TextBox textBox3;
+        public TextBox textBox4;
+        public TextBox textBox6;
+        public TextBox textBox7;
+        public TextBox textBox9;
+        private Label label11;
+        public TextBox textBox10;
     }
 }
