@@ -8,8 +8,9 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using SqlSugar;
+using WinFormsApp1.数据库封装类;
 
-namespace WinFormsApp1
+namespace WinFormsApp1.数据库支持类
 {
     public class PermissionService
     {

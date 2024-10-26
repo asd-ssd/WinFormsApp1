@@ -10,12 +10,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.Forth;
+using WinFormsApp1.数据库支持类;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WinFormsApp1.计划管理.三级
 {
     public partial class 生产计划及MRP : UserControl
     {
+        private readonly PermissionService _permissionService;
         public static 生产计划及MRP shengchan1;
         public MRP生成 MRP1;
         public 新增主生产计划 zhu1;
@@ -23,6 +25,13 @@ namespace WinFormsApp1.计划管理.三级
         {
             InitializeComponent();
             shengchan1 = this;
+            this.button6.Tag = "Create";
+            this.button3.Tag = "Delete";
+            this.button2.Tag = "Edit";
+            var dbHelper = new SqlSugarHelper();
+            _permissionService = new PermissionService(dbHelper);
+            var permissionManager = new PermissionManager(_permissionService, moduleId: 2); // 1是模块ID
+            permissionManager.ApplyPermissions(this);
         }
         public string MPS_number = null;
         public string Item_number = null;

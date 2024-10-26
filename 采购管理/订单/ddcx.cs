@@ -8,13 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using WinFormsApp1.数据库支持类;
 using WinFormsApp1.采购管理.订单;
 
 namespace WinFormsApp1.采购管理
 {
     public partial class ddcx : UserControl
     {
+        private readonly PermissionService _permissionService;
         public ddcxy ddcxy1;
         public ddxg ddxg1;
 
@@ -47,6 +48,13 @@ namespace WinFormsApp1.采购管理
         public ddcx()
         {
             InitializeComponent();
+            
+            this.button3.Tag = "Delete";
+            
+            var dbHelper = new SqlSugarHelper();
+            _permissionService = new PermissionService(dbHelper);
+            var permissionManager = new PermissionManager(_permissionService, moduleId: 4); // 1是模块ID
+            permissionManager.ApplyPermissions(this);
         }
 
         private void label9_Click(object sender, EventArgs e)

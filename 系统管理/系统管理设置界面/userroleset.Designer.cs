@@ -101,7 +101,7 @@
             Controls.Add(button1);
             Controls.Add(tableLayoutPanel1);
             Name = "userroleset";
-            Text = "userroleset";
+            Text = "角色赋予";
             tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }

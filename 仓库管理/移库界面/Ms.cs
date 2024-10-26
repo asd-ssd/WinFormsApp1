@@ -8,14 +8,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库支持类;
 
 namespace WinFormsApp1.仓库管理.移库界面
 {
     public partial class Ms : UserControl
     {
+        private readonly PermissionService _permissionService;
         public Ms()
         {
             InitializeComponent();
+            this.button1.Tag = "Create";
+            this.button3.Tag = "Delete";
+            this.button2.Tag = "Edit";
+            var dbHelper = new SqlSugarHelper();
+            _permissionService = new PermissionService(dbHelper);
+            var permissionManager = new PermissionManager(_permissionService, moduleId: 5); // 1是模块ID
+            permissionManager.ApplyPermissions(this);
         }
 
         private void Ms_Load(object sender, EventArgs e)

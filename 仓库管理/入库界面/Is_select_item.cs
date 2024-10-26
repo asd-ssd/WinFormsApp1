@@ -56,10 +56,10 @@ namespace WinFormsApp1.仓库管理.入库界面
         private void button7_Click(object sender, EventArgs e)
         {
             string selectsql = "select * from BOM表 where 1=1";
-            /*if (textBox1.Text != "")
+            if (textBox1.Text != "")
             {
                 selectsql += "and 物料名称 like'%" + textBox1.Text + "%'";
-            }*/
+            }
             if (textBox2.Text != "")
             {
                 selectsql += "and 物料编码 like'%" + textBox2.Text + "%'";

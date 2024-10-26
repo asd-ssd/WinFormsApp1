@@ -31,19 +31,18 @@
             userconbutton = new Button();
             texconbutton = new Button();
             syswhconbutton = new Button();
-            syssetconbutton = new Button();
             SuspendLayout();
             // 
             // userconbutton
             // 
             userconbutton.BackgroundImage = Properties.Resource1.权限管理;
             userconbutton.BackgroundImageLayout = ImageLayout.Zoom;
-            userconbutton.Location = new Point(88, 213);
+            userconbutton.Location = new Point(88, 69);
             userconbutton.Margin = new Padding(2);
             userconbutton.Name = "userconbutton";
             userconbutton.Size = new Size(174, 144);
             userconbutton.TabIndex = 1;
-            userconbutton.Text = "角色管理";
+            userconbutton.Text = "用户管理";
             userconbutton.TextAlign = ContentAlignment.BottomCenter;
             userconbutton.UseVisualStyleBackColor = true;
             userconbutton.Click += userconbutton_Click;
@@ -52,7 +51,7 @@
             // 
             texconbutton.BackgroundImage = Properties.Resource1.授信详情_操作日志;
             texconbutton.BackgroundImageLayout = ImageLayout.Zoom;
-            texconbutton.Location = new Point(88, 402);
+            texconbutton.Location = new Point(76, 314);
             texconbutton.Margin = new Padding(2);
             texconbutton.Name = "texconbutton";
             texconbutton.Size = new Size(174, 148);
@@ -66,7 +65,7 @@
             // 
             syswhconbutton.BackgroundImage = Properties.Resource1.系统维护;
             syswhconbutton.BackgroundImageLayout = ImageLayout.Zoom;
-            syswhconbutton.Location = new Point(88, 593);
+            syswhconbutton.Location = new Point(88, 556);
             syswhconbutton.Margin = new Padding(2);
             syswhconbutton.Name = "syswhconbutton";
             syswhconbutton.Size = new Size(174, 130);
@@ -76,20 +75,6 @@
             syswhconbutton.UseVisualStyleBackColor = true;
             syswhconbutton.Click += syswhconbutton_Click;
             // 
-            // syssetconbutton
-            // 
-            syssetconbutton.BackgroundImage = Properties.Resource1.设置用;
-            syssetconbutton.BackgroundImageLayout = ImageLayout.Zoom;
-            syssetconbutton.Location = new Point(88, 30);
-            syssetconbutton.Margin = new Padding(2);
-            syssetconbutton.Name = "syssetconbutton";
-            syssetconbutton.Size = new Size(174, 145);
-            syssetconbutton.TabIndex = 0;
-            syssetconbutton.Text = "系统设置";
-            syssetconbutton.TextAlign = ContentAlignment.BottomCenter;
-            syssetconbutton.UseVisualStyleBackColor = true;
-            syssetconbutton.Click += syssetconbutton_Click;
-            // 
             // systemcon
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
@@ -97,7 +82,6 @@
             Controls.Add(syswhconbutton);
             Controls.Add(texconbutton);
             Controls.Add(userconbutton);
-            Controls.Add(syssetconbutton);
             Margin = new Padding(2);
             Name = "systemcon";
             Size = new Size(351, 778);
@@ -108,6 +92,5 @@
         private Button userconbutton;
         private Button texconbutton;
         private Button syswhconbutton;
-        private Button syssetconbutton;
     }
 }

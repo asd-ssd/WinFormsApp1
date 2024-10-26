@@ -42,50 +42,57 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(35, 86);
+            dataGridView1.Location = new Point(43, 103);
+            dataGridView1.Margin = new Padding(4, 4, 4, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(746, 379);
+            dataGridView1.Size = new Size(912, 455);
             dataGridView1.TabIndex = 1;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(125, 52);
+            label2.Location = new Point(153, 62);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(69, 20);
+            label2.Size = new Size(82, 24);
             label2.TabIndex = 32;
             label2.Text = "物料编号";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(275, 49);
+            textBox2.Location = new Point(336, 59);
+            textBox2.Margin = new Padding(4, 4, 4, 4);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
+            textBox2.Size = new Size(152, 30);
             textBox2.TabIndex = 31;
+
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(140, 19);
+            label1.Location = new Point(171, 23);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(54, 20);
+            label1.Size = new Size(64, 24);
             label1.TabIndex = 30;
             label1.Text = "物料名";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(275, 12);
+            textBox1.Location = new Point(336, 14);
+            textBox1.Margin = new Padding(4, 4, 4, 4);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
+            textBox1.Size = new Size(152, 30);
             textBox1.TabIndex = 29;
             // 
             // button7
             // 
-            button7.Location = new Point(35, 19);
+            button7.Location = new Point(43, 23);
+            button7.Margin = new Padding(4, 4, 4, 4);
             button7.Name = "button7";
-            button7.Size = new Size(47, 43);
+            button7.Size = new Size(57, 52);
             button7.TabIndex = 33;
             button7.Text = "查询";
             button7.UseVisualStyleBackColor = true;
@@ -93,10 +100,10 @@
             // 
             // button2
             // 
-            button2.Location = new Point(652, 34);
+            button2.Location = new Point(797, 41);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
-            button2.Size = new Size(109, 38);
+            button2.Size = new Size(133, 46);
             button2.TabIndex = 77;
             button2.Text = "返回";
             button2.UseVisualStyleBackColor = true;
@@ -104,10 +111,10 @@
             // 
             // button1
             // 
-            button1.Location = new Point(504, 34);
+            button1.Location = new Point(616, 41);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
-            button1.Size = new Size(109, 38);
+            button1.Size = new Size(133, 46);
             button1.TabIndex = 76;
             button1.Text = "确定";
             button1.UseVisualStyleBackColor = true;
@@ -115,9 +122,9 @@
             // 
             // Is_select_item
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(818, 477);
+            ClientSize = new Size(1000, 572);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(button7);
@@ -126,6 +133,7 @@
             Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(dataGridView1);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "Is_select_item";
             Text = "Is_select_item";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

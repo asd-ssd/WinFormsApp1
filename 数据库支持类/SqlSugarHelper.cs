@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinFormsApp1
+namespace WinFormsApp1.数据库支持类
 {
-    public  class SqlSugarHelper
+    public class SqlSugarHelper
     {
         //连接字符串
         public static string ConnectionString = string.Empty;
@@ -19,8 +19,8 @@ namespace WinFormsApp1
             {
                 return new SqlSugarClient(new ConnectionConfig()
                 {
-                    ConnectionString = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Integrated Security=True",//必填, 数据库连接字符串 
-                    DbType = DbType.SqlServer ,//选择数据库 sql server
+                    ConnectionString = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=hhr;Password=aa1628381531",//必填, 数据库连接字符串 
+                    DbType = DbType.SqlServer,//选择数据库 sql server
                     IsAutoCloseConnection = true,//设置为true无需使用using或者Close操作，自动关闭连接，不需要手动关闭数据链接
                     InitKeyType = InitKeyType.Attribute //默认SystemTable, 字段信息读取, 如：该属性是不是主键，是不是标识列等等信息
                 });

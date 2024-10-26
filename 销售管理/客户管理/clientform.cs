@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.工作界面;
+using WinFormsApp1.数据库支持类;
 using WinFormsApp1.销售管理;
 using WinFormsApp1.销售管理.客户管理;
 
@@ -20,13 +21,20 @@ namespace WinFormsApp1
 {
     public partial class clientform : UserControl
     {
-
+        private readonly PermissionService _permissionService;
         public CSearch cSearch;
         public static clientform Clientform;
         public client2 Client2;
         public clientform()
         {
             InitializeComponent();
+            this.ccreat.Tag = "Create";
+            this.cdelete.Tag = "Delete";
+            this.cedit.Tag = "Edit";
+            var dbHelper = new SqlSugarHelper();
+            _permissionService = new PermissionService(dbHelper);
+            var permissionManager = new PermissionManager(_permissionService, moduleId: 3); // 1是模块ID
+            permissionManager.ApplyPermissions(this);
         }
         private SqlConnection connection()
         {

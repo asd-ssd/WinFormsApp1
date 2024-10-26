@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -9,20 +10,52 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.基础信息管理工作界面;
+using WinFormsApp1.数据库支持类;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WinFormsApp1
 {
     public partial class empres : Form
     {
+        private DictionaryService _dictionaryService;
         public DataGridView dataGridView1 = empplat.empplat1.dataGridView2;
         public empres()
         {
             InitializeComponent();
+            _dictionaryService = new DictionaryService();
+            LoadXBItems();
+            LoadZZItems();
+            LoadHYItems();
+        }
+        private void LoadHYItems()
+        {
+            var items = _dictionaryService.GetItemsByCategoryName("婚姻情况");
+            comboBox4.DataSource = items;
+            comboBox4.DisplayMember = "ItemName";
+            comboBox4.ValueMember = "ItemId";
+            comboBox4.SelectedIndex = -1; // 使ComboBox不显示任何选择的值
+        }
+
+        private void LoadZZItems()
+        {
+            var items = _dictionaryService.GetItemsByCategoryName("政治面貌");
+            comboBox3.DataSource = items;
+            comboBox3.DisplayMember = "ItemName";
+            comboBox3.ValueMember = "ItemId";
+            comboBox3.SelectedIndex = -1; // 使ComboBox不显示任何选择的值
+        }
+
+        private void LoadXBItems()
+        {
+            var items = _dictionaryService.GetItemsByCategoryName("性别");
+            comboBox2.DataSource = items;
+            comboBox2.DisplayMember = "ItemName";
+            comboBox2.ValueMember = "ItemId";
+            comboBox2.SelectedIndex = -1; // 使ComboBox不显示任何选择的值
         }
         private SqlConnection connection()
         {
-            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Integrated Security=True";
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=hhr;Password=aa1628381531";
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
@@ -38,9 +71,9 @@ namespace WinFormsApp1
             {
                 selectsql += "and 员工姓名 like'%" + textBox2.Text + "%'";
             }
-            if (textBox3.Text.Trim() != "")
+            if (comboBox2.Text.Trim() != "")
             {
-                selectsql += "and 性别 like'%" + textBox3.Text + "%'";
+                selectsql += "and 性别 like'%" + comboBox2.Text + "%'";
             }
             if (textBox4.Text.Trim() != "")
             {
@@ -70,13 +103,13 @@ namespace WinFormsApp1
             {
                 selectsql += "and 民族 like'%" + textBox10.Text + "%'";
             }
-            if (textBox11.Text.Trim() != "")
+            if (comboBox3.Text.Trim() != "")
             {
-                selectsql += "and 政治面貌 like'%" + textBox11.Text + "%'";
+                selectsql += "and 政治面貌 like'%" + comboBox3.Text + "%'";
             }
-            if (textBox12.Text.Trim() != "")
+            if (comboBox4.Text.Trim() != "")
             {
-                selectsql += "and 婚姻情况 like'%" + textBox12.Text + "%'";
+                selectsql += "and 婚姻情况 like'%" + comboBox4.Text + "%'";
             }
             if (textBox13.Text.Trim() != "")
             {
@@ -94,16 +127,16 @@ namespace WinFormsApp1
             
             string end2 = dateTimePicker1.Value.AddDays(1).Date.ToString("yyyy-MM-dd");
             var paras = new Dictionary<string, string> { { "start1", start1 }, { "end1", end1 }, { "start2", start2 }, { "end2", end2 } };
-            if (radioButton1.Checked)
+            if (checkBox1.Checked)
             {
               
                 selectsql += "and 入职日期 >= @start1 AND 入职日期 <@end1";
                 
 
             }
-            if (radioButton2.Checked)
+            if (checkBox2.Checked)
             {
-                selectsql += "and 离职日期 >= @start2 AND 入职日期 <@end2";
+                selectsql += "and 离职日期 >= @start2 AND 离职日期 <@end2";
             }
             if (textBox15.Text.Trim() != "")
             {
@@ -153,7 +186,7 @@ namespace WinFormsApp1
             {
                 label3.Visible = true;
                 label4.Visible = true;
-                radioButton2.Visible = true;
+                checkBox2.Visible = true;
                 dateTimePicker4.Visible = true;
                 dateTimePicker1.Visible = true;
             }
@@ -161,7 +194,7 @@ namespace WinFormsApp1
             {
                 label3.Visible = false;
                 label4.Visible = false;
-                radioButton2.Visible = false;
+                checkBox2.Visible = false;
                 dateTimePicker4.Visible = false;
                 dateTimePicker1.Visible = false;
             }

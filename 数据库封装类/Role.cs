@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinFormsApp1
+namespace WinFormsApp1.数据库封装类
 {
     public class Role
     {
@@ -21,9 +21,9 @@ namespace WinFormsApp1
 
         [SugarColumn(ColumnName = "角色组")]
         public string RoleGroup { get; set; }
-        public Role(string roleName,string roleGroup)
+        public Role(string roleName, string roleGroup)
         {
-            
+
             RoleName = roleName;
             RoleGroup = roleGroup;
         }

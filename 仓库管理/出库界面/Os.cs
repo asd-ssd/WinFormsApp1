@@ -9,16 +9,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.仓库管理.入库界面;
+using WinFormsApp1.数据库支持类;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace WinFormsApp1.仓库管理.出库界面
 {
     public partial class Os : UserControl
     {
+        private readonly PermissionService _permissionService;
         public Os_add Os_add1;
         public Os()
         {
             InitializeComponent();
+            this.button1.Tag = "Create";
+            this.button3.Tag = "Delete";
+            this.button2.Tag = "Edit";
+            var dbHelper = new SqlSugarHelper();
+            _permissionService = new PermissionService(dbHelper);
+            var permissionManager = new PermissionManager(_permissionService, moduleId: 5); // 1是模块ID
+            permissionManager.ApplyPermissions(this);
         }
 
         private void Os_Load(object sender, EventArgs e)

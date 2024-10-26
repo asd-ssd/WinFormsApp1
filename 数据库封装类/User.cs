@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinFormsApp1
+namespace WinFormsApp1.数据库封装类
 {
     [SugarTable("用户信息表")] // 指定 User 类对应的数据库表名为 "用户信息表"
     public class User
@@ -30,7 +30,7 @@ namespace WinFormsApp1
 
         public User() { }
 
-        public User(string userName, string password, string passwordSalt, string employeeid,DateTime createdAt, string remark)
+        public User(string userName, string password, string passwordSalt, string employeeid, DateTime createdAt, string remark)
         {
             UserName = userName;
             Password = password;

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库支持类;
 using WinFormsApp1.销售管理.收发货管理.发货;
 using WinFormsApp1.销售管理.收发货管理.退货;
 
@@ -15,13 +16,20 @@ namespace WinFormsApp1.销售管理
 {
     public partial class ReturnForm : UserControl
     {
-
+        private readonly PermissionService _permissionService;
         public RT3 RT3;
         public RT2 RT2;
         public static ReturnForm returnForm;
         public ReturnForm()
         {
             InitializeComponent();
+            this.srcreat.Tag = "Create";
+            this.srdelete.Tag = "Delete";
+            this.sredit.Tag = "Edit";
+            var dbHelper = new SqlSugarHelper();
+            _permissionService = new PermissionService(dbHelper);
+            var permissionManager = new PermissionManager(_permissionService, moduleId: 1); // 1是模块ID
+            permissionManager.ApplyPermissions(this);
         }
 
         private SqlConnection connection()

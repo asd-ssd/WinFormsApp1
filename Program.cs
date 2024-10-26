@@ -1,7 +1,10 @@
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
+
 namespace WinFormsApp1
 {
     //窗体类的按钮点击事件
-    
+
     internal static class Program
     {
         

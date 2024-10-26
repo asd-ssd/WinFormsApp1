@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinFormsApp1
+namespace WinFormsApp1.数据库封装类
 {
     public class SysLog
     {
@@ -15,11 +15,11 @@ namespace WinFormsApp1
         }
         public SysLog(string logInfo, string logAlarmState, LogTye logType, string user)
         {
-            this.LogTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            this.LogInfo = logInfo;
-            this.LogAlarmState = logAlarmState;
-            this.LogType = logType;
-            this.User = user;
+            LogTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            LogInfo = logInfo;
+            LogAlarmState = logAlarmState;
+            LogType = logType;
+            User = user;
         }
 
         [SugarColumn(ColumnName = "日志编号", IsPrimaryKey = true, IsIdentity = true)] // 将 LogID 属性映射到数据库表的 "日志编号" 列，作为主键并自增

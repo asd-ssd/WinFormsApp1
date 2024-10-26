@@ -31,12 +31,12 @@
             dataGridView1 = new DataGridView();
             button8 = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
-            button4 = new Button();
+            button3 = new Button();
             button5 = new Button();
-            button6 = new Button();
             button1 = new Button();
             button2 = new Button();
-            button3 = new Button();
+            button4 = new Button();
+            button6 = new Button();
             label2 = new Label();
             label1 = new Label();
             dateTimePicker2 = new DateTimePicker();
@@ -49,17 +49,19 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 154);
+            dataGridView1.Location = new Point(0, 185);
+            dataGridView1.Margin = new Padding(4, 4, 4, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1000, 344);
+            dataGridView1.Size = new Size(1222, 413);
             dataGridView1.TabIndex = 14;
             // 
             // button8
             // 
-            button8.Location = new Point(237, 3);
+            button8.Location = new Point(289, 4);
+            button8.Margin = new Padding(4, 4, 4, 4);
             button8.Name = "button8";
-            button8.Size = new Size(71, 81);
+            button8.Size = new Size(87, 97);
             button8.TabIndex = 15;
             button8.Text = "盘点单\r\n查询";
             button8.UseVisualStyleBackColor = true;
@@ -81,112 +83,124 @@
             tableLayoutPanel1.Controls.Add(button8, 3, 0);
             tableLayoutPanel1.Controls.Add(button4, 6, 0);
             tableLayoutPanel1.Controls.Add(button6, 5, 0);
-            tableLayoutPanel1.Location = new Point(31, 7);
+            tableLayoutPanel1.Location = new Point(38, 8);
+            tableLayoutPanel1.Margin = new Padding(4, 4, 4, 4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(546, 89);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 107F));
+            tableLayoutPanel1.Size = new Size(667, 107);
             tableLayoutPanel1.TabIndex = 16;
             // 
-            // button4
+            // button3
             // 
-            button4.Location = new Point(469, 3);
-            button4.Name = "button4";
-            button4.Size = new Size(74, 81);
-            button4.TabIndex = 3;
-            button4.Text = "导出\r\n打印";
-            button4.UseVisualStyleBackColor = true;
+            button3.Location = new Point(194, 4);
+            button3.Margin = new Padding(4, 4, 4, 4);
+            button3.Name = "button3";
+            button3.Size = new Size(87, 97);
+            button3.TabIndex = 16;
+            button3.Text = "删除";
+            button3.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            button5.Location = new Point(315, 3);
+            button5.Location = new Point(384, 4);
+            button5.Margin = new Padding(4, 4, 4, 4);
             button5.Name = "button5";
-            button5.Size = new Size(71, 81);
+            button5.Size = new Size(87, 97);
             button5.TabIndex = 4;
             button5.Text = "下一页";
             button5.UseVisualStyleBackColor = true;
             // 
-            // button6
-            // 
-            button6.Location = new Point(392, 3);
-            button6.Name = "button6";
-            button6.Size = new Size(71, 81);
-            button6.TabIndex = 5;
-            button6.Text = "上一页";
-            button6.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
-            button1.Location = new Point(3, 3);
+            button1.Location = new Point(4, 4);
+            button1.Margin = new Padding(4, 4, 4, 4);
             button1.Name = "button1";
-            button1.Size = new Size(72, 81);
+            button1.Size = new Size(87, 97);
             button1.TabIndex = 0;
             button1.Text = "新增\r\n盘点";
             button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            button2.Location = new Point(81, 3);
+            button2.Location = new Point(99, 4);
+            button2.Margin = new Padding(4, 4, 4, 4);
             button2.Name = "button2";
-            button2.Size = new Size(72, 81);
+            button2.Size = new Size(87, 97);
             button2.TabIndex = 1;
             button2.Text = "修改\r\n盘点\r\n状态";
             button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // button4
             // 
-            button3.Location = new Point(159, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(71, 81);
-            button3.TabIndex = 16;
-            button3.Text = "盘点单\r\n查询";
-            button3.UseVisualStyleBackColor = true;
+            button4.Location = new Point(574, 4);
+            button4.Margin = new Padding(4, 4, 4, 4);
+            button4.Name = "button4";
+            button4.Size = new Size(89, 97);
+            button4.TabIndex = 3;
+            button4.Text = "导出\r\n打印";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(479, 4);
+            button6.Margin = new Padding(4, 4, 4, 4);
+            button6.Name = "button6";
+            button6.Size = new Size(87, 97);
+            button6.TabIndex = 5;
+            button6.Text = "上一页";
+            button6.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(19, 116);
+            label2.Location = new Point(23, 139);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(69, 20);
+            label2.Size = new Size(82, 24);
             label2.TabIndex = 39;
             label2.Text = "盘点日期";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(392, 113);
+            label1.Location = new Point(479, 136);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(15, 20);
+            label1.Size = new Size(18, 24);
             label1.TabIndex = 38;
             label1.Text = "-";
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(413, 111);
+            dateTimePicker2.Location = new Point(505, 133);
+            dateTimePicker2.Margin = new Padding(4, 4, 4, 4);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(250, 27);
+            dateTimePicker2.Size = new Size(305, 30);
             dateTimePicker2.TabIndex = 37;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(136, 111);
+            dateTimePicker1.Location = new Point(166, 133);
+            dateTimePicker1.Margin = new Padding(4, 4, 4, 4);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(250, 27);
+            dateTimePicker1.Size = new Size(305, 30);
             dateTimePicker1.TabIndex = 36;
             // 
             // button7
             // 
-            button7.Location = new Point(702, 109);
+            button7.Location = new Point(858, 131);
+            button7.Margin = new Padding(4, 4, 4, 4);
             button7.Name = "button7";
-            button7.Size = new Size(94, 29);
+            button7.Size = new Size(115, 35);
             button7.TabIndex = 35;
             button7.Text = "查询";
             button7.UseVisualStyleBackColor = true;
             // 
             // count_push
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(label2);
             Controls.Add(label1);
@@ -195,8 +209,9 @@
             Controls.Add(button7);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(dataGridView1);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "count_push";
-            Size = new Size(997, 600);
+            Size = new Size(1219, 720);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);

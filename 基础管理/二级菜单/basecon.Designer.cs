@@ -99,6 +99,7 @@
             dicconbutton.Text = "基础字典";
             dicconbutton.TextAlign = ContentAlignment.BottomCenter;
             dicconbutton.UseVisualStyleBackColor = true;
+            dicconbutton.Click += dicconbutton_Click;
             // 
             // basecon
             // 

@@ -8,11 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库支持类;
 
 namespace WinFormsApp1.采购管理.采购
 {
     public partial class cgsqy : UserControl
     {
+        private readonly PermissionService _permissionService;
         public cgcxy cgcxy1;
         public sgsqy sgsqy1;
         public static cgsqy cgsqy1;
@@ -45,6 +47,13 @@ namespace WinFormsApp1.采购管理.采购
         public cgsqy()
         {
             InitializeComponent();
+            this.button5.Tag = "Create";
+            this.button6.Tag = "Delete";
+            this.button1.Tag = "Edit";
+            var dbHelper = new SqlSugarHelper();
+            _permissionService = new PermissionService(dbHelper);
+            var permissionManager = new PermissionManager(_permissionService, moduleId: 4); // 1是模块ID
+            permissionManager.ApplyPermissions(this);
         }
 
         private void cgsqy_Load(object sender, EventArgs e)

@@ -9,23 +9,34 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using WinFormsApp1.基础信息管理设置界面;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 
 namespace WinFormsApp1.工作界面
 {
     public partial class BOMplat : UserControl
     {
+        private readonly PermissionService _permissionService;
         public static BOMplat BOMplat1;
         public BOMset BOMset1;
         public BOMres BOMres1;
+        public BOMcraftset BOMcraftset1;
         public BOMplat()
         {
             InitializeComponent();
             BOMplat1 = this;
+            this.button2.Tag = "Create";
+            this.button5.Tag = "Delete";
+            this.button4.Tag = "Edit";
+            var dbHelper = new SqlSugarHelper();
+            _permissionService = new PermissionService(dbHelper);
+            var permissionManager = new PermissionManager(_permissionService, moduleId: 1); // 1是模块ID
+            permissionManager.ApplyPermissions(this);
         }
         private SqlConnection connection()
 
         {
-            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Integrated Security=True";
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=hhr;Password=aa1628381531";
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
@@ -135,7 +146,7 @@ namespace WinFormsApp1.工作界面
                 button6.Visible = false;
                 button7.Visible = false;
                 dataGridView1.ReadOnly = true;//整个表格只读
-                strcomm= new string[100];
+                strcomm = new string[100];
             }
         }
 
@@ -150,6 +161,12 @@ namespace WinFormsApp1.工作界面
                 strcomm = new string[100];
             }
 
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            BOMcraftset1 = new BOMcraftset();
+            BOMcraftset1.ShowDialog();
         }
     }
 }

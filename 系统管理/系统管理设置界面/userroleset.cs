@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 
 namespace WinFormsApp1
 {
@@ -93,26 +95,19 @@ namespace WinFormsApp1
                 {
                     var userName = (selectedUser as User).UserName;
 
-                    // 遍历所有选中的角色
+                    // 获取所有已有的角色
+                    var existingUserRoles = SqlSugarHelper.SqlSugarClient.Queryable<UserRole>()
+                        .Where(ur => ur.UserName == userName)
+                        .ToList();
+
+                    // 遍历所有选中的角色，添加或更新
                     foreach (var checkedRole in clbRoles.CheckedItems)
                     {
                         var roleId = (checkedRole as Role).RoleId;
 
-                        // 检查该用户是否已经具有该角色
-                        var existingUserRole = SqlSugarHelper.SqlSugarClient.Queryable<UserRole>()
-                            .Where(ur => ur.UserName == userName && ur.RoleId == roleId)
-                            .First();
-
-                        if (existingUserRole != null)
+                        var existingUserRole = existingUserRoles.FirstOrDefault(ur => ur.RoleId == roleId);
+                        if (existingUserRole == null)
                         {
-                            // 如果已经存在，执行更新操作（可以根据需要调整字段更新逻辑）
-                            existingUserRole.RoleId = roleId;
-                            SqlSugarHelper.SqlSugarClient.Updateable(existingUserRole).ExecuteCommand();
-                            MessageBox.Show($"用户 {userName} 的角色 {checkedRole} 已更新");
-                        }
-                        else
-                        {
-                            // 如果不存在，执行添加操作
                             var newUserRole = new UserRole
                             {
                                 UserName = userName,
@@ -120,6 +115,18 @@ namespace WinFormsApp1
                             };
                             SqlSugarHelper.SqlSugarClient.Insertable(newUserRole).ExecuteCommand();
                             MessageBox.Show($"用户 {userName} 已被赋予新角色 {checkedRole}");
+                        }
+                    }
+
+                    // 删除未勾选的角色
+                    foreach (var existingUserRole in existingUserRoles)
+                    {
+                        if (!clbRoles.CheckedItems.Contains(clbRoles.Items.Cast<Role>().FirstOrDefault(r => r.RoleId == existingUserRole.RoleId)))
+                        {
+                            SqlSugarHelper.SqlSugarClient.Deleteable<UserRole>()
+                                .Where(ur => ur.UserName == userName && ur.RoleId == existingUserRole.RoleId)
+                                .ExecuteCommand();
+                            MessageBox.Show($"用户 {userName} 的角色 {existingUserRole.RoleId} 已被移除");
                         }
                     }
                 }
@@ -132,6 +139,8 @@ namespace WinFormsApp1
                 MessageBox.Show($"操作时发生错误: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -8,11 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库支持类;
 
 namespace WinFormsApp1.采购管理.入库
 {
     public partial class ruku : UserControl
     {
+        private readonly PermissionService _permissionService;
         public cxy cxy1;
         public xjy xjy1;
 
@@ -45,6 +47,13 @@ namespace WinFormsApp1.采购管理.入库
         public ruku()
         {
             InitializeComponent();
+            this.button1.Tag = "Create";
+            this.button2.Tag = "Delete";
+           // this.button1.Tag = "Edit";
+            var dbHelper = new SqlSugarHelper();
+            _permissionService = new PermissionService(dbHelper);
+            var permissionManager = new PermissionManager(_permissionService, moduleId: 4); // 1是模块ID
+            permissionManager.ApplyPermissions(this);
         }
 
         private void ruku_Load(object sender, EventArgs e)

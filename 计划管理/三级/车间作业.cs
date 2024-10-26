@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库支持类;
 using WinFormsApp1.计划管理.三级功能;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
@@ -17,12 +18,20 @@ namespace WinFormsApp1.计划管理.三级
 
     public partial class 车间作业 : UserControl
     {
+        private readonly PermissionService _permissionService;
         public static 车间作业 chejian1;
         public 工序排程 gong1;
         public 车间作业()
         {
             InitializeComponent();
             chejian1 = this;
+            this.button5.Tag = "Create";
+            this.button3.Tag = "Delete";
+            this.button2.Tag = "Edit";
+            var dbHelper = new SqlSugarHelper();
+            _permissionService = new PermissionService(dbHelper);
+            var permissionManager = new PermissionManager(_permissionService, moduleId: 2); // 1是模块ID
+            permissionManager.ApplyPermissions(this);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

@@ -10,11 +10,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.基础信息管理设置界面;
 using WinFormsApp1.工作界面;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 
 namespace WinFormsApp1.基础信息管理工作界面
 {
     public partial class craftplat : UserControl
     {
+        private readonly PermissionService _permissionService;
         public craftset craftset1;
         public craftres craftres1;
         public static craftplat craftplat1;
@@ -22,10 +25,17 @@ namespace WinFormsApp1.基础信息管理工作界面
         {
             InitializeComponent();
             craftplat1 = this;
+            this.button2.Tag = "Create";
+            this.button5.Tag = "Delete";
+            this.button4.Tag = "Edit";
+            var dbHelper = new SqlSugarHelper();
+            _permissionService = new PermissionService(dbHelper);
+            var permissionManager = new PermissionManager(_permissionService, moduleId: 1); // 1是模块ID
+            permissionManager.ApplyPermissions(this);
         }
         private SqlConnection connection()
         {
-            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Integrated Security=True";
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=hhr;Password=aa1628381531";
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
