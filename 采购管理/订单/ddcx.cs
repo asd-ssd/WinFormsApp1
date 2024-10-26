@@ -16,7 +16,7 @@ namespace WinFormsApp1.采购管理
     public partial class ddcx : UserControl
     {
         private readonly PermissionService _permissionService;
-        public ddcxy ddcxy1;
+        
         public ddxg ddxg1;
 
         private SqlConnection connection()
@@ -62,19 +62,22 @@ namespace WinFormsApp1.采购管理
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        
+
+        private void button1_Click(object sender, EventArgs e)
         {
             ddxg1 = new ddxg();
             ddxg1.Show();   //将窗体一进行显示
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ddcx_Load(object sender, EventArgs e)
         {
-            ddcxy1 = new ddcxy();
-            ddcxy1.Show();   //将窗体一进行显示
+            GetDataGridView();
         }
 
-        private void ddcx_Load(object sender, EventArgs e)
+        
+
+        private void button2_Click(object sender, EventArgs e)
         {
             GetDataGridView();
         }

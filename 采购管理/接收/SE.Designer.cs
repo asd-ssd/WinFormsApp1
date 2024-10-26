@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp1.采购管理.入库
 {
-    partial class ruku
+    partial class SE
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -30,7 +30,6 @@
         {
             dataGridView1 = new DataGridView();
             button1 = new Button();
-            button2 = new Button();
             button4 = new Button();
             button5 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -43,7 +42,7 @@
             dataGridView1.Margin = new Padding(4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1226, 537);
+            dataGridView1.Size = new Size(1231, 537);
             dataGridView1.TabIndex = 1;
             // 
             // button1
@@ -52,22 +51,13 @@
             button1.Name = "button1";
             button1.Size = new Size(112, 92);
             button1.TabIndex = 2;
-            button1.Text = "新建";
+            button1.Text = "入库";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // button2
-            // 
-            button2.Location = new Point(122, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(112, 92);
-            button2.TabIndex = 3;
-            button2.Text = "删除";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // button4
             // 
-            button4.Location = new Point(240, 3);
+            button4.Location = new Point(122, 3);
             button4.Name = "button4";
             button4.Size = new Size(112, 92);
             button4.TabIndex = 14;
@@ -77,11 +67,11 @@
             // 
             // button5
             // 
-            button5.Location = new Point(358, 3);
+            button5.Location = new Point(240, 3);
             button5.Name = "button5";
             button5.Size = new Size(112, 92);
             button5.TabIndex = 15;
-            button5.Text = "关闭";
+            button5.Text = "刷新";
             button5.UseVisualStyleBackColor = true;
             // 
             // ruku
@@ -90,7 +80,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(button5);
             Controls.Add(button4);
-            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
             Name = "ruku";
@@ -104,7 +93,6 @@
 
         private DataGridView dataGridView1;
         private Button button1;
-        private Button button2;
         private Button button4;
         private Button button5;
     }

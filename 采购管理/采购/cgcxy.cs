@@ -51,7 +51,14 @@ namespace WinFormsApp1.采购管理.采购
             {
                 selectsql += "and 申请人员 like'%" + textBox1.Text + "%'";
             }
-            
+            if (textBox8.Text != "")
+            {
+                selectsql += "and 员工编号 like'%" + textBox8.Text + "%'";
+            }
+            if (textBox9.Text != "")
+            {
+                selectsql += "and 商品编号 like'%" + textBox9.Text + "%'";
+            }
             if (textBox3.Text != "")
             {
                 selectsql += "and 采购商品 like'%" + textBox3.Text + "%'";

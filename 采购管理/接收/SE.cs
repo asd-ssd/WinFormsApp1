@@ -12,7 +12,7 @@ using WinFormsApp1.数据库支持类;
 
 namespace WinFormsApp1.采购管理.入库
 {
-    public partial class ruku : UserControl
+    public partial class SE : UserControl
     {
         private readonly PermissionService _permissionService;
         public cxy cxy1;
@@ -44,7 +44,7 @@ namespace WinFormsApp1.采购管理.入库
                 MessageBox.Show(ee.Message.ToString());
             }
         }
-        public ruku()
+        public SE()
         {
             InitializeComponent();
             this.button1.Tag = "Create";
@@ -72,5 +72,7 @@ namespace WinFormsApp1.采购管理.入库
             cxy1 = new cxy();
             cxy1.Show();
         }
+
+        
     }
 }

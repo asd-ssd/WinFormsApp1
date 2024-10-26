@@ -43,6 +43,8 @@
             comboBox2 = new ComboBox();
             textBox4 = new TextBox();
             label3 = new Label();
+            label4 = new Label();
+            textBox2 = new TextBox();
             SuspendLayout();
             // 
             // button1
@@ -68,7 +70,7 @@
             // textBox3
             // 
             textBox3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox3.Location = new Point(659, 165);
+            textBox3.Location = new Point(662, 99);
             textBox3.Name = "textBox3";
             textBox3.RightToLeft = RightToLeft.No;
             textBox3.Size = new Size(216, 30);
@@ -114,7 +116,7 @@
             label9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label9.AutoSize = true;
             label9.BackColor = SystemColors.ButtonFace;
-            label9.Location = new Point(540, 171);
+            label9.Location = new Point(543, 105);
             label9.Name = "label9";
             label9.RightToLeft = RightToLeft.No;
             label9.Size = new Size(82, 24);
@@ -162,7 +164,7 @@
             // textBox6
             // 
             textBox6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox6.Location = new Point(659, 103);
+            textBox6.Location = new Point(662, 37);
             textBox6.Name = "textBox6";
             textBox6.RightToLeft = RightToLeft.No;
             textBox6.Size = new Size(216, 30);
@@ -174,7 +176,7 @@
             label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label5.AutoSize = true;
             label5.BackColor = SystemColors.ButtonFace;
-            label5.Location = new Point(540, 113);
+            label5.Location = new Point(543, 47);
             label5.Name = "label5";
             label5.RightToLeft = RightToLeft.No;
             label5.Size = new Size(64, 24);
@@ -185,7 +187,7 @@
             // 
             comboBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "优秀" });
+            comboBox2.Items.AddRange(new object[] { "优秀", "良好", "合格", "不合格", "信誉不良", "产品质量不良", "价格高昂", "物美价廉", "信誉良好", "", "", "" });
             comboBox2.Location = new Point(231, 289);
             comboBox2.Name = "comboBox2";
             comboBox2.RightToLeft = RightToLeft.No;
@@ -216,11 +218,30 @@
             label3.TabIndex = 118;
             label3.Text = "备注";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(113, 41);
+            label4.Name = "label4";
+            label4.Size = new Size(100, 24);
+            label4.TabIndex = 120;
+            label4.Text = "供应商编号";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(231, 41);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(216, 30);
+            textBox2.TabIndex = 121;
+            textBox2.TextChanged += textBox2_TextChanged;
+            // 
             // xjy
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(978, 644);
+            Controls.Add(textBox2);
+            Controls.Add(label4);
             Controls.Add(textBox4);
             Controls.Add(label3);
             Controls.Add(comboBox2);
@@ -259,5 +280,7 @@
         private TextBox textBox4;
         private Label label3;
         public ComboBox comboBox1;
+        private Label label4;
+        private TextBox textBox2;
     }
 }
