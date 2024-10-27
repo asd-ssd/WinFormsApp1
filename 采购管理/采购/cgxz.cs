@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.仓库管理.入库界面;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 
 namespace WinFormsApp1.采购管理.采购
 {
@@ -85,6 +87,7 @@ namespace WinFormsApp1.采购管理.采购
             conn.Close();
             dataGridView1.DataSource = dt1;
             MessageBox.Show("查询成功！");
+            SysLogService.AddSysLog(new SysLog("查询BOM表数据", "触发", LogTye.操作记录, login.login1.userid));
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -56,6 +56,7 @@
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(300, 159);
             textBox5.TabIndex = 118;
+            textBox5.TextChanged += textBox5_TextChanged;
             // 
             // textBox4
             // 

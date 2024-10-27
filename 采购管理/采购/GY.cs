@@ -10,17 +10,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.数据库封装类;
 using WinFormsApp1.数据库支持类;
-using WinFormsApp1.采购管理.采购审核;
 
-namespace WinFormsApp1.采购管理.退货
+namespace WinFormsApp1.采购管理.采购
 {
-    public partial class TR : Form
+    public partial class GY : Form
     {
         private int n;
         private string[] strcomm;
-        private string TR_number;
-        public System.Windows.Forms.TextBox TR_item_textBox1 = thsq1.thsq11.textBox1;//
-        public TR()
+        private string GY_number;
+        public System.Windows.Forms.TextBox GY_item_textBox1 = sgsqy.sgsqy1.textBox7;//供应商名称
+        public GY()
         {
             InitializeComponent();
             GetDataGridView();
@@ -35,7 +34,7 @@ namespace WinFormsApp1.采购管理.退货
         {
             try
             {
-                string strda = "select * from 员工信息表";
+                string strda = "select * from 供应商表";
                 SqlConnection conn = connection();
                 conn.Open();
                 DataTable dt = new DataTable();
@@ -51,27 +50,21 @@ namespace WinFormsApp1.采购管理.退货
                 MessageBox.Show(ee.Message.ToString());
             }
         }
-        private void TR_Load(object sender, EventArgs e)
+        private void GY_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            TR_item_textBox1.Text = TR_number;
-            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string selectsql = "select * from 员工信息表 where 1=1";
-            if (textBox2.Text != "")
+            string selectsql = "select * from 供应商表 where 1=1";
+            /*if (textBox1.Text != "")
             {
-                selectsql += "and 员工编号 like'%" + textBox2.Text + "%'";
-            }
+                selectsql += "and 物料名称 like'%" + textBox1.Text + "%'";
+            }*/
             if (textBox1.Text != "")
             {
-                selectsql += "and 员工姓名 like'%" + textBox1.Text + "%'";
+                selectsql += "and 供应商名称 like'%" + textBox1.Text + "%'";
             }
 
 
@@ -83,12 +76,18 @@ namespace WinFormsApp1.采购管理.退货
             conn.Close();
             dataGridView1.DataSource = dt1;
             MessageBox.Show("查询成功！");
-            SysLogService.AddSysLog(new SysLog("查询员工信息表数据", "触发", LogTye.操作记录, login.login1.userid));
+            SysLogService.AddSysLog(new SysLog("查询供应商表数据", "触发", LogTye.操作记录, login.login1.userid));
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            TR_number = dataGridView1.Rows[e.RowIndex].Cells["员工姓名"].Value.ToString();
+            GY_number = dataGridView1.Rows[e.RowIndex].Cells["供应商名称"].Value.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            GY_item_textBox1.Text = GY_number;
+            this.Close();
         }
     }
 }

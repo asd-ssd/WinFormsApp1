@@ -10,6 +10,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 using WinFormsApp1.采购管理.采购;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -70,6 +72,7 @@ namespace WinFormsApp1.采购管理.供应商
             addDataGridView();
             GetDataGridView();
             MessageBox.Show("添加成功!");
+            SysLogService.AddSysLog(new SysLog("新增供应商表数据", "触发", LogTye.操作记录, login.login1.userid));
             this.Close();
         }
 

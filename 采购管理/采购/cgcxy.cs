@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
@@ -90,6 +92,7 @@ namespace WinFormsApp1.采购管理.采购
             dataGridView1.DataSource = dt;
             MessageBox.Show("查询成功！");
             this.Close();
+            SysLogService.AddSysLog(new SysLog("查询采购表数据", "触发", LogTye.操作记录, login.login1.userid));
         }
 
         private void cgcxy_Load(object sender, EventArgs e)

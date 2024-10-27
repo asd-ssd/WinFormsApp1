@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库封装类;
 using WinFormsApp1.数据库支持类;
 
 namespace WinFormsApp1.采购管理.采购
@@ -85,6 +86,7 @@ namespace WinFormsApp1.采购管理.采购
                     dataGridView1.Rows.Remove(row);
                 }
             }
+            SysLogService.AddSysLog(new SysLog("删除采购表数据", "触发", LogTye.操作记录, login.login1.userid));
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -124,6 +126,7 @@ namespace WinFormsApp1.采购管理.采购
                 n = 0;
 
             }
+            SysLogService.AddSysLog(new SysLog("修改采购表数据", "触发", LogTye.操作记录, login.login1.userid));
         }
 
         private void button5_Click(object sender, EventArgs e)
