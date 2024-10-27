@@ -61,7 +61,7 @@
             dataGridView1.Location = new Point(0, 101);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(599, 491);
+            dataGridView1.Size = new Size(351, 491);
             dataGridView1.StandardTab = true;
             dataGridView1.TabIndex = 42;
             // 

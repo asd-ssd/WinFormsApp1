@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 using WinFormsApp1.采购管理.采购;
 
 
@@ -171,6 +173,7 @@ namespace WinFormsApp1.采购管理.采购审核
                     }
                     dataGridView2.Rows.Remove(row);
                 }
+                SysLogService.AddSysLog(new SysLog("删除审核表数据", "触发", LogTye.操作记录, login.login1.userid));
             }
         }
 
@@ -196,6 +199,7 @@ namespace WinFormsApp1.采购管理.采购审核
                     dataGridView1.Rows.Remove(row);
                 }
             }
+            SysLogService.AddSysLog(new SysLog("删除驳回表数据", "触发", LogTye.操作记录, login.login1.userid));
         }
     }
 }

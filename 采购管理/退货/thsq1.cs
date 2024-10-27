@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 using WinFormsApp1.采购管理.退货;
 using WinFormsApp1.采购管理.采购;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -55,7 +57,7 @@ namespace WinFormsApp1.采购管理
         {
             SqlConnection conn = connection();
             conn.Open();
-            string strda = "insert into 退货表(退货人员,订单编号,退货原因) values('" + textBox1.Text + "','" + textBox4.Text + "','"  + textBox5.Text + "')";
+            string strda = "insert into 退货表(退货人员,订单编号,退货原因) values('" + textBox1.Text + "','" + textBox4.Text + "','" + textBox5.Text + "')";
             SqlCommand comm = new SqlCommand(strda, conn);
             comm.ExecuteNonQuery();
             conn.Close();
@@ -85,7 +87,13 @@ namespace WinFormsApp1.采购管理
             addDataGridView();
             GetDataGridView();
             MessageBox.Show("添加成功!");
+            SysLogService.AddSysLog(new SysLog("新增退货表数据", "触发", LogTye.操作记录, login.login1.userid));
             this.Close();
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

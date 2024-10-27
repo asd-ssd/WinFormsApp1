@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 
 namespace WinFormsApp1.采购管理.采购
 {
@@ -59,7 +61,32 @@ namespace WinFormsApp1.采购管理.采购
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           VA_number = dataGridView1.Rows[e.RowIndex].Cells["单价"].Value.ToString();
+            VA_number = dataGridView1.Rows[e.RowIndex].Cells["单价"].Value.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string selectsql = "select * from BOM表 where 1=1";
+
+            if (textBox1.Text != "")
+            {
+                selectsql += "and 物料名称 like'%" + textBox1.Text + "%'";
+            }
+            if (textBox2.Text != "")
+            {
+                selectsql += "and 物料编码 like'%" + textBox2.Text + "%'";
+            }
+
+
+            SqlConnection conn = connection();
+            conn.Open();
+            DataTable dt1 = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(selectsql, conn);
+            da.Fill(dt1);
+            conn.Close();
+            dataGridView1.DataSource = dt1;
+            MessageBox.Show("查询成功！");
+            SysLogService.AddSysLog(new SysLog("查询BOM表数据", "触发", LogTye.操作记录, login.login1.userid));
         }
     }
 }

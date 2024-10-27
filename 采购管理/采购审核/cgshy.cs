@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 using WinFormsApp1.采购管理.采购;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -83,6 +85,7 @@ namespace WinFormsApp1.采购管理.采购审核
             addDataGridView();
             GetDataGridView();
             MessageBox.Show("已通过。");
+            SysLogService.AddSysLog(new SysLog("新增审核表数据", "触发", LogTye.操作记录, login.login1.userid));
             this.Close();
             try
             {
@@ -151,6 +154,7 @@ namespace WinFormsApp1.采购管理.采购审核
         {
             addDataGridView1();
             MessageBox.Show("已驳回。");
+            SysLogService.AddSysLog(new SysLog("新增驳回表数据", "触发", LogTye.操作记录, login.login1.userid));
             this.Close();
 
         }

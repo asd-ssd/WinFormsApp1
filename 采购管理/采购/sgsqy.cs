@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.仓库管理.入库界面;
 using WinFormsApp1.工作界面;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 using WinFormsApp1.采购管理.采购;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -23,7 +25,9 @@ namespace WinFormsApp1.采购管理
         public string Is_number;
         public cgxz cgxz1;
         public gys1 gys12;
+        public GY GY1;
         public SQR SQR1;
+        public SQRE SQRE1;
         public static sgsqy sgsqy1;
 
         public DataGridView dataGridView1 = cgsqy.cgsqy1.dataGridView1;
@@ -97,6 +101,7 @@ namespace WinFormsApp1.采购管理
             addDataGridView();
             GetDataGridView();
             MessageBox.Show("添加成功!");
+            SysLogService.AddSysLog(new SysLog("新增采购表表数据", "触发", LogTye.操作记录, login.login1.userid));
             this.Close();
         }
         private void sgsqy_Load(object sender, EventArgs e)
@@ -190,14 +195,14 @@ namespace WinFormsApp1.采购管理
 
         private void button4_Click(object sender, EventArgs e)
         {
-            gys12 = new gys1();
-            gys12.Show();   //将窗体一进行显示
+            GY1 = new GY();
+            GY1.Show();   //将窗体一进行显示
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            SQR1 = new SQR();
-            SQR1.Show();   //将窗体一进行显示
+            SQRE1 = new SQRE();
+            SQRE1.Show();   //将窗体一进行显示
         }
     }
 }

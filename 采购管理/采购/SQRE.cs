@@ -10,21 +10,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.数据库封装类;
 using WinFormsApp1.数据库支持类;
-using WinFormsApp1.采购管理.采购审核;
 
-namespace WinFormsApp1.采购管理.退货
+namespace WinFormsApp1.采购管理.采购
 {
-    public partial class TR : Form
+    public partial class SQRE : Form
     {
-        private int n;
         private string[] strcomm;
-        private string TR_number;
-        public System.Windows.Forms.TextBox TR_item_textBox1 = thsq1.thsq11.textBox1;//
-        public TR()
+        private string SQRE_number;
+        private string SQRE_number1;
+        public TextBox SQRE_item_textBox1 = sgsqy.sgsqy1.textBox1;//申请人员
+        public TextBox SQRE_item_textBox2 = sgsqy.sgsqy1.textBox8;//员工编号
+        public SQRE()
         {
             InitializeComponent();
             GetDataGridView();
         }
+
         private SqlConnection connection()
         {
             string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=hhr;Password=aa1628381531";
@@ -51,18 +52,27 @@ namespace WinFormsApp1.采购管理.退货
                 MessageBox.Show(ee.Message.ToString());
             }
         }
-        private void TR_Load(object sender, EventArgs e)
-        {
+       
 
-        }
 
-        private void button1_Click(object sender, EventArgs e)
+
+
+
+
+        private void button2_Click_1(object sender, EventArgs e)
         {
-            TR_item_textBox1.Text = TR_number;
+            SQRE_item_textBox1.Text = SQRE_number;
+            SQRE_item_textBox2.Text = SQRE_number1;
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            SQRE_number = dataGridView1.Rows[e.RowIndex].Cells["员工姓名"].Value.ToString();
+            SQRE_number1 = dataGridView1.Rows[e.RowIndex].Cells["员工编号"].Value.ToString();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
             string selectsql = "select * from 员工信息表 where 1=1";
             if (textBox2.Text != "")
@@ -86,9 +96,9 @@ namespace WinFormsApp1.采购管理.退货
             SysLogService.AddSysLog(new SysLog("查询员工信息表数据", "触发", LogTye.操作记录, login.login1.userid));
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void SQRE_Load(object sender, EventArgs e)
         {
-            TR_number = dataGridView1.Rows[e.RowIndex].Cells["员工姓名"].Value.ToString();
+
         }
     }
 }

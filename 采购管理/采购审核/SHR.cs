@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 
 namespace WinFormsApp1.采购管理.采购审核
 {
@@ -71,6 +73,7 @@ namespace WinFormsApp1.采购管理.采购审核
             conn.Close();
             dataGridView1.DataSource = dt1;
             MessageBox.Show("查询成功！");
+            SysLogService.AddSysLog(new SysLog("查询员工信息表数据", "触发", LogTye.操作记录, login.login1.userid));
         }
 
         private void SHR_Load(object sender, EventArgs e)

@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 
 namespace WinFormsApp1.采购管理.采购
 {
@@ -72,6 +74,27 @@ namespace WinFormsApp1.采购管理.采购
             PLT_item_textBox3.Text = PLT_number3;
             PLT_item_textBox4.Text = PLT_number4;
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string selectsql = "select * from MRP where 1=1";
+            
+            if (textBox1.Text != "")
+            {
+                selectsql += "and MRP编号 like'%" + textBox1.Text + "%'";
+            }
+
+
+            SqlConnection conn = connection();
+            conn.Open();
+            DataTable dt1 = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(selectsql, conn);
+            da.Fill(dt1);
+            conn.Close();
+            dataGridView1.DataSource = dt1;
+            MessageBox.Show("查询成功！");
+            SysLogService.AddSysLog(new SysLog("查询MRP数据", "触发", LogTye.操作记录, login.login1.userid));
         }
     }
 }
