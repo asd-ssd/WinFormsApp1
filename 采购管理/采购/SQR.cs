@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using TextBox = System.Windows.Forms.TextBox;
 
 namespace WinFormsApp1.采购管理.采购
 {
@@ -18,8 +19,8 @@ namespace WinFormsApp1.采购管理.采购
         private string[] strcomm;
         private string SQR_number;
         private string SQR_number1;
-        public System.Windows.Forms.TextBox SQR_item_textBox1 = PL.PL1.textBox1;//申请人员
-        public System.Windows.Forms.TextBox SQR_item_textBox2 = PL.PL1.textBox8;//员工编号
+        public TextBox SQR_item_textBox1 = PL.PL1.textBox1;//申请人员
+        public TextBox SQR_item_textBox2 = PL.PL1.textBox8;//员工编号
         public SQR()
         {
             InitializeComponent();

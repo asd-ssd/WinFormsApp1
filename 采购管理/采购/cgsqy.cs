@@ -128,6 +128,7 @@ namespace WinFormsApp1.采购管理.采购
 
         private void button5_Click(object sender, EventArgs e)
         {
+            PL1 = new PL();
             sgsqy1 = new sgsqy();
             sgsqy1.Show();   //将窗体一进行显示
         }

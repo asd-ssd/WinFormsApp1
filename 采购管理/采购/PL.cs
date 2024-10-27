@@ -25,6 +25,7 @@ namespace WinFormsApp1.采购管理.采购
             GetDataGridView();
             textBox4.TextChanged += TextBox_TextChanged;
             textBox5.TextChanged += TextBox_TextChanged;
+            PL1 = this;
         }
         private SqlConnection connection()
         {
