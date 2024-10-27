@@ -49,7 +49,7 @@ namespace WinFormsApp1.采购管理
         {
             InitializeComponent();
             
-            this.button3.Tag = "Delete";
+            //this.button3.Tag = "Delete";
             
             var dbHelper = new SqlSugarHelper();
             _permissionService = new PermissionService(dbHelper);

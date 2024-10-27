@@ -17,9 +17,9 @@ namespace WinFormsApp1.仓库管理.库存盘点界面
         public count_push_new()
         {
             InitializeComponent();
-            this.button1.Tag = "Create";
-            this.button3.Tag = "Delete";
-            this.button2.Tag = "Edit";
+            //this.button1.Tag = "Create";
+            //this.button3.Tag = "Delete";
+           // this.button2.Tag = "Edit";
             var dbHelper = new SqlSugarHelper();
             _permissionService = new PermissionService(dbHelper);
             var permissionManager = new PermissionManager(_permissionService, moduleId: 5); // 1是模块ID

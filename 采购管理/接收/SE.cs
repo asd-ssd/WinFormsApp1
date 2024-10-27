@@ -48,7 +48,6 @@ namespace WinFormsApp1.采购管理.入库
         {
             InitializeComponent();
             this.button1.Tag = "Create";
-            this.button2.Tag = "Delete";
            // this.button1.Tag = "Edit";
             var dbHelper = new SqlSugarHelper();
             _permissionService = new PermissionService(dbHelper);

@@ -17,15 +17,11 @@ namespace WinFormsApp1.销售管理.收发货管理.发货
     public partial class Delievery : UserControl
     {
         private readonly PermissionService _permissionService;
-        public De2 de2;
         public De3 de3;
         public static Delievery delievery;
         public Delievery()
         {
             InitializeComponent();
-            this.button1.Tag = "Create";
-            this.button3.Tag = "Delete";
-            this.button2.Tag = "Edit";
             var dbHelper = new SqlSugarHelper();
             _permissionService = new PermissionService(dbHelper);
             var permissionManager = new PermissionManager(_permissionService, moduleId: 3); // 1是模块ID
