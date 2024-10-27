@@ -250,11 +250,11 @@ namespace WinFormsApp1.计划管理.三级
             }
             if (checkBox6.Checked)
             {
-                selectsql += "and 物料编码 like'%" + textBox3.Text + "%'";
+                selectsql += "and 物料来源 ='生产'";
             }
             if (checkBox7.Checked)
             {
-                selectsql += "and 物料名称 like'%" + textBox3.Text + "%'";
+                selectsql += "and 物料来源 ='采购'";
             }
             if (checkBox3.Checked)
             {

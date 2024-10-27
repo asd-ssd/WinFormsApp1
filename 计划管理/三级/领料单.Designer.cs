@@ -46,7 +46,6 @@
             checkBox2 = new CheckBox();
             checkBox1 = new CheckBox();
             panel1 = new Panel();
-            buttonex = new Button();
             button3 = new Button();
             button2 = new Button();
             button4 = new Button();
@@ -232,7 +231,6 @@
             // panel1
             // 
             panel1.BackColor = Color.LightGray;
-            panel1.Controls.Add(buttonex);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button4);
@@ -242,17 +240,6 @@
             panel1.Size = new Size(1688, 50);
             panel1.TabIndex = 8;
             panel1.Paint += panel1_Paint;
-            // 
-            // buttonex
-            // 
-            buttonex.Dock = DockStyle.Left;
-            buttonex.Location = new Point(282, 0);
-            buttonex.Name = "buttonex";
-            buttonex.Size = new Size(94, 50);
-            buttonex.TabIndex = 4;
-            buttonex.Text = "导出";
-            buttonex.UseVisualStyleBackColor = true;
-            buttonex.Click += buttonex_Click;
             // 
             // button3
             // 
@@ -323,7 +310,6 @@
         private Button button3;
         private Button button2;
         private Button button4;
-        private Button buttonex;
         public DataGridView dataGridView1;
         private Button button8;
         private Label label4;

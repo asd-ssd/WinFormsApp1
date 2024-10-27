@@ -36,7 +36,7 @@ namespace WinFormsApp1.计划管理.完成
                 conn.Open();
 
                 // 定义SQL更新语句
-                string sql = "UPDATE Workorder SET 派工单状态 = '已完成',完成日期 = CONVERT(VARCHAR, GETDATE(), 23)  WHERE 派工单编号 = @派工单编号";
+                string sql = "UPDATE Workorder SET 状态 = '已完成',完成日期 = CONVERT(VARCHAR, GETDATE(), 23)  WHERE 派工单编号 = @派工单编号";
 
                 // 创建SqlCommand对象
                 using (SqlCommand cmd = new SqlCommand(sql, conn))

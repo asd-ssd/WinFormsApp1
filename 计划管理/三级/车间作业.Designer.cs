@@ -30,7 +30,6 @@
         {
             panel1 = new Panel();
             button9 = new Button();
-            buttonex = new Button();
             button8 = new Button();
             button5 = new Button();
             button3 = new Button();
@@ -64,7 +63,6 @@
             // 
             panel1.BackColor = Color.LightGray;
             panel1.Controls.Add(button9);
-            panel1.Controls.Add(buttonex);
             panel1.Controls.Add(button8);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button3);
@@ -80,24 +78,13 @@
             // button9
             // 
             button9.Dock = DockStyle.Left;
-            button9.Location = new Point(564, 0);
+            button9.Location = new Point(470, 0);
             button9.Name = "button9";
             button9.Size = new Size(94, 50);
             button9.TabIndex = 7;
             button9.Text = "完成";
             button9.UseVisualStyleBackColor = true;
             button9.Click += button9_Click;
-            // 
-            // buttonex
-            // 
-            buttonex.Dock = DockStyle.Left;
-            buttonex.Location = new Point(470, 0);
-            buttonex.Name = "buttonex";
-            buttonex.Size = new Size(94, 50);
-            buttonex.TabIndex = 8;
-            buttonex.Text = "导出";
-            buttonex.UseVisualStyleBackColor = true;
-            buttonex.Click += buttonex_Click;
             // 
             // button8
             // 
@@ -392,6 +379,5 @@
         private Label label3;
         private Button button8;
         private Button button9;
-        private Button buttonex;
     }
 }
