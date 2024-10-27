@@ -20,7 +20,7 @@ namespace WinFormsApp1.销售管理.收发货管理.退货
         private string RTselect_item_number2;
         
         public TextBox RTselect_item_textBox1 = RT2.rT2.textBox5;//订单
-        public TextBox RTselect_item_textBox2 = RT2.rT2.textBox6;//客户
+        public TextBox RTselect_item_textBox2 = RT2.rT2.textBox6;//物料名称
         
         public RTSelect()
         {
@@ -37,7 +37,7 @@ namespace WinFormsApp1.销售管理.收发货管理.退货
         {
             try
             {
-                string strda = "select * from 订单审核通过表";
+                string strda = "select * from 出库单表";
                 SqlConnection conn = connection();
                 conn.Open();
                 DataTable dt = new DataTable();
@@ -55,18 +55,18 @@ namespace WinFormsApp1.销售管理.收发货管理.退货
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            string selectsql = "select * from 订单审核通过表 where 1=1";
+            string selectsql = "select * from 出库单表 where 1=1";
             /*if (textBox1.Text != "")
             {
                 selectsql += "and 物料名称 like'%" + textBox1.Text + "%'";
             }*/
             if (textBox1.Text != "")
             {
-                selectsql += "and 订单编号 like'%" + textBox1.Text + "%'";
+                selectsql += "and 销售订单编号 like'%" + textBox1.Text + "%'";
             }
             if (textBox2.Text != "")
             {
-                selectsql += "and 客户 like'%" + textBox2.Text + "%'";
+                selectsql += "and 物料名称 like'%" + textBox2.Text + "%'";
             }
             
 
@@ -83,8 +83,8 @@ namespace WinFormsApp1.销售管理.收发货管理.退货
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            RTselect_item_number = dataGridView1.Rows[e.RowIndex].Cells["订单编号"].Value.ToString();
-            RTselect_item_number2 = dataGridView1.Rows[e.RowIndex].Cells["客户"].Value.ToString();
+            RTselect_item_number = dataGridView1.Rows[e.RowIndex].Cells["销售订单编号"].Value.ToString();
+            RTselect_item_number2 = dataGridView1.Rows[e.RowIndex].Cells["物料名称"].Value.ToString();
            
         }
 
@@ -96,7 +96,7 @@ namespace WinFormsApp1.销售管理.收发货管理.退货
         private void button2_Click(object sender, EventArgs e)
         {
             RTselect_item_textBox1.Text = RTselect_item_number;
-            RTselect_item_textBox2.Text = RTselect_item_number;
+            RTselect_item_textBox2.Text = RTselect_item_number2;
             
             this.Close();
         }

@@ -85,7 +85,7 @@
             sr11label6.Name = "sr11label6";
             sr11label6.Size = new Size(82, 24);
             sr11label6.TabIndex = 105;
-            sr11label6.Text = "客户编号";
+            sr11label6.Text = "物料名称";
             // 
             // sr11label5
             // 

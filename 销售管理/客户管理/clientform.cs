@@ -133,6 +133,7 @@ namespace WinFormsApp1
                     dataGridView1.Rows.Remove(row);
                 }
             }
+            SysLogService.AddSysLog(new SysLog("删除客户数据", "触发", LogTye.操作记录, login.login1.userid));
         }
 
         private void cedit2_Click(object sender, EventArgs e)
@@ -154,6 +155,8 @@ namespace WinFormsApp1
                 cedit2.Visible = false;
                 ccancel.Visible = false;
             }
+            SysLogService.AddSysLog(new SysLog("修改客户数据", "触发", LogTye.操作记录, login.login1.userid));
+
         }
 
         private void ccancel_Click(object sender, EventArgs e)

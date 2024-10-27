@@ -53,7 +53,7 @@ namespace WinFormsApp1.销售管理.客户管理
         {
             SqlConnection conn = connection();
             conn.Open();
-            string strda = "insert into 客户(客户编号,客户名称,联系电话,公司电话,地址) values('" + c11textBox1.Text + "','" + c11textBox2.Text + "','" + c11textBox3.Text + "','" + c11textBox4.Text + "','" + c11textBox5.Text + "')";
+            string strda = "insert into 客户(客户编号,客户名称,联系人,公司电话,地址) values('" + c11textBox1.Text + "','" + c11textBox2.Text + "','" + c11textBox3.Text + "','" + c11textBox4.Text + "','" + c11textBox5.Text + "')";
             SqlCommand comm = new SqlCommand(strda, conn);
             comm.ExecuteNonQuery();
             conn.Close();
@@ -65,6 +65,7 @@ namespace WinFormsApp1.销售管理.客户管理
             GetDataGridView();
             MessageBox.Show("添加成功！");
             this.Close();
+            SysLogService.AddSysLog(new SysLog("新增客户数据", "触发", LogTye.操作记录, login.login1.userid));
         }
 
         private void client2_Load(object sender, EventArgs e)

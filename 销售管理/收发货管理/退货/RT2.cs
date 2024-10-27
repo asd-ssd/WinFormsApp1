@@ -58,7 +58,7 @@ namespace WinFormsApp1.销售管理.收发货管理.退货
         {
             SqlConnection conn = connection();
             conn.Open();
-            string strda = "insert into 退货单(退回编号,退回日期,收货人,订单编号,客户编号) values('" + textBox1.Text + "','" + textBox2.Value + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "')";
+            string strda = "insert into 退货单(退回编号,退回日期,收货人,订单编号,物料名称) values('" + textBox1.Text + "','" + textBox2.Value + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "')";
             SqlCommand comm = new SqlCommand(strda, conn);
             comm.ExecuteNonQuery();
             conn.Close();
@@ -69,6 +69,7 @@ namespace WinFormsApp1.销售管理.收发货管理.退货
             GetDataGridView();
             MessageBox.Show("添加成功！");
             this.Close();
+            SysLogService.AddSysLog(new SysLog("新增退货单数据", "触发", LogTye.操作记录, login.login1.userid));
         }
 
         private void RT2_Load(object sender, EventArgs e)

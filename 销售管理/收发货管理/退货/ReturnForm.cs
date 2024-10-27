@@ -99,6 +99,7 @@ namespace WinFormsApp1.销售管理
                     dataGridView1.Rows.Remove(row);
                 }
             }
+            SysLogService.AddSysLog(new SysLog("删除退货单数据", "触发", LogTye.操作记录, login.login1.userid));
         }
 
 
@@ -128,6 +129,7 @@ namespace WinFormsApp1.销售管理
                 sredit2.Visible = false;
                 srcancel.Visible = false;
             }
+            SysLogService.AddSysLog(new SysLog("修改退货单数据", "触发", LogTye.操作记录, login.login1.userid));
         }
 
         private void srcancel_Click(object sender, EventArgs e)

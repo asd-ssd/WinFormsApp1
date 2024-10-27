@@ -73,6 +73,7 @@ namespace WinFormsApp1.销售管理
             GetDataGridView();
             MessageBox.Show("添加成功！");
             this.Close();
+            SysLogService.AddSysLog(new SysLog("新增订单数据", "触发", LogTye.操作记录, login.login1.userid));
         }
         private SqlConnection connection()
         {

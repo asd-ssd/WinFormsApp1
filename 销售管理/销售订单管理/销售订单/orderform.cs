@@ -117,6 +117,7 @@ namespace WinFormsApp1
                     dataGridView1.Rows.Remove(row);
                 }
             }
+            SysLogService.AddSysLog(new SysLog("删除订单数据", "触发", LogTye.操作记录, login.login1.userid));
 
         }
 
@@ -146,6 +147,7 @@ namespace WinFormsApp1
                 button1.Visible = false;
                 button2.Visible = false;
             }
+            SysLogService.AddSysLog(new SysLog("修改订单数据", "触发", LogTye.操作记录, login.login1.userid));
         }
 
         private void button2_Click(object sender, EventArgs e)
