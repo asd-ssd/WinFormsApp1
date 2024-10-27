@@ -102,7 +102,7 @@
             label2.Name = "label2";
             label2.Size = new Size(82, 24);
             label2.TabIndex = 6;
-            label2.Text = "客户编号";
+            label2.Text = "物料名称";
             // 
             // textBox2
             // 

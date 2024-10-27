@@ -105,6 +105,7 @@ namespace WinFormsApp1.销售管理
             GetDataGridView();
             MessageBox.Show("添加成功！");
             this.Close();
+            SysLogService.AddSysLog(new SysLog("新增订单审核通过表数据", "触发", LogTye.操作记录, login.login1.userid));
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -119,6 +120,7 @@ namespace WinFormsApp1.销售管理
             GetDataGridView2();
             MessageBox.Show("添加成功！");
             this.Close();
+            SysLogService.AddSysLog(new SysLog("新增订单审核不通过表数据", "触发", LogTye.操作记录, login.login1.userid));
         }
     }
 }

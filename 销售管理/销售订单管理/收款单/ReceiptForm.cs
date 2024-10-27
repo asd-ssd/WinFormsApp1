@@ -109,6 +109,7 @@ namespace WinFormsApp1.销售管理
                     rfdataGridView1.Rows.Remove(row);
                 }
             }
+            SysLogService.AddSysLog(new SysLog("删除收款单数据", "触发", LogTye.操作记录, login.login1.userid));
 
         }
 
@@ -143,6 +144,7 @@ namespace WinFormsApp1.销售管理
                 redit2.Visible = false;
                 rcancel.Visible = false;
             }
+            SysLogService.AddSysLog(new SysLog("修改收款单数据", "触发", LogTye.操作记录, login.login1.userid));
         }
 
         private void rcancel_Click(object sender, EventArgs e)

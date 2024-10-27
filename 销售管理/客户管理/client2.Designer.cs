@@ -45,7 +45,7 @@
             // cflabel5
             // 
             cflabel5.AutoSize = true;
-            cflabel5.Location = new Point(47, 156);
+            cflabel5.Location = new Point(47, 109);
             cflabel5.Name = "cflabel5";
             cflabel5.Size = new Size(46, 24);
             cflabel5.TabIndex = 29;
@@ -63,11 +63,11 @@
             // cflabel3
             // 
             cflabel3.AutoSize = true;
-            cflabel3.Location = new Point(47, 106);
+            cflabel3.Location = new Point(448, 162);
             cflabel3.Name = "cflabel3";
-            cflabel3.Size = new Size(82, 24);
+            cflabel3.Size = new Size(64, 24);
             cflabel3.TabIndex = 27;
-            cflabel3.Text = "联系电话";
+            cflabel3.Text = "联系人";
             // 
             // cflabel2
             // 
@@ -97,7 +97,7 @@
             // 
             // c11textBox5
             // 
-            c11textBox5.Location = new Point(190, 156);
+            c11textBox5.Location = new Point(190, 109);
             c11textBox5.Name = "c11textBox5";
             c11textBox5.Size = new Size(150, 30);
             c11textBox5.TabIndex = 23;
@@ -111,7 +111,7 @@
             // 
             // c11textBox3
             // 
-            c11textBox3.Location = new Point(190, 100);
+            c11textBox3.Location = new Point(594, 162);
             c11textBox3.Name = "c11textBox3";
             c11textBox3.Size = new Size(150, 30);
             c11textBox3.TabIndex = 21;

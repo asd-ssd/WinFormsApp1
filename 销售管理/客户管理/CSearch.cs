@@ -40,7 +40,7 @@ namespace WinFormsApp1.销售管理.客户管理
             }
             if (c12textBox3.Text != "")
             {
-                selectsql += "and 联系电话 like'%" + c12textBox3.Text + "%'";
+                selectsql += "and 联系人 like'%" + c12textBox3.Text + "%'";
             }
             if (c12textBox4.Text != "")
             {
@@ -50,7 +50,7 @@ namespace WinFormsApp1.销售管理.客户管理
             {
                 selectsql += "and 地址 like'%" + c12textBox5.Text + "%'";
             }
-
+            
             SqlConnection conn = connection();
             conn.Open();
             DataTable dt = new DataTable();
@@ -71,6 +71,11 @@ namespace WinFormsApp1.销售管理.客户管理
         }
 
         private void CSearch_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

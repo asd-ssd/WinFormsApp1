@@ -126,6 +126,7 @@ namespace WinFormsApp1.销售管理
                     dataGridView1.Rows.Remove(row);
                 }
             }
+            SysLogService.AddSysLog(new SysLog("删除订单审核通过表数据", "触发", LogTye.操作记录, login.login1.userid));
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -151,6 +152,7 @@ namespace WinFormsApp1.销售管理
                     dataGridView2.Rows.Remove(row);
                 }
             }
+            SysLogService.AddSysLog(new SysLog("删除订单审核不通过表数据", "触发", LogTye.操作记录, login.login1.userid));
         }
     }
 }
