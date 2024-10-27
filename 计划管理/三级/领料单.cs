@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库封装类;
 using WinFormsApp1.数据库支持类;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
@@ -148,6 +149,7 @@ namespace WinFormsApp1.计划管理.三级
                 n = 0;
                 button8.Visible = false;
                 button9.Visible = false;
+                SysLogService.AddSysLog(new SysLog("修改领料单数据", "触发", LogTye.操作记录, login.login1.userid));
             }
         }
 
@@ -172,6 +174,7 @@ namespace WinFormsApp1.计划管理.三级
                     }
                     dataGridView1.Rows.Remove(row);
                 }
+                SysLogService.AddSysLog(new SysLog("删除领料单数据", "触发", LogTye.操作记录, login.login1.userid));
             }
         }
 

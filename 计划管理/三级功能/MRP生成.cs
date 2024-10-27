@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 using WinFormsApp1.计划管理.三级;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -232,7 +234,7 @@ namespace WinFormsApp1.Forth
                         bulkCopy.WriteToServer(MRP);
                     }
                 }
-
+                SysLogService.AddSysLog(new SysLog("新增MRP数据", "触发", LogTye.操作记录, login.login1.userid));
                 MessageBox.Show("已成功添加！");
             }
             catch (Exception ex)

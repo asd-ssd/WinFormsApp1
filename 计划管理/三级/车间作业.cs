@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库封装类;
 using WinFormsApp1.数据库支持类;
 using WinFormsApp1.计划管理.三级功能;
 using WinFormsApp1.计划管理.完成;
@@ -125,6 +126,7 @@ namespace WinFormsApp1.计划管理.三级
                 n = 0;
                 button6.Visible = false;
                 button7.Visible = false;
+                SysLogService.AddSysLog(new SysLog("修改车间作业计划数据", "触发", LogTye.操作记录, login.login1.userid));
             }
         }
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -158,6 +160,7 @@ namespace WinFormsApp1.计划管理.三级
                     }
                     dataGridView1.Rows.Remove(row);
                 }
+                SysLogService.AddSysLog(new SysLog("删除车间作业计划数据", "触发", LogTye.操作记录, login.login1.userid));
             }
         }
 
@@ -246,6 +249,7 @@ namespace WinFormsApp1.计划管理.三级
             }
             chew = new 车间完成();
             chew.Show();
+            
         }
 
         private void buttonex_Click(object sender, EventArgs e)

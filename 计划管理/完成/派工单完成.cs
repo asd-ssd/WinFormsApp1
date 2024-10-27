@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.仓库管理.移库界面;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 using WinFormsApp1.计划管理.三级;
 
 namespace WinFormsApp1.计划管理.完成
@@ -60,6 +62,7 @@ namespace WinFormsApp1.计划管理.完成
 
                 // 关闭数据库连接
                 conn.Close();
+                SysLogService.AddSysLog(new SysLog("完成派工单数据", "触发", LogTye.操作记录, login.login1.userid));
                 派工单.paigong1.GetDataGridView();
                 this.Close();
             }

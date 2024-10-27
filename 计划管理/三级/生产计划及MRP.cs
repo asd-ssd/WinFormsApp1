@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.Forth;
+using WinFormsApp1.数据库封装类;
 using WinFormsApp1.数据库支持类;
 using WinFormsApp1.计划管理.完成;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -147,6 +148,7 @@ namespace WinFormsApp1.计划管理.三级
                                 comm.ExecuteNonQuery();
                             }
                         }
+                        SysLogService.AddSysLog(new SysLog("删除主计划数据", "触发", LogTye.操作记录, login.login1.userid));
                     }
                     else if (which == 1)
                     {
@@ -161,9 +163,11 @@ namespace WinFormsApp1.计划管理.三级
                                 comm.ExecuteNonQuery();
                             }
                         }
+                        SysLogService.AddSysLog(new SysLog("删除MRP数据", "触发", LogTye.操作记录, login.login1.userid));
                     }
 
                     dataGridView1.Rows.Remove(row);
+
                 }
             }
         }
@@ -187,6 +191,15 @@ namespace WinFormsApp1.计划管理.三级
                 n = 0;
                 button10.Visible = false;
                 button9.Visible = false;
+                if (which == 0)
+                {
+                    SysLogService.AddSysLog(new SysLog("修改MPS数据", "触发", LogTye.操作记录, login.login1.userid));
+                }
+                else if (which == 1)
+                {
+                    SysLogService.AddSysLog(new SysLog("修改MRP数据", "触发", LogTye.操作记录, login.login1.userid));
+                }
+                
             }
         }
 

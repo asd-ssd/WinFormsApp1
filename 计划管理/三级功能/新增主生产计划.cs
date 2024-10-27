@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.工作界面;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 using WinFormsApp1.计划管理.三级;
 using WinFormsApp1.计划管理.三级功能;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -94,7 +96,7 @@ namespace WinFormsApp1.Forth
             GetDataGridView();
             dataGridView1.DataSource = dt;
             MessageBox.Show("保存成功！");
-            
+            SysLogService.AddSysLog(new SysLog("新增MPS数据", "触发", LogTye.操作记录, login.login1.userid));
             this.Close();
             //SysLogService.AddSysLog(new SysLog("新增BOM表数据", "触发", LogTye.操作记录, login.login1.userid));
         }
