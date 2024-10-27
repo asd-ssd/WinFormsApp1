@@ -30,6 +30,7 @@
         {
             panel1 = new Panel();
             button9 = new Button();
+            buttonex = new Button();
             button8 = new Button();
             button5 = new Button();
             button3 = new Button();
@@ -54,7 +55,6 @@
             checkBox2 = new CheckBox();
             checkBox1 = new CheckBox();
             dataGridView1 = new DataGridView();
-            button10 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -64,7 +64,7 @@
             // 
             panel1.BackColor = Color.LightGray;
             panel1.Controls.Add(button9);
-            panel1.Controls.Add(button10);
+            panel1.Controls.Add(buttonex);
             panel1.Controls.Add(button8);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button3);
@@ -87,6 +87,17 @@
             button9.Text = "完成";
             button9.UseVisualStyleBackColor = true;
             button9.Click += button9_Click;
+            // 
+            // buttonex
+            // 
+            buttonex.Dock = DockStyle.Left;
+            buttonex.Location = new Point(470, 0);
+            buttonex.Name = "buttonex";
+            buttonex.Size = new Size(94, 50);
+            buttonex.TabIndex = 8;
+            buttonex.Text = "导出";
+            buttonex.UseVisualStyleBackColor = true;
+            buttonex.Click += buttonex_Click;
             // 
             // button8
             // 
@@ -336,17 +347,6 @@
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
             // 
-            // button10
-            // 
-            button10.Dock = DockStyle.Left;
-            button10.Location = new Point(470, 0);
-            button10.Name = "button10";
-            button10.Size = new Size(94, 50);
-            button10.TabIndex = 8;
-            button10.Text = "导出";
-            button10.UseVisualStyleBackColor = true;
-            button10.Click += button10_Click;
-            // 
             // 车间作业
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
@@ -392,6 +392,6 @@
         private Label label3;
         private Button button8;
         private Button button9;
-        private Button button10;
+        private Button buttonex;
     }
 }

@@ -54,7 +54,7 @@ namespace WinFormsApp1.计划管理.三级
             GetDataGridView();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void buttonex_Click(object sender, EventArgs e)
         {
             Stopwatch sw = new Stopwatch();
             sw.Start();
@@ -176,11 +176,11 @@ namespace WinFormsApp1.计划管理.三级
             var paras = new Dictionary<string, string> { { "start1", start1 }, { "end1", end1 } };
             if (checkBox1.Checked)
             {
-                selectsql += "and 状态 ='%" + "未完成" + "%'";
+                selectsql += "and 状态 ='未完成'";
             }
             if (checkBox2.Checked)
             {
-                selectsql += "and 状态 ='%" + "已完成" + "%'";
+                selectsql += "and 状态 ='已完成'";
             }
 
             if (checkBox3.Checked)

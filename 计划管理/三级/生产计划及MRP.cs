@@ -221,6 +221,11 @@ namespace WinFormsApp1.计划管理.三级
         private void button1_Click(object sender, EventArgs e)
         {
             string selectsql = "select * from MPS where 1=1";
+            string start1 = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd");
+            //取开始时间的0点，大于等于开始日期的0点；
+            string end1 = dateTimePicker2.Value.AddDays(1).Date.ToString("yyyy-MM-dd");
+            //取结束时间第二天的0点，小于（没有等于）结束第二天的0点；
+            var paras = new Dictionary<string, string> { { "start1", start1 }, { "end1", end1 } };
             if (which == 1)
             {
                 selectsql = "select * from MRP where 1=1";
@@ -228,11 +233,11 @@ namespace WinFormsApp1.计划管理.三级
 
             if (checkBox1.Checked)
             {
-                selectsql += "and 状态 ='%" + "未完成" + "%'";
+                selectsql += "and 状态 ='未完成'";
             }
             if (checkBox2.Checked)
             {
-                selectsql += "and 状态 ='%" + "已完成" + "%'";
+                selectsql += "and 状态 ='已完成'";
             }
             if (checkBox6.Checked)
             {
@@ -244,7 +249,7 @@ namespace WinFormsApp1.计划管理.三级
             }
             if (checkBox3.Checked)
             {
-                selectsql += "and where 计划开始日期 between'" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "'" + "and'" + dateTimePicker2.Value.ToString("yyyy-MM-dd") + "'";
+                selectsql += "and 开始日期 >= @start1 AND 开始日期 <@end1";
             }
             if (checkBox4.Checked)
             {
@@ -292,7 +297,7 @@ namespace WinFormsApp1.计划管理.三级
             MPSw.Show();
         }
 
-        private void button12_Click(object sender, EventArgs e)
+        private void buttonex_Click(object sender, EventArgs e)
         {
             Stopwatch sw = new Stopwatch();
             sw.Start();

@@ -51,7 +51,7 @@
             checkBox1 = new CheckBox();
             panel1 = new Panel();
             button11 = new Button();
-            button12 = new Button();
+            buttonex = new Button();
             button3 = new Button();
             button2 = new Button();
             button4 = new Button();
@@ -186,7 +186,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(587, 65);
+            textBox3.Location = new Point(593, 65);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(160, 27);
             textBox3.TabIndex = 11;
@@ -194,7 +194,7 @@
             // checkBox5
             // 
             checkBox5.AutoSize = true;
-            checkBox5.Location = new Point(443, 66);
+            checkBox5.Location = new Point(465, 66);
             checkBox5.Name = "checkBox5";
             checkBox5.Size = new Size(136, 24);
             checkBox5.TabIndex = 9;
@@ -203,7 +203,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(275, 65);
+            textBox1.Location = new Point(297, 65);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(160, 27);
             textBox1.TabIndex = 8;
@@ -213,9 +213,9 @@
             checkBox4.AutoSize = true;
             checkBox4.Location = new Point(191, 66);
             checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(76, 24);
+            checkBox4.Size = new Size(106, 24);
             checkBox4.TabIndex = 7;
-            checkBox4.Text = "产品：";
+            checkBox4.Text = "物料编码：";
             checkBox4.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker2
@@ -284,7 +284,7 @@
             // 
             panel1.BackColor = Color.LightGray;
             panel1.Controls.Add(button11);
-            panel1.Controls.Add(button12);
+            panel1.Controls.Add(buttonex);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button4);
@@ -308,16 +308,16 @@
             button11.UseVisualStyleBackColor = true;
             button11.Click += button11_Click;
             // 
-            // button12
+            // buttonex
             // 
-            button12.Dock = DockStyle.Left;
-            button12.Location = new Point(470, 0);
-            button12.Name = "button12";
-            button12.Size = new Size(94, 50);
-            button12.TabIndex = 7;
-            button12.Text = "导出";
-            button12.UseVisualStyleBackColor = true;
-            button12.Click += button12_Click;
+            buttonex.Dock = DockStyle.Left;
+            buttonex.Location = new Point(470, 0);
+            buttonex.Name = "buttonex";
+            buttonex.Size = new Size(94, 50);
+            buttonex.TabIndex = 7;
+            buttonex.Text = "导出";
+            buttonex.UseVisualStyleBackColor = true;
+            buttonex.Click += buttonex_Click;
             // 
             // button3
             // 
@@ -419,6 +419,6 @@
         private Label label3;
         private Button button10;
         private Button button11;
-        private Button button12;
+        private Button buttonex;
     }
 }

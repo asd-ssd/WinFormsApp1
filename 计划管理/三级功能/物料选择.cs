@@ -62,15 +62,18 @@ namespace WinFormsApp1.计划管理.三级功能
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Item_number = dataGridView1.Rows[e.RowIndex].Cells["物料编码"].Value.ToString();
-            Item_name = dataGridView1.Rows[e.RowIndex].Cells["物料名称"].Value.ToString();
-            Item_type = dataGridView1.Rows[e.RowIndex].Cells["物料来源"].Value.ToString();
-            //Is_select_people_textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells["员工编号"].Value.ToString();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Item_textBox1.Text = Item_number;
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            {
+                Item_number = row.Cells["物料编码"].Value.ToString();
+                Item_name = row.Cells["物料名称"].Value.ToString();
+                Item_type = row.Cells["物料来源"].Value.ToString();
+            }
+                Item_textBox1.Text = Item_number;
             Item_textBox2.Text = Item_type;
             Item_textBox3.Text = Item_name;
             this.Close();
