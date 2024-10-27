@@ -36,11 +36,9 @@
             label1 = new Label();
             textBox4 = new TextBox();
             label9 = new Label();
-            textBox1 = new TextBox();
             button3 = new Button();
             label10 = new Label();
             label11 = new Label();
-            textBox5 = new TextBox();
             label12 = new Label();
             label5 = new Label();
             textBox15 = new TextBox();
@@ -51,6 +49,8 @@
             textBox16 = new TextBox();
             comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
+            textBox5 = new TextBox();
+            textBox1 = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -161,16 +161,6 @@
             label9.TabIndex = 42;
             label9.Text = "物料编码";
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(377, 68);
-            textBox1.Margin = new Padding(2);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(116, 27);
-            textBox1.TabIndex = 50;
-            textBox1.TextChanged += textBox1_TextChanged;
-            // 
             // button3
             // 
             button3.Location = new Point(210, 69);
@@ -201,15 +191,6 @@
             label11.Size = new Size(69, 20);
             label11.TabIndex = 84;
             label11.Text = "移库单号";
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(89, 68);
-            textBox5.Margin = new Padding(2);
-            textBox5.Multiline = true;
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(116, 27);
-            textBox5.TabIndex = 89;
             // 
             // label12
             // 
@@ -301,6 +282,26 @@
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(114, 28);
             comboBox2.TabIndex = 88;
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(89, 68);
+            textBox5.Margin = new Padding(2);
+            textBox5.Multiline = true;
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(116, 27);
+            textBox5.TabIndex = 89;
+            textBox5.TextChanged += textBox5_TextChanged;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(377, 68);
+            textBox1.Margin = new Padding(2);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(116, 27);
+            textBox1.TabIndex = 50;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // Ms_add
             // 

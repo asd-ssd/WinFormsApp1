@@ -9,25 +9,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 //using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using WinFormsApp1.仓库管理.入库界面;
 
-namespace WinFormsApp1.仓库管理.移库界面
+namespace WinFormsApp1.仓库管理.库存盘点界面
 {
-    public partial class Ms_select_item : Form
+    public partial class count_select_item : Form
     {
         private int n;
         private string[] strcomm;
-        private string Ms_select_item_name;
-        private string Ms_select_item_number;
-        public TextBox Ms_select_item_textBox1 = Ms_add.Ms_Add1.textBox1;//绑定is_add的入库人格
-        public TextBox Ms_select_item_textBox2 = Ms_add.Ms_Add1.textBox5;
-        public Ms_select_item()
+        private string count_select_item_name;
+        private string count_select_item_number;
+        public TextBox count_select_item_textBox1 = count_push_new.count_Add1.textBox5;//绑定count_add的入库人格
+        public TextBox count_select_item_textBox2 = count_push_new.count_Add1.textBox1;
+        public count_select_item()
         {
             InitializeComponent();
             GetDataGridView();
         }
         private SqlConnection connection()
         {
-            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=hhr;Password=aa1628381531";
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=lwx;Password=luowenxin";
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
@@ -51,6 +52,7 @@ namespace WinFormsApp1.仓库管理.移库界面
                 MessageBox.Show(ee.Message.ToString());
             }
         }
+
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -84,15 +86,18 @@ namespace WinFormsApp1.仓库管理.移库界面
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {
                 //获取要选中行的ID值
-                Ms_select_item_number = row.Cells["物料编码"].Value.ToString();
-                Ms_select_item_name = row.Cells["物料名称"].Value.ToString();
+                count_select_item_number = row.Cells["物料编码"].Value.ToString();
+                count_select_item_name = row.Cells["物料名称"].Value.ToString();
 
             }
-            Ms_select_item_textBox1.Text = Ms_select_item_name;
-            Ms_select_item_textBox2.Text = Ms_select_item_number;
+            count_select_item_textBox1.Text = count_select_item_name;
+            count_select_item_textBox2.Text = count_select_item_number;
             this.Close();
         }
 
-   
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

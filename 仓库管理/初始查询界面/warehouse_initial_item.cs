@@ -18,8 +18,10 @@ namespace WinFormsApp1.仓库管理.初始查询界面
         private string[] strcomm;
         private string warehouse_select_item_name;
         private string warehouse_select_item_number;
+        private string warehouse_select_item_lei;
         public TextBox warehouse_select_item_textBox1 = warehouse_initial_add.warehouse_initial_add1.textBox1;//绑定is_add的入库人格
         public TextBox warehouse_select_item_textBox2 = warehouse_initial_add.warehouse_initial_add1.textBox5;
+        public TextBox warehouse_select_item_textBox3 = warehouse_initial_add.warehouse_initial_add1.textBox2;
         public warehouse_initial_item()
         {
             InitializeComponent();
@@ -87,11 +89,13 @@ namespace WinFormsApp1.仓库管理.初始查询界面
                     //获取要选中行的ID值
                     warehouse_select_item_number = row.Cells["物料编码"].Value.ToString();
                     warehouse_select_item_name = row.Cells["物料名称"].Value.ToString();
+                    warehouse_select_item_lei = row.Cells["物料分类"].Value.ToString();
 
-                }
+            }
                 warehouse_select_item_textBox1.Text = warehouse_select_item_name;
                 warehouse_select_item_textBox2.Text = warehouse_select_item_number;
-                this.Close();
+                 warehouse_select_item_textBox3.Text = warehouse_select_item_lei;
+            this.Close();
             }
 
             private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -12,6 +12,8 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.仓库管理.初始查询界面;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WinFormsApp1.仓库管理.入库界面
@@ -47,6 +49,7 @@ namespace WinFormsApp1.仓库管理.入库界面
             Is_number = result.ToString();
             textBox4.Text = Numberplus(Is_number);
             conn.Close();
+            SysLogService.AddSysLog(new SysLog("新增入库单表数据", "触发", LogTye.操作记录, login.login1.userid));
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -59,6 +62,7 @@ namespace WinFormsApp1.仓库管理.入库界面
             addDataGridView();
             //addDataGridView1();
             GetDataGridView();
+            change_1();
             this.Close();
         }
         private void addDataGridView()
@@ -153,11 +157,12 @@ namespace WinFormsApp1.仓库管理.入库界面
         }
 
 
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        int flag_text=0;
+        int flag_number = 0;
+        private void textBox5_TextChanged(object sender, EventArgs e)
         {
             comboBox2.Items.Clear();
-            string strda = "select * from 库存管理表 WHERE 物料编码='" + textBox1.Text.Trim() + "'";
+            string strda = "select * from 库存管理表 WHERE 物料编码='" + textBox5.Text.Trim() + "'";
             SqlConnection conn = connection();
             conn.Open();
             DataTable dt = new DataTable();
@@ -166,33 +171,34 @@ namespace WinFormsApp1.仓库管理.入库界面
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                if (dt.Rows[i]["库位号"].ToString() != "")
+                if (int.TryParse(textBox16.Text, out int numberru))
                 {
+                    // 获取库位库存量和库位容量，并转换为整数（假设它们已经是数字或可以转换为数字）  
+                    int currentStock = int.Parse(dt.Rows[i]["库位库存量"].ToString());
+                    int capacity = int.Parse(dt.Rows[i]["库位容量"].ToString());
 
-                    if (int.TryParse(textBox16.Text, out int numberru))
+                    // 检查是否满足条件：库位库存量加上 textBox16 中的数字小于库位容量  
+                    if (currentStock + numberru <= capacity)
                     {
-                        // 获取库位库存量和库位容量，并转换为整数（假设它们已经是数字或可以转换为数字）  
-                        int currentStock = int.Parse(dt.Rows[i]["库位库存量"].ToString());
-                        int capacity = int.Parse(dt.Rows[i]["库位容量"].ToString());
-
-                        // 检查是否满足条件：库位库存量加上 textBox16 中的数字小于库位容量  
-                        if (currentStock + numberru <= capacity)
-                        {
-                            // 将库位号添加到 comboBox2 的项中  
-                            comboBox2.Items.Add(dt.Rows[i]["库位号"].ToString());
-                        }
+                       
+                        // 将库位号添加到 comboBox2 的项中  
+                        comboBox2.Items.Add(dt.Rows[i]["库位号"].ToString());
                     }
-
-
                 }
+
+
+
+
             }
+            
             conn.Close();
+  
         }
 
         private void textBox16_TextChanged(object sender, EventArgs e)
         {
-            comboBox2.Items.Clear();
-            string strda = "select * from 库存管理表 WHERE 物料编码='" + textBox1.Text.Trim() + "'";
+        comboBox2.Items.Clear();
+        string strda = "select * from 库存管理表 WHERE 物料编码='" + textBox5.Text.Trim() + "'";
             SqlConnection conn = connection();
             conn.Open();
             DataTable dt = new DataTable();
@@ -203,7 +209,7 @@ namespace WinFormsApp1.仓库管理.入库界面
             {
                 if (dt.Rows[i]["库位号"].ToString() != "")
                 {
-
+                  
                     if (int.TryParse(textBox16.Text, out int numberru))
                     {
                         // 获取库位库存量和库位容量，并转换为整数（假设它们已经是数字或可以转换为数字）  
@@ -213,6 +219,7 @@ namespace WinFormsApp1.仓库管理.入库界面
                         // 检查是否满足条件：库位库存量加上 textBox16 中的数字小于库位容量  
                         if (currentStock + numberru <= capacity)
                         {
+                            
                             // 将库位号添加到 comboBox2 的项中  
                             comboBox2.Items.Add(dt.Rows[i]["库位号"].ToString());
                         }
@@ -237,6 +244,49 @@ namespace WinFormsApp1.仓库管理.入库界面
         {
             Is_dingdan1 = new Is_select_dingdan();
             Is_dingdan1.Show();
+        }
+        private void change_1()
+        {
+            try
+            {
+                // 创建并打开数据库连接
+                SqlConnection conn = connection();
+                conn.Open();
+                // 定义SQL更新语句
+                string sql = "UPDATE 审核表 SET 入库状态 = '已入库' WHERE 订单编号 = @订单编号";
+                // 创建SqlCommand对象
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    // 添加参数化查询以防止SQL注入
+                    cmd.Parameters.AddWithValue("@订单编号", textBox2.Text);
+
+                    // 执行更新操作
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    // 检查是否有行被更新
+                    if (rowsAffected > 0)
+                    {
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("没有找到对应的记录。");
+                    }
+                }
+
+                // 关闭数据库连接
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                // 显示异常信息
+                MessageBox.Show("发生错误：" + ex.Message);
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
         /* string strcolumn = dataGridView1.Columns[e.ColumnIndex].HeaderText;//获取列标题
 string strrow = dataGridView1.Rows[e.RowIndex].Cells["物料编码"].Value.ToString();//获取焦点触发行的第一个值

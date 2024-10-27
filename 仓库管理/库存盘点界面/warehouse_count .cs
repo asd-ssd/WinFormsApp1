@@ -13,18 +13,19 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 using WinFormsApp1.数据库支持类;
+using WinFormsApp1.仓库管理.初始查询界面;
 
 namespace WinFormsApp1.仓库管理.库存盘点界面
 {
     public partial class warehouse_count : UserControl
     {
         private readonly PermissionService _permissionService;
+        public static count_push_new Count_push_new1;
+        public static count_issue count_issue1;
+        private static readonly DateTime DefaultStartDate = new DateTime(2000, 1, 1);
         public warehouse_count()
         {
             InitializeComponent();
-            this.button1.Tag = "Create";
-            //this.button3.Tag = "Delete";
-             this.button12.Tag = "Edit";
             var dbHelper = new SqlSugarHelper();
             _permissionService = new PermissionService(dbHelper);
             var permissionManager = new PermissionManager(_permissionService, moduleId: 5); // 1是模块ID
@@ -61,13 +62,10 @@ namespace WinFormsApp1.仓库管理.库存盘点界面
             //取结束时间第二天的0点，小于（没有等于）结束第二天的0点；
 
             var paras = new Dictionary<string, string> { { "start1", start1 }, { "end1", end1 } };
-            if (checkBox1.Checked)
-            {
-
-                selectsql += "and 最后盘点日期 >= @start1 AND 最后盘点日期 <@end1";
 
 
-            }
+            selectsql += "and 最后盘点日期 >= @start1 AND 最后盘点日期 <@end1";
+
             SqlConnection conn = connection();
             conn.Open();
             DataTable dt1 = new DataTable();
@@ -117,9 +115,8 @@ namespace WinFormsApp1.仓库管理.库存盘点界面
 
         private void button2_Click(object sender, EventArgs e)
         {
-            dataGridView1.ReadOnly = false;//整个表格只读
-            button12.Visible = true;
-            button13.Visible = true;
+            Count_push_new1 = new count_push_new();
+            Count_push_new1.Show();
         }
 
         int n = 0;
@@ -210,6 +207,79 @@ namespace WinFormsApp1.仓库管理.库存盘点界面
                 GetDataGridView();
             }
 
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            DateTime now = DateTime.Now;
+            DateTime startDate, endDate;
+
+            switch (comboBox1.SelectedItem.ToString())
+            {
+                case "全部":
+                    // 对于“全部”，你可能需要设置特定的起始和结束日期，  
+                    // 或者清空DateTimePicker的值以表示没有限制。  
+                    // 这里我们假设清空DateTimePicker的值。  
+                    // 使用默认的起始日期和当前日期作为结束日期  
+
+                    startDate = DefaultStartDate;
+
+                    endDate = now.Date;
+
+                    dateTimePicker1.Value = startDate;
+
+                    dateTimePicker2.Value = endDate;
+
+                    break;
+
+                case "当天":
+                    startDate = now.Date;
+                    endDate = startDate.AddDays(1).AddTicks(-1); // 当天结束时间（23:59:59.999...）  
+                    dateTimePicker1.Value = startDate;
+                    dateTimePicker2.Value = endDate;
+                    break;
+
+                case "本周":
+                    // 获取本周的开始和结束日期（假设周一是周的第一天）  
+                    int startOfWeek = (7 + (now.DayOfWeek - DayOfWeek.Monday)) % 7;
+                    startDate = now.AddDays(-startOfWeek).Date;
+                    endDate = startDate.AddDays(6).AddTicks(-1); // 本周结束时间  
+                    dateTimePicker1.Value = startDate;
+                    dateTimePicker2.Value = endDate;
+                    break;
+
+                case "本月":
+                    startDate = new DateTime(now.Year, now.Month, 1);
+                    endDate = startDate.AddMonths(1).AddDays(-1); // 本月结束时间  
+                    dateTimePicker1.Value = startDate;
+                    dateTimePicker2.Value = endDate;
+                    break;
+
+                case "本年":
+                    startDate = new DateTime(now.Year, 1, 1);
+                    endDate = startDate.AddYears(1).AddDays(-1); // 本年结束时间  
+                    dateTimePicker1.Value = startDate;
+                    dateTimePicker2.Value = endDate;
+                    break;
+
+                default:
+                    // 处理未知选项（理论上不应该发生，除非ComboBox被外部修改）  
+                    dateTimePicker1.Value = DateTime.MinValue;
+                    dateTimePicker2.Value = DateTime.MaxValue;
+                    break;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            count_issue1 = new count_issue();
+            count_issue1.Show();
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            GetDataGridView();
         }
     }
 }

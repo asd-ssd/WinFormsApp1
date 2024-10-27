@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using WinFormsApp1.数据库支持类;
 using WinFormsApp1.仓库管理.移库界面;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using WinFormsApp1.数据库封装类;
 
 namespace WinFormsApp1.仓库管理.移库界面
 {
@@ -114,6 +115,7 @@ namespace WinFormsApp1.仓库管理.移库界面
                     }
                     dataGridView1.Rows.Remove(row);
                 }
+                SysLogService.AddSysLog(new SysLog("删除移库单表数据", "触发", LogTye.操作记录, login.login1.userid));
             }
         }
 
@@ -137,6 +139,7 @@ namespace WinFormsApp1.仓库管理.移库界面
                 button12.Visible = false;
                 button13.Visible = false;
                 dataGridView1.ReadOnly = true;//整个表格只读
+                SysLogService.AddSysLog(new SysLog("修改移库单表数据", "触发", LogTye.操作记录, login.login1.userid));
             }
         }
 
