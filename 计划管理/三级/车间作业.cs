@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库封装类;
 using WinFormsApp1.数据库支持类;
 using WinFormsApp1.计划管理.三级功能;
 using WinFormsApp1.计划管理.完成;
@@ -125,6 +126,7 @@ namespace WinFormsApp1.计划管理.三级
                 n = 0;
                 button6.Visible = false;
                 button7.Visible = false;
+                SysLogService.AddSysLog(new SysLog("修改车间作业计划数据", "触发", LogTye.操作记录, login.login1.userid));
             }
         }
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -158,12 +160,13 @@ namespace WinFormsApp1.计划管理.三级
                     }
                     dataGridView1.Rows.Remove(row);
                 }
+                SysLogService.AddSysLog(new SysLog("删除车间作业计划数据", "触发", LogTye.操作记录, login.login1.userid));
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string selectsql = "select * from MRP where 1=1";
+            string selectsql = "select * from MRP where 1=1 AND 物料来源 = '生产'";
             string start1 = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd");
             //取开始时间的0点，大于等于开始日期的0点；
             string end1 = dateTimePicker2.Value.AddDays(1).Date.ToString("yyyy-MM-dd");
@@ -171,11 +174,11 @@ namespace WinFormsApp1.计划管理.三级
             var paras = new Dictionary<string, string> { { "start1", start1 }, { "end1", end1 } };
             if (checkBox1.Checked)
             {
-                selectsql += "and 状态 ='%" + "未完成" + "%'";
+                selectsql += "and 状态 ='未完成'";
             }
             if (checkBox2.Checked)
             {
-                selectsql += "and 状态 ='%" + "已完成" + "%'";
+                selectsql += "and 状态 ='已完成'";
             }
 
             if (checkBox3.Checked)
@@ -246,9 +249,10 @@ namespace WinFormsApp1.计划管理.三级
             }
             chew = new 车间完成();
             chew.Show();
+            
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void buttonex_Click(object sender, EventArgs e)
         {
             Stopwatch sw = new Stopwatch();
             sw.Start();

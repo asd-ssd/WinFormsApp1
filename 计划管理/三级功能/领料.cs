@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 using WinFormsApp1.计划管理.三级;
 
 namespace WinFormsApp1.计划管理.三级功能
@@ -104,8 +106,9 @@ namespace WinFormsApp1.计划管理.三级功能
                         // 执行批量复制
                         bulkCopy.WriteToServer(Issue);
                     }
-                }
 
+                }
+                SysLogService.AddSysLog(new SysLog("新增领料单数据", "触发", LogTye.操作记录, login.login1.userid));
                 MessageBox.Show("已成功添加！");
             }
             catch (Exception ex)

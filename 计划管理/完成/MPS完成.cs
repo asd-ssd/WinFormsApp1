@@ -9,6 +9,8 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 using WinFormsApp1.计划管理.三级;
 
 namespace WinFormsApp1.计划管理.完成
@@ -37,7 +39,7 @@ namespace WinFormsApp1.计划管理.完成
                 conn.Open();
 
                 // 定义SQL更新语句
-                string sql = "UPDATE MPS SET 计划状态 = '已完成' ,完成日期 = CONVERT(VARCHAR, GETDATE(), 23)  WHERE 主计划编号 = @主计划编号";
+                string sql = "UPDATE MPS SET 状态 = '已完成' ,完成日期 = CONVERT(VARCHAR, GETDATE(), 23)  WHERE 主计划编号 = @主计划编号";
 
                 // 创建SqlCommand对象
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
@@ -61,6 +63,7 @@ namespace WinFormsApp1.计划管理.完成
 
                 // 关闭数据库连接
                 conn.Close();
+                SysLogService.AddSysLog(new SysLog("完成MPS数据", "触发", LogTye.操作记录, login.login1.userid));
                 生产计划及MRP.shengchan1.GetDataGridView();
                 this.Close();
             }

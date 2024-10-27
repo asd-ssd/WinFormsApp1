@@ -241,9 +241,10 @@
             Controls.Add(textBox1);
             Name = "新增主生产计划";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "新增生产计划";
+            Text = "新增主生产计划";
             ResumeLayout(false);
             PerformLayout();
+            Load += 新增主生产计划_Load;
         }
 
         #endregion
@@ -259,12 +260,12 @@
         private DateTimePicker dateTimePicker1;
         private DateTimePicker dateTimePicker2;
         private Label label8;
-        private TextBox textBox5;
         private Button button3;
         public TextBox textBox1;
         private Label label2;
         private Label label4;
         public TextBox textBox2;
         public TextBox textBox4;
+        public TextBox textBox5;
     }
 }

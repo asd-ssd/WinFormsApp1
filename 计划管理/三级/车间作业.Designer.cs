@@ -54,7 +54,6 @@
             checkBox2 = new CheckBox();
             checkBox1 = new CheckBox();
             dataGridView1 = new DataGridView();
-            button10 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -64,7 +63,6 @@
             // 
             panel1.BackColor = Color.LightGray;
             panel1.Controls.Add(button9);
-            panel1.Controls.Add(button10);
             panel1.Controls.Add(button8);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button3);
@@ -80,7 +78,7 @@
             // button9
             // 
             button9.Dock = DockStyle.Left;
-            button9.Location = new Point(564, 0);
+            button9.Location = new Point(470, 0);
             button9.Name = "button9";
             button9.Size = new Size(94, 50);
             button9.TabIndex = 7;
@@ -336,17 +334,6 @@
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
             // 
-            // button10
-            // 
-            button10.Dock = DockStyle.Left;
-            button10.Location = new Point(470, 0);
-            button10.Name = "button10";
-            button10.Size = new Size(94, 50);
-            button10.TabIndex = 8;
-            button10.Text = "导出";
-            button10.UseVisualStyleBackColor = true;
-            button10.Click += button10_Click;
-            // 
             // 车间作业
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
@@ -392,6 +379,5 @@
         private Label label3;
         private Button button8;
         private Button button9;
-        private Button button10;
     }
 }

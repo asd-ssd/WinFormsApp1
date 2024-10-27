@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic.Logging;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.工作界面;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 using WinFormsApp1.计划管理.三级;
 using WinFormsApp1.计划管理.三级功能;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -32,25 +35,42 @@ namespace WinFormsApp1.Forth
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
+        DataTable dt = new DataTable();
         private void GetDataGridView()
         {
             try
             {
                 string strda = "select * from MPS";
+                string strdaz = "SELECT TOP 1 主计划编号 FROM MPS ORDER BY 主计划编号 DESC";
                 SqlConnection conn = connection();
                 conn.Open();
-                DataTable dt = new DataTable();
+
                 SqlDataAdapter da = new SqlDataAdapter(strda, conn);
                 da.Fill(dt);
-                conn.Close();
+
                 //dataGridView1.AutoGenerateColumns = true;//自动创建列
                 //dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;//单击单元格编辑
-                dataGridView1.DataSource = dt;
+                SqlCommand command = new SqlCommand(strdaz, conn);
+                object result = command.ExecuteScalar();
+
+                if (result != null)
+                {
+                    int lastMainPlanNumber = Convert.ToInt32(result);
+                    int nextMainPlanNumber = lastMainPlanNumber + 1;
+                    // 将结果设置到textBox5中
+                    textBox5.Text = nextMainPlanNumber.ToString();
+                }
+                conn.Close();
+
             }
             catch (Exception ee)
             {
                 MessageBox.Show(ee.Message.ToString());
             }
+        }
+        private void 新增主生产计划_Load(object sender, EventArgs e)
+        {
+            GetDataGridView();
         }
         private void addDataGridView()
         {
@@ -74,7 +94,9 @@ namespace WinFormsApp1.Forth
         {
             addDataGridView();
             GetDataGridView();
+            dataGridView1.DataSource = dt;
             MessageBox.Show("保存成功！");
+            SysLogService.AddSysLog(new SysLog("新增MPS数据", "触发", LogTye.操作记录, login.login1.userid));
             this.Close();
             //SysLogService.AddSysLog(new SysLog("新增BOM表数据", "触发", LogTye.操作记录, login.login1.userid));
         }
