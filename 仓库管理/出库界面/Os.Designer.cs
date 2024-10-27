@@ -49,7 +49,7 @@
             textBox2 = new TextBox();
             label1 = new Label();
             textBox1 = new TextBox();
-            radioButton1 = new RadioButton();
+            checkBox1 = new CheckBox();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -130,14 +130,14 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1000, 411);
+            dataGridView1.Size = new Size(1071, 556);
             dataGridView1.TabIndex = 9;
             dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(42, 550);
+            label3.Location = new Point(38, 707);
             label3.Name = "label3";
             label3.Size = new Size(54, 20);
             label3.TabIndex = 15;
@@ -145,7 +145,7 @@
             // 
             // button7
             // 
-            button7.Location = new Point(884, 550);
+            button7.Location = new Point(880, 707);
             button7.Name = "button7";
             button7.Size = new Size(94, 29);
             button7.TabIndex = 22;
@@ -177,7 +177,7 @@
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(388, 562);
+            dateTimePicker2.Location = new Point(384, 719);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(142, 27);
             dateTimePicker2.TabIndex = 56;
@@ -185,7 +185,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(367, 567);
+            label11.Location = new Point(363, 724);
             label11.Name = "label11";
             label11.Size = new Size(15, 20);
             label11.TabIndex = 55;
@@ -193,7 +193,7 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(219, 562);
+            dateTimePicker1.Location = new Point(215, 719);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(142, 27);
             dateTimePicker1.TabIndex = 54;
@@ -201,7 +201,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(119, 567);
+            label5.Location = new Point(115, 724);
             label5.Name = "label5";
             label5.Size = new Size(69, 20);
             label5.TabIndex = 53;
@@ -210,7 +210,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(119, 530);
+            label4.Location = new Point(115, 687);
             label4.Name = "label4";
             label4.Size = new Size(69, 20);
             label4.TabIndex = 52;
@@ -218,7 +218,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(257, 523);
+            textBox3.Location = new Point(253, 680);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(125, 27);
             textBox3.TabIndex = 51;
@@ -226,7 +226,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(572, 571);
+            label2.Location = new Point(568, 728);
             label2.Name = "label2";
             label2.Size = new Size(69, 20);
             label2.TabIndex = 50;
@@ -234,7 +234,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(721, 564);
+            textBox2.Location = new Point(717, 721);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(125, 27);
             textBox2.TabIndex = 49;
@@ -242,7 +242,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(572, 535);
+            label1.Location = new Point(568, 692);
             label1.Name = "label1";
             label1.Size = new Size(54, 20);
             label1.TabIndex = 48;
@@ -250,26 +250,27 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(721, 527);
+            textBox1.Location = new Point(717, 684);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(125, 27);
             textBox1.TabIndex = 47;
             // 
-            // radioButton1
+            // checkBox1
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(96, 569);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(17, 16);
-            radioButton1.TabIndex = 57;
-            radioButton1.TabStop = true;
-            radioButton1.UseVisualStyleBackColor = true;
+            checkBox1.AutoSize = true;
+            checkBox1.Cursor = Cursors.Hand;
+            checkBox1.Location = new Point(93, 727);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(18, 17);
+            checkBox1.TabIndex = 57;
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // Os
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(radioButton1);
+            Controls.Add(checkBox1);
             Controls.Add(dateTimePicker2);
             Controls.Add(label11);
             Controls.Add(dateTimePicker1);
@@ -287,7 +288,7 @@
             Controls.Add(dataGridView1);
             Controls.Add(label3);
             Name = "Os";
-            Size = new Size(1000, 600);
+            Size = new Size(1071, 788);
             Load += Os_Load;
             tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -302,7 +303,6 @@
         private Button button3;
         private Button button2;
         private Button button1;
-        private DataGridView dataGridView1;
         private Label label3;
         private Button button7;
         private Button button5;
@@ -318,6 +318,7 @@
         private TextBox textBox2;
         private Label label1;
         private TextBox textBox1;
-        private RadioButton radioButton1;
+        public DataGridView dataGridView1;
+        private CheckBox checkBox1;
     }
 }

@@ -48,6 +48,7 @@
             button2.TabIndex = 85;
             button2.Text = "返回";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -58,6 +59,7 @@
             button1.TabIndex = 84;
             button1.Text = "确定";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button7
             // 
@@ -67,6 +69,7 @@
             button7.TabIndex = 83;
             button7.Text = "查询";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // label2
             // 
@@ -108,6 +111,7 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(746, 379);
             dataGridView1.TabIndex = 78;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Os_select_item
             // 

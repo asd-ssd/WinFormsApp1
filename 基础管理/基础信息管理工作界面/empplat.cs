@@ -10,11 +10,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.基础信息管理设置界面;
 using WinFormsApp1.工作界面;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 
 namespace WinFormsApp1.基础信息管理工作界面
 {
     public partial class empplat : UserControl
     {
+        private readonly PermissionService _permissionService;
         public static empplat empplat1;
         public empres empres1;
         public emplset emplset1;
@@ -22,6 +25,13 @@ namespace WinFormsApp1.基础信息管理工作界面
         {
             InitializeComponent();
             empplat1 = this;
+            this.button2.Tag = "Create";
+            this.button5.Tag = "Delete";
+            this.button4.Tag = "Edit";
+            var dbHelper = new SqlSugarHelper();
+            _permissionService = new PermissionService(dbHelper);
+            var permissionManager = new PermissionManager(_permissionService, moduleId: 1); // 1是模块ID
+            permissionManager.ApplyPermissions(this);
         }
 
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)

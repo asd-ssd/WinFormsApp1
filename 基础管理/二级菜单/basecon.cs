@@ -20,6 +20,7 @@ namespace WinFormsApp1
         public craftplat craftplat1;
         public empplat empplat1;
         public partplat partplat1;
+        public DictionaryManager dictionaryManager1;
         public basecon()
         {
             InitializeComponent();
@@ -55,6 +56,12 @@ namespace WinFormsApp1
             partplat1.Show();   //将窗体一进行显示
             panel.Controls.Clear();    //清空原容器上的控件
             panel.Controls.Add(partplat1);    //将窗体一加入容器panel2
+        }
+
+        private void dicconbutton_Click(object sender, EventArgs e)
+        {
+            dictionaryManager1 = new DictionaryManager();
+            dictionaryManager1.ShowDialog();
         }
     }
 }

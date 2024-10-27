@@ -139,7 +139,7 @@
             checkBox7.AutoSize = true;
             checkBox7.Location = new Point(449, 21);
             checkBox7.Name = "checkBox7";
-            checkBox7.Size = new Size(61, 24);
+            checkBox7.Size = new Size(72, 28);
             checkBox7.TabIndex = 16;
             checkBox7.Text = "采购";
             checkBox7.UseVisualStyleBackColor = true;
@@ -149,7 +149,7 @@
             checkBox6.AutoSize = true;
             checkBox6.Location = new Point(373, 21);
             checkBox6.Name = "checkBox6";
-            checkBox6.Size = new Size(61, 24);
+            checkBox6.Size = new Size(72, 28);
             checkBox6.TabIndex = 15;
             checkBox6.Text = "生产";
             checkBox6.UseVisualStyleBackColor = true;
@@ -188,7 +188,7 @@
             // 
             textBox3.Location = new Point(593, 65);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(160, 27);
+            textBox3.Size = new Size(160, 30);
             textBox3.TabIndex = 11;
             // 
             // checkBox5
@@ -196,7 +196,7 @@
             checkBox5.AutoSize = true;
             checkBox5.Location = new Point(465, 66);
             checkBox5.Name = "checkBox5";
-            checkBox5.Size = new Size(136, 24);
+            checkBox5.Size = new Size(162, 28);
             checkBox5.TabIndex = 9;
             checkBox5.Text = "生产计划编号：";
             checkBox5.UseVisualStyleBackColor = true;
@@ -205,7 +205,7 @@
             // 
             textBox1.Location = new Point(297, 65);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(160, 27);
+            textBox1.Size = new Size(160, 30);
             textBox1.TabIndex = 8;
             // 
             // checkBox4
@@ -222,7 +222,7 @@
             // 
             dateTimePicker2.Location = new Point(800, 20);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(140, 27);
+            dateTimePicker2.Size = new Size(140, 30);
             dateTimePicker2.TabIndex = 6;
             // 
             // label2
@@ -230,7 +230,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(770, 23);
             label2.Name = "label2";
-            label2.Size = new Size(24, 20);
+            label2.Size = new Size(28, 24);
             label2.TabIndex = 5;
             label2.Text = "到";
             // 
@@ -238,7 +238,7 @@
             // 
             dateTimePicker1.Location = new Point(617, 20);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(140, 27);
+            dateTimePicker1.Size = new Size(140, 30);
             dateTimePicker1.TabIndex = 4;
             // 
             // label1
@@ -246,7 +246,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(587, 23);
             label1.Name = "label1";
-            label1.Size = new Size(24, 20);
+            label1.Size = new Size(28, 24);
             label1.TabIndex = 3;
             label1.Text = "从";
             // 
@@ -255,7 +255,7 @@
             checkBox3.AutoSize = true;
             checkBox3.Location = new Point(525, 21);
             checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(76, 24);
+            checkBox3.Size = new Size(90, 28);
             checkBox3.TabIndex = 1;
             checkBox3.Text = "日期：";
             checkBox3.UseVisualStyleBackColor = true;
@@ -265,7 +265,7 @@
             checkBox2.AutoSize = true;
             checkBox2.Location = new Point(282, 21);
             checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(76, 24);
+            checkBox2.Size = new Size(90, 28);
             checkBox2.TabIndex = 0;
             checkBox2.Text = "已完成";
             checkBox2.UseVisualStyleBackColor = true;
@@ -275,7 +275,7 @@
             checkBox1.AutoSize = true;
             checkBox1.Location = new Point(191, 21);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(76, 24);
+            checkBox1.Size = new Size(90, 28);
             checkBox1.TabIndex = 0;
             checkBox1.Text = "未完成";
             checkBox1.UseVisualStyleBackColor = true;
@@ -322,7 +322,7 @@
             // button3
             // 
             button3.Dock = DockStyle.Left;
-            button3.Location = new Point(376, 0);
+            button3.Location = new Point(469, 0);
             button3.Name = "button3";
             button3.Size = new Size(94, 50);
             button3.TabIndex = 2;
@@ -333,7 +333,7 @@
             // button2
             // 
             button2.Dock = DockStyle.Left;
-            button2.Location = new Point(282, 0);
+            button2.Location = new Point(375, 0);
             button2.Name = "button2";
             button2.Size = new Size(94, 50);
             button2.TabIndex = 1;
@@ -344,7 +344,7 @@
             // button4
             // 
             button4.Dock = DockStyle.Left;
-            button4.Location = new Point(188, 0);
+            button4.Location = new Point(281, 0);
             button4.Name = "button4";
             button4.Size = new Size(94, 50);
             button4.TabIndex = 3;
@@ -355,9 +355,9 @@
             // button5
             // 
             button5.Dock = DockStyle.Left;
-            button5.Location = new Point(94, 0);
+            button5.Location = new Point(153, 0);
             button5.Name = "button5";
-            button5.Size = new Size(94, 50);
+            button5.Size = new Size(128, 50);
             button5.TabIndex = 4;
             button5.Text = "MRP生成";
             button5.UseVisualStyleBackColor = true;
@@ -368,7 +368,7 @@
             button6.Dock = DockStyle.Left;
             button6.Location = new Point(0, 0);
             button6.Name = "button6";
-            button6.Size = new Size(94, 50);
+            button6.Size = new Size(153, 50);
             button6.TabIndex = 5;
             button6.Text = "新增主生产计划";
             button6.UseVisualStyleBackColor = true;

@@ -32,12 +32,10 @@
             textBox6 = new TextBox();
             textBox5 = new TextBox();
             textBox4 = new TextBox();
-            textBox3 = new TextBox();
             textBox1 = new TextBox();
             sr11label6 = new Label();
             sr11label5 = new Label();
             sr11label4 = new Label();
-            sr11label3 = new Label();
             sr11label2 = new Label();
             sr11label1 = new Label();
             button1 = new Button();
@@ -68,17 +66,10 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(546, 219);
+            textBox4.Location = new Point(177, 227);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(150, 30);
             textBox4.TabIndex = 108;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(177, 219);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(150, 30);
-            textBox3.TabIndex = 107;
             // 
             // textBox1
             // 
@@ -108,20 +99,11 @@
             // sr11label4
             // 
             sr11label4.AutoSize = true;
-            sr11label4.Location = new Point(416, 219);
+            sr11label4.Location = new Point(58, 230);
             sr11label4.Name = "sr11label4";
             sr11label4.Size = new Size(64, 24);
             sr11label4.TabIndex = 103;
             sr11label4.Text = "收货人";
-            // 
-            // sr11label3
-            // 
-            sr11label3.AutoSize = true;
-            sr11label3.Location = new Point(58, 219);
-            sr11label3.Name = "sr11label3";
-            sr11label3.Size = new Size(82, 24);
-            sr11label3.TabIndex = 102;
-            sr11label3.Text = "仓库编号";
             // 
             // sr11label2
             // 
@@ -163,7 +145,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(701, 219);
+            button3.Location = new Point(332, 227);
             button3.Name = "button3";
             button3.Size = new Size(33, 30);
             button3.TabIndex = 114;
@@ -183,12 +165,10 @@
             Controls.Add(textBox6);
             Controls.Add(textBox5);
             Controls.Add(textBox4);
-            Controls.Add(textBox3);
             Controls.Add(textBox1);
             Controls.Add(sr11label6);
             Controls.Add(sr11label5);
             Controls.Add(sr11label4);
-            Controls.Add(sr11label3);
             Controls.Add(sr11label2);
             Controls.Add(sr11label1);
             Name = "RT2";
@@ -205,7 +185,6 @@
         private Label sr11label6;
         private Label sr11label5;
         private Label sr11label4;
-        private Label sr11label3;
         private Label sr11label2;
         private Label sr11label1;
         private Button button1;
@@ -214,6 +193,5 @@
         public TextBox textBox6;
         public TextBox textBox5;
         public TextBox textBox4;
-        public TextBox textBox3;
     }
 }

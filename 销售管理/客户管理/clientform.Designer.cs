@@ -103,6 +103,7 @@
             ccancel.TabIndex = 6;
             ccancel.Text = "取消修改";
             ccancel.UseVisualStyleBackColor = false;
+            ccancel.Visible = false;
             ccancel.Click += ccancel_Click;
             // 
             // cedit2
@@ -114,6 +115,7 @@
             cedit2.TabIndex = 7;
             cedit2.Text = "修改完成";
             cedit2.UseVisualStyleBackColor = false;
+            cedit2.Visible = false;
             cedit2.Click += cedit2_Click;
             // 
             // button1

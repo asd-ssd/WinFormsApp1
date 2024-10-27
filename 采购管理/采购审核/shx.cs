@@ -8,14 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.采购管理.采购;
 
 
 namespace WinFormsApp1.采购管理.采购审核
 {
     public partial class shx : UserControl
     {
-       
+
         public shcx shcx1;
+        public cgshy cgshy1;
         public static shx shx1;
         public shx()
         {
@@ -28,7 +30,7 @@ namespace WinFormsApp1.采购管理.采购审核
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
-        
+
 
         private void GetDataGridView2()
         {
@@ -50,10 +52,31 @@ namespace WinFormsApp1.采购管理.采购审核
                 MessageBox.Show(ee.Message.ToString());
             }
         }
+        private void GetDataGridView()
+        {
+            try
+            {
+                string strda = "select * from 驳回表";
+                SqlConnection conn = connection();
+                conn.Open();
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(strda, conn);
+                da.Fill(dt);
+                conn.Close();
+                //dataGridView1.AutoGenerateColumns = true;//自动创建列
+                //dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;//单击单元格编辑
+                dataGridView1.DataSource = dt;
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.Message.ToString());
+            }
+        }
         private void shx_Load(object sender, EventArgs e)
         {
 
             GetDataGridView2();
+            GetDataGridView();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -62,12 +85,12 @@ namespace WinFormsApp1.采购管理.采购审核
             shcx1.Show();   //将窗体一进行显示
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            dataGridView2.ReadOnly = false;//整个表格只读
-            button4.Visible = true;
-            
-        }
+        //private void button1_Click(object sender, EventArgs e)
+        // {
+        //    dataGridView2.ReadOnly = false;//整个表格只读
+        //    button4.Visible = true;
+
+        //}
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             string strcolumn = dataGridView2.Columns[e.ColumnIndex].HeaderText;//获取列标题
@@ -94,6 +117,7 @@ namespace WinFormsApp1.采购管理.采购审核
                 }
 
                 GetDataGridView2();
+                GetDataGridView();
                 n = 0;
 
             }
@@ -102,6 +126,76 @@ namespace WinFormsApp1.采购管理.采购审核
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            cgshy1 = new cgshy();
+            cgshy1.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            GetDataGridView();
+            GetDataGridView2();
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("确实要删除该行吗?", "询问", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                DataGridViewSelectedRowCollection selectedRows = dataGridView2.SelectedRows;
+                foreach (DataGridViewRow row in selectedRows)
+                {
+                    //获取要删除行的ID值
+                    string id = row.Cells["订单编号"].Value.ToString();
+                    string delesql = "DELETE FROM 审核表 WHERE 订单编号 = @订单编号";
+                    using (SqlConnection conn = connection())
+                    {
+                        using (SqlCommand comm = new SqlCommand(delesql, conn))
+                        {
+                            comm.Parameters.AddWithValue("@订单编号", id);
+                            conn.Open();
+                            comm.ExecuteNonQuery();
+                        }
+                    }
+                    dataGridView2.Rows.Remove(row);
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("确实要删除该行吗?", "询问", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                DataGridViewSelectedRowCollection selectedRows = dataGridView1.SelectedRows;
+                foreach (DataGridViewRow row in selectedRows)
+                {
+                    //获取要删除行的ID值
+                    string id = row.Cells["订单编号"].Value.ToString();
+                    string delesql = "DELETE FROM 驳回表 WHERE 订单编号 = @订单编号";
+                    using (SqlConnection conn = connection())
+                    {
+                        using (SqlCommand comm = new SqlCommand(delesql, conn))
+                        {
+                            comm.Parameters.AddWithValue("@订单编号", id);
+                            conn.Open();
+                            comm.ExecuteNonQuery();
+                        }
+                    }
+                    dataGridView1.Rows.Remove(row);
+                }
+            }
         }
     }
 }

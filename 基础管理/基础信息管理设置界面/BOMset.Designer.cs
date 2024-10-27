@@ -36,7 +36,6 @@
             label15 = new Label();
             label16 = new Label();
             textBox7 = new TextBox();
-            textBox8 = new TextBox();
             textBox3 = new TextBox();
             textBox4 = new TextBox();
             textBox2 = new TextBox();
@@ -58,6 +57,8 @@
             comboBox1 = new ComboBox();
             label14 = new Label();
             comboBox2 = new ComboBox();
+            button3 = new Button();
+            comboBox3 = new ComboBox();
             SuspendLayout();
             // 
             // button2
@@ -133,17 +134,11 @@
             textBox7.Size = new Size(150, 30);
             textBox7.TabIndex = 55;
             // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(517, 347);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(150, 30);
-            textBox8.TabIndex = 54;
-            // 
             // textBox3
             // 
             textBox3.Location = new Point(227, 171);
             textBox3.Name = "textBox3";
+            textBox3.ReadOnly = true;
             textBox3.Size = new Size(150, 30);
             textBox3.TabIndex = 53;
             // 
@@ -158,6 +153,7 @@
             // 
             textBox2.Location = new Point(517, 83);
             textBox2.Name = "textBox2";
+            textBox2.ReadOnly = true;
             textBox2.Size = new Size(150, 30);
             textBox2.TabIndex = 51;
             // 
@@ -165,6 +161,7 @@
             // 
             textBox1.Location = new Point(227, 83);
             textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
             textBox1.Size = new Size(150, 30);
             textBox1.TabIndex = 50;
             // 
@@ -289,7 +286,6 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "采购", "生产" });
             comboBox1.Location = new Point(517, 587);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(150, 32);
@@ -307,17 +303,36 @@
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "A类", "B类", "C类" });
             comboBox2.Location = new Point(227, 257);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(150, 32);
             comboBox2.TabIndex = 142;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(633, 81);
+            button3.Name = "button3";
+            button3.Size = new Size(34, 34);
+            button3.TabIndex = 143;
+            button3.Text = "...";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // comboBox3
+            // 
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(517, 341);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(150, 32);
+            comboBox3.TabIndex = 144;
             // 
             // BOMset
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 912);
+            Controls.Add(comboBox3);
+            Controls.Add(button3);
             Controls.Add(comboBox2);
             Controls.Add(comboBox1);
             Controls.Add(label14);
@@ -337,7 +352,6 @@
             Controls.Add(label15);
             Controls.Add(label16);
             Controls.Add(textBox7);
-            Controls.Add(textBox8);
             Controls.Add(textBox3);
             Controls.Add(textBox4);
             Controls.Add(textBox2);
@@ -366,11 +380,8 @@
         private Label label15;
         private Label label16;
         private TextBox textBox7;
-        private TextBox textBox8;
         private TextBox textBox3;
         private TextBox textBox4;
-        private TextBox textBox2;
-        private TextBox textBox1;
         private Label label7;
         private Label label5;
         private Label label4;
@@ -388,5 +399,9 @@
         private ComboBox comboBox1;
         private Label label14;
         private ComboBox comboBox2;
+        private Button button3;
+        public TextBox textBox2;
+        public TextBox textBox1;
+        private ComboBox comboBox3;
     }
 }

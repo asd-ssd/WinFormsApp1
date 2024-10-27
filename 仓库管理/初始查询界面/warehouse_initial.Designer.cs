@@ -101,6 +101,7 @@
             button1.TabIndex = 0;
             button1.Text = "新增\r\n数据";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button3
             // 
@@ -263,8 +264,6 @@
         }
 
         #endregion
-
-        private DataGridView dataGridView1;
         private TableLayoutPanel tableLayoutPanel1;
         private Button button2;
         private Button button1;
@@ -283,5 +282,6 @@
         private Button button8;
         private Button button13;
         private Button button12;
+        public DataGridView dataGridView1;
     }
 }

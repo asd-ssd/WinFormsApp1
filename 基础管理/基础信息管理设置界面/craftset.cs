@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.基础信息管理工作界面;
 using WinFormsApp1.工作界面;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WinFormsApp1.基础信息管理设置界面

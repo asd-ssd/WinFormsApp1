@@ -73,6 +73,7 @@
             chkEdit_Module5 = new CheckBox();
             chkView_Module5 = new CheckBox();
             label1 = new Label();
+            button5 = new Button();
             tableLayoutPanel2.SuspendLayout();
             panel1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -103,6 +104,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(button5);
             panel1.Controls.Add(button4);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
@@ -619,6 +621,15 @@
             label1.Text = "基础管理";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // button5
+            // 
+            button5.Location = new Point(501, 3);
+            button5.Name = "button5";
+            button5.Size = new Size(103, 65);
+            button5.TabIndex = 4;
+            button5.Text = "删除";
+            button5.UseVisualStyleBackColor = true;
+            // 
             // syswhplat
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
@@ -692,5 +703,6 @@
         private Button button2;
         private Button button3;
         private Button button4;
+        private Button button5;
     }
 }

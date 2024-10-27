@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -11,16 +13,19 @@ using System.Windows.Forms;
 using WinFormsApp1.Second;
 using WinFormsApp1.二级菜单;
 using WinFormsApp1.工作界面;
+using WinFormsApp1.数据库支持类;
 using WinFormsApp1.销售管理;
 using static System.Windows.Forms.DataFormats;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace WinFormsApp1
 {
     public partial class Form2 : Form
     {
+        private readonly PermissionService _permissionService;
         public static Form2 form;
         //工作平台
-
         public workplat1 plat1;
         //二级菜单
         public workplatform work1;
@@ -30,11 +35,32 @@ namespace WinFormsApp1
         public caigou2 caigou21;
         public SaleForm sale1;
         public warehouse_usercontrol warehouse_Usercontrol1;
+        public Editpassword editpassword1;
         public Form2()
         {
             InitializeComponent();
             form = this;
             this.FormClosed += Form2_FormClosed;
+            this.button3.Tag = "View";
+            this.button4.Tag = "View";
+            this.button5.Tag = "View";
+            this.button6.Tag = "View";
+            this.button7.Tag = "View";
+            this.button8.Tag = "View";
+            var dbHelper = new SqlSugarHelper();
+            _permissionService = new PermissionService(dbHelper);
+            var permissionManager1 = new PermissionManager(_permissionService, moduleId: 1); // 1是模块ID
+            var permissionManager2 = new PermissionManager(_permissionService, moduleId: 2); // 1是模块ID
+            var permissionManager3 = new PermissionManager(_permissionService, moduleId: 3); // 1是模块ID
+            var permissionManager4 = new PermissionManager(_permissionService, moduleId: 4); // 1是模块ID
+            var permissionManager5 = new PermissionManager(_permissionService, moduleId: 5); // 1是模块ID
+            var permissionManager6 = new PermissionManager(_permissionService, moduleId: 6); // 1是模块ID
+            permissionManager1.ApplyOnly(button3);
+            permissionManager2.ApplyOnly(button4);
+            permissionManager3.ApplyOnly(button5);
+            permissionManager4.ApplyOnly(button6);
+            permissionManager5.ApplyOnly(button7);
+            permissionManager6.ApplyOnly(button8);
         }
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -52,8 +78,10 @@ namespace WinFormsApp1
             panel2.Controls.Clear();    //清空原容器上的控件
             panel2.Controls.Add(plat1);    //将窗体一加入容器panel2
                                            //修改其显示为当前时间
-            this.toolStripStatusLabel3.Text = "系统当前时间：" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
-
+            var username = ConfigurationManager.AppSettings["用户名"];
+            this.toolStripStatusLabel3.Text = " 系统当前时间：" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
+            this.toolStripStatusLabel2.Text = " 当前登录账号：" + username;
+            this.label7.Text = "亲爱的" + username + ",欢迎使用本系统，现在是北京时间：" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
             //对timer1进行相关设置
             this.timer1.Interval = 1000;
             this.timer1.Start();
@@ -154,7 +182,16 @@ namespace WinFormsApp1
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
+            var username = ConfigurationManager.AppSettings["用户名"];
             this.toolStripStatusLabel3.Text = "系统当前时间：" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
+            this.label7.Text = "亲爱的" + username + ",欢迎使用本系统，现在是北京时间：" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
         }
+
+        private void 修改密码ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            editpassword1 = new Editpassword();
+            editpassword1.ShowDialog();
+        }
+       
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库支持类;
 using WinFormsApp1.销售管理;
 using WinFormsApp1.销售管理.销售订单管理.销售订单;
 
@@ -16,7 +17,7 @@ namespace WinFormsApp1
     public partial class orderform : UserControl
     {
 
-
+        private readonly PermissionService _permissionService;
         public Order2nd order2Nd;
         public static orderform Orderform;
         public OrderSearch orderSearch;
@@ -24,11 +25,18 @@ namespace WinFormsApp1
         public orderform()
         {
             InitializeComponent();
+            this.ocreat.Tag = "Create";
+            this.odelete.Tag = "Delete";
+            this.oedit.Tag = "Edit";
+            var dbHelper = new SqlSugarHelper();
+            _permissionService = new PermissionService(dbHelper);
+            var permissionManager = new PermissionManager(_permissionService, moduleId: 3); // 1是模块ID
+            permissionManager.ApplyPermissions(this);
         }
 
         private SqlConnection connection()
         {
-            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=xlh;Persist Security Info=True;User ID=xlh;Password=123456";
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=xlh;Password=123456";
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
@@ -87,7 +95,12 @@ namespace WinFormsApp1
             string value = dataGridView1.CurrentCell.Value.ToString();//获取当前点击的活动单元格的值
             strcomm[n] = strcomm[n] = $"UPDATE 订单 SET {strcolumn} = '{value}' WHERE 订单编号 = '{strrow}'";
             n++;
+
+
+            
+
         }
+        
 
         private void odelete_Click(object sender, EventArgs e)
         {
@@ -122,6 +135,7 @@ namespace WinFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             if (MessageBox.Show("确定要修改数据吗？", "询问", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 SqlConnection conn = connection();
@@ -155,5 +169,7 @@ namespace WinFormsApp1
         {
             GetDataGridView();
         }
-    }
+
+        
+}
 }

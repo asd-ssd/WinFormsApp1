@@ -15,6 +15,7 @@ namespace WinFormsApp1.采购管理.采购审核
     public partial class shcx : Form
     {
         public DataGridView dataGridView2 = shx.shx1.dataGridView2;
+        public DataGridView dataGridView1 = shx.shx1.dataGridView1;
         public shcx()
         {
             InitializeComponent();
@@ -33,17 +34,18 @@ namespace WinFormsApp1.采购管理.采购审核
         private void button1_Click(object sender, EventArgs e)
         {
             string selectsql = "select * from 审核表 where 1=1";
+            string selectsq2 = "select * from 驳回表 where 1=1";
+            if (textBox10.Text != "")
+            {
+                selectsql += "and 订单编号 like'%" + textBox10.Text + "%'";
+            }
             if (textBox1.Text != "")
             {
                 selectsql += "and 申请人员 like'%" + textBox1.Text + "%'";
             }
-            if (textBox2.Text != "")
+            if (textBox9.Text != "")
             {
-                selectsql += "and 审核人员 like'%" + textBox2.Text + "%'";
-            }
-            if (textBox8.Text != "")
-            {
-                selectsql += "and 审核 like'%" + textBox8.Text + "%'";
+                selectsql += "and 员工编码 like'%" + textBox9.Text + "%'";
             }
             if (textBox3.Text != "")
             {
@@ -51,20 +53,57 @@ namespace WinFormsApp1.采购管理.采购审核
             }
             if (textBox4.Text != "")
             {
-                selectsql += "and 商品单价 like'%" + textBox4.Text + "%'";
-            }
-            if (textBox5.Text != "")
-            {
-                selectsql += "and 采购数量 like'%" + textBox5.Text + "%'";
-            }
-            if (textBox6.Text != "")
-            {
-                selectsql += "and 采购总价 like'%" + textBox6.Text + "%'";
+                selectsql += "and 商品编码 like'%" + textBox4.Text + "%'";
             }
             if (textBox7.Text != "")
             {
                 selectsql += "and 供应商 like'%" + textBox7.Text + "%'";
             }
+            if (textBox2.Text != "")
+            {
+                selectsql += "and 审核人员 like'%" + textBox2.Text + "%'";
+            }
+            if (textBox8.Text != "")
+            {
+                selectsql += "and 审核编码 like'%" + textBox8.Text + "%'";
+            }
+
+
+
+            if (textBox10.Text != "")
+            {
+                selectsq2 += "and 订单编号 like'%" + textBox10.Text + "%'";
+            }
+            if (textBox1.Text != "")
+            {
+                selectsq2 += "and 申请人员 like'%" + textBox1.Text + "%'";
+            }
+            if (textBox9.Text != "")
+            {
+                selectsq2 += "and 员工编码 like'%" + textBox9.Text + "%'";
+            }
+            if (textBox3.Text != "")
+            {
+                selectsq2 += "and 采购商品 like'%" + textBox3.Text + "%'";
+            }
+            if (textBox4.Text != "")
+            {
+                selectsq2 += "and 商品编码 like'%" + textBox4.Text + "%'";
+            }
+            if (textBox7.Text != "")
+            {
+                selectsq2 += "and 供应商 like'%" + textBox7.Text + "%'";
+            }
+            if (textBox2.Text != "")
+            {
+                selectsq2 += "and 审核人员 like'%" + textBox2.Text + "%'";
+            }
+            if (textBox8.Text != "")
+            {
+                selectsq2 += "and 审核编码 like'%" + textBox8.Text + "%'";
+            }
+
+
 
 
             SqlConnection conn = connection();
@@ -74,6 +113,7 @@ namespace WinFormsApp1.采购管理.采购审核
             da.Fill(dt);
             conn.Close();
             dataGridView2.DataSource = dt;
+            dataGridView1.DataSource = dt;
             MessageBox.Show("查询成功！");
             this.Close();
         }

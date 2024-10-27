@@ -28,31 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button4 = new Button();
-            button3 = new Button();
             button2 = new Button();
             button6 = new Button();
             dataGridView1 = new DataGridView();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
-            // 
-            // button4
-            // 
-            button4.Location = new Point(357, 3);
-            button4.Name = "button4";
-            button4.Size = new Size(112, 92);
-            button4.TabIndex = 41;
-            button4.Text = "保存";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(239, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(112, 92);
-            button3.TabIndex = 40;
-            button3.Text = "关闭";
-            button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -80,17 +61,26 @@
             dataGridView1.Location = new Point(0, 101);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1222, 530);
+            dataGridView1.Size = new Size(599, 491);
             dataGridView1.StandardTab = true;
             dataGridView1.TabIndex = 42;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(239, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(112, 92);
+            button1.TabIndex = 44;
+            button1.Text = "刷新";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // thsq
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(button1);
             Controls.Add(dataGridView1);
-            Controls.Add(button4);
-            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button6);
             Name = "thsq";
@@ -101,11 +91,9 @@
         }
 
         #endregion
-
-        private Button button4;
-        private Button button3;
         private Button button2;
         private Button button6;
-        private DataGridView dataGridView1;
+        private Button button1;
+        public DataGridView dataGridView1;
     }
 }

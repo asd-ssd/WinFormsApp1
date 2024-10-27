@@ -20,7 +20,7 @@ namespace WinFormsApp1.销售管理.销售订单管理.销售订单
         }
         private SqlConnection connection()
         {
-            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=xlh;Persist Security Info=True;User ID=xlh;Password=123456";
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=xlh;Password=123456";
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
@@ -46,15 +46,28 @@ namespace WinFormsApp1.销售管理.销售订单管理.销售订单
             }
             if (textBox4.Text != "")
             {
-                selectsql += "and 总金额 like'%" + textBox4.Text + "%'";
+                selectsql += "and 商品名称 like'%" + textBox4.Text + "%'";
             }
-            if (textBox5.Text != "")
-            {
-                selectsql += "and 销售仓库 like'%" + textBox4.Text + "%'";
-            }
+            
             if (textBox6.Text != "")
             {
+                selectsql += "and 商品单价 like'%" + textBox4.Text + "%'";
+            }
+            if (textBox7.Text != "")
+            {
+                selectsql += "and 商品数量 like'%" + textBox4.Text + "%'";
+            }
+            if (textBox8.Text != "")
+            {
+                selectsql += "and 总价 like'%" + textBox4.Text + "%'";
+            }
+            if (textBox9.Text != "")
+            {
                 selectsql += "and 送货地址 like'%" + textBox4.Text + "%'";
+            }
+            if (textBox9.Text != "")
+            {
+                selectsql += "and 商品编码 like'%" + textBox4.Text + "%'";
             }
             SqlConnection conn = connection();
             conn.Open();
@@ -73,6 +86,11 @@ namespace WinFormsApp1.销售管理.销售订单管理.销售订单
             {
                 this.Close();
             }
+        }
+
+        private void OrderSearch_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

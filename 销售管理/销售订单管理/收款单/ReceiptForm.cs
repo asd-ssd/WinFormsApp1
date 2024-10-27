@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库支持类;
 using WinFormsApp1.销售管理.销售订单管理.收款单;
 using WinFormsApp1.销售管理.销售订单管理.销售订单;
 
@@ -16,18 +17,25 @@ namespace WinFormsApp1.销售管理
 {
     public partial class ReceiptForm : UserControl
     {
-
+        private readonly PermissionService _permissionService;
         public Receipt2nd receipt2;
         public static ReceiptForm receiptForm;
         public ReceiptSearch receiptSearch;
         public ReceiptForm()
         {
             InitializeComponent();
+            this.rcreat.Tag = "Create";
+            this.rdelete.Tag = "Delete";
+            this.redit.Tag = "Edit";
+            var dbHelper = new SqlSugarHelper();
+            _permissionService = new PermissionService(dbHelper);
+            var permissionManager = new PermissionManager(_permissionService, moduleId: 3); // 1是模块ID
+            permissionManager.ApplyPermissions(this);
         }
 
         private SqlConnection connection()
         {
-            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=xlh;Persist Security Info=True;User ID=xlh;Password=123456";
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=xlh;Password=123456";
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
@@ -145,6 +153,11 @@ namespace WinFormsApp1.销售管理
                 redit2.Visible = false;
                 rcancel.Visible = false;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            GetDataGridView();
         }
     }
 }

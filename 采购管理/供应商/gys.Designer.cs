@@ -32,8 +32,9 @@
             button3 = new Button();
             button1 = new Button();
             button4 = new Button();
-            button6 = new Button();
             button2 = new Button();
+            button5 = new Button();
+            button6 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -46,6 +47,7 @@
             dataGridView1.Size = new Size(1222, 530);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
             // 
             // button3
             // 
@@ -55,6 +57,7 @@
             button3.TabIndex = 15;
             button3.Text = "删除";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button1
             // 
@@ -76,32 +79,45 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
-            // button6
-            // 
-            button6.Location = new Point(475, 3);
-            button6.Name = "button6";
-            button6.Size = new Size(112, 92);
-            button6.TabIndex = 18;
-            button6.Text = "保存";
-            button6.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
             button2.Location = new Point(357, 3);
             button2.Name = "button2";
             button2.Size = new Size(112, 92);
-            button2.TabIndex = 14;
-            button2.Text = "关闭";
+            button2.TabIndex = 17;
+            button2.Text = "修改";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(475, 3);
+            button5.Name = "button5";
+            button5.Size = new Size(112, 92);
+            button5.TabIndex = 18;
+            button5.Text = "保存";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(593, 3);
+            button6.Name = "button6";
+            button6.Size = new Size(112, 92);
+            button6.TabIndex = 19;
+            button6.Text = "刷新";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click_1;
             // 
             // gys
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(button6);
+            Controls.Add(button5);
+            Controls.Add(button2);
             Controls.Add(button4);
             Controls.Add(button3);
-            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
             Name = "gys";
@@ -115,8 +131,9 @@
         private Button button3;
         private Button button1;
         private Button button4;
-        private Button button6;
-        private Button button2;
         public DataGridView dataGridView1;
+        private Button button2;
+        private Button button5;
+        private Button button6;
     }
 }

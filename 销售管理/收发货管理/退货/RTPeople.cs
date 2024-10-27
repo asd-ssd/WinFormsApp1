@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WinFormsApp1.销售管理.收发货管理.退货
 {
@@ -15,18 +16,19 @@ namespace WinFormsApp1.销售管理.收发货管理.退货
     {
         private int n;
         private string[] strcomm;
-        private string RTselect_item_number;
-        
-        public TextBox RTselect_item_textBox4 = RT2.rT2.textBox4;//订单
-       //仓库绑定is_add的入库人格
+        private string RTselect_people_number;
+
+        public TextBox RTselect_people_textBox4 = RT2.rT2.textBox4;//订单
+                                                                   //仓库绑定is_add的入库人格
         public RTPeople()
         {
             InitializeComponent();
+            GetDataGridView();
         }
 
         private SqlConnection connection()
         {
-            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=xlh;Persist Security Info=True;User ID=xlh;Password=123456";
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=xlh;Password=123456";
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
@@ -34,7 +36,7 @@ namespace WinFormsApp1.销售管理.收发货管理.退货
         {
             try
             {
-                string strda = "select * from 订单";
+                string strda = "select * from 员工信息表";
                 SqlConnection conn = connection();
                 conn.Open();
                 DataTable dt = new DataTable();
@@ -52,6 +54,46 @@ namespace WinFormsApp1.销售管理.收发货管理.退货
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            string selectsql = "select * from 员工信息表 where 1=1";
+            /*if (textBox1.Text != "")
+            {
+                selectsql += "and 物料名称 like'%" + textBox1.Text + "%'";
+            }*/
+            if (textBox1.Text != "")
+            {
+                selectsql += "and 员工姓名 like'%" + textBox1.Text + "%'";
+            }
+
+
+
+            SqlConnection conn = connection();
+            conn.Open();
+            DataTable dt1 = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(selectsql, conn);
+            da.Fill(dt1);
+            conn.Close();
+            dataGridView1.DataSource = dt1;
+            MessageBox.Show("查询成功！");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            RTselect_people_textBox4.Text = RTselect_people_number;
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            RTselect_people_number = dataGridView1.Rows[e.RowIndex].Cells["员工姓名"].Value.ToString();
+        }
+
+        private void RTPeople_Load(object sender, EventArgs e)
         {
 
         }

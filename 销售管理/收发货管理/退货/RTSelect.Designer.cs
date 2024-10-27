@@ -35,9 +35,7 @@
             textBox1 = new TextBox();
             dataGridView1 = new DataGridView();
             label2 = new Label();
-            label3 = new Label();
             textBox2 = new TextBox();
-            textBox3 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -106,15 +104,6 @@
             label2.TabIndex = 6;
             label2.Text = "客户编号";
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(256, 144);
-            label3.Name = "label3";
-            label3.Size = new Size(82, 24);
-            label3.TabIndex = 7;
-            label3.Text = "仓库编号";
-            // 
             // textBox2
             // 
             textBox2.Location = new Point(359, 101);
@@ -122,21 +111,12 @@
             textBox2.Size = new Size(150, 30);
             textBox2.TabIndex = 8;
             // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(359, 144);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(150, 30);
-            textBox3.TabIndex = 9;
-            // 
             // RTSelect
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(textBox3);
             Controls.Add(textBox2);
-            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(dataGridView1);
             Controls.Add(textBox1);
@@ -161,8 +141,6 @@
         private TextBox textBox1;
         private DataGridView dataGridView1;
         private Label label2;
-        private Label label3;
         private TextBox textBox2;
-        private TextBox textBox3;
     }
 }

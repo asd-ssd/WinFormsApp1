@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.基础信息管理工作界面;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using TreeView = System.Windows.Forms.TreeView;
 
@@ -67,13 +69,13 @@ namespace WinFormsApp1.基础信息管理设置界面
             // 用于存储所有根节点
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                string zhi = dt.Rows[i]["部门层级"].ToString(); // 获取节点层级Tag值 例如：1, 1-2, 1-2-3
+                string zhi = dt.Rows[i]["部门编号"].ToString(); // 获取节点层级Tag值 例如：1, 1-2, 1-2-3
                 if (!zhi.Contains("-")) // 根节点，即只有一层的节点
                 {
                     TreeNode rootNode = new TreeNode
                     {
                         Tag = zhi,
-                        Text = dt.Rows[i][1].ToString()
+                        Text = dt.Rows[i][2].ToString()
                     };
                     treeView1.Nodes.Add(rootNode); // 将根节点添加到TreeView
                 }
@@ -82,7 +84,7 @@ namespace WinFormsApp1.基础信息管理设置界面
             // 调用递归绑定子节点
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                bindChildNote(dt, dt.Rows[i]["部门层级"].ToString());
+                bindChildNote(dt, dt.Rows[i]["部门编号"].ToString());
             }
         }
 
@@ -91,7 +93,7 @@ namespace WinFormsApp1.基础信息管理设置界面
         {
             foreach (DataRow row in dt.Rows)
             {
-                string zhi = row["部门层级"].ToString(); // 获取当前节点层级Tag值 例如：1-2, 1-2-3
+                string zhi = row["部门编号"].ToString(); // 获取当前节点层级Tag值 例如：1-2, 1-2-3
 
                 // 检查当前节点是否是parentTag的直接子节点
                 if (IsDirectChild(parentTag, zhi))
@@ -101,7 +103,7 @@ namespace WinFormsApp1.基础信息管理设置界面
                     TreeNode childNode = new TreeNode
                     {
                         Tag = currentTag, // 设置完整的层级Tag
-                        Text = row[1].ToString()
+                        Text = row[2].ToString()
                     };
 
                     // 查找父节点
@@ -169,7 +171,7 @@ namespace WinFormsApp1.基础信息管理设置界面
         {
             SqlConnection conn = connection();
             conn.Open();
-            string strda = "insert into 部门信息表(上级部门,部门名称,部门位置,部门负责人,负责人联系电话,部门层级) values('" + comboBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "')";
+            string strda = "insert into 部门信息表(上级部门,部门名称,部门位置,部门负责人,负责人联系电话,部门编号) values('" + comboBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "')";
             SqlCommand comm = new SqlCommand(strda, conn);
             comm.ExecuteNonQuery();
             conn.Close();
@@ -205,7 +207,7 @@ namespace WinFormsApp1.基础信息管理设置界面
             {
                 if (comboBox1.Text.ToString() == dt.Rows[i]["部门名称"].ToString())
                 {
-                    textBox6.Text = dt.Rows[i]["部门层级"].ToString() + "-";
+                    textBox6.Text = dt.Rows[i]["部门编号"].ToString() + "-";
                 }
                 if (comboBox1.Text.ToString() == dt.Rows[i]["上级部门"].ToString())
                 {

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库支持类;
 using WinFormsApp1.计划管理.三级功能;
 using WinFormsApp1.计划管理.完成;
 
@@ -16,6 +17,7 @@ namespace WinFormsApp1.计划管理.三级
 {
     public partial class 派工单 : UserControl
     {
+        private readonly PermissionService _permissionService;
         public static 派工单 paigong1;
         public 派工单完成 paiw;
         public string Workorder_number;
@@ -23,6 +25,13 @@ namespace WinFormsApp1.计划管理.三级
         {
             InitializeComponent();
             paigong1 = this;
+            this.button6.Tag = "Create";
+            this.button3.Tag = "Delete";
+            this.button2.Tag = "Edit";
+            var dbHelper = new SqlSugarHelper();
+            _permissionService = new PermissionService(dbHelper);
+            var permissionManager = new PermissionManager(_permissionService, moduleId: 2); // 1是模块ID
+            permissionManager.ApplyPermissions(this);
         }
         private SqlConnection connection()
         {

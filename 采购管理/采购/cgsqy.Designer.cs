@@ -34,6 +34,8 @@
             button6 = new Button();
             button5 = new Button();
             dataGridView1 = new DataGridView();
+            button3 = new Button();
+            button7 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -83,25 +85,47 @@
             button5.Name = "button5";
             button5.Size = new Size(112, 92);
             button5.TabIndex = 37;
-            button5.Text = "新建";
+            button5.Text = "采购申请";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 118);
+            dataGridView1.Location = new Point(3, 101);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1222, 530);
+            dataGridView1.Size = new Size(1222, 547);
             dataGridView1.StandardTab = true;
             dataGridView1.TabIndex = 43;
             dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(592, 3);
+            button3.Name = "button3";
+            button3.Size = new Size(112, 92);
+            button3.TabIndex = 44;
+            button3.Text = "刷新";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // button7
+            // 
+            button7.Location = new Point(710, 3);
+            button7.Name = "button7";
+            button7.Size = new Size(112, 92);
+            button7.TabIndex = 45;
+            button7.Text = "采购计划";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // cgsqy
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(button7);
+            Controls.Add(button3);
             Controls.Add(dataGridView1);
             Controls.Add(button1);
             Controls.Add(button4);
@@ -123,5 +147,7 @@
         private Button button6;
         private Button button5;
         public DataGridView dataGridView1;
+        private Button button3;
+        private Button button7;
     }
 }

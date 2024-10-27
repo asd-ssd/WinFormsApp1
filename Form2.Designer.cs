@@ -57,6 +57,7 @@
             toolStripStatusLabel1 = new ToolStripStatusLabel();
             toolStripStatusLabel3 = new ToolStripStatusLabel();
             toolStripStatusLabel2 = new ToolStripStatusLabel();
+            toolStripStatusLabel4 = new ToolStripStatusLabel();
             timer1 = new System.Windows.Forms.Timer(components);
             menuStrip1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -94,6 +95,7 @@
             修改密码ToolStripMenuItem.Name = "修改密码ToolStripMenuItem";
             修改密码ToolStripMenuItem.Size = new Size(232, 44);
             修改密码ToolStripMenuItem.Text = "修改密码";
+            修改密码ToolStripMenuItem.Click += 修改密码ToolStripMenuItem_Click;
             // 
             // 退出ToolStripMenuItem
             // 
@@ -340,15 +342,14 @@
             // 
             // label7
             // 
-            label7.BackColor = Color.AliceBlue;
+            label7.BackColor = Color.Snow;
             label7.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            label7.ForeColor = SystemColors.ActiveCaption;
-            label7.Location = new Point(321, 56);
+            label7.ForeColor = SystemColors.ActiveCaptionText;
+            label7.Location = new Point(326, 54);
             label7.Margin = new Padding(5, 0, 5, 0);
             label7.Name = "label7";
-            label7.Size = new Size(1168, 84);
+            label7.Size = new Size(1340, 40);
             label7.TabIndex = 16;
-            label7.Text = "亲爱的xxx，欢迎使用本系统，现在是北京时间xxxxx";
             label7.TextAlign = ContentAlignment.MiddleCenter;
             label7.Click += label7_Click;
             // 
@@ -373,32 +374,37 @@
             // 
             statusStrip1.Font = new Font("Microsoft YaHei UI", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
             statusStrip1.ImageScalingSize = new Size(24, 24);
-            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1, toolStripStatusLabel3, toolStripStatusLabel2 });
-            statusStrip1.Location = new Point(0, 1307);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1, toolStripStatusLabel3, toolStripStatusLabel2, toolStripStatusLabel4 });
+            statusStrip1.Location = new Point(0, 1311);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(2179, 39);
+            statusStrip1.Size = new Size(2179, 35);
             statusStrip1.TabIndex = 20;
             statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
             toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            toolStripStatusLabel1.Size = new Size(243, 32);
+            toolStripStatusLabel1.Size = new Size(243, 28);
             toolStripStatusLabel1.Text = "您好！欢迎使用本系统！";
             // 
             // toolStripStatusLabel3
             // 
             toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            toolStripStatusLabel3.Size = new Size(18, 32);
+            toolStripStatusLabel3.Size = new Size(18, 28);
             toolStripStatusLabel3.Text = " ";
             // 
             // toolStripStatusLabel2
             // 
-            toolStripStatusLabel2.BorderSides = ToolStripStatusLabelBorderSides.Left | ToolStripStatusLabelBorderSides.Right;
             toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            toolStripStatusLabel2.Size = new Size(1903, 32);
-            toolStripStatusLabel2.Spring = true;
+            toolStripStatusLabel2.Size = new Size(18, 28);
             toolStripStatusLabel2.Text = " ";
+            // 
+            // toolStripStatusLabel4
+            // 
+            toolStripStatusLabel4.BorderSides = ToolStripStatusLabelBorderSides.Left | ToolStripStatusLabelBorderSides.Right;
+            toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            toolStripStatusLabel4.Size = new Size(1885, 28);
+            toolStripStatusLabel4.Spring = true;
             // 
             // timer1
             // 
@@ -427,7 +433,6 @@
             Text = "橘猫ERP系统";
             WindowState = FormWindowState.Maximized;
             Load += Form2_Load;
-            
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
@@ -475,5 +480,6 @@
         private System.Windows.Forms.Timer timer1;
         private ToolStripStatusLabel toolStripStatusLabel3;
         public Panel panel1;
+        private ToolStripStatusLabel toolStripStatusLabel4;
     }
 }

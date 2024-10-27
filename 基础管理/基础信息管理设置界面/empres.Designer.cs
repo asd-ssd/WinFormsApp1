@@ -40,8 +40,6 @@
             textBox15 = new TextBox();
             textBox14 = new TextBox();
             textBox13 = new TextBox();
-            textBox12 = new TextBox();
-            textBox11 = new TextBox();
             textBox10 = new TextBox();
             textBox9 = new TextBox();
             textBox5 = new TextBox();
@@ -56,7 +54,6 @@
             label16 = new Label();
             textBox7 = new TextBox();
             textBox8 = new TextBox();
-            textBox3 = new TextBox();
             textBox4 = new TextBox();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
@@ -71,8 +68,11 @@
             label4 = new Label();
             dateTimePicker1 = new DateTimePicker();
             dateTimePicker4 = new DateTimePicker();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
+            comboBox4 = new ComboBox();
+            comboBox3 = new ComboBox();
+            comboBox2 = new ComboBox();
+            checkBox1 = new CheckBox();
+            checkBox2 = new CheckBox();
             SuspendLayout();
             // 
             // button2
@@ -117,7 +117,7 @@
             // 
             label8.AutoSize = true;
             label8.BackColor = SystemColors.ButtonHighlight;
-            label8.Location = new Point(231, 678);
+            label8.Location = new Point(231, 683);
             label8.Name = "label8";
             label8.Size = new Size(28, 24);
             label8.TabIndex = 110;
@@ -182,20 +182,6 @@
             textBox13.Name = "textBox13";
             textBox13.Size = new Size(150, 30);
             textBox13.TabIndex = 146;
-            // 
-            // textBox12
-            // 
-            textBox12.Location = new Point(556, 526);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(150, 30);
-            textBox12.TabIndex = 145;
-            // 
-            // textBox11
-            // 
-            textBox11.Location = new Point(269, 529);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(150, 30);
-            textBox11.TabIndex = 144;
             // 
             // textBox10
             // 
@@ -313,13 +299,6 @@
             textBox8.Size = new Size(150, 30);
             textBox8.TabIndex = 124;
             // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(269, 217);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(150, 30);
-            textBox3.TabIndex = 123;
-            // 
             // textBox4
             // 
             textBox4.Location = new Point(556, 217);
@@ -418,7 +397,7 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = SystemColors.ButtonHighlight;
-            label4.Location = new Point(231, 734);
+            label4.Location = new Point(231, 740);
             label4.Name = "label4";
             label4.Size = new Size(28, 24);
             label4.TabIndex = 155;
@@ -442,33 +421,60 @@
             dateTimePicker4.Size = new Size(198, 30);
             dateTimePicker4.TabIndex = 153;
             // 
-            // radioButton1
+            // comboBox4
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(118, 674);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(107, 28);
-            radioButton1.TabIndex = 157;
-            radioButton1.Text = "入职日期";
-            radioButton1.UseVisualStyleBackColor = true;
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Location = new Point(556, 526);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(150, 32);
+            comboBox4.TabIndex = 161;
             // 
-            // radioButton2
+            // comboBox3
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(118, 730);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(107, 28);
-            radioButton2.TabIndex = 158;
-            radioButton2.Text = "离职日期";
-            radioButton2.UseVisualStyleBackColor = true;
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(266, 526);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(150, 32);
+            comboBox3.TabIndex = 160;
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(269, 223);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(150, 32);
+            comboBox2.TabIndex = 159;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(117, 683);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(108, 28);
+            checkBox1.TabIndex = 162;
+            checkBox1.Text = "入职日期";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Location = new Point(117, 740);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(108, 28);
+            checkBox2.TabIndex = 163;
+            checkBox2.Text = "离职日期";
+            checkBox2.UseVisualStyleBackColor = true;
             // 
             // empres
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(832, 1016);
-            Controls.Add(radioButton2);
-            Controls.Add(radioButton1);
+            Controls.Add(checkBox2);
+            Controls.Add(checkBox1);
+            Controls.Add(comboBox4);
+            Controls.Add(comboBox3);
+            Controls.Add(comboBox2);
             Controls.Add(label3);
             Controls.Add(label4);
             Controls.Add(dateTimePicker1);
@@ -478,8 +484,6 @@
             Controls.Add(textBox15);
             Controls.Add(textBox14);
             Controls.Add(textBox13);
-            Controls.Add(textBox12);
-            Controls.Add(textBox11);
             Controls.Add(textBox10);
             Controls.Add(textBox9);
             Controls.Add(textBox5);
@@ -494,7 +498,6 @@
             Controls.Add(label16);
             Controls.Add(textBox7);
             Controls.Add(textBox8);
-            Controls.Add(textBox3);
             Controls.Add(textBox4);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
@@ -532,8 +535,6 @@
         private TextBox textBox15;
         private TextBox textBox14;
         private TextBox textBox13;
-        private TextBox textBox12;
-        private TextBox textBox11;
         private TextBox textBox10;
         private TextBox textBox9;
         private TextBox textBox5;
@@ -548,7 +549,6 @@
         private Label label16;
         private TextBox textBox7;
         private TextBox textBox8;
-        private TextBox textBox3;
         private TextBox textBox4;
         private TextBox textBox2;
         private TextBox textBox1;
@@ -563,7 +563,10 @@
         private Label label4;
         private DateTimePicker dateTimePicker1;
         private DateTimePicker dateTimePicker4;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
+        private ComboBox comboBox4;
+        private ComboBox comboBox3;
+        private ComboBox comboBox2;
+        private CheckBox checkBox1;
+        private CheckBox checkBox2;
     }
 }

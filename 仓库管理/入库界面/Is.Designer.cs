@@ -65,6 +65,7 @@
             dateTimePicker2 = new DateTimePicker();
             button12 = new Button();
             button13 = new Button();
+            checkBox1 = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -389,7 +390,6 @@
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(142, 27);
             dateTimePicker1.TabIndex = 39;
-            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // dateTimePicker2
             // 
@@ -397,7 +397,6 @@
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(142, 27);
             dateTimePicker2.TabIndex = 42;
-            dateTimePicker2.ValueChanged += dateTimePicker2_ValueChanged;
             // 
             // button12
             // 
@@ -421,10 +420,21 @@
             button13.Visible = false;
             button13.Click += button13_Click;
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Cursor = Cursors.Hand;
+            checkBox1.Location = new Point(98, 714);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(18, 17);
+            checkBox1.TabIndex = 58;
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
             // Is
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(checkBox1);
             Controls.Add(button13);
             Controls.Add(button12);
             Controls.Add(dateTimePicker2);
@@ -490,5 +500,6 @@
         public DataGridView dataGridView1;
         private Button button12;
         private Button button13;
+        private CheckBox checkBox1;
     }
 }
