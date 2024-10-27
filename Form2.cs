@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -13,11 +14,13 @@ using System.Windows.Forms;
 using WinFormsApp1.Second;
 using WinFormsApp1.二级菜单;
 using WinFormsApp1.工作界面;
+using WinFormsApp1.数据库封装类;
 using WinFormsApp1.数据库支持类;
 using WinFormsApp1.销售管理;
 using static System.Windows.Forms.DataFormats;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
 namespace WinFormsApp1
 {
@@ -29,6 +32,7 @@ namespace WinFormsApp1
         public workplat1 plat1;
         //二级菜单
         public workplatform work1;
+        private workplat1 workPlat1Instance;
         public basecon basecon1;
         public systemcon systemcon1;
         public Plan Plan1;
@@ -36,11 +40,13 @@ namespace WinFormsApp1
         public SaleForm sale1;
         public warehouse_usercontrol warehouse_Usercontrol1;
         public Editpassword editpassword1;
+        private TaskRepository taskRepository;
         public Form2()
         {
             InitializeComponent();
             form = this;
             this.FormClosed += Form2_FormClosed;
+            taskRepository = new TaskRepository();
             this.button3.Tag = "View";
             this.button4.Tag = "View";
             this.button5.Tag = "View";
@@ -69,8 +75,10 @@ namespace WinFormsApp1
         }
         private void Form2_Load(object sender, EventArgs e)
         {
-            work1 = new workplatform();    //实例化work1
+
+            //实例化work1
             plat1 = new workplat1();
+            work1 = new workplatform(plat1);
             work1.Show();   //将窗体一进行显示
             panel1.Controls.Clear();    //清空原容器上的控件
             panel1.Controls.Add(work1);    //将窗体一加入容器panel1
@@ -79,9 +87,21 @@ namespace WinFormsApp1
             panel2.Controls.Add(plat1);    //将窗体一加入容器panel2
                                            //修改其显示为当前时间
             var username = ConfigurationManager.AppSettings["用户名"];
+            var Empname = ConfigurationManager.AppSettings["员工姓名"];
+
+            List<TaskItem> tasks = taskRepository.GetIncompleteTasks();
             this.toolStripStatusLabel3.Text = " 系统当前时间：" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
             this.toolStripStatusLabel2.Text = " 当前登录账号：" + username;
-            this.label7.Text = "亲爱的" + username + ",欢迎使用本系统，现在是北京时间：" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
+            if (tasks.Count == 0)
+            {
+                this.label7.Text = "亲爱的" + Empname + ",欢迎使用本系统，现在是北京时间：" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + Environment.NewLine + "您当前暂无未完成任务";
+
+            }
+            else
+            {
+                this.label7.Text = "亲爱的" + Empname + ",欢迎使用本系统，现在是北京时间：" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + Environment.NewLine + "您当前有" + tasks.Count + "项未完成任务";
+
+            }
             //对timer1进行相关设置
             this.timer1.Interval = 1000;
             this.timer1.Start();
@@ -182,9 +202,20 @@ namespace WinFormsApp1
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
+            var Empname = ConfigurationManager.AppSettings["员工姓名"];
             var username = ConfigurationManager.AppSettings["用户名"];
+            List<TaskItem> tasks = taskRepository.GetIncompleteTasks();
             this.toolStripStatusLabel3.Text = "系统当前时间：" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
-            this.label7.Text = "亲爱的" + username + ",欢迎使用本系统，现在是北京时间：" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
+            if (tasks.Count == 0)
+            {
+                this.label7.Text = "亲爱的" + Empname + ",欢迎使用本系统，现在是北京时间：" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + Environment.NewLine + "您当前暂无未完成任务";
+
+            }
+            else
+            {
+                this.label7.Text = "亲爱的" + Empname + ",欢迎使用本系统，现在是北京时间：" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + Environment.NewLine + "您当前有" + tasks.Count + "项未完成任务";
+
+            }
         }
 
         private void 修改密码ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -192,6 +223,77 @@ namespace WinFormsApp1
             editpassword1 = new Editpassword();
             editpassword1.ShowDialog();
         }
-       
+        private DataGridView FindDataGridView(Control parent)
+        {
+            foreach (Control control in parent.Controls)
+            {
+                if (control is DataGridView dgv)
+                {
+                    return dgv;
+                }
+                else
+                {
+                    DataGridView found = FindDataGridView(control);
+                    if (found != null)
+                    {
+                        return found;
+                    }
+                }
+            }
+            return null;
+        }
+
+        private DataGridView GetCurrentDataGridView()
+        {
+            return FindDataGridView(panel2);
+        }
+        private void 导出数据ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataGridView dgv = GetCurrentDataGridView();
+            if (dgv == null)
+            {
+                MessageBox.Show("当前没有可导出的数据表格。");
+                return;
+            }
+
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            DataTable dt = DgvToDt(dgv);
+
+            SaveFileDialog save = new SaveFileDialog();
+            //设置文件类型
+            save.Filter = "Excel表格（*.xls）|*.xls|Excel表格（*.xlsx）|*.xlsx";
+            //设置默认文件类型显⽰顺序
+            save.FilterIndex = 1;
+            //保存对话框是否记忆上次打开的记录
+            save.RestoreDirectory = true;
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                NPOIExcel.TableToExcel(dt, save.FileName);
+                sw.Stop();
+                SysLogService.AddSysLog(new SysLog("导出表格数据", "触发", LogTye.操作记录, login.login1.userid));
+                MessageBox.Show("数据导出完成");
+            }
+        }
+        private DataTable DgvToDt(DataGridView dgv)
+        {
+            DataTable dt = new DataTable();
+            //把DataGridView控件数据，转成DataTable
+            for (int count = 0; count < dgv.Columns.Count; count++)
+            {
+                DataColumn dc = new DataColumn(dgv.Columns[count].Name.ToString());
+                dt.Columns.Add(dc);
+            }
+            for (int count = 0; count < dgv.Rows.Count; count++)
+            {
+                DataRow dr = dt.NewRow();
+                for (int countsub = 0; countsub < dgv.Columns.Count; countsub++)
+                {
+                    dr[countsub] = Convert.ToString(dgv.Rows[count].Cells[countsub].Value);
+                }
+                dt.Rows.Add(dr);
+            }
+            return dt;
+        }
     }
 }

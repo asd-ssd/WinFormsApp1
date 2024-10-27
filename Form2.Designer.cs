@@ -59,6 +59,7 @@
             toolStripStatusLabel2 = new ToolStripStatusLabel();
             toolStripStatusLabel4 = new ToolStripStatusLabel();
             timer1 = new System.Windows.Forms.Timer(components);
+            导出数据ToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -113,6 +114,7 @@
             // 
             // 主菜单ToolStripMenuItem
             // 
+            主菜单ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { 导出数据ToolStripMenuItem });
             主菜单ToolStripMenuItem.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 134);
             主菜单ToolStripMenuItem.Name = "主菜单ToolStripMenuItem";
             主菜单ToolStripMenuItem.Size = new Size(87, 40);
@@ -348,7 +350,7 @@
             label7.Location = new Point(326, 54);
             label7.Margin = new Padding(5, 0, 5, 0);
             label7.Name = "label7";
-            label7.Size = new Size(1340, 40);
+            label7.Size = new Size(1340, 86);
             label7.TabIndex = 16;
             label7.TextAlign = ContentAlignment.MiddleCenter;
             label7.Click += label7_Click;
@@ -409,6 +411,13 @@
             // timer1
             // 
             timer1.Tick += timer1_Tick_1;
+            // 
+            // 导出数据ToolStripMenuItem
+            // 
+            导出数据ToolStripMenuItem.Name = "导出数据ToolStripMenuItem";
+            导出数据ToolStripMenuItem.Size = new Size(270, 44);
+            导出数据ToolStripMenuItem.Text = "导出数据";
+            导出数据ToolStripMenuItem.Click += 导出数据ToolStripMenuItem_Click;
             // 
             // Form2
             // 
@@ -481,5 +490,6 @@
         private ToolStripStatusLabel toolStripStatusLabel3;
         public Panel panel1;
         private ToolStripStatusLabel toolStripStatusLabel4;
+        private ToolStripMenuItem 导出数据ToolStripMenuItem;
     }
 }

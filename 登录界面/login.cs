@@ -194,11 +194,37 @@ namespace WinFormsApp1
                                 {
                                     cf.AppSettings.Settings.Add("角色编号", roleId.ToString());
                                     cf.AppSettings.Settings.Add("用户名", usernm.ToString());
+                                    var db = SqlSugarHelper.SqlSugarClient;
+                                    var users = db.Queryable<User>().Where(c => c.UserName == usernm).ToList();
+                                    foreach (var user in users)
+                                    {
+                                        string empid = user.EmployeeId;
+                                        SqlConnection connection1 = connection();
+                                        string sql11 = "SELECT * FROM 员工信息表 WHERE 员工编号=@员工编号";
+                                        DataTable dt = new DataTable();
+                                        SqlDataAdapter da = new SqlDataAdapter(sql11, connection1);
+                                        da.SelectCommand.Parameters.AddWithValue("@员工编号", empid);
+                                        da.Fill(dt);
+                                        cf.AppSettings.Settings.Add("员工姓名", dt.Rows[0]["员工姓名"].ToString());
+                                    }
                                 }
                                 else
                                 {
                                     cf.AppSettings.Settings["角色编号"].Value = roleId.ToString(); // 保存 roleId 到配置文件
                                     cf.AppSettings.Settings["用户名"].Value = usernm.ToString(); // 保存 roleId 到配置文件
+                                    var db = SqlSugarHelper.SqlSugarClient;
+                                    var users = db.Queryable<User>().Where(c => c.UserName == usernm).ToList();
+                                    foreach (var user in users)
+                                    {
+                                        string empid = user.EmployeeId;
+                                        SqlConnection connection1 = connection();
+                                        string sql11 = "SELECT * FROM 员工信息表 WHERE 员工编号=@员工编号";
+                                        DataTable dt = new DataTable();
+                                        SqlDataAdapter da = new SqlDataAdapter(sql11, connection1);
+                                        da.SelectCommand.Parameters.AddWithValue("@员工编号", empid);
+                                        da.Fill(dt);
+                                        cf.AppSettings.Settings["员工姓名"].Value=dt.Rows[0]["员工姓名"].ToString();
+                                    }
                                 }
 
                                 cf.Save(); // 保存配置

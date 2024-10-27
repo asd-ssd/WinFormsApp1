@@ -112,7 +112,6 @@ namespace WinFormsApp1
                                 CraftId = craftId
                             };
                             SqlSugarHelper.SqlSugarClient.Insertable(newBOMcraft).ExecuteCommand();
-                            MessageBox.Show($"物料 {bomId} 已被赋予新工艺路线 {checkedCraft}");
                         }
                     }
 
@@ -130,6 +129,7 @@ namespace WinFormsApp1
                 }
 
                 MessageBox.Show("工艺路线已成功赋予或更新给选定物料");
+                SysLogService.AddSysLog(new SysLog("更新物料工艺路线", "触发", LogTye.操作记录, login.login1.userid));
                 this.Close();
             }
             catch (Exception ex)

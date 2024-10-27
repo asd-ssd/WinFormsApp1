@@ -130,7 +130,7 @@ namespace WinFormsApp1
                         }
                     }
                 }
-
+                SysLogService.AddSysLog(new SysLog("修改用户角色", "触发", LogTye.操作记录, login.login1.userid));
                 MessageBox.Show("角色已成功赋予或更新给选定用户");
                 this.Close();
             }

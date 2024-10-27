@@ -152,7 +152,7 @@ namespace WinFormsApp1.基础信息管理工作界面
                 {
                     //获取要删除行的ID值
                     string id = row.Cells["工序号"].Value.ToString();
-                    string delesql = "DELETE FROM BOM表 WHERE 工序号 = @工序号";
+                    string delesql = "DELETE FROM BOM表 WHERE 工序 = @工序号";
                     using (SqlConnection conn = connection())
                     {
                         using (SqlCommand comm = new SqlCommand(delesql, conn))

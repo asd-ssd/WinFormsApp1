@@ -21,7 +21,7 @@ namespace WinFormsApp1
         public DateTime InitiationTime { get; set; }
         public DateTime ExecutionTime { get; set; }
         public DateTime Deadline { get; set; }
-        public DateTime CompletionTime { get; set; }
+        public DateTime? CompletionTime { get; set; }
         public string Action { get; set; }
         public string ResponseContent { get; set; }
     }

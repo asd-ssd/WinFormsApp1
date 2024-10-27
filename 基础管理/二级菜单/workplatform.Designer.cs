@@ -30,21 +30,22 @@ namespace WinFormsApp1
         private void InitializeComponent()
         {
             tableLayoutPanel2 = new TableLayoutPanel();
-            button1 = new Button();
-            label13 = new Label();
-            label11 = new Label();
-            label10 = new Label();
-            label9 = new Label();
+            myedbutton = new Button();
+            mypublishbutton = new Button();
+            compeletebutton = new Button();
+            panel2 = new Panel();
+            label3 = new Label();
+            dateTimePicker3 = new DateTimePicker();
+            uncompeletebutton = new Button();
+            resbutton = new Button();
             label8 = new Label();
             label12 = new Label();
-            label14 = new Label();
-            textBox1 = new TextBox();
             panel1 = new Panel();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
             label1 = new Label();
-            label2 = new Label();
+            dateTimePicker1 = new DateTimePicker();
+            allbutton = new Button();
             tableLayoutPanel2.SuspendLayout();
+            panel2.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -54,97 +55,117 @@ namespace WinFormsApp1
             tableLayoutPanel2.CellBorderStyle = TableLayoutPanelCellBorderStyle.OutsetDouble;
             tableLayoutPanel2.ColumnCount = 1;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Controls.Add(button1, 0, 9);
-            tableLayoutPanel2.Controls.Add(label13, 0, 5);
-            tableLayoutPanel2.Controls.Add(label11, 0, 3);
-            tableLayoutPanel2.Controls.Add(label10, 0, 2);
-            tableLayoutPanel2.Controls.Add(label9, 0, 1);
+            tableLayoutPanel2.Controls.Add(myedbutton, 0, 5);
+            tableLayoutPanel2.Controls.Add(mypublishbutton, 0, 4);
+            tableLayoutPanel2.Controls.Add(compeletebutton, 0, 3);
+            tableLayoutPanel2.Controls.Add(panel2, 0, 8);
+            tableLayoutPanel2.Controls.Add(uncompeletebutton, 0, 2);
+            tableLayoutPanel2.Controls.Add(resbutton, 0, 9);
             tableLayoutPanel2.Controls.Add(label8, 0, 0);
-            tableLayoutPanel2.Controls.Add(label12, 0, 4);
-            tableLayoutPanel2.Controls.Add(label14, 0, 7);
-            tableLayoutPanel2.Controls.Add(panel1, 0, 6);
-            tableLayoutPanel2.Controls.Add(textBox1, 0, 8);
+            tableLayoutPanel2.Controls.Add(label12, 0, 6);
+            tableLayoutPanel2.Controls.Add(panel1, 0, 7);
+            tableLayoutPanel2.Controls.Add(allbutton, 0, 1);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(0, 0);
             tableLayoutPanel2.Margin = new Padding(5, 4, 5, 4);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 10;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 6.847545F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 6.976744F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 7.751938F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 6.45994854F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 8.268734F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 19.6382427F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 5.16795874F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 17.7002583F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 9.909361F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 7.851936F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 8.265196F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 6.749911F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 8.265196F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 7.02541637F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 10.0559874F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 14.8773546F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 14.8773527F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 12.1222878F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel2.Size = new Size(351, 777);
             tableLayoutPanel2.TabIndex = 16;
             tableLayoutPanel2.Paint += tableLayoutPanel2_Paint;
             // 
-            // button1
+            // myedbutton
             // 
-            button1.Anchor = AnchorStyles.None;
-            button1.Location = new Point(71, 708);
-            button1.Name = "button1";
-            button1.Size = new Size(209, 51);
-            button1.TabIndex = 17;
-            button1.Text = "查询";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            myedbutton.Dock = DockStyle.Fill;
+            myedbutton.Location = new Point(6, 324);
+            myedbutton.Name = "myedbutton";
+            myedbutton.Size = new Size(339, 46);
+            myedbutton.TabIndex = 25;
+            myedbutton.Text = "我执行的";
+            myedbutton.UseVisualStyleBackColor = true;
+            myedbutton.Click += myedbutton_Click;
             // 
-            // label13
+            // mypublishbutton
             // 
-            label13.AutoSize = true;
-            label13.Dock = DockStyle.Fill;
-            label13.Location = new Point(8, 302);
-            label13.Margin = new Padding(5, 0, 5, 0);
-            label13.Name = "label13";
-            label13.Size = new Size(335, 62);
-            label13.TabIndex = 5;
-            label13.Text = "日期范围";
-            label13.TextAlign = ContentAlignment.MiddleCenter;
-            label13.Click += label13_Click;
+            mypublishbutton.Dock = DockStyle.Fill;
+            mypublishbutton.Location = new Point(6, 260);
+            mypublishbutton.Name = "mypublishbutton";
+            mypublishbutton.Size = new Size(339, 55);
+            mypublishbutton.TabIndex = 24;
+            mypublishbutton.Text = "我发布的";
+            mypublishbutton.UseVisualStyleBackColor = true;
+            mypublishbutton.Click += mypublishbutton_Click;
             // 
-            // label11
+            // compeletebutton
             // 
-            label11.AutoSize = true;
-            label11.Dock = DockStyle.Fill;
-            label11.Font = new Font("Microsoft YaHei UI", 10.5F);
-            label11.Location = new Point(8, 190);
-            label11.Margin = new Padding(5, 0, 5, 0);
-            label11.Name = "label11";
-            label11.Size = new Size(335, 58);
-            label11.TabIndex = 3;
-            label11.Text = "逾期事项（0）";
-            label11.TextAlign = ContentAlignment.MiddleCenter;
+            compeletebutton.Dock = DockStyle.Fill;
+            compeletebutton.Location = new Point(6, 207);
+            compeletebutton.Name = "compeletebutton";
+            compeletebutton.Size = new Size(339, 44);
+            compeletebutton.TabIndex = 23;
+            compeletebutton.Text = "已完成";
+            compeletebutton.UseVisualStyleBackColor = true;
+            compeletebutton.Click += compeletebutton_Click_1;
             // 
-            // label10
+            // panel2
             // 
-            label10.AutoSize = true;
-            label10.Dock = DockStyle.Fill;
-            label10.Font = new Font("Microsoft YaHei UI", 10.5F);
-            label10.Location = new Point(8, 135);
-            label10.Margin = new Padding(5, 0, 5, 0);
-            label10.Name = "label10";
-            label10.Size = new Size(335, 52);
-            label10.TabIndex = 2;
-            label10.Text = "已完成（0）";
-            label10.TextAlign = ContentAlignment.MiddleCenter;
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(dateTimePicker3);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(6, 569);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(339, 104);
+            panel2.TabIndex = 22;
             // 
-            // label9
+            // label3
             // 
-            label9.AutoSize = true;
-            label9.Dock = DockStyle.Fill;
-            label9.Font = new Font("Microsoft YaHei UI", 10.5F);
-            label9.Location = new Point(8, 81);
-            label9.Margin = new Padding(5, 0, 5, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(335, 51);
-            label9.TabIndex = 1;
-            label9.Text = "未完成（0）";
-            label9.TextAlign = ContentAlignment.MiddleCenter;
+            label3.AutoSize = true;
+            label3.BackColor = Color.MintCream;
+            label3.Location = new Point(132, 10);
+            label3.Name = "label3";
+            label3.Size = new Size(82, 24);
+            label3.TabIndex = 3;
+            label3.Text = "结束时间";
+            // 
+            // dateTimePicker3
+            // 
+            dateTimePicker3.Location = new Point(27, 52);
+            dateTimePicker3.Name = "dateTimePicker3";
+            dateTimePicker3.Size = new Size(300, 30);
+            dateTimePicker3.TabIndex = 0;
+            // 
+            // uncompeletebutton
+            // 
+            uncompeletebutton.Dock = DockStyle.Fill;
+            uncompeletebutton.Location = new Point(6, 143);
+            uncompeletebutton.Name = "uncompeletebutton";
+            uncompeletebutton.Size = new Size(339, 55);
+            uncompeletebutton.TabIndex = 20;
+            uncompeletebutton.Text = "未完成";
+            uncompeletebutton.UseVisualStyleBackColor = true;
+            uncompeletebutton.Click += uncompeletebutton_Click;
+            // 
+            // resbutton
+            // 
+            resbutton.Anchor = AnchorStyles.None;
+            resbutton.Location = new Point(71, 701);
+            resbutton.Name = "resbutton";
+            resbutton.Size = new Size(209, 51);
+            resbutton.TabIndex = 17;
+            resbutton.Text = "查询";
+            resbutton.UseVisualStyleBackColor = true;
+            resbutton.Click += button1_Click;
             // 
             // label8
             // 
@@ -154,7 +175,7 @@ namespace WinFormsApp1
             label8.Location = new Point(8, 3);
             label8.Margin = new Padding(5, 0, 5, 0);
             label8.Name = "label8";
-            label8.Size = new Size(335, 75);
+            label8.Size = new Size(335, 73);
             label8.TabIndex = 0;
             label8.Text = "所有事项";
             label8.TextAlign = ContentAlignment.MiddleCenter;
@@ -164,81 +185,52 @@ namespace WinFormsApp1
             label12.AutoSize = true;
             label12.Dock = DockStyle.Fill;
             label12.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            label12.Location = new Point(8, 251);
+            label12.Location = new Point(8, 376);
             label12.Margin = new Padding(5, 0, 5, 0);
             label12.Name = "label12";
-            label12.Size = new Size(335, 48);
+            label12.Size = new Size(335, 74);
             label12.TabIndex = 4;
             label12.Text = "查询";
             label12.TextAlign = ContentAlignment.MiddleCenter;
-            
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Dock = DockStyle.Fill;
-            label14.Location = new Point(8, 517);
-            label14.Margin = new Padding(5, 0, 5, 0);
-            label14.Name = "label14";
-            label14.Size = new Size(335, 38);
-            label14.TabIndex = 6;
-            label14.Text = "关键词";
-            label14.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // textBox1
-            // 
-            textBox1.Anchor = AnchorStyles.None;
-            textBox1.Location = new Point(100, 609);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(150, 30);
-            textBox1.TabIndex = 7;
             // 
             // panel1
             // 
-            panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(dateTimePicker2);
             panel1.Controls.Add(dateTimePicker1);
             panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(6, 370);
+            panel1.Location = new Point(6, 456);
             panel1.Name = "panel1";
-            panel1.Size = new Size(339, 141);
+            panel1.Size = new Size(339, 104);
             panel1.TabIndex = 18;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(36, 22);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(300, 30);
-            dateTimePicker1.TabIndex = 0;
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Location = new Point(37, 88);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(300, 30);
-            dateTimePicker2.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.MintCream;
-            label1.Location = new Point(3, 22);
+            label1.Location = new Point(132, 15);
             label1.Name = "label1";
-            label1.Size = new Size(28, 24);
+            label1.Size = new Size(82, 24);
             label1.TabIndex = 2;
-            label1.Text = "从";
+            label1.Text = "开始时间";
             label1.Click += label1_Click;
             // 
-            // label2
+            // dateTimePicker1
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.MintCream;
-            label2.Location = new Point(2, 88);
-            label2.Name = "label2";
-            label2.Size = new Size(28, 24);
-            label2.TabIndex = 3;
-            label2.Text = "到";
+            dateTimePicker1.Location = new Point(27, 58);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(300, 30);
+            dateTimePicker1.TabIndex = 0;
+            // 
+            // allbutton
+            // 
+            allbutton.Dock = DockStyle.Fill;
+            allbutton.Location = new Point(6, 82);
+            allbutton.Name = "allbutton";
+            allbutton.Size = new Size(339, 52);
+            allbutton.TabIndex = 19;
+            allbutton.Text = "全部";
+            allbutton.UseVisualStyleBackColor = true;
+            allbutton.Click += allbutton_Click;
             // 
             // workplatform
             // 
@@ -248,6 +240,8 @@ namespace WinFormsApp1
             Size = new Size(351, 777);
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -258,19 +252,19 @@ namespace WinFormsApp1
         #endregion
 
         private TableLayoutPanel tableLayoutPanel2;
-        private Button button1;
-        private Label label13;
-        private Label label11;
-        private Label label10;
-        private Label label9;
+        private Button resbutton;
         private Label label8;
         private Label label12;
-        private Label label14;
-        private TextBox textBox1;
         private Panel panel1;
         private Label label1;
-        private DateTimePicker dateTimePicker2;
         private DateTimePicker dateTimePicker1;
-        private Label label2;
+        private Panel panel2;
+        private Label label3;
+        private DateTimePicker dateTimePicker3;
+        private Button uncompeletebutton;
+        private Button allbutton;
+        private Button compeletebutton;
+        private Button myedbutton;
+        private Button mypublishbutton;
     }
 }

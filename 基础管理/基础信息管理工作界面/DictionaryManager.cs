@@ -38,6 +38,15 @@ namespace WinFormsApp1
                                 .Where(item => item.CategoryId == categoryId)
                                 .ToList();
                 dgvItems.DataSource = items;
+                var catagorys = SqlSugarHelper.SqlSugarClient.Queryable<DictionaryCategory>()
+                                .Where(item => item.CategoryId == categoryId)
+                                .ToList();
+                foreach(var catagory in catagorys)
+                {
+                    txtCategoryName.Text = catagory.CategoryName;
+                    txtCategoryDescription.Text = catagory.Description;
+                }
+
                 // 设置中文列名
                 dgvItems.Columns["ItemId"].HeaderText = "项 ID"; // 如果你有 ItemId 列
                 dgvItems.Columns["CategoryId"].HeaderText = "类别 ID"; // 如果你有 CategoryId 列
@@ -67,6 +76,8 @@ namespace WinFormsApp1
             var category = new DictionaryCategory { CategoryName = categoryName, Description = description };
             SqlSugarHelper.SqlSugarClient.Insertable(category).ExecuteCommand();
             LoadDictionaryCategories();
+            txtCategoryName.Clear();
+            txtCategoryDescription.Clear();
         }
 
         private void btnUpdateCategory_Click(object sender, EventArgs e)
@@ -94,6 +105,9 @@ namespace WinFormsApp1
             var item = new DictionaryItem { CategoryId = categoryId, ItemName = itemName, ItemValue = itemValue, Description = description };
             SqlSugarHelper.SqlSugarClient.Insertable(item).ExecuteCommand();
             cbCategories_SelectedIndexChanged(null, null);
+            txtItemName.Clear();
+            txtItemValue.Clear();
+            txtItemDescription.Clear();
         }
 
         private void btnUpdateItem_Click(object sender, EventArgs e)
@@ -129,6 +143,11 @@ namespace WinFormsApp1
         {
             LoadDictionaryCategories();
             dgvItems.DataSource = null;
+            txtCategoryName.Clear();
+            txtCategoryDescription.Clear();
+            txtItemName.Clear();
+            txtItemValue.Clear();
+            txtItemDescription.Clear();
 
         }
 

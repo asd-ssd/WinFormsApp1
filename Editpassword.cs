@@ -129,6 +129,7 @@ namespace WinFormsApp1
             if (CaptchaVerification() && EditFlag())
             {
                 Editpass();
+                SysLogService.AddSysLog(new SysLog("修改账户密码", "触发", LogTye.操作记录, login.login1.userid));
                 MessageBox.Show("修改密码成功！");
                 this.Close();
             };

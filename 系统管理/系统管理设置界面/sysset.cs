@@ -65,7 +65,7 @@ namespace WinFormsApp1.系统管理设置界面
 
                 // 重新加载角色到 TreeView
                 syswhplat.syswhplat1.LoadRoles();
-
+                SysLogService.AddSysLog(new SysLog("新增角色", "触发", LogTye.操作记录, login.login1.userid));
                 MessageBox.Show("新角色已添加，并已初始化所有权限为零，请设置权限后点击保存");
                 this.Close();
             }
