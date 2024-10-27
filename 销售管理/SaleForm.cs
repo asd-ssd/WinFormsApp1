@@ -23,11 +23,11 @@ namespace WinFormsApp1.销售管理
         public orderform orderform1;
         public Receipt2nd receipt2Nd1;
         public ReceiptForm ReceiptForm1;
-        
+
         public ExamineForm examineForm1;
         public ReturnForm returnForm1;
-        
-        
+
+
         public SaleForm()
         {
             InitializeComponent();
@@ -58,7 +58,7 @@ namespace WinFormsApp1.销售管理
             panel.Controls.Add(ReceiptForm1);    //将窗体一加入容器panel2
         }
 
-        
+
 
         private void saleddsp_Click(object sender, EventArgs e)
         {
@@ -78,14 +78,15 @@ namespace WinFormsApp1.销售管理
 
         private void salefh_Click(object sender, EventArgs e)
         {
-            delievery = new Delievery ();
+            delievery = new Delievery();
             delievery.Show();
             panel.Controls.Clear();    //清空原容器上的控件
             panel.Controls.Add(delievery);    //将窗体一加入容器panel2
         }
 
-        
+        private void saleformlable3_Click(object sender, EventArgs e)
+        {
 
-        
+        }
     }
 }

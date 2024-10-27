@@ -10,7 +10,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 using WinFormsApp1.销售管理.收发货管理.退货;
 using WinFormsApp1.销售管理.销售订单管理.收款单;
 using WinFormsApp1.销售管理.销售订单管理.销售订单;

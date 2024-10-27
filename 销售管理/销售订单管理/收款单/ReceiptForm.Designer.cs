@@ -91,7 +91,7 @@ namespace WinFormsApp1.销售管理
             rfdataGridView1.Location = new Point(50, 187);
             rfdataGridView1.Name = "rfdataGridView1";
             rfdataGridView1.RowHeadersWidth = 62;
-            rfdataGridView1.Size = new Size(831, 471);
+            rfdataGridView1.Size = new Size(1248, 694);
             rfdataGridView1.TabIndex = 68;
             rfdataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
             // 

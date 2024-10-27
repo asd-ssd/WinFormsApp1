@@ -41,9 +41,9 @@
             button6.BackgroundImage = (Image)resources.GetObject("button6.BackgroundImage");
             button6.BackgroundImageLayout = ImageLayout.Zoom;
             button6.Font = new Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            button6.Location = new Point(92, 548);
+            button6.Location = new Point(107, 584);
             button6.Name = "button6";
-            button6.Size = new Size(125, 170);
+            button6.Size = new Size(124, 139);
             button6.TabIndex = 13;
             button6.Text = "供应商";
             button6.TextAlign = ContentAlignment.BottomCenter;
@@ -56,9 +56,9 @@
             button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
             button3.BackgroundImageLayout = ImageLayout.Zoom;
             button3.Font = new Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            button3.Location = new Point(92, 372);
+            button3.Location = new Point(107, 408);
             button3.Name = "button3";
-            button3.Size = new Size(125, 170);
+            button3.Size = new Size(124, 139);
             button3.TabIndex = 11;
             button3.Text = "退货";
             button3.TextAlign = ContentAlignment.BottomCenter;
@@ -72,9 +72,9 @@
             button2.BackgroundImageLayout = ImageLayout.Zoom;
             button2.Font = new Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, 134);
             button2.ImageAlign = ContentAlignment.TopCenter;
-            button2.Location = new Point(92, 20);
+            button2.Location = new Point(107, 56);
             button2.Name = "button2";
-            button2.Size = new Size(125, 170);
+            button2.Size = new Size(124, 139);
             button2.TabIndex = 10;
             button2.Text = "采购";
             button2.TextAlign = ContentAlignment.BottomCenter;
@@ -86,9 +86,9 @@
             button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
             button1.BackgroundImageLayout = ImageLayout.Zoom;
             button1.Font = new Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            button1.Location = new Point(92, 196);
+            button1.Location = new Point(107, 232);
             button1.Name = "button1";
-            button1.Size = new Size(125, 170);
+            button1.Size = new Size(124, 139);
             button1.TabIndex = 15;
             button1.Text = "采购审核";
             button1.TextAlign = ContentAlignment.BottomCenter;
@@ -99,7 +99,7 @@
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.GradientInactiveCaption;
+            BackColor = Color.Transparent;
             Controls.Add(button1);
             Controls.Add(button6);
             Controls.Add(button3);

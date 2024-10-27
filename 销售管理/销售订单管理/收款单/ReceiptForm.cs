@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库封装类;
 using WinFormsApp1.数据库支持类;
 using WinFormsApp1.销售管理.销售订单管理.收款单;
 using WinFormsApp1.销售管理.销售订单管理.销售订单;

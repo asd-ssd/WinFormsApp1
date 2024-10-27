@@ -62,10 +62,10 @@
             tableLayoutPanel1.ColumnCount = 6;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 39.45946F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60.54054F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 97F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 90F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 131F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 63F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 119F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 160F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 78F));
             tableLayoutPanel1.Controls.Add(button4, 5, 3);
             tableLayoutPanel1.Controls.Add(textBox2, 4, 3);
             tableLayoutPanel1.Controls.Add(label8, 3, 3);
@@ -87,7 +87,8 @@
             tableLayoutPanel1.Controls.Add(label7, 3, 1);
             tableLayoutPanel1.Controls.Add(textBox5, 1, 1);
             tableLayoutPanel1.Controls.Add(textBox1, 4, 1);
-            tableLayoutPanel1.Location = new Point(131, 51);
+            tableLayoutPanel1.Location = new Point(160, 61);
+            tableLayoutPanel1.Margin = new Padding(4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 5;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
@@ -95,15 +96,16 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(567, 332);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 24F));
+            tableLayoutPanel1.Size = new Size(693, 398);
             tableLayoutPanel1.TabIndex = 96;
             // 
             // button4
             // 
-            button4.Location = new Point(506, 201);
+            button4.Location = new Point(618, 241);
+            button4.Margin = new Padding(4);
             button4.Name = "button4";
-            button4.Size = new Size(30, 30);
+            button4.Size = new Size(37, 36);
             button4.TabIndex = 97;
             button4.Text = "...";
             button4.UseVisualStyleBackColor = true;
@@ -111,36 +113,38 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(374, 200);
+            textBox2.Location = new Point(456, 239);
             textBox2.Margin = new Padding(2);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(123, 27);
+            textBox2.Size = new Size(149, 30);
             textBox2.TabIndex = 97;
             textBox2.TextChanged += textBox2_TextChanged;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(284, 198);
+            label8.Location = new Point(346, 237);
             label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
-            label8.Size = new Size(69, 20);
+            label8.Size = new Size(82, 24);
             label8.TabIndex = 97;
             label8.Text = "订单编号";
             // 
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(76, 135);
+            comboBox2.Location = new Point(93, 162);
+            comboBox2.Margin = new Padding(4);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(106, 28);
+            comboBox2.Size = new Size(128, 32);
             comboBox2.TabIndex = 88;
             // 
             // button5
             // 
-            button5.Location = new Point(188, 267);
+            button5.Location = new Point(229, 320);
+            button5.Margin = new Padding(4);
             button5.Name = "button5";
-            button5.Size = new Size(30, 30);
+            button5.Size = new Size(37, 36);
             button5.TabIndex = 83;
             button5.Text = "...";
             button5.UseVisualStyleBackColor = true;
@@ -150,9 +154,10 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "销售提货", "生产领料", "其他出库" });
-            comboBox1.Location = new Point(76, 201);
+            comboBox1.Location = new Point(93, 241);
+            comboBox1.Margin = new Padding(4);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(106, 28);
+            comboBox1.Size = new Size(128, 32);
             comboBox1.TabIndex = 86;
             comboBox1.Text = "销售提货";
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged_1;
@@ -160,74 +165,75 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(2, 198);
+            label6.Location = new Point(2, 237);
             label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(69, 20);
+            label6.Size = new Size(82, 24);
             label6.TabIndex = 87;
             label6.Text = "出库类别";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(2, 264);
+            label4.Location = new Point(2, 316);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(54, 20);
+            label4.Size = new Size(64, 24);
             label4.TabIndex = 79;
             label4.Text = "出库人";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(284, 132);
+            label2.Location = new Point(346, 158);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(39, 20);
+            label2.Size = new Size(46, 24);
             label2.TabIndex = 43;
             label2.Text = "数量";
             // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(284, 264);
+            label15.Location = new Point(346, 316);
             label15.Margin = new Padding(2, 0, 2, 0);
             label15.Name = "label15";
-            label15.Size = new Size(84, 20);
+            label15.Size = new Size(100, 24);
             label15.TabIndex = 59;
             label15.Text = "出库人编号";
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(75, 2);
+            textBox4.Location = new Point(91, 2);
             textBox4.Margin = new Padding(2);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(108, 27);
+            textBox4.Size = new Size(131, 30);
             textBox4.TabIndex = 85;
             // 
             // textBox15
             // 
-            textBox15.Location = new Point(75, 266);
+            textBox15.Location = new Point(91, 318);
             textBox15.Margin = new Padding(2);
             textBox15.Name = "textBox15";
-            textBox15.Size = new Size(108, 27);
+            textBox15.Size = new Size(131, 30);
             textBox15.TabIndex = 67;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(2, 66);
+            label1.Location = new Point(2, 79);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(69, 20);
+            label1.Size = new Size(82, 24);
             label1.TabIndex = 42;
             label1.Text = "物料编码";
             // 
             // button3
             // 
-            button3.Location = new Point(188, 69);
+            button3.Location = new Point(229, 83);
+            button3.Margin = new Padding(4);
             button3.Name = "button3";
-            button3.Size = new Size(30, 30);
+            button3.Size = new Size(37, 36);
             button3.TabIndex = 81;
             button3.Text = "...";
             button3.UseVisualStyleBackColor = true;
@@ -236,10 +242,10 @@
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(2, 132);
+            label16.Location = new Point(2, 158);
             label16.Margin = new Padding(2, 0, 2, 0);
             label16.Name = "label16";
-            label16.Size = new Size(54, 20);
+            label16.Size = new Size(64, 24);
             label16.TabIndex = 58;
             label16.Tag = "";
             label16.Text = "库位号";
@@ -250,73 +256,73 @@
             label5.Location = new Point(2, 0);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(69, 20);
+            label5.Size = new Size(82, 24);
             label5.TabIndex = 84;
             label5.Text = "出库单号";
             // 
             // textBox16
             // 
-            textBox16.Location = new Point(374, 134);
+            textBox16.Location = new Point(456, 160);
             textBox16.Margin = new Padding(2);
             textBox16.Name = "textBox16";
-            textBox16.Size = new Size(123, 27);
+            textBox16.Size = new Size(149, 30);
             textBox16.TabIndex = 66;
             textBox16.TextChanged += textBox16_TextChanged;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(374, 266);
+            textBox3.Location = new Point(456, 318);
             textBox3.Margin = new Padding(2);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(123, 27);
+            textBox3.Size = new Size(149, 30);
             textBox3.TabIndex = 80;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(284, 66);
+            label7.Location = new Point(346, 79);
             label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(54, 20);
+            label7.Size = new Size(64, 24);
             label7.TabIndex = 90;
             label7.Text = "物料名";
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(75, 68);
+            textBox5.Location = new Point(91, 81);
             textBox5.Margin = new Padding(2);
             textBox5.Multiline = true;
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(108, 27);
+            textBox5.Size = new Size(131, 32);
             textBox5.TabIndex = 89;
             textBox5.TextChanged += textBox5_TextChanged;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(374, 68);
+            textBox1.Location = new Point(456, 81);
             textBox1.Margin = new Padding(2);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(108, 27);
+            textBox1.Size = new Size(131, 32);
             textBox1.TabIndex = 50;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(133, 389);
+            label3.Location = new Point(163, 467);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(69, 20);
+            label3.Size = new Size(82, 24);
             label3.TabIndex = 94;
             label3.Text = "出库时间";
             // 
             // button2
             // 
-            button2.Location = new Point(462, 463);
+            button2.Location = new Point(565, 556);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
-            button2.Size = new Size(109, 38);
+            button2.Size = new Size(133, 46);
             button2.TabIndex = 93;
             button2.Text = "返回";
             button2.UseVisualStyleBackColor = true;
@@ -324,10 +330,10 @@
             // 
             // button1
             // 
-            button1.Location = new Point(264, 463);
+            button1.Location = new Point(323, 556);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
-            button1.Size = new Size(109, 38);
+            button1.Size = new Size(133, 46);
             button1.TabIndex = 92;
             button1.Text = "确定";
             button1.UseVisualStyleBackColor = true;
@@ -335,22 +341,24 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(211, 389);
+            dateTimePicker1.Location = new Point(258, 467);
+            dateTimePicker1.Margin = new Padding(4);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(250, 27);
+            dateTimePicker1.Size = new Size(305, 30);
             dateTimePicker1.TabIndex = 95;
-            dateTimePicker1.Value = new DateTime(2024, 10, 26, 12, 4, 56, 0);
+            dateTimePicker1.Value = new DateTime(2024, 10, 29, 0, 0, 0, 0);
             // 
             // Os_add
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(832, 553);
+            ClientSize = new Size(1017, 664);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(label3);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(dateTimePicker1);
+            Margin = new Padding(4);
             Name = "Os_add";
             Text = "Os_add";
             Load += Os_add_Load;

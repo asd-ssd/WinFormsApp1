@@ -57,7 +57,7 @@
             dataGridView1.Location = new Point(50, 129);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(886, 243);
+            dataGridView1.Size = new Size(1004, 243);
             dataGridView1.TabIndex = 4;
             dataGridView1.CellContentClick += exdataGridView1_CellContentClick;
             // 
@@ -75,10 +75,10 @@
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(50, 423);
+            dataGridView2.Location = new Point(34, 418);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 62;
-            dataGridView2.Size = new Size(886, 246);
+            dataGridView2.Size = new Size(1020, 246);
             dataGridView2.TabIndex = 9;
             dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 

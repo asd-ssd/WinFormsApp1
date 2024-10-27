@@ -97,8 +97,8 @@ namespace WinFormsApp1.仓库管理.出库界面
 
             }
             Os_select_dingdan_2_textBox2.Text = Os_select_dingdan_2_number;
-            Os_select_dingdan_2_textBox1.Text = Os_select_dingdan_2_wunumber;
-            Os_select_dingdan_2_textBox5.Text = Os_select_dingdan_2_name;
+            Os_select_dingdan_2_textBox5.Text = Os_select_dingdan_2_wunumber;
+            Os_select_dingdan_2_textBox1.Text = Os_select_dingdan_2_name;
             Os_select_dingdan_2_textBox16.Text = Os_select_dingdan_2_shuliang;
 
             this.Close();

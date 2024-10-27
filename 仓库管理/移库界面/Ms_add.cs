@@ -30,6 +30,7 @@ namespace WinFormsApp1.仓库管理.移库界面
         {
             InitializeComponent();
             Ms_Add1 = this;
+            dateTimePicker1.Value = DateTime.Now;
         }
         private SqlConnection connection()
         {

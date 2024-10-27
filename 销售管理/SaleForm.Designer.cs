@@ -45,9 +45,9 @@
             saleddsp.BackgroundImage = (Image)resources.GetObject("saleddsp.BackgroundImage");
             saleddsp.BackgroundImageLayout = ImageLayout.Zoom;
             saleddsp.Font = new Font("Microsoft YaHei UI", 7.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            saleddsp.Location = new Point(125, 253);
+            saleddsp.Location = new Point(190, 253);
             saleddsp.Name = "saleddsp";
-            saleddsp.Size = new Size(93, 105);
+            saleddsp.Size = new Size(124, 139);
             saleddsp.TabIndex = 24;
             saleddsp.Text = "订单审批";
             saleddsp.TextAlign = ContentAlignment.BottomCenter;
@@ -60,9 +60,9 @@
             saletuihuo.BackgroundImage = (Image)resources.GetObject("saletuihuo.BackgroundImage");
             saletuihuo.BackgroundImageLayout = ImageLayout.Zoom;
             saletuihuo.Font = new Font("Microsoft YaHei UI", 7.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            saletuihuo.Location = new Point(126, 434);
+            saletuihuo.Location = new Point(178, 617);
             saletuihuo.Name = "saletuihuo";
-            saletuihuo.Size = new Size(92, 105);
+            saletuihuo.Size = new Size(124, 139);
             saletuihuo.TabIndex = 22;
             saletuihuo.Text = "退货管理";
             saletuihuo.TextAlign = ContentAlignment.BottomCenter;
@@ -74,20 +74,21 @@
             saleformlable3.AutoSize = true;
             saleformlable3.Font = new Font("Microsoft YaHei UI", 10.5F, FontStyle.Bold, GraphicsUnit.Point, 134);
             saleformlable3.ForeColor = SystemColors.HotTrack;
-            saleformlable3.Location = new Point(26, 391);
+            saleformlable3.Location = new Point(27, 555);
             saleformlable3.Name = "saleformlable3";
             saleformlable3.Size = new Size(117, 28);
             saleformlable3.TabIndex = 21;
             saleformlable3.Text = "退发货管理";
+            saleformlable3.Click += saleformlable3_Click;
             // 
             // salexsskd
             // 
             salexsskd.BackgroundImage = (Image)resources.GetObject("salexsskd.BackgroundImage");
             salexsskd.BackgroundImageLayout = ImageLayout.Zoom;
             salexsskd.Font = new Font("Microsoft YaHei UI", 7.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            salexsskd.Location = new Point(224, 253);
+            salexsskd.Location = new Point(27, 413);
             salexsskd.Name = "salexsskd";
-            salexsskd.Size = new Size(93, 105);
+            salexsskd.Size = new Size(124, 139);
             salexsskd.TabIndex = 20;
             salexsskd.Text = "销售收款单";
             salexsskd.TextAlign = ContentAlignment.BottomLeft;
@@ -122,9 +123,9 @@
             salefh.BackgroundImage = (Image)resources.GetObject("salefh.BackgroundImage");
             salefh.BackgroundImageLayout = ImageLayout.Zoom;
             salefh.Font = new Font("Microsoft YaHei UI", 7.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            salefh.Location = new Point(27, 434);
+            salefh.Location = new Point(27, 617);
             salefh.Name = "salefh";
-            salefh.Size = new Size(92, 105);
+            salefh.Size = new Size(124, 139);
             salefh.TabIndex = 15;
             salefh.Text = "发货查询";
             salefh.TextAlign = ContentAlignment.BottomCenter;
@@ -138,7 +139,7 @@
             salexsdd.Font = new Font("Microsoft YaHei UI", 7.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
             salexsdd.Location = new Point(27, 253);
             salexsdd.Name = "salexsdd";
-            salexsdd.Size = new Size(92, 105);
+            salexsdd.Size = new Size(124, 139);
             salexsdd.TabIndex = 14;
             salexsdd.Text = "销售订单";
             salexsdd.TextAlign = ContentAlignment.BottomCenter;
@@ -153,7 +154,7 @@
             saleclient.Font = new Font("Microsoft YaHei UI", 7.5F, FontStyle.Regular, GraphicsUnit.Point, 134);
             saleclient.Location = new Point(27, 69);
             saleclient.Name = "saleclient";
-            saleclient.Size = new Size(92, 105);
+            saleclient.Size = new Size(124, 139);
             saleclient.TabIndex = 13;
             saleclient.Text = "客户资料";
             saleclient.TextAlign = ContentAlignment.BottomCenter;

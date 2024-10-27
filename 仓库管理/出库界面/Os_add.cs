@@ -32,6 +32,7 @@ namespace WinFormsApp1.仓库管理.出库界面
         {
             InitializeComponent();
             Os_Add1 = this;
+            dateTimePicker1.Value=DateTime.Now;
         }
         private SqlConnection connection()
         {
@@ -54,7 +55,7 @@ namespace WinFormsApp1.仓库管理.出库界面
                 SqlConnection conn = connection();
                 conn.Open();
                 // 定义SQL更新语句
-                string sql = "UPDATE Issue SET 领料单状态 = '已完成' WHERE 领料单编号 = @领料单编号";
+                string sql = "UPDATE Issue SET 状态 = '已完成' WHERE 领料单编号 = @领料单编号";
                 // 创建SqlCommand对象
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
@@ -224,11 +225,7 @@ namespace WinFormsApp1.仓库管理.出库界面
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            if (comboBox1.Text == "其他出库")
-            {
-                textBox2.Visible = false;
-                label8.Visible = false;
-            }
+
         }
 
         private void button4_Click(object sender, EventArgs e)

@@ -113,7 +113,7 @@ namespace WinFormsApp1.仓库管理.库存盘点界面
             if (textBox7.Text != "")
 
             {
-                selectsql += "and 库位号 like'%" + textBox1.Text + "%'";
+                selectsql += "and 库位号 like'%" + textBox7.Text + "%'";
             }
             string start1 = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd");
             //取开始时间的0点，大于等于开始日期的0点；

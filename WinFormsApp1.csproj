@@ -7,6 +7,8 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>d49abf86-3a38-4362-b7c6-4a7821fb140c</UserSecretsId>
+    <PackageIcon>微信图片_20241027222929.png</PackageIcon>
+    <ApplicationIcon>favicon (3).ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -31,6 +33,17 @@
     <EmbeddedResource Remove="系统管理\系统管理设置界面\userconset.resx" />
     <EmbeddedResource Remove="计划管理\MRP.resx" />
     <EmbeddedResource Remove="采购管理\cg申请.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="favicon (3).ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\微信图片_20241027222929.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

@@ -96,8 +96,8 @@ namespace WinFormsApp1.仓库管理.入库界面
                 Is_select_dingdan_shuliang = row.Cells["采购数量"].Value.ToString();
             }
             Is_select_dingdan_textBox2.Text = Is_select_dingdan_number;
-            Is_select_dingdan_textBox1.Text = Is_select_dingdan_wunumber;
-            Is_select_dingdan_textBox5.Text = Is_select_dingdan_name;
+            Is_select_dingdan_textBox5.Text = Is_select_dingdan_wunumber;
+            Is_select_dingdan_textBox1.Text = Is_select_dingdan_name;
             Is_select_dingdan_textBox16.Text = Is_select_dingdan_shuliang;
 
             this.Close();

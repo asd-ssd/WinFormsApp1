@@ -11,6 +11,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.仓库管理.出库界面;
 using WinFormsApp1.仓库管理.初始查询界面;
 using WinFormsApp1.数据库封装类;
 using WinFormsApp1.数据库支持类;
@@ -23,6 +24,7 @@ namespace WinFormsApp1.仓库管理.入库界面
         public Is_select_item Is_item1;
         public Is_select_people Is_people1;
         public Is_select_dingdan Is_dingdan1;
+        public Is_select_dingdan2 Is_dingdan2;
         public DataGridView dataGridView1 = Is.is1.dataGridView1;
         public static Is_add is_Add1;
         private string Is_number;
@@ -31,6 +33,7 @@ namespace WinFormsApp1.仓库管理.入库界面
         {
             InitializeComponent();
             is_Add1 = this;
+            dateTimePicker1.Value = DateTime.Now;
         }
         private SqlConnection connection()
         {
@@ -233,17 +236,22 @@ namespace WinFormsApp1.仓库管理.入库界面
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            if (comboBox1.Text != "采购入库")
-            {
-                textBox2.Visible = false;
-                label8.Visible = false;
-            }
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Is_dingdan1 = new Is_select_dingdan();
-            Is_dingdan1.Show();
+
+            if (comboBox1.Text == "采购入库")
+            {
+                Is_dingdan1 = new Is_select_dingdan();
+                Is_dingdan1.Show();
+            }
+            if (comboBox1.Text == "生产入库")
+            {
+                Is_dingdan2 = new Is_select_dingdan2();
+                Is_dingdan2.Show();
+            }
         }
         private void change_1()
         {

@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.工作界面;
+using WinFormsApp1.数据库封装类;
 using WinFormsApp1.数据库支持类;
 using WinFormsApp1.销售管理;
 using WinFormsApp1.销售管理.客户管理;

@@ -32,13 +32,13 @@ namespace WinFormsApp1.销售管理.销售订单管理.收款单
             {
                 selectsql += "and 收款单编号 like'%" + textBox1.Text + "%'";
             }
-            if (textBox2.Text != "")
-            {
-                selectsql += "and 客户 like'%" + textBox2.Text + "%'";
-            }
             if (textBox3.Text != "")
             {
-                selectsql += "and 收款人 like'%" + textBox3.Text + "%'";
+                selectsql += "and 客户 like'%" + textBox3.Text + "%'";
+            }
+            if (textBox2.Text != "")
+            {
+                selectsql += "and 收款人 like'%" + textBox2.Text + "%'";
             }
             if (textBox4.Text != "")
             {

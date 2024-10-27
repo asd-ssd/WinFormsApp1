@@ -10,19 +10,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.仓库管理.入库界面;
 
-namespace WinFormsApp1.仓库管理.出库界面
+namespace WinFormsApp1.仓库管理.入库界面
 {
-    public partial class Os_select_dingdan : Form
+    public partial class Is_select_dingdan2 : Form
     {
-        private string Os_select_dingdan_wunumber;
-        private string Os_select_dingdan_number;
-        private string Os_select_dingdan_name;
-        private string Os_select_dingdan_shuliang;
-        public TextBox Os_select_dingdan_textBox2 = Os_add.Os_Add1.textBox2;//绑定is_add的入库人格
-        public TextBox Os_select_dingdan_textBox5 = Os_add.Os_Add1.textBox5;
-        public TextBox Os_select_dingdan_textBox16 = Os_add.Os_Add1.textBox16;
-        public TextBox Os_select_dingdan_textBox1 = Os_add.Os_Add1.textBox1;
-        public Os_select_dingdan()
+        private string Is_select_dingdan2_wunumber;
+        private string Is_select_dingdan2_number;
+        private string Is_select_dingdan2_name;
+        private string Is_select_dingdan2_shuliang;
+        public TextBox Is_select_dingdan2_textBox2 = Is_add.is_Add1.textBox2;//绑定is_add的入库人格
+        public TextBox Is_select_dingdan2_textBox5 = Is_add.is_Add1.textBox5;
+        public TextBox Is_select_dingdan2_textBox16 = Is_add.is_Add1.textBox16;
+        public TextBox Is_select_dingdan2_textBox1 = Is_add.is_Add1.textBox1;
+        public Is_select_dingdan2()
         {
             InitializeComponent();
         }
@@ -42,7 +42,7 @@ namespace WinFormsApp1.仓库管理.出库界面
         {
             try
             {
-                string strda = "select * from 订单审核通过表";
+                string strda = "select * from Workorder where 1=1 AND 状态='已完成'";
                 SqlConnection conn = connection();
                 conn.Open();
                 DataTable dt = new DataTable();
@@ -63,14 +63,14 @@ namespace WinFormsApp1.仓库管理.出库界面
 
         private void button7_Click(object sender, EventArgs e)
         {
-            string selectsql = "select * from 订单审核通过表 where 1=1";
+            string selectsql = "select * from Workorder where 1=1 AND 状态='已完成'";
             if (textBox1.Text != "")
             {
-                selectsql += "and 商品编码 like'%" + textBox1.Text + "%'";
+                selectsql += "and 物料编码 like'%" + textBox1.Text + "%'";
             }
             if (textBox2.Text != "")
             {
-                selectsql += "and 订单编号 like'%" + textBox2.Text + "%'";
+                selectsql += "and 派工单编号 like'%" + textBox2.Text + "%'";
             }
 
 
@@ -90,16 +90,15 @@ namespace WinFormsApp1.仓库管理.出库界面
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {
                 //获取要选中行的ID值
-                Os_select_dingdan_number = row.Cells["订单编号"].Value.ToString();
-                Os_select_dingdan_wunumber = row.Cells["商品编码"].Value.ToString();
-                Os_select_dingdan_name = row.Cells["商品名称"].Value.ToString();
-                Os_select_dingdan_shuliang = row.Cells["商品数量"].Value.ToString();
+                Is_select_dingdan2_number = row.Cells["派工单编号"].Value.ToString();
+                Is_select_dingdan2_wunumber = row.Cells["物料编号"].Value.ToString();
+                Is_select_dingdan2_name = row.Cells["物料名称"].Value.ToString();
+                Is_select_dingdan2_shuliang = row.Cells["派工数量"].Value.ToString();
             }
-           
-            Os_select_dingdan_textBox2.Text = Os_select_dingdan_number;
-            Os_select_dingdan_textBox5.Text = Os_select_dingdan_wunumber;
-            Os_select_dingdan_textBox1.Text = Os_select_dingdan_name;
-            Os_select_dingdan_textBox16.Text = Os_select_dingdan_shuliang;
+            Is_select_dingdan2_textBox2.Text = Is_select_dingdan2_number;
+            Is_select_dingdan2_textBox5.Text = Is_select_dingdan2_wunumber;
+            Is_select_dingdan2_textBox1.Text = Is_select_dingdan2_name;
+            Is_select_dingdan2_textBox16.Text = Is_select_dingdan2_shuliang;
 
             this.Close();
 
@@ -107,16 +106,17 @@ namespace WinFormsApp1.仓库管理.出库界面
 
 
 
-        private void Os_select_dingdan_Load(object sender, EventArgs e)
-        {
-            GetDataGridView();
-        }
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
 
+        }
 
+        private void Is_select_dingdan2_Load(object sender, EventArgs e)
+        {
+            GetDataGridView();
         }
     }
 }

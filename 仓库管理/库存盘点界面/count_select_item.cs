@@ -90,8 +90,8 @@ namespace WinFormsApp1.仓库管理.库存盘点界面
                 count_select_item_name = row.Cells["物料名称"].Value.ToString();
 
             }
-            count_select_item_textBox1.Text = count_select_item_name;
-            count_select_item_textBox2.Text = count_select_item_number;
+            count_select_item_textBox2.Text = count_select_item_name;
+            count_select_item_textBox1.Text = count_select_item_number;
             this.Close();
         }
 

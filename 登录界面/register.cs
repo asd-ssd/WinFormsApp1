@@ -36,7 +36,7 @@ namespace WinFormsApp1
             string hashedInputPassword = HashPassword(textBox3.Text.Trim(), savedSalt);
             string creattime = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
             // 使用参数化查询来避免SQL注入问题
-            string strda = "INSERT INTO 用户信息表 (用户名, 密码, 密码盐, 员工编号,角色编号,创建时间) VALUES (@username, @password, @salt, @employeeID, @roleID, @createtime)";
+            string strda = "INSERT INTO 用户信息表 (用户名, 密码, 密码盐, 员工编号,创建时间) VALUES (@username, @password, @salt, @employeeID, @createtime)";
             SqlCommand comm = new SqlCommand(strda, conn);
 
             // 添加参数
@@ -45,7 +45,6 @@ namespace WinFormsApp1
             comm.Parameters.AddWithValue("@salt", savedSalt);
             comm.Parameters.AddWithValue("@employeeID", textBox2.Text.Trim());
             comm.Parameters.AddWithValue("@createtime", creattime);
-            comm.Parameters.AddWithValue("@roleID", 0);
             comm.ExecuteNonQuery();
 
 

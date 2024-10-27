@@ -33,10 +33,10 @@ namespace WinFormsApp1.计划管理.三级功能
         }
         private void GetDataGridView()
         {
-            try
-            {
+            //try
+            //{
 
-                string strda = "select * from 工艺路线表 INNER JOIN BOMcraft ON  BOMcraft.工序 = 工艺路线表.工序  WHERE BOMcraft.物料编码 =" + Item_number;
+                string strda = "select * from 工艺路线表 INNER JOIN BOMcraft ON  BOMcraft.工序 = 工艺路线表.工序  WHERE BOMcraft.物料编码 ='" + 车间作业.chejian1.Item_number + "'";
                 SqlConnection conn = connection();
                 conn.Open();
                 DataTable dt = new DataTable();
@@ -75,11 +75,11 @@ namespace WinFormsApp1.计划管理.三级功能
                 //dataGridView1.AutoGenerateColumns = true;//自动创建列
                 //dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;//单击单元格编辑
                 dataGridView1.DataSource = dt;
-            }
-            catch (Exception ee)
-            {
-                MessageBox.Show(ee.Message.ToString());
-            }
+           // }
+            //catch (Exception ee)
+            //{
+                //MessageBox.Show(ee.Message.ToString());
+          //  }
         }
         private void 工序排程_Load(object sender, EventArgs e)
         {

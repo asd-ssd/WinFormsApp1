@@ -79,7 +79,7 @@
             // 
             // replybutton
             // 
-            replybutton.Location = new Point(464, 6);
+            replybutton.Location = new Point(464, 4);
             replybutton.Name = "replybutton";
             replybutton.Size = new Size(112, 62);
             replybutton.TabIndex = 6;
@@ -99,7 +99,7 @@
             // 
             // deletebutton
             // 
-            deletebutton.Location = new Point(231, 0);
+            deletebutton.Location = new Point(231, 3);
             deletebutton.Name = "deletebutton";
             deletebutton.Size = new Size(108, 65);
             deletebutton.TabIndex = 4;
@@ -109,7 +109,7 @@
             // 
             // compeletebutton
             // 
-            compeletebutton.Location = new Point(117, 2);
+            compeletebutton.Location = new Point(117, 3);
             compeletebutton.Name = "compeletebutton";
             compeletebutton.Size = new Size(108, 65);
             compeletebutton.TabIndex = 3;
@@ -168,6 +168,7 @@
             // 
             // richTextBox1
             // 
+            richTextBox1.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 134);
             richTextBox1.Location = new Point(-3, 36);
             richTextBox1.Name = "richTextBox1";
             richTextBox1.Size = new Size(1685, 245);

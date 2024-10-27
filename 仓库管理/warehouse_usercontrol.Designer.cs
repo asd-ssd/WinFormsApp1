@@ -44,9 +44,10 @@
             warehouse_in.BackgroundImage = (Image)resources.GetObject("warehouse_in.BackgroundImage");
             warehouse_in.BackgroundImageLayout = ImageLayout.Zoom;
             warehouse_in.Font = new Font("宋体", 7.5F);
-            warehouse_in.Location = new Point(3, 419);
+            warehouse_in.Location = new Point(4, 486);
+            warehouse_in.Margin = new Padding(4, 4, 4, 4);
             warehouse_in.Name = "warehouse_in";
-            warehouse_in.Size = new Size(80, 105);
+            warehouse_in.Size = new Size(124, 139);
             warehouse_in.TabIndex = 2;
             warehouse_in.Text = "物料入库";
             warehouse_in.TextAlign = ContentAlignment.BottomCenter;
@@ -58,9 +59,10 @@
             warehouse_move.BackgroundImage = (Image)resources.GetObject("warehouse_move.BackgroundImage");
             warehouse_move.BackgroundImageLayout = ImageLayout.Zoom;
             warehouse_move.Font = new Font("宋体", 7.5F);
-            warehouse_move.Location = new Point(203, 419);
+            warehouse_move.Location = new Point(4, 633);
+            warehouse_move.Margin = new Padding(4, 4, 4, 4);
             warehouse_move.Name = "warehouse_move";
-            warehouse_move.Size = new Size(80, 105);
+            warehouse_move.Size = new Size(124, 139);
             warehouse_move.TabIndex = 4;
             warehouse_move.Text = "物料移库";
             warehouse_move.TextAlign = ContentAlignment.BottomCenter;
@@ -72,9 +74,10 @@
             warehouse_edit.BackgroundImage = (Image)resources.GetObject("warehouse_edit.BackgroundImage");
             warehouse_edit.BackgroundImageLayout = ImageLayout.Zoom;
             warehouse_edit.Font = new Font("宋体", 7.5F);
-            warehouse_edit.Location = new Point(3, 221);
+            warehouse_edit.Location = new Point(4, 265);
+            warehouse_edit.Margin = new Padding(4, 4, 4, 4);
             warehouse_edit.Name = "warehouse_edit";
-            warehouse_edit.Size = new Size(80, 105);
+            warehouse_edit.Size = new Size(124, 139);
             warehouse_edit.TabIndex = 5;
             warehouse_edit.Text = "库存盘点";
             warehouse_edit.TextAlign = ContentAlignment.BottomCenter;
@@ -86,9 +89,10 @@
             warehouse_inquiry.BackgroundImage = Properties.Resource1.Receiving_goods_query;
             warehouse_inquiry.BackgroundImageLayout = ImageLayout.Zoom;
             warehouse_inquiry.Font = new Font("宋体", 7.5F);
-            warehouse_inquiry.Location = new Point(3, 37);
+            warehouse_inquiry.Location = new Point(4, 44);
+            warehouse_inquiry.Margin = new Padding(4, 4, 4, 4);
             warehouse_inquiry.Name = "warehouse_inquiry";
-            warehouse_inquiry.Size = new Size(80, 105);
+            warehouse_inquiry.Size = new Size(124, 139);
             warehouse_inquiry.TabIndex = 0;
             warehouse_inquiry.Text = "查询与维护";
             warehouse_inquiry.TextAlign = ContentAlignment.BottomCenter;
@@ -100,9 +104,10 @@
             warehouse_out.BackgroundImage = (Image)resources.GetObject("warehouse_out.BackgroundImage");
             warehouse_out.BackgroundImageLayout = ImageLayout.Zoom;
             warehouse_out.Font = new Font("宋体", 7.5F);
-            warehouse_out.Location = new Point(101, 419);
+            warehouse_out.Location = new Point(158, 486);
+            warehouse_out.Margin = new Padding(4, 4, 4, 4);
             warehouse_out.Name = "warehouse_out";
-            warehouse_out.Size = new Size(80, 105);
+            warehouse_out.Size = new Size(124, 139);
             warehouse_out.TabIndex = 3;
             warehouse_out.Text = "物料出库";
             warehouse_out.TextAlign = ContentAlignment.BottomCenter;
@@ -114,10 +119,10 @@
             saleformlable1.AutoSize = true;
             saleformlable1.Font = new Font("Microsoft YaHei UI", 10.5F, FontStyle.Bold, GraphicsUnit.Point, 134);
             saleformlable1.ForeColor = SystemColors.Desktop;
-            saleformlable1.Location = new Point(3, 0);
+            saleformlable1.Location = new Point(4, 0);
             saleformlable1.Margin = new Padding(2, 0, 2, 0);
             saleformlable1.Name = "saleformlable1";
-            saleformlable1.Size = new Size(84, 25);
+            saleformlable1.Size = new Size(96, 28);
             saleformlable1.TabIndex = 18;
             saleformlable1.Text = "库存维护";
             // 
@@ -126,10 +131,10 @@
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft YaHei UI", 10.5F, FontStyle.Bold, GraphicsUnit.Point, 134);
             label1.ForeColor = SystemColors.Desktop;
-            label1.Location = new Point(-1, 180);
+            label1.Location = new Point(-1, 216);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(84, 25);
+            label1.Size = new Size(96, 28);
             label1.TabIndex = 19;
             label1.Text = "库存盘点";
             // 
@@ -138,16 +143,16 @@
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft YaHei UI", 10.5F, FontStyle.Bold, GraphicsUnit.Point, 134);
             label3.ForeColor = SystemColors.Desktop;
-            label3.Location = new Point(3, 381);
+            label3.Location = new Point(4, 437);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(84, 25);
+            label3.Size = new Size(96, 28);
             label3.TabIndex = 21;
             label3.Text = "库存操作";
             // 
             // warehouse_usercontrol
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
             Controls.Add(label3);
@@ -158,8 +163,9 @@
             Controls.Add(warehouse_out);
             Controls.Add(warehouse_inquiry);
             Controls.Add(warehouse_edit);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "warehouse_usercontrol";
-            Size = new Size(436, 777);
+            Size = new Size(351, 777);
             Load += warehouse_usercontrol_Load;
             ResumeLayout(false);
             PerformLayout();

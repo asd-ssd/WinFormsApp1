@@ -33,7 +33,6 @@
             button1 = new Button();
             button4 = new Button();
             button2 = new Button();
-            button11 = new Button();
             button3 = new Button();
             label3 = new Label();
             button7 = new Button();
@@ -76,42 +75,43 @@
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 95);
+            dataGridView1.Location = new Point(0, 114);
+            dataGridView1.Margin = new Padding(4, 4, 4, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1068, 536);
+            dataGridView1.Size = new Size(1305, 643);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.ColumnCount = 5;
+            tableLayoutPanel1.ColumnCount = 4;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20.0004959F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20.0005016F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20.0004978F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 19.9985046F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.Controls.Add(button1, 0, 0);
             tableLayoutPanel1.Controls.Add(button4, 3, 0);
             tableLayoutPanel1.Controls.Add(button2, 1, 0);
-            tableLayoutPanel1.Controls.Add(button11, 3, 0);
             tableLayoutPanel1.Controls.Add(button3, 2, 0);
-            tableLayoutPanel1.Location = new Point(39, 5);
+            tableLayoutPanel1.Location = new Point(48, 6);
+            tableLayoutPanel1.Margin = new Padding(4, 4, 4, 4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(397, 87);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 104F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 104F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 104F));
+            tableLayoutPanel1.Size = new Size(420, 104);
             tableLayoutPanel1.TabIndex = 1;
             // 
             // button1
             // 
-            button1.Location = new Point(3, 3);
+            button1.Location = new Point(4, 4);
+            button1.Margin = new Padding(4, 4, 4, 4);
             button1.Name = "button1";
-            button1.Size = new Size(73, 81);
+            button1.Size = new Size(89, 96);
             button1.TabIndex = 0;
             button1.Text = "新增\r\n入库";
             button1.UseVisualStyleBackColor = true;
@@ -119,9 +119,10 @@
             // 
             // button4
             // 
-            button4.Location = new Point(240, 3);
+            button4.Location = new Point(319, 4);
+            button4.Margin = new Padding(4, 4, 4, 4);
             button4.Name = "button4";
-            button4.Size = new Size(73, 81);
+            button4.Size = new Size(89, 96);
             button4.TabIndex = 3;
             button4.Text = "刷新";
             button4.UseVisualStyleBackColor = true;
@@ -129,28 +130,21 @@
             // 
             // button2
             // 
-            button2.Location = new Point(82, 3);
+            button2.Location = new Point(109, 4);
+            button2.Margin = new Padding(4, 4, 4, 4);
             button2.Name = "button2";
-            button2.Size = new Size(73, 81);
+            button2.Size = new Size(89, 96);
             button2.TabIndex = 1;
             button2.Text = "修改\r\n数据";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
-            // button11
-            // 
-            button11.Location = new Point(319, 3);
-            button11.Name = "button11";
-            button11.Size = new Size(73, 81);
-            button11.TabIndex = 4;
-            button11.Text = "导出\r\n打印";
-            button11.UseVisualStyleBackColor = true;
-            // 
             // button3
             // 
-            button3.Location = new Point(161, 3);
+            button3.Location = new Point(214, 4);
+            button3.Margin = new Padding(4, 4, 4, 4);
             button3.Name = "button3";
-            button3.Size = new Size(73, 81);
+            button3.Size = new Size(89, 96);
             button3.TabIndex = 2;
             button3.Text = "删除";
             button3.UseVisualStyleBackColor = true;
@@ -159,17 +153,19 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(38, 696);
+            label3.Location = new Point(46, 835);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(54, 20);
+            label3.Size = new Size(64, 24);
             label3.TabIndex = 6;
             label3.Text = "查询：";
             // 
             // button7
             // 
-            button7.Location = new Point(884, 714);
+            button7.Location = new Point(1080, 857);
+            button7.Margin = new Padding(4, 4, 4, 4);
             button7.Name = "button7";
-            button7.Size = new Size(94, 29);
+            button7.Size = new Size(115, 35);
             button7.TabIndex = 22;
             button7.Text = "查询";
             button7.UseVisualStyleBackColor = true;
@@ -178,58 +174,65 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(120, 712);
+            label5.Location = new Point(147, 854);
+            label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new Size(69, 20);
+            label5.Size = new Size(82, 24);
             label5.TabIndex = 32;
             label5.Text = "入库时间";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(120, 675);
+            label4.Location = new Point(147, 810);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(69, 20);
+            label4.Size = new Size(82, 24);
             label4.TabIndex = 30;
             label4.Text = "入库单号";
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(258, 668);
+            textBox3.Location = new Point(315, 802);
+            textBox3.Margin = new Padding(4, 4, 4, 4);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 27);
+            textBox3.Size = new Size(152, 30);
             textBox3.TabIndex = 29;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(573, 716);
+            label2.Location = new Point(700, 859);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(69, 20);
+            label2.Size = new Size(82, 24);
             label2.TabIndex = 28;
             label2.Text = "物料编号";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(722, 709);
+            textBox2.Location = new Point(882, 851);
+            textBox2.Margin = new Padding(4, 4, 4, 4);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
+            textBox2.Size = new Size(152, 30);
             textBox2.TabIndex = 27;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(573, 680);
+            label1.Location = new Point(700, 816);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(54, 20);
+            label1.Size = new Size(64, 24);
             label1.TabIndex = 26;
             label1.Text = "物料名";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(722, 672);
+            textBox1.Location = new Point(882, 806);
+            textBox1.Margin = new Padding(4, 4, 4, 4);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
+            textBox1.Size = new Size(152, 30);
             textBox1.TabIndex = 25;
             // 
             // button5
@@ -290,7 +293,7 @@
             // 
             textBox5.Location = new Point(3, 70);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(73, 27);
+            textBox5.Size = new Size(73, 30);
             textBox5.TabIndex = 43;
             // 
             // label7
@@ -306,7 +309,7 @@
             // 
             textBox6.Location = new Point(3, 70);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(73, 27);
+            textBox6.Size = new Size(73, 30);
             textBox6.TabIndex = 41;
             // 
             // label8
@@ -322,7 +325,7 @@
             // 
             textBox7.Location = new Point(3, 70);
             textBox7.Name = "textBox7";
-            textBox7.Size = new Size(73, 27);
+            textBox7.Size = new Size(73, 30);
             textBox7.TabIndex = 39;
             // 
             // label9
@@ -338,7 +341,7 @@
             // 
             textBox8.Location = new Point(3, 70);
             textBox8.Name = "textBox8";
-            textBox8.Size = new Size(73, 27);
+            textBox8.Size = new Size(73, 30);
             textBox8.TabIndex = 37;
             // 
             // button10
@@ -378,31 +381,35 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(368, 712);
+            label11.Location = new Point(450, 854);
+            label11.Margin = new Padding(4, 0, 4, 0);
             label11.Name = "label11";
-            label11.Size = new Size(15, 20);
+            label11.Size = new Size(18, 24);
             label11.TabIndex = 41;
             label11.Text = "-";
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(220, 707);
+            dateTimePicker1.Location = new Point(269, 848);
+            dateTimePicker1.Margin = new Padding(4, 4, 4, 4);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(142, 27);
+            dateTimePicker1.Size = new Size(173, 30);
             dateTimePicker1.TabIndex = 39;
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(389, 707);
+            dateTimePicker2.Location = new Point(475, 848);
+            dateTimePicker2.Margin = new Padding(4, 4, 4, 4);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(142, 27);
+            dateTimePicker2.Size = new Size(173, 30);
             dateTimePicker2.TabIndex = 42;
             // 
             // button12
             // 
-            button12.Location = new Point(672, 34);
+            button12.Location = new Point(821, 41);
+            button12.Margin = new Padding(4, 4, 4, 4);
             button12.Name = "button12";
-            button12.Size = new Size(94, 29);
+            button12.Size = new Size(115, 35);
             button12.TabIndex = 43;
             button12.Text = "保存";
             button12.UseVisualStyleBackColor = true;
@@ -411,9 +418,10 @@
             // 
             // button13
             // 
-            button13.Location = new Point(814, 34);
+            button13.Location = new Point(995, 41);
+            button13.Margin = new Padding(4, 4, 4, 4);
             button13.Name = "button13";
-            button13.Size = new Size(94, 29);
+            button13.Size = new Size(115, 35);
             button13.TabIndex = 44;
             button13.Text = "取消";
             button13.UseVisualStyleBackColor = true;
@@ -424,15 +432,16 @@
             // 
             checkBox1.AutoSize = true;
             checkBox1.Cursor = Cursors.Hand;
-            checkBox1.Location = new Point(98, 714);
+            checkBox1.Location = new Point(120, 857);
+            checkBox1.Margin = new Padding(4, 4, 4, 4);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(18, 17);
+            checkBox1.Size = new Size(22, 21);
             checkBox1.TabIndex = 58;
             checkBox1.UseVisualStyleBackColor = true;
             // 
             // Is
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(checkBox1);
             Controls.Add(button13);
@@ -451,8 +460,9 @@
             Controls.Add(label3);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(dataGridView1);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "Is";
-            Size = new Size(1071, 788);
+            Size = new Size(1309, 946);
             Load += Is_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
@@ -477,7 +487,6 @@
         private TextBox textBox2;
         private Label label1;
         private TextBox textBox1;
-        private Button button11;
         private Button button5;
         private DataGridView dataGridView2;
         private Button button6;

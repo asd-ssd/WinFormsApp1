@@ -43,7 +43,7 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(43, 103);
-            dataGridView1.Margin = new Padding(4, 4, 4, 4);
+            dataGridView1.Margin = new Padding(4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(912, 455);
@@ -53,7 +53,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(153, 62);
+            label2.Location = new Point(90, 60);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(82, 24);
@@ -62,17 +62,16 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(336, 59);
-            textBox2.Margin = new Padding(4, 4, 4, 4);
+            textBox2.Location = new Point(273, 57);
+            textBox2.Margin = new Padding(4);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(152, 30);
             textBox2.TabIndex = 31;
-
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(171, 23);
+            label1.Location = new Point(108, 21);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(64, 24);
@@ -81,16 +80,16 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(336, 14);
-            textBox1.Margin = new Padding(4, 4, 4, 4);
+            textBox1.Location = new Point(273, 12);
+            textBox1.Margin = new Padding(4);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(152, 30);
             textBox1.TabIndex = 29;
             // 
             // button7
             // 
-            button7.Location = new Point(43, 23);
-            button7.Margin = new Padding(4, 4, 4, 4);
+            button7.Location = new Point(455, 32);
+            button7.Margin = new Padding(4);
             button7.Name = "button7";
             button7.Size = new Size(57, 52);
             button7.TabIndex = 33;
@@ -133,7 +132,7 @@
             Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(dataGridView1);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "Is_select_item";
             Text = "Is_select_item";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

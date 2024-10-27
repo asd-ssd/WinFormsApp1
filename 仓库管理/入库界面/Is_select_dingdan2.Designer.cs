@@ -1,6 +1,6 @@
-﻿namespace WinFormsApp1.仓库管理.出库界面
+﻿namespace WinFormsApp1.仓库管理.入库界面
 {
-    partial class Os_select_dingdan_2
+    partial class Is_select_dingdan2
     {
         /// <summary>
         /// Required designer variable.
@@ -41,33 +41,33 @@
             // 
             // button2
             // 
-            button2.Location = new Point(787, 25);
+            button2.Location = new Point(740, 24);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(133, 46);
-            button2.TabIndex = 101;
+            button2.TabIndex = 109;
             button2.Text = "返回";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
             // button1
             // 
-            button1.Location = new Point(606, 25);
+            button1.Location = new Point(559, 24);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(133, 46);
-            button1.TabIndex = 100;
+            button1.TabIndex = 108;
             button1.Text = "确定";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // button7
             // 
-            button7.Location = new Point(444, 19);
-            button7.Margin = new Padding(4, 4, 4, 4);
+            button7.Location = new Point(399, 7);
+            button7.Margin = new Padding(4);
             button7.Name = "button7";
-            button7.Size = new Size(88, 56);
-            button7.TabIndex = 99;
+            button7.Size = new Size(64, 58);
+            button7.TabIndex = 107;
             button7.Text = "查询";
             button7.UseVisualStyleBackColor = true;
             button7.Click += button7_Click;
@@ -75,55 +75,54 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(65, 52);
+            label2.Location = new Point(18, 51);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(100, 24);
-            label2.TabIndex = 98;
-            label2.Text = "领料单编号";
+            label2.Size = new Size(82, 24);
+            label2.TabIndex = 106;
+            label2.Text = "订单编号";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(248, 48);
-            textBox2.Margin = new Padding(4, 4, 4, 4);
+            textBox2.Location = new Point(201, 47);
+            textBox2.Margin = new Padding(4);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(152, 30);
-            textBox2.TabIndex = 97;
+            textBox2.TabIndex = 105;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(83, 12);
+            label1.Location = new Point(36, 11);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(64, 24);
-            label1.TabIndex = 96;
+            label1.TabIndex = 104;
             label1.Text = "物料名";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(248, 4);
-            textBox1.Margin = new Padding(4, 4, 4, 4);
+            textBox1.Location = new Point(201, 3);
+            textBox1.Margin = new Padding(4);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(152, 30);
-            textBox1.TabIndex = 95;
+            textBox1.TabIndex = 103;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(33, 88);
-            dataGridView1.Margin = new Padding(4, 4, 4, 4);
+            dataGridView1.Location = new Point(-14, 87);
+            dataGridView1.Margin = new Padding(4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(912, 455);
-            dataGridView1.TabIndex = 94;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.TabIndex = 102;
             // 
-            // Os_select_dingdan_2
+            // Is_select_dingdan2
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(978, 565);
+            ClientSize = new Size(917, 570);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(button7);
@@ -132,10 +131,9 @@
             Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(dataGridView1);
-            Margin = new Padding(4, 4, 4, 4);
-            Name = "Os_select_dingdan_2";
-            Text = " ";
-            Load += Os_select_dingdan_2_Load;
+            Name = "Is_select_dingdan2";
+            Text = "Is_select_dingdan2";
+            Load += Is_select_dingdan2_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

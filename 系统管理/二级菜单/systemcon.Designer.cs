@@ -37,10 +37,10 @@
             // 
             userconbutton.BackgroundImage = Properties.Resource1.权限管理;
             userconbutton.BackgroundImageLayout = ImageLayout.Zoom;
-            userconbutton.Location = new Point(88, 69);
+            userconbutton.Location = new Point(88, 113);
             userconbutton.Margin = new Padding(2);
             userconbutton.Name = "userconbutton";
-            userconbutton.Size = new Size(174, 144);
+            userconbutton.Size = new Size(165, 139);
             userconbutton.TabIndex = 1;
             userconbutton.Text = "用户管理";
             userconbutton.TextAlign = ContentAlignment.BottomCenter;
@@ -51,10 +51,10 @@
             // 
             texconbutton.BackgroundImage = Properties.Resource1.授信详情_操作日志;
             texconbutton.BackgroundImageLayout = ImageLayout.Zoom;
-            texconbutton.Location = new Point(76, 314);
+            texconbutton.Location = new Point(88, 339);
             texconbutton.Margin = new Padding(2);
             texconbutton.Name = "texconbutton";
-            texconbutton.Size = new Size(174, 148);
+            texconbutton.Size = new Size(165, 139);
             texconbutton.TabIndex = 2;
             texconbutton.Text = "日志信息";
             texconbutton.TextAlign = ContentAlignment.BottomCenter;
@@ -68,7 +68,7 @@
             syswhconbutton.Location = new Point(88, 556);
             syswhconbutton.Margin = new Padding(2);
             syswhconbutton.Name = "syswhconbutton";
-            syswhconbutton.Size = new Size(174, 130);
+            syswhconbutton.Size = new Size(165, 139);
             syswhconbutton.TabIndex = 3;
             syswhconbutton.Text = "权限设置";
             syswhconbutton.TextAlign = ContentAlignment.BottomCenter;

@@ -81,7 +81,7 @@
             // Plan
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
-            BackColor = Color.LightSteelBlue;
+            BackColor = Color.Transparent;
             Controls.Add(panel1);
             Name = "Plan";
             resources.ApplyResources(this, "$this");

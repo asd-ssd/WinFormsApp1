@@ -92,7 +92,7 @@
             dicconbutton.BackgroundImage = Properties.Resource1.字典管理;
             dicconbutton.BackgroundImageLayout = ImageLayout.Zoom;
             dicconbutton.ForeColor = SystemColors.ControlText;
-            dicconbutton.Location = new Point(101, 616);
+            dicconbutton.Location = new Point(101, 618);
             dicconbutton.Name = "dicconbutton";
             dicconbutton.Size = new Size(149, 116);
             dicconbutton.TabIndex = 4;
