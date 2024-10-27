@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.工作界面;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 using WinFormsApp1.登录界面;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -24,15 +26,15 @@ namespace WinFormsApp1
         int roleID = 0; // 用于存储用户角色ID
         int logonCount = 0; // 登录失败次数计数器
         private const int CodeLength = 4; // 验证码的长度
-        private  string V = "";
+        private string V = "";
         private string verificationCode = ""; // 当前验证码
         private int flag = 0;
-        public  string userid;
+        public string userid;
         public login()
         {
             InitializeComponent();
             login1 = this;
-            
+
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -114,7 +116,7 @@ namespace WinFormsApp1
                 return false;
             }
         }
-        
+
         private void RememberMe() // 保存用户信息
         {
             string loginID = username_text.Text.Trim(); // 获取用户名
@@ -167,20 +169,50 @@ namespace WinFormsApp1
                     //string hashedInputPassword = password_text.Text.Trim();
                     if (hashedInputPassword == savedHashedPassword)
                     {
-                        // 从 UserRole 表中获取用户名对应的角色编号
-                        var userRole = SqlSugarHelper.SqlSugarClient.Queryable<UserRole>()
-                            .Where(ur => ur.UserName == username_text.Text.Trim())
-                            .First();
-
-                        if (userRole != null)
+                        if (radioButton1.Checked && username_text.Text.Trim() != "admin")
                         {
-                            // 如果找到了对应的角色编号，保存到配置文件
-                            int roleId = userRole.RoleId;
-                            Configuration cf = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                            cf.AppSettings.Settings["角色编号"].Value = roleId.ToString(); // 保存 roleId 到配置文件
-                            cf.Save();
+                            MessageBox.Show("您并不是管理员，请使用选择普通用户登录。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return false;
                         }
-                        return true; // 登录验证通过
+                        else
+                        {
+
+                            // 从 UserRole 表中获取用户名对应的角色编号
+                            var userRole = SqlSugarHelper.SqlSugarClient.Queryable<UserRole>()
+                                .Where(ur => ur.UserName == username_text.Text.Trim())
+                                .First();
+
+                            if (userRole != null)
+                            {
+                                // 如果找到了对应的角色编号，保存到配置文件
+                                int roleId = userRole.RoleId;
+                                string usernm = userRole.UserName;
+                                Configuration cf = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+                                // 确保角色编号的 AppSetting 存在
+                                if (cf.AppSettings.Settings["角色编号"] == null)
+                                {
+                                    cf.AppSettings.Settings.Add("角色编号", roleId.ToString());
+                                    cf.AppSettings.Settings.Add("用户名", usernm.ToString());
+                                }
+                                else
+                                {
+                                    cf.AppSettings.Settings["角色编号"].Value = roleId.ToString(); // 保存 roleId 到配置文件
+                                    cf.AppSettings.Settings["用户名"].Value = usernm.ToString(); // 保存 roleId 到配置文件
+                                }
+
+                                cf.Save(); // 保存配置
+                                           // 重新加载配置文件以确保更改生效
+                                ConfigurationManager.RefreshSection("appSettings");
+                                return true; // 登录验证通过
+                            }
+                            else
+                            {
+                                // 如果没有找到角色编号，显示错误信息
+                                MessageBox.Show("未找到对应的角色编号，请联系管理员。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return false; // 登录验证失败
+                            }
+                        }
                     }
                     else
                     {
@@ -248,9 +280,9 @@ namespace WinFormsApp1
             {
                 password_text.PasswordChar = '*'; // 隐藏密码
             }
-            if(flag==1)
+            if (flag == 1)
             {
-                 password_text.Text = V; // 删除密码
+                password_text.Text = V; // 删除密码
             }
             flag = 0;
         }
@@ -259,6 +291,38 @@ namespace WinFormsApp1
         {
             register1 = new register();
             register1.ShowDialog();
+        }
+
+        private void username_text_TextChanged(object sender, EventArgs e)
+        {
+            // 取消勾选“记住我”复选框
+            checkBox1.Checked = false;
+            // 清空密码框
+            password_text.Text = string.Empty;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            Configuration cf = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            if (checkBox1.Checked == false) // 如果没勾选了“记住我”选项
+            {
+                cf.AppSettings.Settings["loginID"].Value = V; // 清空用户名
+                cf.AppSettings.Settings["passwd"].Value = V; // 清空密码
+                cf.AppSettings.Settings["rememberme"].Value = "false";
+            }
+            cf.Save(); // 保存配置文件
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radioButton1.Checked)
+            {
+                username_text.Text = "admin";
+            }
+            else
+            {
+                username_text.Text = string.Empty;
+            }
         }
     }
 }

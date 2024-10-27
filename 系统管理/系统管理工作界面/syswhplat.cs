@@ -8,11 +8,13 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 using WinFormsApp1.系统管理设置界面;
 
 namespace WinFormsApp1.系统管理工作界面
-{ 
-public partial class syswhplat : UserControl
+{
+    public partial class syswhplat : UserControl
     {
         private PermissionService _permissionService;
         public sysset sysset1;
@@ -28,6 +30,12 @@ public partial class syswhplat : UserControl
             LoadRoles();
             // 绑定角色列表的选择事件
             roleTreeView.NodeMouseDoubleClick += RoleTreeView_NodeMouseDoubleClick;
+            this.button4.Tag = "Create";
+            this.button3.Tag = "Edit";
+            this.button2.Tag = "Edit";
+            this.button5.Tag = "Delete";
+            var permissionManager = new PermissionManager(_permissionService, moduleId: 6); // 1是模块ID
+            permissionManager.ApplyPermissions(this);
         }
 
         // 当用户选择角色时调用此方法

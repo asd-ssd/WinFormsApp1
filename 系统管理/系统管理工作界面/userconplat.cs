@@ -8,12 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace WinFormsApp1.系统管理工作界面
 {
     public partial class userconplat : UserControl
     {
+        private PermissionService _permissionService;
         public static userconplat userconplat1;
         public userconres userconres1;
         public userconplat()
@@ -21,6 +24,12 @@ namespace WinFormsApp1.系统管理工作界面
             InitializeComponent();
             userconplat1 = this;
             this.dataGridView2.CellValueChanged += dataGridView2_CellValueChanged;
+            this.button5.Tag = "Delete";
+            this.button4.Tag = "Edit";
+            var dbHelper = new SqlSugarHelper();
+            _permissionService = new PermissionService(dbHelper);
+            var permissionManager = new PermissionManager(_permissionService, moduleId: 6); // 1是模块ID
+            permissionManager.ApplyPermissions(this);
         }
 
         private void userconplat_Load(object sender, EventArgs e)

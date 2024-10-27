@@ -77,6 +77,7 @@
             username_text.Name = "username_text";
             username_text.Size = new Size(183, 30);
             username_text.TabIndex = 10;
+            username_text.TextChanged += username_text_TextChanged;
             // 
             // password
             // 
@@ -115,6 +116,7 @@
             radioButton1.TabIndex = 14;
             radioButton1.Text = "管理员";
             radioButton1.UseVisualStyleBackColor = false;
+            radioButton1.CheckedChanged += radioButton1_CheckedChanged;
             // 
             // radioButton2
             // 
@@ -142,6 +144,7 @@
             checkBox1.TabIndex = 16;
             checkBox1.Text = "记住用户";
             checkBox1.UseVisualStyleBackColor = false;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // textBox1
             // 

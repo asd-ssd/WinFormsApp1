@@ -16,8 +16,10 @@ namespace WinFormsApp1.仓库管理.入库界面
     {
         private int n;
         private string[] strcomm;
+        private string Is_select_item_name;
         private string Is_select_item_number;
         public TextBox Is_select_item_textBox1 = Is_add.is_Add1.textBox1;//绑定is_add的入库人格
+        public TextBox Is_select_item_textBox2 = Is_add.is_Add1.textBox5;
         public Is_select_item()
         {
             InitializeComponent();
@@ -25,7 +27,7 @@ namespace WinFormsApp1.仓库管理.入库界面
         }
         private SqlConnection connection()
         {
-            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=lwx;Password=luowenxin";
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=hhr;Password=aa1628381531";
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
@@ -56,10 +58,10 @@ namespace WinFormsApp1.仓库管理.入库界面
         private void button7_Click(object sender, EventArgs e)
         {
             string selectsql = "select * from BOM表 where 1=1";
-            /*if (textBox1.Text != "")
+            if (textBox1.Text != "")
             {
                 selectsql += "and 物料名称 like'%" + textBox1.Text + "%'";
-            }*/
+            }
             if (textBox2.Text != "")
             {
                 selectsql += "and 物料编码 like'%" + textBox2.Text + "%'";
@@ -79,15 +81,22 @@ namespace WinFormsApp1.仓库管理.入库界面
 
         private void button1_Click(object sender, EventArgs e)
         {
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            {
+                //获取要选中行的ID值
+                Is_select_item_number = row.Cells["物料编码"].Value.ToString();
+                Is_select_item_name = row.Cells["物料名称"].Value.ToString();
 
-            Is_select_item_textBox1.Text = Is_select_item_number;
+            }
+            Is_select_item_textBox1.Text = Is_select_item_name;
+            Is_select_item_textBox2.Text = Is_select_item_number;
             this.Close();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
-            Is_select_item_number = dataGridView1.Rows[e.RowIndex].Cells["物料名称"].Value.ToString();
+
         }
     }
 }

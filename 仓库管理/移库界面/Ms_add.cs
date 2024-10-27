@@ -1,20 +1,233 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.仓库管理.初始查询界面;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WinFormsApp1.仓库管理.移库界面
 {
     public partial class Ms_add : Form
     {
+        public Ms_select_item Ms_item1;
+        public Ms_select_people Ms_people1;
+        public DataGridView dataGridView1 = Ms.Ms1.dataGridView1;
+        public static Ms_add Ms_Add1;
+        private string Ms_number;
+        //public string Ms_select_people_number;
         public Ms_add()
         {
             InitializeComponent();
+            Ms_Add1 = this;
+        }
+        private SqlConnection connection()
+        {
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=lwx;Password=luowenxin";
+            SqlConnection conn = new SqlConnection(strconn);
+            return conn;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void button7_Click(object sender, EventArgs e)
+        {
+            addDataGridView();
+            //addDataGridView1();
+            GetDataGridView();
+            this.Close();
+        }
+
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            addDataGridView();
+            GetDataGridView();
+            this.Close();
+        }
+        private void addDataGridView()
+        {
+            SqlConnection conn = connection();
+            conn.Open();
+
+            string strda = "INSERT INTO 移库单表 (移库单编号,原库位号,现库位号, 物料编码, 移库数量,移库人姓名,移库人编号,移库日期,物料名称) VALUES ('" + textBox4.Text.Trim() + "','" + comboBox1.Text.Trim() + "','" + comboBox2.Text.Trim() + "','" + textBox1.Text.Trim() + "','" + textBox16.Text.Trim() + "','" + textBox15.Text.Trim() + "','" + textBox3.Text.Trim() + "','" + dateTimePicker1.Value + "','" + textBox5.Text.Trim() + "')";
+            SqlCommand comm = new SqlCommand(strda, conn);
+            comm.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        private void GetDataGridView()
+        {
+            try
+            {
+                string strda = "select * from 移库单表";
+                SqlConnection conn = connection();
+                conn.Open();
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(strda, conn);
+                da.Fill(dt);
+                conn.Close();
+                //dataGridView1.AutoGenerateColumns = true;//自动创建列
+                //dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;//单击单元格编辑
+                dataGridView1.DataSource = dt;
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.Message.ToString());
+            }
+        }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Ms_item1 = new Ms_select_item();
+            Ms_item1.Show();
+        }
+
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Ms_people1 = new Ms_select_people();
+            Ms_people1.Show();
+        }
+        public static string Numberplus(string str)
+        {
+            // 使用正则表达式找到字符串中的数字部分  
+            Match match = Regex.Match(str, @"\d+");
+            if (!match.Success)
+            {
+                // 如果没有找到数字部分，直接返回原字符串  
+                return str;
+            }
+
+            // 将找到的数字部分转换为整数并加一  
+            string numberPart = match.Value;
+            int number = int.Parse(numberPart);
+            number++;
+
+            // 将加一的数字部分转换回字符串，并确保其长度与原数字部分相同（使用前导零）  
+            string incrementedNumberPart = number.ToString(new string('0', numberPart.Length));
+
+            // 使用正则表达式替换原字符串中的数字部分为加一的数字部分  
+            return Regex.Replace(str, @"\d+", incrementedNumberPart);
+        }
+
+        private void Ms_add_Load(object sender, EventArgs e)
+        {
+            SqlConnection conn = connection();
+            conn.Open();
+            string query = "SELECT 移库单编号 FROM 移库单表 ORDER BY 移库单编号 DESC OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY";
+            SqlCommand comm = new SqlCommand(query, conn);
+            object result = comm.ExecuteScalar();
+            Ms_number = result.ToString();
+            textBox4.Text = Numberplus(Ms_number);
+            conn.Close();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear();
+            comboBox2.Items.Clear();
+            string strda = "select * from 库存管理表 WHERE 物料编码='" + textBox1.Text.Trim() + "'";
+            SqlConnection conn = connection();
+            conn.Open();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(strda, conn);
+            da.Fill(dt);
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (dt.Rows[i]["库位号"].ToString() != "")
+                {
+
+                    if (int.TryParse(textBox16.Text, out int numberru))
+                    {
+                        // 获取库位库存量和库位容量，并转换为整数（假设它们已经是数字或可以转换为数字）  
+                        int currentStock = int.Parse(dt.Rows[i]["库位库存量"].ToString());
+                        int capacity = int.Parse(dt.Rows[i]["库位容量"].ToString());
+
+                        // 检查是否满足条件：库位库存量加上 textBox16 中的数字小于库位容量  
+                        if (currentStock - numberru >= 0)
+                        {
+                            // 将库位号添加到 comboBox2 的项中  
+                            comboBox1.Items.Add(dt.Rows[i]["库位号"].ToString());
+
+                        }
+                        if (currentStock + numberru <= capacity)
+                        {
+                            // 将库位号添加到 comboBox2 的项中  
+                            comboBox2.Items.Add(dt.Rows[i]["库位号"].ToString());
+                        }
+                    }
+                }
+        
+
+            }
+
+            conn.Close();
+
+        } 
+
+        private void textBox16_TextChanged(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear();
+            comboBox2.Items.Clear();
+            string strda = "select * from 库存管理表 WHERE 物料编码='" + textBox1.Text.Trim() + "'";
+            SqlConnection conn = connection();
+            conn.Open();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(strda, conn);
+            da.Fill(dt);
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (dt.Rows[i]["库位号"].ToString() != "")
+                {
+
+                    if (int.TryParse(textBox16.Text, out int numberru))
+                    {
+                        // 获取库位库存量和库位容量，并转换为整数（假设它们已经是数字或可以转换为数字）  
+                        int currentStock = int.Parse(dt.Rows[i]["库位库存量"].ToString());
+                        int capacity = int.Parse(dt.Rows[i]["库位容量"].ToString());
+
+                        // 检查是否满足条件：库位库存量加上 textBox16 中的数字小于库位容量  
+
+                        if (currentStock - numberru >= 0)
+                        {
+                            // 将库位号添加到 comboBox2 的项中  
+                            comboBox1.Items.Add(dt.Rows[i]["库位号"].ToString());
+
+                        }
+                        if (currentStock + numberru <= capacity)
+                        {
+                            // 将库位号添加到 comboBox2 的项中  
+                            comboBox2.Items.Add(dt.Rows[i]["库位号"].ToString());
+                        }
+
+                    }
+
+
+                }
+            }
+            conn.Close();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
+

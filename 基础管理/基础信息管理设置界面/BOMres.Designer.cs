@@ -45,7 +45,6 @@
             label15 = new Label();
             label16 = new Label();
             textBox7 = new TextBox();
-            textBox8 = new TextBox();
             textBox3 = new TextBox();
             textBox4 = new TextBox();
             textBox2 = new TextBox();
@@ -61,6 +60,7 @@
             label14 = new Label();
             comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
+            comboBox3 = new ComboBox();
             SuspendLayout();
             // 
             // button2
@@ -207,13 +207,6 @@
             textBox7.Size = new Size(150, 30);
             textBox7.TabIndex = 120;
             // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(523, 409);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(150, 30);
-            textBox8.TabIndex = 119;
-            // 
             // textBox3
             // 
             textBox3.Location = new Point(233, 233);
@@ -324,7 +317,6 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "采购", "生产" });
             comboBox1.Location = new Point(233, 723);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(150, 32);
@@ -333,17 +325,25 @@
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "A类", "B类", "C类" });
             comboBox2.Location = new Point(233, 314);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(150, 32);
             comboBox2.TabIndex = 140;
+            // 
+            // comboBox3
+            // 
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(523, 406);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(150, 32);
+            comboBox3.TabIndex = 141;
             // 
             // BOMres
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 912);
+            Controls.Add(comboBox3);
             Controls.Add(comboBox2);
             Controls.Add(comboBox1);
             Controls.Add(label14);
@@ -363,7 +363,6 @@
             Controls.Add(label15);
             Controls.Add(label16);
             Controls.Add(textBox7);
-            Controls.Add(textBox8);
             Controls.Add(textBox3);
             Controls.Add(textBox4);
             Controls.Add(textBox2);
@@ -379,6 +378,7 @@
             Controls.Add(button1);
             Name = "BOMres";
             Text = "查询BOM";
+            Load += BOMres_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -401,7 +401,6 @@
         private Label label15;
         private Label label16;
         private TextBox textBox7;
-        private TextBox textBox8;
         private TextBox textBox3;
         private TextBox textBox4;
         private TextBox textBox2;
@@ -417,5 +416,6 @@
         private Label label14;
         private ComboBox comboBox1;
         private ComboBox comboBox2;
+        private ComboBox comboBox3;
     }
 }

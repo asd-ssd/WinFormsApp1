@@ -8,18 +8,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库支持类;
+using WinFormsApp1.仓库管理.出库界面;
 
 namespace WinFormsApp1.仓库管理.初始查询界面
 {
     public partial class warehouse_initial : UserControl
     {
+        private readonly PermissionService _permissionService;
+        public warehouse_initial_add warehouse_add1;
+        public static warehouse_initial warehouse_initial1;
         public warehouse_initial()
         {
             InitializeComponent();
+            this.button1.Tag = "Create";
+            this.button3.Tag = "Delete";
+            this.button2.Tag = "Edit";
+            var dbHelper = new SqlSugarHelper();
+            _permissionService = new PermissionService(dbHelper);
+            var permissionManager = new PermissionManager(_permissionService, moduleId: 5); // 1是模块ID
+            permissionManager.ApplyPermissions(this);
+            warehouse_initial1 = this; 
         }
         private SqlConnection connection()
         {
-            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=lwx;Password=luowenxin";
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=hhr;Password=aa1628381531";
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
@@ -135,6 +148,12 @@ namespace WinFormsApp1.仓库管理.初始查询界面
         private void button8_Click(object sender, EventArgs e)
         {
             GetDataGridView();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            warehouse_add1 = new warehouse_initial_add();
+            warehouse_add1.Show();
         }
     }
 }

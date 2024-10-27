@@ -8,17 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库支持类;
 
 namespace WinFormsApp1.采购管理.采购
 {
     public partial class cgsqy : UserControl
     {
+        private readonly PermissionService _permissionService;
         public cgcxy cgcxy1;
         public sgsqy sgsqy1;
         public static cgsqy cgsqy1;
+        public PL PL1;
         private SqlConnection connection()
         {
-            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=zyx;Persist Security Info=True;User ID=zyx;Password=123456";
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=hhr;Password=aa1628381531";
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
@@ -45,6 +48,13 @@ namespace WinFormsApp1.采购管理.采购
         public cgsqy()
         {
             InitializeComponent();
+            this.button5.Tag = "Create";
+            this.button6.Tag = "Delete";
+            this.button1.Tag = "Edit";
+            var dbHelper = new SqlSugarHelper();
+            _permissionService = new PermissionService(dbHelper);
+            var permissionManager = new PermissionManager(_permissionService, moduleId: 4); // 1是模块ID
+            permissionManager.ApplyPermissions(this);
         }
 
         private void cgsqy_Load(object sender, EventArgs e)
@@ -112,12 +122,13 @@ namespace WinFormsApp1.采购管理.采购
 
                 GetDataGridView();
                 n = 0;
-                
+
             }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            PL1 = new PL();
             sgsqy1 = new sgsqy();
             sgsqy1.Show();   //将窗体一进行显示
         }
@@ -126,6 +137,17 @@ namespace WinFormsApp1.采购管理.采购
         {
             cgcxy1 = new cgcxy();
             cgcxy1.Show();   //将窗体一进行显示
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            GetDataGridView();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            PL1 = new PL();
+            PL1.Show();
         }
     }
 }

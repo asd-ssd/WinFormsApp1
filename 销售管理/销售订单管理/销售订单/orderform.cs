@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库支持类;
 using WinFormsApp1.销售管理;
 using WinFormsApp1.销售管理.销售订单管理.销售订单;
 
@@ -16,7 +17,7 @@ namespace WinFormsApp1
     public partial class orderform : UserControl
     {
 
-
+        private readonly PermissionService _permissionService;
         public Order2nd order2Nd;
         public static orderform Orderform;
         public OrderSearch orderSearch;
@@ -24,7 +25,13 @@ namespace WinFormsApp1
         public orderform()
         {
             InitializeComponent();
-            
+            this.ocreat.Tag = "Create";
+            this.odelete.Tag = "Delete";
+            this.oedit.Tag = "Edit";
+            var dbHelper = new SqlSugarHelper();
+            _permissionService = new PermissionService(dbHelper);
+            var permissionManager = new PermissionManager(_permissionService, moduleId: 3); // 1是模块ID
+            permissionManager.ApplyPermissions(this);
         }
 
         private SqlConnection connection()

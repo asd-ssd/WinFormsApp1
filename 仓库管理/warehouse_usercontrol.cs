@@ -23,7 +23,7 @@ namespace WinFormsApp1
         public Is Is1;
         public Ms ms1;
         public warehouse_initial warehouse_Initial1;
-        public count_push count_Push1;
+        public warehouse_count warehouse_count1;
 
         public warehouse_usercontrol()
         {
@@ -54,10 +54,10 @@ namespace WinFormsApp1
 
         private void warehouse_edit_Click(object sender, EventArgs e)
         {
-            count_Push1 = new count_push();
-            count_Push1.Show();   //将窗体一进行显示
+            warehouse_count1 = new warehouse_count();
+            warehouse_count1.Show();   //将窗体一进行显示
             panel.Controls.Clear();    //清空原容器上的控件
-            panel.Controls.Add(count_Push1);    //将窗体一加入容器panel2
+            panel.Controls.Add(warehouse_count1);    //将窗体一加入容器panel2
         }
 
         private void warehouse_in_Click(object sender, EventArgs e)
@@ -83,5 +83,15 @@ namespace WinFormsApp1
             panel.Controls.Clear();    //清空原容器上的控件
             panel.Controls.Add(ms1);    //将窗体一加入容器panel2
         }
+
+        private void warehouse_inquiry_Click_1(object sender, EventArgs e)
+        {
+            warehouse_Initial1 = new warehouse_initial();
+            warehouse_Initial1.Show();   //将窗体一进行显示
+            panel.Controls.Clear();    //清空原容器上的控件
+            panel.Controls.Add(warehouse_Initial1);    //将窗体一加入容器panel2
+        }
+
+       
     }
 }

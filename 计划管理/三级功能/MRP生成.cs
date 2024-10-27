@@ -22,11 +22,11 @@ namespace WinFormsApp1.Forth
         string MPS = 生产计划及MRP.shengchan1.MPS_number;
         string Item = 生产计划及MRP.shengchan1.Item_number;
         int Kucun = 0;
-        string MPS_Am= 生产计划及MRP.shengchan1.MPS_am;
+        string MPS_Am = 生产计划及MRP.shengchan1.MPS_am;
         string MPS_End = 生产计划及MRP.shengchan1.MPS_end;
         private SqlConnection connection()
         {
-            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=sa;Password=978123thy";
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=hhr;Password=aa1628381531";
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
@@ -35,83 +35,114 @@ namespace WinFormsApp1.Forth
         {
             try
             {
-                string name = "物料需求";
-                string strda = "select * from MRP where 主计划编号 ='" + MPS + "'";
+                string name = "MRP";
+                string strda = "select * from MRP where 主计划编号 = @MPS";
                 string strdacte = "WITH CTE(物料编码, 物料名称, 父项编码, 单位用量, 层次号, 需求量, 物料来源, 提前期) " +
-                    "AS (SELECT Distinct 物料编码, 物料名称, 父项编码, 单位用量, 层次号, 单位用量*"+MPS_Am+", 物料来源, 提前期 " +
-                    "FROM BOM表 WHERE 物料编码 = '"+Item+"' " +
+                    "AS (SELECT Distinct 物料编码, 物料名称, 父项编码, 单位用量, 层次号, 单位用量 * @MPS_Am, 物料来源, 提前期 " +
+                    "FROM BOM表 WHERE 物料编码 = @Item " +
                     "UNION ALL " +
-                    "SELECT P.物料编码, P.物料名称, P.父项编码, P.单位用量, P.层次号, P.单位用量*"+MPS_Am+", P.物料来源, P.提前期 " +
-                    "FROM BOM表 AS P INNER JOIN CTE AS C ON C.物料编码 = P.父项编码 WHERE LEN(P.父项编码) > 0  ) SELECT * FROM CTE";
-                //string str = "select * from CTE";
-                string strdato = "with kucun(物料编号,库存) as (select 物料编码,sum(库位库存量) from 库存管理表 group by 物料编码) select * from kucun";
-                
-                SqlConnection conn = connection();
-                conn.Open();
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(strdacte, conn);
-                da.Fill(dt);
-                DataTable dt1 = new DataTable();
-                SqlDataAdapter da1 = new SqlDataAdapter(strdato, conn);
-                da1.Fill(dt1);
-                dt = UniteDataTable(dt, dt1, name);
-                /*SqlDataAdapter da2 = new SqlDataAdapter(strdajin, conn);
-                da2.Fill(dt);*/
-                dt.Columns.Add("主计划编号", Type.GetType("System.String"));
-                dt.Columns.Add("开始日期", Type.GetType("System.String"));
-                dt.Columns.Add("最迟需求日期", Type.GetType("System.String"));
-                foreach (DataRow row in dt.Rows)
+                    "SELECT P.物料编码, P.物料名称, P.父项编码, P.单位用量, P.层次号, P.单位用量 * @MPS_Am, P.物料来源, P.提前期 " +
+                    "FROM BOM表 AS P INNER JOIN CTE AS C ON C.物料编码 = P.父项编码 WHERE LEN(P.父项编码) > 0) SELECT * FROM CTE";
+                string strdato = "WITH kucun(物料编号, 库存) AS (SELECT 物料编码, SUM(库位库存量) FROM 库存管理表 GROUP BY 物料编码) SELECT * FROM kucun";
+
+                using (SqlConnection conn = connection())
                 {
-                    // 检查 MPS 是否为 null 或空字符串，如果是，提供默认值
-                    if (!string.IsNullOrEmpty(MPS))
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(strdacte, conn))
                     {
-                        row["主计划编号"] = MPS;
-                    }
-                    else
-                    {
-                        row["主计划编号"] = "默认编号"; // 或者可以跳过该行的赋值
+                        cmd.Parameters.AddWithValue("@MPS_Am", MPS_Am);
+                        cmd.Parameters.AddWithValue("@Item", Item);
+
+                        DataTable dt = new DataTable();
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        da.Fill(dt);
+
+                        using (SqlCommand cmd1 = new SqlCommand(strdato, conn))
+                        {
+                            DataTable dt1 = new DataTable();
+                            SqlDataAdapter da1 = new SqlDataAdapter(cmd1);
+                            da1.Fill(dt1);
+
+                            dt = UniteDataTable(dt, dt1, name);
+                        }
+
+                        dt.Columns.Add("主计划编号", typeof(string));
+                        dt.Columns.Add("开始日期", typeof(string));
+                        dt.Columns.Add("最迟需求日期", typeof(string));
+
+                        List<DataRow> rowsToDelete = new List<DataRow>();
+
+                        foreach (DataRow row in dt.Rows)
+                        {
+                            if (!string.IsNullOrEmpty(MPS))
+                            {
+                                row["主计划编号"] = MPS;
+                            }
+                            else
+                            {
+                                row["主计划编号"] = "0001";
+                            }
+
+                            row["开始日期"] = DateTime.Now.ToString("yyyy-MM-dd");
+
+                            if (!string.IsNullOrEmpty(MPS_End) && DateTime.TryParse(MPS_End, out DateTime enddate))
+                            {
+                                int leadTime = row["提前期"] != DBNull.Value ? Convert.ToInt32(row["提前期"]) : 0;
+                                DateTime latestDemandDate = enddate.AddDays(-leadTime);
+                                row["最迟需求日期"] = latestDemandDate.ToString("yyyy-MM-dd");
+                            }
+                            else
+                            {
+                                row["最迟需求日期"] = "无有效日期";
+                            }
+
+                            if (row["需求量"] != "" && row["库存"] != "")
+                            {
+                                string demandStr = row["需求量"].ToString();
+                                string stockStr = row["库存"].ToString();
+
+                                // 确保字符串可以转换为整数
+                                if (int.TryParse(demandStr, out int demand) && int.TryParse(stockStr, out int stock))
+                                {
+                                    int result = demand - stock;
+                                    row["需求量"] = result >= 0 ? result.ToString() : "0";
+                                }
+                                else
+                                {
+                                    MessageBox.Show($"无法转换需求量或库存为整数。需求量: {demandStr}, 库存: {stockStr}", "转换错误");
+                                    row["需求量"] = "0";
+                                }
+                            }
+
+                            if (row.IsNull("物料编码"))
+                            {
+                                rowsToDelete.Add(row);
+                            }
+                        }
+
+                        foreach (DataRow row in rowsToDelete)
+                        {
+                            row.Delete();
+                        }
+
+                        dt.AcceptChanges();
+                        dt.Columns.Remove("物料编号");
+                        dt.Columns.Remove("库存");
+                        dt.Columns[8].SetOrdinal(0);
+
+                        dataGridView1.DataSource = dt;
                     }
 
-                    // 设置开始日期为当前日期
-                    row["开始日期"] = DateTime.Now.ToString("yyyy-MM-dd");
-
-                    // 检查 MPS_End 是否为 null 或空字符串，并且是有效的日期格式
-                    if (!string.IsNullOrEmpty(MPS_End) && DateTime.TryParse(MPS_End, out DateTime enddate))
-                    {
-                        int leadTime = row["提前期"] != DBNull.Value ? Convert.ToInt32(row["提前期"]) : 0;
-                        DateTime latestDemandDate = enddate.AddDays(-leadTime);
-                        row["最迟需求日期"] = latestDemandDate.ToString("yyyy-MM-dd");
-                    }
-                    else
-                    {
-                        // 如果 MPS_End 无效，提供一个默认值或者处理逻辑
-                        row["最迟需求日期"] = "无有效日期";
-                    }
-                    // 检查行中是否有列"a"和"b"的数据*/
-                    if (row["需求量"] != DBNull.Value && row["库存"] != DBNull.Value)
-                    {
-                        // 执行减法操作
-                        int result = Convert.ToInt32(row["需求量"]) - Convert.ToInt32(row["库存"]);
-                        if (result >= 0)
-                            // 将结果存储在列"a"中
-                            row["需求量"] = Convert.ToString(result);
-                        else
-                            row["需求量"] = Convert.ToString(0);
-                    }
+                    conn.Close();
                 }
-                dt.Columns.Remove("物料编号");
-                dt.Columns.Remove("库存");
-                
-                conn.Close();
-                //dataGridView1.AutoGenerateColumns = true;//自动创建列
-                //dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;//单击单元格编辑
-                dataGridView1.DataSource = dt;
             }
-            catch (Exception ee)
+            catch (Exception ex)
             {
-                MessageBox.Show(ee.Message.ToString());
+                MessageBox.Show(ex.Message);
             }
         }
+
         private DataTable UniteDataTable(DataTable DataTable1, DataTable DataTable2, string DTName)
         {
             //克隆DataTable1的结构
@@ -159,43 +190,55 @@ namespace WinFormsApp1.Forth
             newDataTable.TableName = DTName; //设置DT的名字 
             return newDataTable;
         }
-            private void MRP_Load(object sender, EventArgs e)
+        private void MRP_Load(object sender, EventArgs e)
         {
             GetDataGridView();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            int amount = 0;
-            int i = 0;
             try
             {
-                string strdas = "select * from BOM表 where 物料编码 ='" + Item + "'";
-                string strdal = "select * from 库存管理表 where 物料编码 ='" + Item + "'";
-                string strdacte = "WITH CTE(物料编码, 物料名称, 父项编码, 单位用量, 层次号, 需求量, 物料来源)\r\nAS\r\n(\r\n\tSELECT Distinct 物料编码, 物料名称, 父项编码, 单位用量, 层次号, 单位用量*" + MPS_Am + ", 物料来源\r\n\tFROM BOM表\r\n\tWHERE 物料编码 = '" + Item + "'\r\n\tUNION ALL\r\n\tSELECT P.物料编码, P.物料名称, P.父项编码, P.单位用量, P.层次号, P.单位用量*" + MPS_Am + ", P.物料来源\r\n\tFROM BOM表 AS P\r\n\tINNER JOIN CTE AS C ON C.物料编码 = P.父项编码\r\n\tWHERE LEN(P.父项编码) > 0 \r\n)\r\nSELECT * FROM CTE";
-                SqlConnection conns = connection();
-                SqlCommand cmd1=new SqlCommand(strdas, conns);
-                
+                // 假设你已经有了一个填充了数据的DataTable dt
+                DataTable MRP = dataGridView1.DataSource as DataTable;
+                MRP.Columns.Add("MRP编号", Type.GetType("System.Int32"));
+                MRP.Columns.Add("状态", Type.GetType("System.String"));
+                MRP.Columns.Remove("父项编码");
+                MRP.Columns.Remove("单位用量");
+                MRP.Columns.Remove("层次号");
+                // 创建SQL连接
+                SqlConnection conn = connection();
+                {
+                    conn.Open();
+                    // 使用SqlBulkCopy批量插入数据
+                    using (SqlBulkCopy bulkCopy = new SqlBulkCopy(conn))
+                    {
+                        bulkCopy.DestinationTableName = "MRP"; // 目标表名
 
-            }
-            catch (Exception ee)
-            { 
-                MessageBox.Show(ee.Message.ToString());
-            }
-        }
-        private void addDataGridView()
-        {
-            
-            
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
+                        // 可以配置批量复制的其他选项，例如列映射、批量大小等
+                        bulkCopy.ColumnMappings.Add("MRP编号", "MRP编号");
+                        bulkCopy.ColumnMappings.Add("状态", "状态");
+                        bulkCopy.ColumnMappings.Add("主计划编号", "主计划编号");
+                        bulkCopy.ColumnMappings.Add("物料编码", "物料编号");
+                        bulkCopy.ColumnMappings.Add("物料名称", "物料名称");
+                        bulkCopy.ColumnMappings.Add("需求量", "需求量");
+                        bulkCopy.ColumnMappings.Add("物料来源", "物料来源");
+                        bulkCopy.ColumnMappings.Add("开始日期", "开始日期");
+                        bulkCopy.ColumnMappings.Add("最迟需求日期", "最迟需求日期");
 
+                        // 执行批量复制
+                        bulkCopy.WriteToServer(MRP);
+                    }
+                }
+
+                MessageBox.Show("已成功添加！");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("发生错误：" + ex.Message);
+            }
         }
     }
 }

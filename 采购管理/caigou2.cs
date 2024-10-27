@@ -25,7 +25,7 @@ namespace WinFormsApp1
         public ddcx ddcx1;
         public shx shx1;
         
-        public ruku ruku1;
+        public SE ruku1;
 
 
         public caigou2()
@@ -82,7 +82,7 @@ namespace WinFormsApp1
 
         private void button5_Click(object sender, EventArgs e)
         {
-            ruku1 = new ruku();
+            ruku1 = new SE();
             ruku1.Show();   //将窗体一进行显示
             panel.Controls.Clear();    //清空原容器上的控件
             panel.Controls.Add(ruku1);    //将窗体一加入容器panel2

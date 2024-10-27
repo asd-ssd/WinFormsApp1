@@ -11,11 +11,14 @@ using System.Windows.Forms;
 using WinFormsApp1.基础信息管理设置界面;
 using WinFormsApp1.基础管理.基础信息管理工作界面;
 using WinFormsApp1.工作界面;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 
 namespace WinFormsApp1.基础信息管理工作界面
 {
     public partial class partplat : UserControl
     {
+        private readonly PermissionService _permissionService;
         public static partplat partplat1;
         public partset partset1;
         public parttree parttree1;
@@ -24,6 +27,13 @@ namespace WinFormsApp1.基础信息管理工作界面
             InitializeComponent();
             GetTreeView();
             partplat1 = this;
+            this.button2.Tag = "Create";
+            this.button5.Tag = "Delete";
+            this.button4.Tag = "Edit";
+            var dbHelper = new SqlSugarHelper();
+            _permissionService = new PermissionService(dbHelper);
+            var permissionManager = new PermissionManager(_permissionService, moduleId: 1); // 1是模块ID
+            permissionManager.ApplyPermissions(this);
 
         }
         private SqlConnection connection()
@@ -53,13 +63,13 @@ namespace WinFormsApp1.基础信息管理工作界面
             // 用于存储所有根节点
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                string zhi = dt.Rows[i]["部门层级"].ToString(); // 获取节点层级Tag值 例如：1, 1-2, 1-2-3
+                string zhi = dt.Rows[i]["部门编号"].ToString(); // 获取节点层级Tag值 例如：1, 1-2, 1-2-3
                 if (!zhi.Contains("-")) // 根节点，即只有一层的节点
                 {
                     TreeNode rootNode = new TreeNode
                     {
                         Tag = zhi,
-                        Text = dt.Rows[i][1].ToString()
+                        Text = dt.Rows[i][2].ToString()
                     };
                     treeView1.Nodes.Add(rootNode); // 将根节点添加到TreeView
                 }
@@ -68,7 +78,7 @@ namespace WinFormsApp1.基础信息管理工作界面
             // 调用递归绑定子节点
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                bindChildNote(dt, dt.Rows[i]["部门层级"].ToString());
+                bindChildNote(dt, dt.Rows[i]["部门编号"].ToString());
             }
         }
         //绑定子节点
@@ -76,7 +86,7 @@ namespace WinFormsApp1.基础信息管理工作界面
         {
             foreach (DataRow row in dt.Rows)
             {
-                string zhi = row["部门层级"].ToString(); // 获取当前节点层级Tag值 例如：1-2, 1-2-3
+                string zhi = row["部门编号"].ToString(); // 获取当前节点层级Tag值 例如：1-2, 1-2-3
 
                 // 检查当前节点是否是parentTag的直接子节点
                 if (IsDirectChild(parentTag, zhi))
@@ -86,7 +96,7 @@ namespace WinFormsApp1.基础信息管理工作界面
                     TreeNode childNode = new TreeNode
                     {
                         Tag = currentTag, // 设置完整的层级Tag
-                        Text = row[1].ToString()
+                        Text = row[2].ToString()
                     };
 
                     // 查找父节点
@@ -278,7 +288,7 @@ namespace WinFormsApp1.基础信息管理工作界面
             // 定义数据库连接字符串
 
             // 定义SQL查询，
-            string query = "SELECT * FROM 部门信息表 WHERE 部门层级 like @NodeTag ";
+            string query = "SELECT * FROM 部门信息表 WHERE 部门编号 like @NodeTag ";
 
             // 使用ADO.NET查询数据库
             using (SqlConnection connection1 = connection())

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库支持类;
 using WinFormsApp1.采购管理.供应商;
 
 
@@ -15,15 +16,15 @@ namespace WinFormsApp1.采购管理
 {
     public partial class gys : UserControl
     {
+        private readonly PermissionService _permissionService;
         public cxy cxy1;
-        
         public xjy xjy1;
         public static gys gys1;
 
 
         private SqlConnection connection()
         {
-            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=zyx;Persist Security Info=True;User ID=zyx;Password=123456";
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=hhr;Password=aa1628381531";
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
@@ -50,6 +51,14 @@ namespace WinFormsApp1.采购管理
         public gys()
         {
             InitializeComponent();
+            this.button4.Tag = "Create";
+            this.button3.Tag = "Delete";
+            //this.button1.Tag = "Edit";
+            var dbHelper = new SqlSugarHelper();
+            _permissionService = new PermissionService(dbHelper);
+            var permissionManager = new PermissionManager(_permissionService, moduleId: 4); // 1是模块ID
+            permissionManager.ApplyPermissions(this);
+            gys1 = this;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -69,7 +78,7 @@ namespace WinFormsApp1.采购管理
 
         }
 
-       
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -86,6 +95,76 @@ namespace WinFormsApp1.采购管理
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("确实要删除该行吗?", "询问", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                DataGridViewSelectedRowCollection selectedRows = dataGridView1.SelectedRows;
+                foreach (DataGridViewRow row in selectedRows)
+                {
+                    //获取要删除行的ID值
+                    string id = row.Cells["供应商编号"].Value.ToString();
+                    string delesql = "DELETE FROM 供应商表 WHERE 供应商编号 = @供应商编号";
+                    using (SqlConnection conn = connection())
+                    {
+                        using (SqlCommand comm = new SqlCommand(delesql, conn))
+                        {
+                            comm.Parameters.AddWithValue("@供应商编号", id);
+                            conn.Open();
+                            comm.ExecuteNonQuery();
+                        }
+                    }
+                    dataGridView1.Rows.Remove(row);
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dataGridView1.ReadOnly = false;//整个表格只读
+            button4.Visible = true;
+        }
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            string strcolumn = dataGridView1.Columns[e.ColumnIndex].HeaderText;//获取列标题
+            string strrow = dataGridView1.Rows[e.RowIndex].Cells["供应商编号"].Value.ToString();//获取焦点触发行的第一个值
+            string value = dataGridView1.CurrentCell.Value.ToString();//获取当前点击的活动单元格的值
+            strcomm[n] = "update 供应商表 set " + strcolumn + "='" + value + "'where 供应商编号 = " + strrow;
+            n++;
+        }
+        string[] strcomm = new string[100];
+        int n = 0;
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("确定要保存数据吗？", "询问", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                SqlConnection conn = connection();
+                for (int i = 0; i < n; i++)
+                {
+                    using (SqlCommand comm = new SqlCommand(strcomm[i], conn))
+                    {
+                        conn.Open();
+                        comm.ExecuteNonQuery();
+                        conn.Close();
+                    }
+                }
+
+                GetDataGridView();
+                n = 0;
+
+            }
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            GetDataGridView();
         }
     }
 }

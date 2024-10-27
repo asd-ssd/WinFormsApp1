@@ -101,6 +101,7 @@
             button8.TabIndex = 26;
             button8.Text = "取消修改";
             button8.UseVisualStyleBackColor = true;
+            button8.Visible = false;
             button8.Click += button8_Click;
             // 
             // label4
@@ -119,6 +120,7 @@
             button9.TabIndex = 25;
             button9.Text = "修改完成";
             button9.UseVisualStyleBackColor = true;
+            button9.Visible = false;
             button9.Click += button9_Click;
             // 
             // button1
@@ -248,7 +250,7 @@
             button5.Name = "button5";
             button5.Size = new Size(94, 50);
             button5.TabIndex = 4;
-            button5.Text = "导出打印";
+            button5.Text = "导出";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 

@@ -8,18 +8,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.数据库支持类;
 using WinFormsApp1.采购管理.退货;
 
 namespace WinFormsApp1.采购管理
 {
     public partial class thsq : UserControl
     {
+        private readonly PermissionService _permissionService;
         public thsq1 thsq11;
         public thcxy thcxy1;
+        public static thsq thsq1;
 
         private SqlConnection connection()
         {
-            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=zyx;Persist Security Info=True;User ID=zyx;Password=123456";
+            string strconn = "Data Source=DESKTOP-DC8DD5P;Initial Catalog=sss;Persist Security Info=True;User ID=hhr;Password=aa1628381531";
             SqlConnection conn = new SqlConnection(strconn);
             return conn;
         }
@@ -43,9 +46,18 @@ namespace WinFormsApp1.采购管理
                 MessageBox.Show(ee.Message.ToString());
             }
         }
+        
         public thsq()
         {
             InitializeComponent();
+            this.button6.Tag = "Create";
+          //  this.button6.Tag = "Delete";
+           // this.button1.Tag = "Edit";
+            var dbHelper = new SqlSugarHelper();
+            _permissionService = new PermissionService(dbHelper);
+            var permissionManager = new PermissionManager(_permissionService, moduleId: 4); // 1是模块ID
+            permissionManager.ApplyPermissions(this);
+            thsq1 = this;
         }
 
         private void label10_Click(object sender, EventArgs e)
@@ -56,6 +68,7 @@ namespace WinFormsApp1.采购管理
         private void thsq_Load(object sender, EventArgs e)
         {
             GetDataGridView();
+            
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -68,6 +81,12 @@ namespace WinFormsApp1.采购管理
         {
             thcxy1 = new thcxy();
             thcxy1.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            GetDataGridView();
+            
         }
     }
 }

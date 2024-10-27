@@ -38,7 +38,6 @@
             label8 = new Label();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
-            textBox3 = new TextBox();
             textBox4 = new TextBox();
             textBox7 = new TextBox();
             textBox8 = new TextBox();
@@ -62,14 +61,16 @@
             textBox5 = new TextBox();
             textBox9 = new TextBox();
             textBox10 = new TextBox();
-            textBox11 = new TextBox();
-            textBox12 = new TextBox();
             textBox13 = new TextBox();
             textBox14 = new TextBox();
             textBox15 = new TextBox();
             textBox16 = new TextBox();
             textBox17 = new TextBox();
             comboBox1 = new ComboBox();
+            comboBox2 = new ComboBox();
+            comboBox3 = new ComboBox();
+            comboBox4 = new ComboBox();
+            button3 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -147,8 +148,9 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(218, 49);
+            textBox1.Location = new Point(215, 49);
             textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
             textBox1.Size = new Size(150, 30);
             textBox1.TabIndex = 8;
             // 
@@ -159,19 +161,14 @@
             textBox2.Size = new Size(150, 30);
             textBox2.TabIndex = 9;
             // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(218, 119);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(150, 30);
-            textBox3.TabIndex = 11;
-            // 
             // textBox4
             // 
             textBox4.Location = new Point(505, 119);
             textBox4.Name = "textBox4";
+            textBox4.ReadOnly = true;
             textBox4.Size = new Size(150, 30);
             textBox4.TabIndex = 10;
+            textBox4.TextChanged += textBox4_TextChanged;
             // 
             // textBox7
             // 
@@ -347,35 +344,21 @@
             // 
             // textBox9
             // 
-            textBox9.Location = new Point(215, 358);
+            textBox9.Location = new Point(218, 349);
             textBox9.Name = "textBox9";
             textBox9.Size = new Size(150, 30);
             textBox9.TabIndex = 46;
             // 
             // textBox10
             // 
-            textBox10.Location = new Point(505, 358);
+            textBox10.Location = new Point(503, 352);
             textBox10.Name = "textBox10";
             textBox10.Size = new Size(150, 30);
             textBox10.TabIndex = 47;
             // 
-            // textBox11
-            // 
-            textBox11.Location = new Point(218, 431);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(150, 30);
-            textBox11.TabIndex = 48;
-            // 
-            // textBox12
-            // 
-            textBox12.Location = new Point(505, 428);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(150, 30);
-            textBox12.TabIndex = 49;
-            // 
             // textBox13
             // 
-            textBox13.Location = new Point(215, 501);
+            textBox13.Location = new Point(215, 504);
             textBox13.Name = "textBox13";
             textBox13.Size = new Size(150, 30);
             textBox13.TabIndex = 50;
@@ -419,19 +402,56 @@
             comboBox1.TabIndex = 55;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(215, 125);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(150, 32);
+            comboBox2.TabIndex = 56;
+            // 
+            // comboBox3
+            // 
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(215, 423);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(150, 32);
+            comboBox3.TabIndex = 57;
+            // 
+            // comboBox4
+            // 
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Location = new Point(503, 425);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(150, 32);
+            comboBox4.TabIndex = 58;
+            comboBox4.SelectedIndexChanged += comboBox4_SelectedIndexChanged;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(644, 119);
+            button3.Name = "button3";
+            button3.Size = new Size(41, 30);
+            button3.TabIndex = 59;
+            button3.Text = "...";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // emplset
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(832, 931);
+            Controls.Add(button3);
+            Controls.Add(comboBox4);
+            Controls.Add(comboBox3);
+            Controls.Add(comboBox2);
             Controls.Add(comboBox1);
             Controls.Add(textBox17);
             Controls.Add(textBox16);
             Controls.Add(textBox15);
             Controls.Add(textBox14);
             Controls.Add(textBox13);
-            Controls.Add(textBox12);
-            Controls.Add(textBox11);
             Controls.Add(textBox10);
             Controls.Add(textBox9);
             Controls.Add(textBox5);
@@ -454,7 +474,6 @@
             Controls.Add(label16);
             Controls.Add(textBox7);
             Controls.Add(textBox8);
-            Controls.Add(textBox3);
             Controls.Add(textBox4);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
@@ -483,10 +502,7 @@
         private Label label6;
         private Label label7;
         private Label label8;
-        private TextBox textBox1;
         private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
         private TextBox textBox7;
         private TextBox textBox8;
         private Label label9;
@@ -509,13 +525,17 @@
         private TextBox textBox5;
         private TextBox textBox9;
         private TextBox textBox10;
-        private TextBox textBox11;
-        private TextBox textBox12;
         private TextBox textBox13;
         private TextBox textBox14;
         private TextBox textBox15;
         private TextBox textBox16;
         private TextBox textBox17;
         private ComboBox comboBox1;
+        private ComboBox comboBox2;
+        private ComboBox comboBox3;
+        private ComboBox comboBox4;
+        private Button button3;
+        public TextBox textBox4;
+        public TextBox textBox1;
     }
 }
