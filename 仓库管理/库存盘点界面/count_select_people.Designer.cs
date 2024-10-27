@@ -1,6 +1,6 @@
-﻿namespace WinFormsApp1.仓库管理.移库界面
+﻿namespace WinFormsApp1.仓库管理.库存盘点界面
 {
-    partial class Ms_select_item
+    partial class count_select_people
     {
         /// <summary>
         /// Required designer variable.
@@ -41,32 +41,32 @@
             // 
             // button2
             // 
-            button2.Location = new Point(644, 21);
+            button2.Location = new Point(644, 18);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(109, 38);
-            button2.TabIndex = 85;
+            button2.TabIndex = 109;
             button2.Text = "返回";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
             // button1
             // 
-            button1.Location = new Point(496, 21);
+            button1.Location = new Point(496, 18);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(109, 38);
-            button1.TabIndex = 84;
+            button1.TabIndex = 108;
             button1.Text = "确定";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // button7
             // 
-            button7.Location = new Point(364, 16);
+            button7.Location = new Point(334, 18);
             button7.Name = "button7";
             button7.Size = new Size(47, 43);
-            button7.TabIndex = 83;
+            button7.TabIndex = 107;
             button7.Text = "查询";
             button7.UseVisualStyleBackColor = true;
             button7.Click += button7_Click;
@@ -74,49 +74,49 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(49, 43);
+            label2.Location = new Point(52, 38);
             label2.Name = "label2";
             label2.Size = new Size(69, 20);
-            label2.TabIndex = 82;
-            label2.Text = "物料编号";
+            label2.TabIndex = 106;
+            label2.Text = "员工编号";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(199, 40);
+            textBox2.Location = new Point(187, 39);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(125, 27);
-            textBox2.TabIndex = 81;
+            textBox2.TabIndex = 105;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(64, 10);
+            label1.Location = new Point(52, 8);
             label1.Name = "label1";
-            label1.Size = new Size(54, 20);
-            label1.TabIndex = 80;
-            label1.Text = "物料名";
+            label1.Size = new Size(39, 20);
+            label1.TabIndex = 104;
+            label1.Text = "姓名";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(199, 3);
+            textBox1.Location = new Point(187, 2);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 79;
+            textBox1.TabIndex = 103;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(27, 73);
+            dataGridView1.Location = new Point(27, 70);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(746, 379);
-            dataGridView1.TabIndex = 78;
+            dataGridView1.TabIndex = 102;
             // 
-            // Ms_select_item
+            // count_select_people
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 473);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(button7);
@@ -125,9 +125,9 @@
             Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(dataGridView1);
-            Name = "Ms_select_item";
-            Text = "Ms_select_item";
-            //Load += Ms_select_item_Load;
+            Name = "count_select_people";
+            Text = "count_select_people";
+            Load += count_select_people_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

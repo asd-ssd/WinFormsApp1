@@ -213,6 +213,7 @@
             button7.TabIndex = 21;
             button7.Text = "查询";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // button13
             // 

@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.仓库管理.出库界面;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WinFormsApp1.仓库管理.初始查询界面
@@ -66,6 +68,7 @@ namespace WinFormsApp1.仓库管理.初始查询界面
             SqlCommand comm = new SqlCommand(strda, conn);
             comm.ExecuteNonQuery();
             conn.Close();
+            SysLogService.AddSysLog(new SysLog("新增库存管理表数据", "触发", LogTye.操作记录, login.login1.userid));
         }
         private void button2_Click(object sender, EventArgs e)
         {

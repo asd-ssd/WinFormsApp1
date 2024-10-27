@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.数据库支持类;
 using WinFormsApp1.仓库管理.出库界面;
+using WinFormsApp1.数据库封装类;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace WinFormsApp1.仓库管理.初始查询界面
 {
@@ -28,7 +30,7 @@ namespace WinFormsApp1.仓库管理.初始查询界面
             _permissionService = new PermissionService(dbHelper);
             var permissionManager = new PermissionManager(_permissionService, moduleId: 5); // 1是模块ID
             permissionManager.ApplyPermissions(this);
-            warehouse_initial1 = this; 
+            warehouse_initial1 = this;
         }
         private SqlConnection connection()
         {
@@ -99,7 +101,7 @@ namespace WinFormsApp1.仓库管理.初始查询界面
                         conn.Close();
                     }
                 }
-
+                SysLogService.AddSysLog(new SysLog("修改库存管理表数据", "触发", LogTye.操作记录, login.login1.userid));
                 GetDataGridView();
                 n = 0;
                 button12.Visible = false;
@@ -141,7 +143,9 @@ namespace WinFormsApp1.仓库管理.初始查询界面
                         }
                     }
                     dataGridView1.Rows.Remove(row);
+
                 }
+                SysLogService.AddSysLog(new SysLog("删除库存管理表数据", "触发", LogTye.操作记录, login.login1.userid));
             }
         }
 
@@ -154,6 +158,37 @@ namespace WinFormsApp1.仓库管理.初始查询界面
         {
             warehouse_add1 = new warehouse_initial_add();
             warehouse_add1.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string selectsql = "select * from 库存管理表 where 1=1";
+            if (textBox1.Text != "")
+
+            {
+                selectsql += "and 物料名称 like'%" + textBox1.Text + "%'";
+            }
+            if (textBox2.Text != "")
+            {
+                selectsql += "and 物料编码 like'%" + textBox2.Text + "%'";
+            }
+            if (textBox3.Text != "")
+            {
+                selectsql += "and 库位号 like'%" + textBox3.Text + "%'";
+            }
+            if (textBox4.Text != "")
+            {
+                selectsql += "and 所属库房 like'%" + textBox4.Text + "%'";
+            }
+          
+
+            SqlConnection conn = connection();
+            conn.Open();
+            DataTable dt1 = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(selectsql, conn);
+            da.Fill(dt1);
+            conn.Close();
+            dataGridView1.DataSource = dt1;
         }
     }
 }

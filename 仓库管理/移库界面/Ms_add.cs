@@ -12,6 +12,8 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.仓库管理.初始查询界面;
+using WinFormsApp1.数据库封装类;
+using WinFormsApp1.数据库支持类;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WinFormsApp1.仓库管理.移库界面
@@ -65,6 +67,7 @@ namespace WinFormsApp1.仓库管理.移库界面
             SqlCommand comm = new SqlCommand(strda, conn);
             comm.ExecuteNonQuery();
             conn.Close();
+            SysLogService.AddSysLog(new SysLog("新增移库单表数据", "触发", LogTye.操作记录, login.login1.userid));
         }
 
         private void GetDataGridView()
@@ -136,11 +139,11 @@ namespace WinFormsApp1.仓库管理.移库界面
             conn.Close();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void textBox5_TextChanged(object sender, EventArgs e)
         {
             comboBox1.Items.Clear();
             comboBox2.Items.Clear();
-            string strda = "select * from 库存管理表 WHERE 物料编码='" + textBox1.Text.Trim() + "'";
+            string strda = "select * from 库存管理表 WHERE 物料编码='" + textBox5.Text.Trim() + "'";
             SqlConnection conn = connection();
             conn.Open();
             DataTable dt = new DataTable();
@@ -172,19 +175,18 @@ namespace WinFormsApp1.仓库管理.移库界面
                         }
                     }
                 }
-        
-
+                
             }
 
             conn.Close();
-
-        } 
+            
+        }
 
         private void textBox16_TextChanged(object sender, EventArgs e)
         {
             comboBox1.Items.Clear();
             comboBox2.Items.Clear();
-            string strda = "select * from 库存管理表 WHERE 物料编码='" + textBox1.Text.Trim() + "'";
+            string strda = "select * from 库存管理表 WHERE 物料编码='" + textBox5.Text.Trim() + "'";
             SqlConnection conn = connection();
             conn.Open();
             DataTable dt = new DataTable();
@@ -225,6 +227,11 @@ namespace WinFormsApp1.仓库管理.移库界面
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

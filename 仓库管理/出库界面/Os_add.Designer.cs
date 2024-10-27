@@ -42,14 +42,14 @@
             textBox4 = new TextBox();
             textBox15 = new TextBox();
             label1 = new Label();
-            textBox1 = new TextBox();
             button3 = new Button();
             label16 = new Label();
             label5 = new Label();
             textBox16 = new TextBox();
             textBox3 = new TextBox();
-            textBox5 = new TextBox();
             label7 = new Label();
+            textBox5 = new TextBox();
+            textBox1 = new TextBox();
             label3 = new Label();
             button2 = new Button();
             button1 = new Button();
@@ -223,16 +223,6 @@
             label1.TabIndex = 42;
             label1.Text = "物料编码";
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(374, 68);
-            textBox1.Margin = new Padding(2);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(108, 27);
-            textBox1.TabIndex = 50;
-            textBox1.TextChanged += textBox1_TextChanged;
-            // 
             // button3
             // 
             button3.Location = new Point(188, 69);
@@ -281,15 +271,6 @@
             textBox3.Size = new Size(123, 27);
             textBox3.TabIndex = 80;
             // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(75, 68);
-            textBox5.Margin = new Padding(2);
-            textBox5.Multiline = true;
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(108, 27);
-            textBox5.TabIndex = 89;
-            // 
             // label7
             // 
             label7.AutoSize = true;
@@ -299,6 +280,26 @@
             label7.Size = new Size(54, 20);
             label7.TabIndex = 90;
             label7.Text = "物料名";
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(75, 68);
+            textBox5.Margin = new Padding(2);
+            textBox5.Multiline = true;
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(108, 27);
+            textBox5.TabIndex = 89;
+            textBox5.TextChanged += textBox5_TextChanged;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(374, 68);
+            textBox1.Margin = new Padding(2);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(108, 27);
+            textBox1.TabIndex = 50;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // label3
             // 
