@@ -62,6 +62,7 @@
             label10 = new Label();
             textBox7 = new TextBox();
             groupBox1 = new GroupBox();
+            dateTimePicker3 = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -447,11 +448,22 @@
             groupBox1.TabIndex = 115;
             groupBox1.TabStop = false;
             // 
+            // dateTimePicker3
+            // 
+            dateTimePicker3.Location = new Point(488, 282);
+            dateTimePicker3.Margin = new Padding(4);
+            dateTimePicker3.Name = "dateTimePicker3";
+            dateTimePicker3.Size = new Size(169, 30);
+            dateTimePicker3.TabIndex = 116;
+            dateTimePicker3.Value = new DateTime(2024, 10, 29, 0, 0, 0, 0);
+            dateTimePicker3.Visible = false;
+            // 
             // count_push_new
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1384, 898);
+            Controls.Add(dateTimePicker3);
             Controls.Add(groupBox1);
             Controls.Add(button4);
             Controls.Add(button1);
@@ -508,5 +520,6 @@
         private Label label10;
         public TextBox textBox7;
         private GroupBox groupBox1;
+        private DateTimePicker dateTimePicker3;
     }
 }

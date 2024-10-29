@@ -102,7 +102,22 @@ namespace WinFormsApp1.基础信息管理设置界面
         {
             SqlConnection conn = connection();
             conn.Open();
-            float sum = float.Parse(textBox10.Text.Trim()) + float.Parse(textBox11.Text.Trim()) + float.Parse(textBox12.Text.Trim());
+            float x = 0;
+            float y = 0;
+            float z = 0;
+            if(textBox10.Text.Trim()!="")
+            {
+                x = float.Parse(textBox10.Text.Trim());
+            }
+            if (textBox11.Text.Trim() != "")
+            {
+                y = float.Parse(textBox11.Text.Trim());
+            }
+            if (textBox12.Text.Trim() != "")
+            {
+                z = float.Parse(textBox12.Text.Trim());
+            }
+            float sum =  x+ y + z ;
             string strda = "insert into BOM表(层次号,父项编码,物料编码,物料名称,物料分类,安全库存量,提前期,计量单位,单位用量,材料费用,人工费用,制造费用,单价,物料来源,小计) values('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + comboBox2.Text + "','" + textBox6.Text + "','" + textBox7.Text + "','" + comboBox3.Text + "','" + textBox9.Text + "','" + textBox10.Text + "','" + textBox11.Text + "','" + textBox12.Text + "','" + textBox13.Text + "','" + comboBox1.Text + "','" + sum.ToString() + "')";
             SqlCommand comm = new SqlCommand(strda, conn);
             comm.ExecuteNonQuery();

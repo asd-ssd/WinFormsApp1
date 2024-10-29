@@ -110,11 +110,6 @@ namespace WinFormsApp1.Forth
                                     int result = demand - stock;
                                     row["需求量"] = result >= 0 ? result.ToString() : "0";
                                 }
-                                else
-                                {
-                                    MessageBox.Show($"无法转换需求量或库存为整数。需求量: {demandStr}, 库存: {stockStr}", "转换错误");
-                                    row["需求量"] = "0";
-                                }
                             }
 
                             if (row.IsNull("物料编码"))

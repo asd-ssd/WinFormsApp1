@@ -189,9 +189,9 @@ namespace WinFormsApp1.基础信息管理工作界面
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             string strcolumn = dataGridView1.Columns[e.ColumnIndex].HeaderText.ToString();//获取列标题
-            string strrow = dataGridView1.Rows[e.RowIndex].Cells["部门名称"].Value.ToString();//获取焦点触发行的第一个值
+            string strrow = dataGridView1.Rows[e.RowIndex].Cells["部门编号"].Value.ToString();//获取焦点触发行的第一个值
             string value = dataGridView1.CurrentCell.Value.ToString();//获取当前点击的活动单元格的值
-            strcomm[n] = $"UPDATE 部门信息表 SET {strcolumn} = '{value}' WHERE 部门名称 = '{strrow}'";
+            strcomm[n] = $"UPDATE 部门信息表 SET {strcolumn} = '{value}' WHERE 部门编号 = '{strrow}'";
             n++;
         }
         //删除

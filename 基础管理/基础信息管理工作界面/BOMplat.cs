@@ -51,8 +51,6 @@ namespace WinFormsApp1.工作界面
                 SqlDataAdapter da = new SqlDataAdapter(strda, conn);
                 da.Fill(dt);
                 conn.Close();
-                //dataGridView1.AutoGenerateColumns = true;//自动创建列
-                //dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;//单击单元格编辑
                 dataGridView1.DataSource = dt;
             }
             catch (Exception ee)

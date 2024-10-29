@@ -20,7 +20,6 @@ namespace WinFormsApp1.数据库支持类
         {
             _dbHelper = dbHelper;
         }
-
         /// <summary>
         /// 获取所有角色
         /// </summary>
@@ -29,7 +28,6 @@ namespace WinFormsApp1.数据库支持类
             var roles = SqlSugarHelper.SqlSugarClient.Queryable<Role>().ToList();
             return roles;
         }
-
         /// <summary>
         /// 获取所有模块
         /// </summary>
@@ -38,7 +36,6 @@ namespace WinFormsApp1.数据库支持类
             var modules = SqlSugarHelper.SqlSugarClient.Queryable<Module>().ToList();
             return modules;
         }
-
         /// <summary>
         /// 获取指定角色在指定模块中的权限
         /// </summary>

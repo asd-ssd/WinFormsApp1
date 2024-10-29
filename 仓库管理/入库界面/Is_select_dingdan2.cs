@@ -42,7 +42,7 @@ namespace WinFormsApp1.仓库管理.入库界面
         {
             try
             {
-                string strda = "select * from Workorder where 1=1 AND 状态='已完成'";
+                string strda = "select * from MRP where 1=1 AND 状态='已完成'";
                 SqlConnection conn = connection();
                 conn.Open();
                 DataTable dt = new DataTable();
@@ -90,10 +90,10 @@ namespace WinFormsApp1.仓库管理.入库界面
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {
                 //获取要选中行的ID值
-                Is_select_dingdan2_number = row.Cells["派工单编号"].Value.ToString();
+                Is_select_dingdan2_number = row.Cells["MRP编号"].Value.ToString();
                 Is_select_dingdan2_wunumber = row.Cells["物料编号"].Value.ToString();
                 Is_select_dingdan2_name = row.Cells["物料名称"].Value.ToString();
-                Is_select_dingdan2_shuliang = row.Cells["派工数量"].Value.ToString();
+                Is_select_dingdan2_shuliang = row.Cells["需求量"].Value.ToString();
             }
             Is_select_dingdan2_textBox2.Text = Is_select_dingdan2_number;
             Is_select_dingdan2_textBox5.Text = Is_select_dingdan2_wunumber;

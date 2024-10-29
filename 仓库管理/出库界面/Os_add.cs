@@ -143,7 +143,7 @@ namespace WinFormsApp1.仓库管理.出库界面
             SqlConnection conn = connection();
             conn.Open();
 
-            string strda = "INSERT INTO 出库单表 (出库单编号,库位号, 物料编码, 出库数量,出库人姓名,出库人编号,出库日期,出库类别,物料名称,销售订单编号) VALUES ('" + textBox4.Text.Trim() + "','" + comboBox2.Text.Trim() + "','" + textBox1.Text.Trim() + "','" + textBox16.Text.Trim() + "','" + textBox15.Text.Trim() + "','" + textBox3.Text.Trim() + "','" + dateTimePicker1.Value + "','" + comboBox1.Text + "','" + textBox5.Text.Trim() + "','" + textBox2.Text.Trim() + "')";
+            string strda = "INSERT INTO 出库单表 (出库单编号,库位号, 物料编码, 出库数量,出库人姓名,出库人编号,出库日期,出库类别,物料名称,销售订单编号) VALUES ('" + textBox4.Text.Trim() + "','" + comboBox2.Text.Trim() + "','" + textBox5.Text.Trim() + "','" + textBox16.Text.Trim() + "','" + textBox15.Text.Trim() + "','" + textBox3.Text.Trim() + "','" + dateTimePicker1.Value + "','" + comboBox1.Text + "','" + textBox1.Text.Trim() + "','" + textBox2.Text.Trim() + "')";
             SqlCommand comm = new SqlCommand(strda, conn);
             comm.ExecuteNonQuery();
             conn.Close();

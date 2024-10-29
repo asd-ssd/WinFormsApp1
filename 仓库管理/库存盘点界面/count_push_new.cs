@@ -49,9 +49,49 @@ namespace WinFormsApp1.仓库管理.库存盘点界面
         {
             addDataGridView();
             GetDataGridView();
+            change_1();
             this.Close();
         }
-        private void GetDataGridView()
+        private void change_1()
+        {
+            try
+            {
+                // 创建并打开数据库连接
+                SqlConnection conn = connection();
+                conn.Open();
+                // 定义SQL更新语句
+                string sql = "UPDATE 库存管理表 SET 最后盘点日期 = @最后盘点日期 WHERE 库位号 = @库位号";
+                // 创建SqlCommand对象
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    // 添加参数化查询以防止SQL注入
+                    cmd.Parameters.AddWithValue("@最后盘点日期", dateTimePicker3.Value.Date.ToString("yyyy-MM-dd"));
+                    cmd.Parameters.AddWithValue("@库位号", comboBox2.Text);
+                    // 执行更新操作
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    // 检查是否有行被更新
+                    if (rowsAffected > 0)
+                    {
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("没有找到对应的记录。");
+                    }
+                }
+
+                // 关闭数据库连接
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                // 显示异常信息
+                MessageBox.Show("发生错误：" + ex.Message);
+            }
+        }
+    
+    private void GetDataGridView()
         {
             try
             {
@@ -76,7 +116,7 @@ namespace WinFormsApp1.仓库管理.库存盘点界面
             SqlConnection conn = connection();
             conn.Open();
             int num1, num2, minus = 0;
-            bool result1 = int.TryParse(textBox1.Text, out num1);
+            bool result1 = int.TryParse(textBox6.Text, out num1);
             bool result2 = int.TryParse(textBox2.Text, out num2);
 
             if (result1 && result2)
@@ -171,7 +211,7 @@ namespace WinFormsApp1.仓库管理.库存盘点界面
                 textBox1.Text = row.Cells["物料名称"].Value.ToString();
                 textBox2.Text = row.Cells["库位库存量"].Value.ToString();
                 textBox6.Text = row.Cells["库位库存量"].Value.ToString();
-                comboBox2.Items.Add(row.Cells["库位号"].Value.ToString());
+                comboBox2.Text=(row.Cells["库位号"].Value.ToString());
 
             }
         }

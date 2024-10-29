@@ -31,11 +31,9 @@ namespace WinFormsApp1.数据库支持类
                     // 执行 SQL 查询，获取所有日志记录
                     var logs = db.Queryable<SysLog>().OrderBy(c => c.LogTime, OrderByType.Desc).ToList();
 
-                    // 如果需要转换日志类型为字符串，可在这里进行处理
-
                     return logs;
                 }
-            }
+            }   
             catch (Exception ex)
             {
                 // 记录错误日志，方便排查问题
