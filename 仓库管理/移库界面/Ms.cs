@@ -31,6 +31,7 @@ namespace WinFormsApp1.仓库管理.移库界面
             var permissionManager = new PermissionManager(_permissionService, moduleId: 5); // 1是模块ID
             permissionManager.ApplyPermissions(this);
             Ms1 = this;
+            dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
         }
 
 
